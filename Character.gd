@@ -21,9 +21,6 @@ onready var body = $"."
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 func _physics_process(delta):
-	print(body.scale.x)
-	body.scale.x = -1
-	print(directionX)
 	#apply gravity
 	velocity.y += gravity
 	if velocity.y > terminalVelocity:
@@ -42,8 +39,8 @@ func _physics_process(delta):
 	#apply movement
 #	directionY = Input.get_action_strength("8")
 #	velocity.y = directionY*speed
-	
-#	move_and_slide(velocity, Vector2.UP)
+	move_and_slide(velocity, Vector2.UP)
+#	animatedSprite.scale.x = 1
 	if is_on_floor():
 		if directionX > 0:
 			animatedSprite.play("6")
