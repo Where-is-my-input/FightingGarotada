@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=2]
+[gd_scene load_steps=115 format=2]
 
 [ext_resource path="res://Characters/Jill Valentine/anim055.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Jill Valentine/anim058.png" type="Texture" id=2]
@@ -412,6 +412,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "sLP"
+length = 0.15
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -444,7 +445,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.102049 ),
+"times": PoolRealArray( 0.15 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -535,13 +536,72 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.316667 ),
+"times": PoolRealArray( 0.333333 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "animationFinished"
 } ]
 }
+
+[sub_resource type="AnimationNodeTransition" id=17]
+input_count = 2
+input_0/name = "Neutral"
+input_0/auto_advance = false
+input_1/name = "Attacking"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeTransition" id=20]
+input_count = 2
+input_0/name = "LP"
+input_0/auto_advance = false
+input_1/name = "MP"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "crouch"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "sLP"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "sMP"
+
+[sub_resource type="AnimationNodeTransition" id=19]
+input_count = 3
+input_0/name = "idle"
+input_0/auto_advance = false
+input_1/name = "walk"
+input_1/auto_advance = false
+input_2/name = "crouch"
+input_2/auto_advance = false
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "WalkForward"
+
+[sub_resource type="AnimationNodeBlendTree" id=18]
+graph_offset = Vector2( 452.082, -6.28372 )
+nodes/Action/node = SubResource( 17 )
+nodes/Action/position = Vector2( 1020, 20 )
+nodes/Attacking/node = SubResource( 20 )
+nodes/Attacking/position = Vector2( 1000, 240 )
+nodes/Crouch/node = SubResource( 13 )
+nodes/Crouch/position = Vector2( 400, 320 )
+nodes/Idle/node = SubResource( 16 )
+nodes/Idle/position = Vector2( 440, 0 )
+nodes/LP/node = SubResource( 14 )
+nodes/LP/position = Vector2( 720, 280 )
+nodes/MP/node = SubResource( 15 )
+nodes/MP/position = Vector2( 720, 420 )
+nodes/Neutral/node = SubResource( 19 )
+nodes/Neutral/position = Vector2( 740, 40 )
+"nodes/WalkForward /node" = SubResource( 12 )
+"nodes/WalkForward /position" = Vector2( 420, 140 )
+nodes/output/position = Vector2( 1220, 40 )
+node_connections = [ "Neutral", 0, "Idle", "Neutral", 1, "WalkForward ", "Neutral", 2, "Crouch", "Action", 0, "Neutral", "Action", 1, "Attacking", "Attacking", 0, "LP", "Attacking", 1, "MP", "output", 0, "Action" ]
 
 [node name="Player" type="Node2D"]
 scale = Vector2( -1, 1 )
@@ -575,3 +635,11 @@ anims/WalkForward = SubResource( 11 )
 anims/crouch = SubResource( 10 )
 anims/sLP = SubResource( 7 )
 anims/sMP = SubResource( 9 )
+
+[node name="AnimationTree" type="AnimationTree" parent="KinematicBody2D/AnimatedSprite"]
+tree_root = SubResource( 18 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/Action/current = 0
+parameters/Attacking/current = 0
+parameters/Neutral/current = 0
