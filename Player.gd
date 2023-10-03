@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var animation = $KinematicBody2D/AnimatedSprite/AnimationPlayer
-onready var body = $KinematicBody2D
+@onready var animation = $CharacterBody2D/AnimatedSprite2D/AnimationPlayer
+@onready var body = $CharacterBody2D
 
 #var teste = 1
 

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var directionX = 0
 var directionY
@@ -7,11 +7,10 @@ var gravity = 50
 var terminalVelocity = 888
 var strength = -1000
 
-var velocity:Vector2
 var speed = 500;
 
-onready var animatedSprite = $AnimatedSprite
-onready var body = $"."
+@onready var animatedSprite = $AnimatedSprite2D
+@onready var body = $"."
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -39,7 +38,9 @@ func _physics_process(delta):
 	#apply movement
 #	directionY = Input.get_action_strength("8")
 #	velocity.y = directionY*speed
-	move_and_slide(velocity, Vector2.UP)
+	set_velocity(velocity)
+	set_up_direction(Vector2.UP)
+	move_and_slide()
 #	animatedSprite.scale.x = 1
 	if is_on_floor():
 		if directionX > 0:

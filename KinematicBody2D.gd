@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var directionX = 0
 var facing = 1
@@ -10,9 +10,9 @@ var strength = -1000
 var attacking = false
 
 #states
-var action = 0
-var neutral = 0
-var attack = 0
+var action = "Neutral"
+var neutral = "idle"
+var attack = "LP"
 
 #attacks
 var LP = 0
@@ -22,17 +22,16 @@ var LK = 0
 var MK = 0
 var HK = 0
 
-var velocity:Vector2
 var speed = 500;
 
-onready var animatedSprite = $AnimatedSprite
-onready var animatedPlayer = $AnimatedSprite/AnimationPlayer
-onready var animatedTree = $AnimatedSprite/AnimationTree
+@onready var animatedSprite = $AnimatedSprite2D
+@onready var animatedPlayer = $AnimatedSprite2D/AnimationPlayer
+@onready var animatedTree : AnimationTree = $AnimatedSprite2D/AnimationTree
 
 #animationTree
-onready var A_action = "parameters/Action/current"
-onready var A_attacking = "parameters/Attacking/current"
-onready var A_neutral = "parameters/Neutral/current"
+@onready var A_action = "parameters/Action/transition_request"
+@onready var A_attacking = "parameters/Attacking/transition_request"
+@onready var A_neutral = "parameters/Neutral/transition_request"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,12 +41,14 @@ func _physics_process(delta):
 	gravity_fall()
 	readInput()
 	if !attacking:
-		attacking = isAttacking()
+		isAttacking()
 	
 	jump()
 	walk()
 		
-	move_and_slide(velocity, Vector2.UP)
+	set_velocity(velocity)
+	set_up_direction(Vector2.UP)
+	move_and_slide()
 	
 	setAnimation()
 	flip()
@@ -65,20 +66,18 @@ func gravity_fall():
 	pass
 
 func isAttacking():
+	action = "Neutral"
 	if LP == 1:
-#		if is_on_floor():
-#			animatedPlayer.play("sLP")
-		attack = 0
-		print("Atacou ", HK)
-		return 1
+		attack = "LP"
+		attacking = 1
 	if MP == 1: 
-#		if is_on_floor():
-#			animatedPlayer.play("sMP")
-		attack = 1
-		return 1
+		attack = "MP"
+		attacking = 1
 	neutralAnimation()
-	return 0
-	pass
+	if attacking:
+		action = "Attacking"
+		return
+	attacking = 0
 
 func readInput():
 	crouching = Input.get_action_strength("2")
@@ -96,17 +95,17 @@ func readInput():
 
 func animationFinished():
 	attacking = 0
-#	neutralAnimation()
+	print("finished")
 	pass
 
 func neutralAnimation():
 	if is_on_floor():
 		if crouching:
-			neutral = 2
+			neutral = "crouch"
 		elif directionX == 0:
-			neutral = 0
+			neutral = "idle"
 		else:
-			neutral = 1
+			neutral = "walk"
 	pass
 	
 func flip():
@@ -129,11 +128,13 @@ func walk():
 			velocity.x = 0
 
 func jump():
-	if Input.is_action_just_pressed("8") and is_on_floor():
+	if Input.get_action_strength("8") > 0 and is_on_floor() and !attacking:
 		velocity.y = +strength
 
 func setAnimation():
-	animatedTree[A_action] = attacking
-	animatedTree[A_attacking] = attack
-	animatedTree[A_neutral] = neutral
+#	print(LP)
+	animatedTree.set(A_action, action)
+	animatedTree.set(A_neutral, neutral)
+	animatedTree.set(A_attacking, attack)
+	
 	pass

@@ -1,105 +1,105 @@
-[gd_scene load_steps=115 format=2]
+[gd_scene load_steps=116 format=3 uid="uid://cbi3kopno23pf"]
 
-[ext_resource path="res://Characters/Jill Valentine/anim055.png" type="Texture" id=1]
-[ext_resource path="res://Characters/Jill Valentine/anim058.png" type="Texture" id=2]
-[ext_resource path="res://Characters/Jill Valentine/anim111.png" type="Texture" id=3]
-[ext_resource path="res://Characters/Jill Valentine/anim053.png" type="Texture" id=4]
-[ext_resource path="res://Characters/Jill Valentine/anim109.png" type="Texture" id=5]
-[ext_resource path="res://Characters/Jill Valentine/anim084.png" type="Texture" id=6]
-[ext_resource path="res://Characters/Jill Valentine/anim054.png" type="Texture" id=7]
-[ext_resource path="res://Characters/Jill Valentine/anim110.png" type="Texture" id=8]
-[ext_resource path="res://Characters/Jill Valentine/anim105.png" type="Texture" id=9]
-[ext_resource path="res://Characters/Jill Valentine/anim106.png" type="Texture" id=10]
-[ext_resource path="res://Characters/Jill Valentine/anim107.png" type="Texture" id=11]
-[ext_resource path="res://Characters/Jill Valentine/anim082.png" type="Texture" id=12]
-[ext_resource path="res://Characters/Jill Valentine/anim060.png" type="Texture" id=13]
-[ext_resource path="res://Characters/Jill Valentine/anim056.png" type="Texture" id=14]
-[ext_resource path="res://Characters/Jill Valentine/anim112.png" type="Texture" id=15]
-[ext_resource path="res://Characters/Jill Valentine/anim086.png" type="Texture" id=16]
-[ext_resource path="res://Characters/Jill Valentine/anim085.png" type="Texture" id=17]
-[ext_resource path="res://Characters/Jill Valentine/anim108.png" type="Texture" id=18]
-[ext_resource path="res://Player.gd" type="Script" id=19]
-[ext_resource path="res://Characters/Jill Valentine/anim080.png" type="Texture" id=20]
-[ext_resource path="res://Characters/Jill Valentine/anim079.png" type="Texture" id=21]
-[ext_resource path="res://Characters/Jill Valentine/anim078.png" type="Texture" id=22]
-[ext_resource path="res://Characters/Jill Valentine/anim081.png" type="Texture" id=23]
-[ext_resource path="res://Characters/Jill Valentine/anim061.png" type="Texture" id=24]
-[ext_resource path="res://Characters/Jill Valentine/anim059.png" type="Texture" id=25]
-[ext_resource path="res://Characters/Jill Valentine/anim062.png" type="Texture" id=26]
-[ext_resource path="res://Characters/Jill Valentine/anim057.png" type="Texture" id=27]
-[ext_resource path="res://Characters/Jill Valentine/anim083.png" type="Texture" id=28]
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=29]
-[ext_resource path="res://Characters/Jill Valentine/anim238.png" type="Texture" id=30]
-[ext_resource path="res://Characters/Jill Valentine/anim239.png" type="Texture" id=31]
-[ext_resource path="res://Characters/Jill Valentine/anim237.png" type="Texture" id=32]
-[ext_resource path="res://Characters/Jill Valentine/anim242.png" type="Texture" id=33]
-[ext_resource path="res://Characters/Jill Valentine/anim243.png" type="Texture" id=34]
-[ext_resource path="res://Characters/Jill Valentine/anim241.png" type="Texture" id=35]
-[ext_resource path="res://Characters/Jill Valentine/anim244.png" type="Texture" id=36]
-[ext_resource path="res://Characters/Jill Valentine/anim240.png" type="Texture" id=37]
-[ext_resource path="res://Characters/Jill Valentine/anim076.png" type="Texture" id=38]
-[ext_resource path="res://Characters/Jill Valentine/anim077.png" type="Texture" id=39]
-[ext_resource path="res://Characters/Jill Valentine/anim073.png" type="Texture" id=40]
-[ext_resource path="res://Characters/Jill Valentine/anim072.png" type="Texture" id=41]
-[ext_resource path="res://Characters/Jill Valentine/anim075.png" type="Texture" id=42]
-[ext_resource path="res://Characters/Jill Valentine/anim074.png" type="Texture" id=43]
-[ext_resource path="res://Characters/Jill Valentine/anim103.png" type="Texture" id=44]
-[ext_resource path="res://Characters/Jill Valentine/anim113.png" type="Texture" id=45]
-[ext_resource path="res://Characters/Jill Valentine/anim104.png" type="Texture" id=46]
-[ext_resource path="res://Characters/Jill Valentine/anim114.png" type="Texture" id=47]
-[ext_resource path="res://Characters/Jill Valentine/anim137.png" type="Texture" id=48]
-[ext_resource path="res://Characters/Jill Valentine/anim115.png" type="Texture" id=49]
-[ext_resource path="res://Characters/Jill Valentine/anim138.png" type="Texture" id=50]
-[ext_resource path="res://Characters/Jill Valentine/anim139.png" type="Texture" id=51]
-[ext_resource path="res://Characters/Jill Valentine/anim134.png" type="Texture" id=52]
-[ext_resource path="res://Characters/Jill Valentine/anim141.png" type="Texture" id=53]
-[ext_resource path="res://Characters/Jill Valentine/anim145.png" type="Texture" id=54]
-[ext_resource path="res://Characters/Jill Valentine/anim146.png" type="Texture" id=55]
-[ext_resource path="res://Characters/Jill Valentine/anim126.png" type="Texture" id=56]
-[ext_resource path="res://Characters/Jill Valentine/anim128.png" type="Texture" id=57]
-[ext_resource path="res://Characters/Jill Valentine/anim140.png" type="Texture" id=58]
-[ext_resource path="res://Characters/Jill Valentine/anim130.png" type="Texture" id=59]
-[ext_resource path="res://Characters/Jill Valentine/anim116.png" type="Texture" id=60]
-[ext_resource path="res://Characters/Jill Valentine/anim123.png" type="Texture" id=61]
-[ext_resource path="res://Characters/Jill Valentine/anim129.png" type="Texture" id=62]
-[ext_resource path="res://Characters/Jill Valentine/anim147.png" type="Texture" id=63]
-[ext_resource path="res://Characters/Jill Valentine/anim122.png" type="Texture" id=64]
-[ext_resource path="res://Characters/Jill Valentine/anim136.png" type="Texture" id=65]
-[ext_resource path="res://Characters/Jill Valentine/anim144.png" type="Texture" id=66]
-[ext_resource path="res://Characters/Jill Valentine/anim127.png" type="Texture" id=67]
-[ext_resource path="res://Characters/Jill Valentine/anim119.png" type="Texture" id=68]
-[ext_resource path="res://Characters/Jill Valentine/anim124.png" type="Texture" id=69]
-[ext_resource path="res://Characters/Jill Valentine/anim132.png" type="Texture" id=70]
-[ext_resource path="res://Characters/Jill Valentine/anim125.png" type="Texture" id=71]
-[ext_resource path="res://Characters/Jill Valentine/anim121.png" type="Texture" id=72]
-[ext_resource path="res://Characters/Jill Valentine/anim118.png" type="Texture" id=73]
-[ext_resource path="res://Characters/Jill Valentine/anim120.png" type="Texture" id=74]
-[ext_resource path="res://Characters/Jill Valentine/anim117.png" type="Texture" id=75]
-[ext_resource path="res://Characters/Jill Valentine/anim131.png" type="Texture" id=76]
-[ext_resource path="res://Characters/Jill Valentine/anim133.png" type="Texture" id=77]
-[ext_resource path="res://Characters/Jill Valentine/anim135.png" type="Texture" id=78]
-[ext_resource path="res://Characters/Jill Valentine/anim090.png" type="Texture" id=79]
-[ext_resource path="res://Characters/Jill Valentine/anim092.png" type="Texture" id=80]
-[ext_resource path="res://Characters/Jill Valentine/anim095.png" type="Texture" id=81]
-[ext_resource path="res://Characters/Jill Valentine/anim097.png" type="Texture" id=82]
-[ext_resource path="res://Characters/Jill Valentine/anim098.png" type="Texture" id=83]
-[ext_resource path="res://Characters/Jill Valentine/anim088.png" type="Texture" id=84]
-[ext_resource path="res://Characters/Jill Valentine/anim091.png" type="Texture" id=85]
-[ext_resource path="res://Characters/Jill Valentine/anim093.png" type="Texture" id=86]
-[ext_resource path="res://Characters/Jill Valentine/anim094.png" type="Texture" id=87]
-[ext_resource path="res://Characters/Jill Valentine/anim099.png" type="Texture" id=88]
-[ext_resource path="res://Characters/Jill Valentine/anim100.png" type="Texture" id=89]
-[ext_resource path="res://Characters/Jill Valentine/anim087.png" type="Texture" id=90]
-[ext_resource path="res://Characters/Jill Valentine/anim101.png" type="Texture" id=91]
-[ext_resource path="res://Characters/Jill Valentine/anim096.png" type="Texture" id=92]
-[ext_resource path="res://Characters/Jill Valentine/anim102.png" type="Texture" id=93]
-[ext_resource path="res://Characters/Jill Valentine/anim089.png" type="Texture" id=94]
+[ext_resource type="Texture2D" uid="uid://ulee81e28x3l" path="res://Characters/Jill Valentine/anim055.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bi4e6awwr73as" path="res://Characters/Jill Valentine/anim058.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b8tboc02hvaa0" path="res://Characters/Jill Valentine/anim111.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://br53p53io5knj" path="res://Characters/Jill Valentine/anim053.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://jvnc7ehedrwx" path="res://Characters/Jill Valentine/anim109.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d1kvexcjil7fo" path="res://Characters/Jill Valentine/anim084.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://8dqddt7p33qo" path="res://Characters/Jill Valentine/anim054.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://5l45l0sdoah5" path="res://Characters/Jill Valentine/anim110.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://b4ypyyg1f40t6" path="res://Characters/Jill Valentine/anim105.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://c0mxww54pl8yl" path="res://Characters/Jill Valentine/anim106.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bngbgvfwn1nli" path="res://Characters/Jill Valentine/anim107.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dj7fs5xlaohxo" path="res://Characters/Jill Valentine/anim082.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://04f4rdw42uni" path="res://Characters/Jill Valentine/anim060.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://cusk4aiaxn7kj" path="res://Characters/Jill Valentine/anim056.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://dvmjtonskj8ax" path="res://Characters/Jill Valentine/anim112.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://5sxj8ycx4h2a" path="res://Characters/Jill Valentine/anim086.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://dpmiocrqdmywu" path="res://Characters/Jill Valentine/anim085.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://c0p40wik66b0n" path="res://Characters/Jill Valentine/anim108.png" id="18"]
+[ext_resource type="Script" path="res://Player.gd" id="19"]
+[ext_resource type="Texture2D" uid="uid://dg8h6gajravaa" path="res://Characters/Jill Valentine/anim080.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://btade3xf1eteb" path="res://Characters/Jill Valentine/anim079.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://brk86gguv7hx2" path="res://Characters/Jill Valentine/anim078.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://7e6oebkc3mi4" path="res://Characters/Jill Valentine/anim081.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://cx2tni2akm5h7" path="res://Characters/Jill Valentine/anim061.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://ccsgvm0q8htr1" path="res://Characters/Jill Valentine/anim059.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://bxcec25bl73lc" path="res://Characters/Jill Valentine/anim062.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://c1qfl52oqe73u" path="res://Characters/Jill Valentine/anim057.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://clummjp4i55x6" path="res://Characters/Jill Valentine/anim083.png" id="28"]
+[ext_resource type="Script" path="res://KinematicBody2D.gd" id="29"]
+[ext_resource type="Texture2D" uid="uid://bimv4bqtinmuw" path="res://Characters/Jill Valentine/anim238.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://6843ftnlkbpq" path="res://Characters/Jill Valentine/anim239.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://c865kemyona51" path="res://Characters/Jill Valentine/anim237.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://d1ju3yjb43ys4" path="res://Characters/Jill Valentine/anim242.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://wx1m11nob7j0" path="res://Characters/Jill Valentine/anim243.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://ce21qjogw7mh7" path="res://Characters/Jill Valentine/anim241.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://c8vdxq0fusg2y" path="res://Characters/Jill Valentine/anim244.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://lbtwg5l4jt0a" path="res://Characters/Jill Valentine/anim240.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://bvrisbplgt2ut" path="res://Characters/Jill Valentine/anim076.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://dyp2afpir8764" path="res://Characters/Jill Valentine/anim077.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://dkcb5nx5hi22y" path="res://Characters/Jill Valentine/anim073.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://5n7msu2pbmnw" path="res://Characters/Jill Valentine/anim072.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://bp4ym33ld87t2" path="res://Characters/Jill Valentine/anim075.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://bxrd1mlyh2qxp" path="res://Characters/Jill Valentine/anim074.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://bwgv116ivpmh2" path="res://Characters/Jill Valentine/anim103.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://bllikqoo7467q" path="res://Characters/Jill Valentine/anim113.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://chpuubyya76j5" path="res://Characters/Jill Valentine/anim104.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://01ucjm2xfaqp" path="res://Characters/Jill Valentine/anim114.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://bt344e36j5g66" path="res://Characters/Jill Valentine/anim137.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://7lme10wqgriq" path="res://Characters/Jill Valentine/anim115.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://bcepaej2f56ir" path="res://Characters/Jill Valentine/anim138.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://bcb06al3d7ib7" path="res://Characters/Jill Valentine/anim139.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://b4643jrmvx2s8" path="res://Characters/Jill Valentine/anim134.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://cfb8dq228ja3b" path="res://Characters/Jill Valentine/anim141.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://bovjc3evovdns" path="res://Characters/Jill Valentine/anim145.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://b5nag7kjmp820" path="res://Characters/Jill Valentine/anim146.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://bjaichdbtml7g" path="res://Characters/Jill Valentine/anim126.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://u4qnoq1oqj4u" path="res://Characters/Jill Valentine/anim128.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://bceuglkanufp0" path="res://Characters/Jill Valentine/anim140.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://d1cobpj3d1m5n" path="res://Characters/Jill Valentine/anim130.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://dvxq7ibuo6rp3" path="res://Characters/Jill Valentine/anim116.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://0ixehxl165wj" path="res://Characters/Jill Valentine/anim123.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://daligtu8orvdy" path="res://Characters/Jill Valentine/anim129.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://cwlwk18ud2sn5" path="res://Characters/Jill Valentine/anim147.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://cavliky5okdaq" path="res://Characters/Jill Valentine/anim122.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://c8kung7sp28g6" path="res://Characters/Jill Valentine/anim136.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://cttuf2a8wqrvu" path="res://Characters/Jill Valentine/anim144.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://3b1reuhan4r1" path="res://Characters/Jill Valentine/anim127.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://cswhloxlptlin" path="res://Characters/Jill Valentine/anim119.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://fy25tiu0vqok" path="res://Characters/Jill Valentine/anim124.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://dvvxbbipcfpor" path="res://Characters/Jill Valentine/anim132.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://xtux5ybjxbmj" path="res://Characters/Jill Valentine/anim125.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://bn5t7cdekjeb7" path="res://Characters/Jill Valentine/anim121.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://p7nxdwxf1egy" path="res://Characters/Jill Valentine/anim118.png" id="73"]
+[ext_resource type="Texture2D" uid="uid://bt8e20d4iv0tt" path="res://Characters/Jill Valentine/anim120.png" id="74"]
+[ext_resource type="Texture2D" uid="uid://be5bffhgncylb" path="res://Characters/Jill Valentine/anim117.png" id="75"]
+[ext_resource type="Texture2D" uid="uid://c7kkmp1736tok" path="res://Characters/Jill Valentine/anim131.png" id="76"]
+[ext_resource type="Texture2D" uid="uid://cbt5gjx7xorou" path="res://Characters/Jill Valentine/anim133.png" id="77"]
+[ext_resource type="Texture2D" uid="uid://d4eopuplyxkky" path="res://Characters/Jill Valentine/anim135.png" id="78"]
+[ext_resource type="Texture2D" uid="uid://ecee3ubav70p" path="res://Characters/Jill Valentine/anim090.png" id="79"]
+[ext_resource type="Texture2D" uid="uid://cob42bsl7n7fb" path="res://Characters/Jill Valentine/anim092.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://dlxca04n0ytp" path="res://Characters/Jill Valentine/anim095.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://chya0cf16jfqa" path="res://Characters/Jill Valentine/anim097.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://buhvto0dtv6r5" path="res://Characters/Jill Valentine/anim098.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://bi4jb4kjsj07r" path="res://Characters/Jill Valentine/anim088.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://c8w67a2fty2do" path="res://Characters/Jill Valentine/anim091.png" id="85"]
+[ext_resource type="Texture2D" uid="uid://b824t3tnau3y0" path="res://Characters/Jill Valentine/anim093.png" id="86"]
+[ext_resource type="Texture2D" uid="uid://bod1q6na6uc17" path="res://Characters/Jill Valentine/anim094.png" id="87"]
+[ext_resource type="Texture2D" uid="uid://bro0nf6onok22" path="res://Characters/Jill Valentine/anim099.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://chr3dqs755m5j" path="res://Characters/Jill Valentine/anim100.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://b8util4yer7ta" path="res://Characters/Jill Valentine/anim087.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://bk8iwxvuan4d1" path="res://Characters/Jill Valentine/anim101.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://dqlao4hc1mb2w" path="res://Characters/Jill Valentine/anim096.png" id="92"]
+[ext_resource type="Texture2D" uid="uid://ddpoml14gaue0" path="res://Characters/Jill Valentine/anim102.png" id="93"]
+[ext_resource type="Texture2D" uid="uid://5xklasapxp1c" path="res://Characters/Jill Valentine/anim089.png" id="94"]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
 
-uniform vec4 chroma_key: hint_color = vec4(248.0,0.0,248.0,255.0);
-uniform vec4 chroma_key_replace: hint_color = vec4(0.0,0.0,0.0,0.0);
+uniform vec4 chroma_key: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 chroma_key_replace: source_color = vec4(0.0,0.0,0.0,0.0);
 uniform float tolerance: hint_range(0.0,1.0) = 0.5;
 
 void fragment(){
@@ -120,526 +120,846 @@ void fragment(){
 	COLOR = vec4(color,a);
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/chroma_key = Color( 248, 0, 248, 255 )
-shader_param/chroma_key_replace = Color( 0, 0, 0, 0 )
-shader_param/tolerance = 0.5
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("1")
+shader_parameter/chroma_key = Color(248, 0, 248, 255)
+shader_parameter/chroma_key_replace = Color(0, 0, 0, 0)
+shader_parameter/tolerance = 0.5
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 14, 36 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(14, 36)
 
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 41 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 39 ) ],
+[sub_resource type="SpriteFrames" id="4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}],
 "loop": true,
-"name": "2",
+"name": &"2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 90 ), ExtResource( 84 ), ExtResource( 94 ), ExtResource( 79 ), ExtResource( 85 ), ExtResource( 80 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 81 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81")
+}],
 "loop": true,
-"name": "4",
+"name": &"4",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 12 ), ExtResource( 28 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 16 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}],
 "loop": true,
-"name": "6",
+"name": &"6",
 "speed": 11.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 15 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}],
 "loop": false,
-"name": "8",
+"name": &"8",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}],
 "loop": true,
-"name": "CrouchingBlocking",
+"name": &"CrouchingBlocking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 70 ), ExtResource( 77 ), ExtResource( 52 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}],
 "loop": true,
-"name": "CrouchingTurnAround",
+"name": &"CrouchingTurnAround",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 92 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 44 ), ExtResource( 46 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("92")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}],
 "loop": true,
-"name": "DashForward",
+"name": &"DashForward",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 15 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}],
 "loop": true,
-"name": "Jump",
+"name": &"Jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 60 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 68 ), ExtResource( 74 ), ExtResource( 72 ), ExtResource( 64 ), ExtResource( 61 ), ExtResource( 69 ), ExtResource( 71 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71")
+}],
 "loop": true,
-"name": "JumpBackwards",
+"name": &"JumpBackwards",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 58 ), ExtResource( 53 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}],
 "loop": true,
-"name": "JumpingBlocking",
+"name": &"JumpingBlocking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 45 ), ExtResource( 47 ), ExtResource( 49 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}],
 "loop": true,
-"name": "Landing",
+"name": &"Landing",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 56 ), ExtResource( 67 ), ExtResource( 57 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}],
 "loop": true,
-"name": "LandingBackwards",
+"name": &"LandingBackwards",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 78 ), ExtResource( 65 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65")
+}],
 "loop": true,
-"name": "StandingBlocking",
+"name": &"StandingBlocking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 62 ), ExtResource( 59 ), ExtResource( 76 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76")
+}],
 "loop": true,
-"name": "StandingTurnAround",
+"name": &"StandingTurnAround",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 63 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63")
+}],
 "loop": true,
-"name": "WakeUp",
+"name": &"WakeUp",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 14 ), ExtResource( 27 ), ExtResource( 2 ), ExtResource( 25 ), ExtResource( 13 ), ExtResource( 24 ), ExtResource( 26 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}],
 "loop": true,
-"name": "sLP",
+"name": &"sLP",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 37 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 36 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}],
 "loop": true,
-"name": "sMP",
+"name": &"sMP",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 23.75, 5 )
+[sub_resource type="RectangleShape2D" id="5"]
+size = Vector2(23.75, 5)
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id="8"]
 resource_name = "Idle"
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath(".:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ "default" ]
+"values": ["default"]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("../CollisionShape2D:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ SubResource( 3 ) ]
+"values": [SubResource("3")]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id="6"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(-0.3),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 1 ]
+"values": [1]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ true ]
+"values": [true]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath(".:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ "sLP" ]
+"values": ["sLP"]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("../CollisionShape2D:shape")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ SubResource( 3 ) ]
+"values": [SubResource("3")]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Area2D/CollisionShape2D:shape")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ SubResource( 5 ) ]
+"values": [SubResource("5")]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id="11"]
 resource_name = "WalkForward"
 length = 0.9
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ "6" ]
+"values": ["6"]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("../CollisionShape2D:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ SubResource( 3 ) ]
+"values": [SubResource("3")]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id="10"]
 resource_name = "crouch"
 length = 0.6
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ "2" ]
+"values": ["2"]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5 ]
+"values": [0, 1, 2, 3, 4, 5]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("../CollisionShape2D:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ SubResource( 3 ) ]
+"values": [SubResource("3")]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id="7"]
 resource_name = "sLP"
 length = 0.15
 step = 0.0166667
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ 0, 1, 2 ]
+"values": [0, 1, 2]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0529378, 0.103219 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.0529378, 0.103219),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ true, false, true ]
+"values": [true, false, true]
 }
 tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.15 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "animationFinished"
-} ]
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath(".:animation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ "sLP" ]
+"values": ["sLP"]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("../CollisionShape2D:shape")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ SubResource( 3 ) ]
+"values": [SubResource("3")]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id="9"]
 resource_name = "sMP"
 length = 0.333333
 step = 0.0166667
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ "sMP" ]
+"values": ["sMP"]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.133333, 0.183333, 0.266667 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.0833333, 0.133333, 0.183333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
+"values": [0, 1, 2, 3, 4]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.133333 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.0833333, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ true, false, true ]
+"values": [true, false, true]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Area2D/CollisionShape2D:shape")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ SubResource( 5 ) ]
+"values": [SubResource("5")]
 }
 tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("..")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.333333 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "animationFinished"
-} ]
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
 }
 
-[sub_resource type="AnimationNodeTransition" id=17]
-input_count = 2
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2qeg7"]
+_data = {
+"Idle": SubResource("8"),
+"RESET": SubResource("6"),
+"WalkForward": SubResource("11"),
+"crouch": SubResource("10"),
+"sLP": SubResource("7"),
+"sMP": SubResource("9")
+}
+
+[sub_resource type="AnimationNodeTransition" id="17"]
 input_0/name = "Neutral"
 input_0/auto_advance = false
+input_0/reset = true
 input_1/name = "Attacking"
 input_1/auto_advance = false
+input_1/reset = true
 
-[sub_resource type="AnimationNodeTransition" id=20]
-input_count = 2
+[sub_resource type="AnimationNodeTransition" id="20"]
 input_0/name = "LP"
 input_0/auto_advance = false
+input_0/reset = true
 input_1/name = "MP"
 input_1/auto_advance = false
+input_1/reset = true
 
-[sub_resource type="AnimationNodeAnimation" id=13]
-animation = "crouch"
+[sub_resource type="AnimationNodeAnimation" id="13"]
+animation = &"crouch"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
-animation = "Idle"
+[sub_resource type="AnimationNodeAnimation" id="16"]
+animation = &"Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
-animation = "sLP"
+[sub_resource type="AnimationNodeAnimation" id="14"]
+animation = &"sLP"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
-animation = "sMP"
+[sub_resource type="AnimationNodeAnimation" id="15"]
+animation = &"sMP"
 
-[sub_resource type="AnimationNodeTransition" id=19]
-input_count = 3
+[sub_resource type="AnimationNodeTransition" id="19"]
 input_0/name = "idle"
 input_0/auto_advance = false
+input_0/reset = true
 input_1/name = "walk"
 input_1/auto_advance = false
+input_1/reset = true
 input_2/name = "crouch"
 input_2/auto_advance = false
+input_2/reset = true
 
-[sub_resource type="AnimationNodeAnimation" id=12]
-animation = "WalkForward"
+[sub_resource type="AnimationNodeAnimation" id="12"]
+animation = &"WalkForward"
 
-[sub_resource type="AnimationNodeBlendTree" id=18]
-graph_offset = Vector2( 452.082, -6.28372 )
-nodes/Action/node = SubResource( 17 )
-nodes/Action/position = Vector2( 1020, 20 )
-nodes/Attacking/node = SubResource( 20 )
-nodes/Attacking/position = Vector2( 1000, 240 )
-nodes/Crouch/node = SubResource( 13 )
-nodes/Crouch/position = Vector2( 400, 320 )
-nodes/Idle/node = SubResource( 16 )
-nodes/Idle/position = Vector2( 440, 0 )
-nodes/LP/node = SubResource( 14 )
-nodes/LP/position = Vector2( 720, 280 )
-nodes/MP/node = SubResource( 15 )
-nodes/MP/position = Vector2( 720, 420 )
-nodes/Neutral/node = SubResource( 19 )
-nodes/Neutral/position = Vector2( 740, 40 )
-"nodes/WalkForward /node" = SubResource( 12 )
-"nodes/WalkForward /position" = Vector2( 420, 140 )
-nodes/output/position = Vector2( 1220, 40 )
-node_connections = [ "Neutral", 0, "Idle", "Neutral", 1, "WalkForward ", "Neutral", 2, "Crouch", "Action", 0, "Neutral", "Action", 1, "Attacking", "Attacking", 0, "LP", "Attacking", 1, "MP", "output", 0, "Action" ]
+[sub_resource type="AnimationNodeBlendTree" id="18"]
+graph_offset = Vector2(369.368, -129.347)
+nodes/Action/node = SubResource("17")
+nodes/Action/position = Vector2(1260, 40)
+nodes/Attacking/node = SubResource("20")
+nodes/Attacking/position = Vector2(1120, 140)
+nodes/Crouch/node = SubResource("13")
+nodes/Crouch/position = Vector2(980, 40)
+nodes/Idle/node = SubResource("16")
+nodes/Idle/position = Vector2(980, -100)
+nodes/LP/node = SubResource("14")
+nodes/LP/position = Vector2(980, 160)
+nodes/MP/node = SubResource("15")
+nodes/MP/position = Vector2(980, 280)
+nodes/Neutral/node = SubResource("19")
+nodes/Neutral/position = Vector2(1120, -80)
+"nodes/WalkForward /node" = SubResource("12")
+"nodes/WalkForward /position" = Vector2(820, -20)
+nodes/output/position = Vector2(1400, 40)
+node_connections = [&"output", 0, &"Action", &"Action", 0, &"Neutral", &"Action", 1, &"Attacking", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Neutral", 0, &"Idle", &"Neutral", 1, &"WalkForward ", &"Neutral", 2, &"Crouch"]
 
 [node name="Player" type="Node2D"]
-scale = Vector2( -1, 1 )
-script = ExtResource( 19 )
+scale = Vector2(-1, 1)
+script = ExtResource("19")
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-material = SubResource( 2 )
-script = ExtResource( 29 )
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+material = SubResource("2")
+script = ExtResource("29")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( -2, 8 )
-shape = SubResource( 3 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-2, 8)
+shape = SubResource("3")
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 use_parent_material = true
-frames = SubResource( 4 )
-animation = "sLP"
-offset = Vector2( 36, 0 )
+sprite_frames = SubResource("4")
+animation = &"sLP"
+offset = Vector2(36, 0)
 
-[node name="Area2D" type="Area2D" parent="KinematicBody2D/AnimatedSprite"]
+[node name="Area2D" type="Area2D" parent="CharacterBody2D/AnimatedSprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/AnimatedSprite/Area2D"]
-position = Vector2( 71.75, -18 )
-shape = SubResource( 5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Area2D"]
+position = Vector2(71.75, -18)
+shape = SubResource("5")
 disabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D/AnimatedSprite"]
-anims/Idle = SubResource( 8 )
-anims/RESET = SubResource( 6 )
-anims/WalkForward = SubResource( 11 )
-anims/crouch = SubResource( 10 )
-anims/sLP = SubResource( 7 )
-anims/sMP = SubResource( 9 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_2qeg7")
+}
 
-[node name="AnimationTree" type="AnimationTree" parent="KinematicBody2D/AnimatedSprite"]
-tree_root = SubResource( 18 )
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D/AnimatedSprite2D"]
+tree_root = SubResource("18")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/Action/current = 0
-parameters/Attacking/current = 0
-parameters/Neutral/current = 0
+parameters/Action/current_state = "Neutral"
+parameters/Action/transition_request = ""
+parameters/Action/current_index = 0
+parameters/Attacking/current_state = "LP"
+parameters/Attacking/transition_request = ""
+parameters/Attacking/current_index = 0
+parameters/Neutral/current_state = "idle"
+parameters/Neutral/transition_request = ""
+parameters/Neutral/current_index = 0
