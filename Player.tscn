@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=123 format=3 uid="uid://cbi3kopno23pf"]
 
 [ext_resource type="Texture2D" uid="uid://ulee81e28x3l" path="res://Characters/Jill Valentine/anim055.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bi4e6awwr73as" path="res://Characters/Jill Valentine/anim058.png" id="2"]
@@ -87,9 +87,13 @@
 [ext_resource type="Texture2D" uid="uid://c8w67a2fty2do" path="res://Characters/Jill Valentine/anim091.png" id="85"]
 [ext_resource type="Texture2D" uid="uid://b824t3tnau3y0" path="res://Characters/Jill Valentine/anim093.png" id="86"]
 [ext_resource type="Texture2D" uid="uid://bod1q6na6uc17" path="res://Characters/Jill Valentine/anim094.png" id="87"]
+[ext_resource type="Texture2D" uid="uid://ccyreswieo5cj" path="res://Characters/Jill Valentine/anim467.png" id="87_1i58r"]
 [ext_resource type="Texture2D" uid="uid://bro0nf6onok22" path="res://Characters/Jill Valentine/anim099.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://bu5ght442ejeg" path="res://Characters/Jill Valentine/anim468.png" id="88_7183d"]
 [ext_resource type="Texture2D" uid="uid://chr3dqs755m5j" path="res://Characters/Jill Valentine/anim100.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://g2x7rebvdlrx" path="res://Characters/Jill Valentine/anim469.png" id="89_k7nf2"]
 [ext_resource type="Texture2D" uid="uid://b8util4yer7ta" path="res://Characters/Jill Valentine/anim087.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://eax4qg7dibif" path="res://Characters/Jill Valentine/anim470.png" id="90_jhuie"]
 [ext_resource type="Texture2D" uid="uid://bk8iwxvuan4d1" path="res://Characters/Jill Valentine/anim101.png" id="91"]
 [ext_resource type="Texture2D" uid="uid://dqlao4hc1mb2w" path="res://Characters/Jill Valentine/anim096.png" id="92"]
 [ext_resource type="Texture2D" uid="uid://ddpoml14gaue0" path="res://Characters/Jill Valentine/anim102.png" id="93"]
@@ -127,7 +131,7 @@ shader_parameter/chroma_key_replace = Color(0, 0, 0, 0)
 shader_parameter/tolerance = 0.5
 
 [sub_resource type="RectangleShape2D" id="3"]
-size = Vector2(14, 36)
+size = Vector2(30, 74)
 
 [sub_resource type="SpriteFrames" id="4"]
 animations = [{
@@ -492,6 +496,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("87_1i58r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_7183d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_k7nf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_jhuie")
+}],
+"loop": true,
+"name": &"midHitstun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("32")
 }, {
 "duration": 1.0,
@@ -525,8 +546,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4kfw"]
+size = Vector2(33, 79)
+
 [sub_resource type="RectangleShape2D" id="5"]
-size = Vector2(23.75, 5)
+size = Vector2(24, 7.5)
 
 [sub_resource type="Animation" id="8"]
 resource_name = "Idle"
@@ -558,7 +582,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CollisionShape2D:shape")
+tracks/2/path = NodePath("../CollisionBox:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -585,7 +609,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Hitboxes/Hitbox:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -609,7 +633,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../CollisionShape2D:shape")
+tracks/3/path = NodePath("../CollisionBox:shape")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -621,7 +645,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Area2D/CollisionShape2D:shape")
+tracks/4/path = NodePath("Hitboxes/Hitbox:shape")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -662,7 +686,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CollisionShape2D:shape")
+tracks/2/path = NodePath("../CollisionBox:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -703,7 +727,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CollisionShape2D:shape")
+tracks/2/path = NodePath("../CollisionBox:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -715,7 +739,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="7"]
 resource_name = "sLP"
-length = 0.15
+length = 0.250002
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -732,7 +756,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Hitboxes/Hitbox:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -770,7 +794,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../CollisionShape2D:shape")
+tracks/4/path = NodePath("../CollisionBox:shape")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -811,7 +835,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/path = NodePath("Hitboxes/Hitbox:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -823,7 +847,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Area2D/CollisionShape2D:shape")
+tracks/3/path = NodePath("Hitboxes/Hitbox:shape")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -839,12 +863,39 @@ tracks/4/path = NodePath("..")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.333333),
+"times": PackedFloat32Array(0.333334),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"animationFinished"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_umjm0"]
+resource_name = "midHitstun"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"midHitstun"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2qeg7"]
@@ -853,6 +904,7 @@ _data = {
 "RESET": SubResource("6"),
 "WalkForward": SubResource("11"),
 "crouch": SubResource("10"),
+"midHitstun": SubResource("Animation_umjm0"),
 "sLP": SubResource("7"),
 "sMP": SubResource("9")
 }
@@ -864,6 +916,12 @@ input_0/reset = true
 input_1/name = "Attacking"
 input_1/auto_advance = false
 input_1/reset = true
+input_2/name = "Hitstun"
+input_2/auto_advance = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0n5x5"]
+animation = &"midHitstun"
 
 [sub_resource type="AnimationNodeTransition" id="20"]
 input_0/name = "LP"
@@ -900,9 +958,11 @@ input_2/reset = true
 animation = &"WalkForward"
 
 [sub_resource type="AnimationNodeBlendTree" id="18"]
-graph_offset = Vector2(369.368, -129.347)
+graph_offset = Vector2(249.992, 37.9756)
 nodes/Action/node = SubResource("17")
-nodes/Action/position = Vector2(1260, 40)
+nodes/Action/position = Vector2(1280, 80)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_0n5x5")
+nodes/Animation/position = Vector2(1120, 340)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1120, 140)
 nodes/Crouch/node = SubResource("13")
@@ -917,8 +977,8 @@ nodes/Neutral/node = SubResource("19")
 nodes/Neutral/position = Vector2(1120, -80)
 "nodes/WalkForward /node" = SubResource("12")
 "nodes/WalkForward /position" = Vector2(820, -20)
-nodes/output/position = Vector2(1400, 40)
-node_connections = [&"output", 0, &"Action", &"Action", 0, &"Neutral", &"Action", 1, &"Attacking", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Neutral", 0, &"Idle", &"Neutral", 1, &"WalkForward ", &"Neutral", 2, &"Crouch"]
+nodes/output/position = Vector2(1420, 80)
+node_connections = [&"output", 0, &"Action", &"Action", 0, &"Neutral", &"Action", 1, &"Attacking", &"Action", 2, &"Animation", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Neutral", 0, &"Idle", &"Neutral", 1, &"WalkForward ", &"Neutral", 2, &"Crouch"]
 
 [node name="Player" type="Node2D"]
 scale = Vector2(-1, 1)
@@ -928,8 +988,8 @@ script = ExtResource("19")
 material = SubResource("2")
 script = ExtResource("29")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-2, 8)
+[node name="CollisionBox" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-2, 14)
 shape = SubResource("3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -938,12 +998,24 @@ sprite_frames = SubResource("4")
 animation = &"sLP"
 offset = Vector2(36, 0)
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D/AnimatedSprite2D"]
+[node name="Hurtboxes" type="Area2D" parent="CharacterBody2D/AnimatedSprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Area2D"]
-position = Vector2(71.75, -18)
+[node name="Hurtbox" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Hurtboxes"]
+light_mask = 2
+visibility_layer = 4
+position = Vector2(-2.5, 11.5)
+shape = SubResource("RectangleShape2D_x4kfw")
+debug_color = Color(0, 0.647059, 0.254902, 0.419608)
+
+[node name="Hitboxes" type="Area2D" parent="CharacterBody2D/AnimatedSprite2D"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Hitboxes"]
+light_mask = 4
+visibility_layer = 2
+position = Vector2(14, -16.75)
 shape = SubResource("5")
 disabled = true
+debug_color = Color(1, 0, 0.0784314, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
 libraries = {
@@ -954,12 +1026,14 @@ libraries = {
 tree_root = SubResource("18")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/Action/current_state = "Neutral"
+parameters/Action/current_state = "Hitstun"
 parameters/Action/transition_request = ""
-parameters/Action/current_index = 0
+parameters/Action/current_index = 2
 parameters/Attacking/current_state = "LP"
 parameters/Attacking/transition_request = ""
 parameters/Attacking/current_index = 0
 parameters/Neutral/current_state = "idle"
 parameters/Neutral/transition_request = ""
 parameters/Neutral/current_index = 0
+
+[connection signal="area_entered" from="CharacterBody2D/AnimatedSprite2D/Hitboxes" to="CharacterBody2D" method="_on_hitboxes_area_entered"]

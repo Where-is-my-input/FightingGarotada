@@ -22,6 +22,8 @@ var LK = 0
 var MK = 0
 var HK = 0
 
+var hitstun = 0
+
 var speed = 500;
 
 @onready var animatedSprite = $AnimatedSprite2D
@@ -38,9 +40,13 @@ func _ready():
 	setAnimation()
 	
 func _physics_process(delta):
+	if hitstun == 0 && action == "Hitstun":
+		action = "Neutral"
+	elif hitstun > 0:
+		hitstun = hitstun - 1
 	gravity_fall()
 	readInput()
-	if !attacking:
+	if !attacking && action != "Hitstun":
 		isAttacking()
 	
 	jump()
@@ -95,7 +101,6 @@ func readInput():
 
 func animationFinished():
 	attacking = 0
-	print("finished")
 	pass
 
 func neutralAnimation():
@@ -132,9 +137,18 @@ func jump():
 		velocity.y = +strength
 
 func setAnimation():
-#	print(LP)
 	animatedTree.set(A_action, action)
 	animatedTree.set(A_neutral, neutral)
 	animatedTree.set(A_attacking, attack)
+	pass
+
+func _on_hitboxes_area_entered(hitbox):
+	if hitbox.get_parent() != animatedSprite:
+		hitbox.get_parent().get_parent().getHit()
+	pass # Replace with function body.
 	
+func getHit():
+	action = "Hitstun"
+	attacking = 0
+	hitstun = 15
 	pass

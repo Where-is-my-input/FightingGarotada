@@ -54,6 +54,12 @@ MP={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Collision"
+2d_physics/layer_2="Hurtbox"
+2d_physics/layer_3="Hitbox"
+
 [rendering]
 
 environment/defaults/default_environment="res://default_env.tres"
