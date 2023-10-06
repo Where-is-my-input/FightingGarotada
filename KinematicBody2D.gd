@@ -14,6 +14,11 @@ var action = "Neutral"
 var neutral = "idle"
 var attack = "LP"
 
+#cancel states
+var normalCancel = false
+var specialCancel = true
+var superCancel = true
+
 #attacks
 var LP = 0
 var MP = 0
@@ -29,7 +34,7 @@ var speed = 500;
 @onready var animatedSprite = $AnimatedSprite2D
 @onready var animatedPlayer = $AnimatedSprite2D/AnimationPlayer
 @onready var animatedTree : AnimationTree = $AnimatedSprite2D/AnimationTree
-
+@onready var hitboxes = $AnimatedSprite2D/Hitboxes
 #animationTree
 @onready var A_action = "parameters/Action/transition_request"
 @onready var A_attacking = "parameters/Attacking/transition_request"
@@ -38,15 +43,13 @@ var speed = 500;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setAnimation()
+	animatedTree.active = true
 	
 func _physics_process(delta):
-	if hitstun == 0 && action == "Hitstun":
-		action = "Neutral"
-	elif hitstun > 0:
-		hitstun = hitstun - 1
+	endHitstun()
 	gravity_fall()
 	readInput()
-	if !attacking && action != "Hitstun":
+	if (!attacking || normalCancel && action == "Attacking") && action != "Hitstun":
 		isAttacking()
 	
 	jump()
@@ -72,12 +75,14 @@ func gravity_fall():
 	pass
 
 func isAttacking():
-	action = "Neutral"
 	if LP == 1:
 		attack = "LP"
 		attacking = 1
 	if MP == 1: 
 		attack = "MP"
+		attacking = 1
+	if HP == 1: 
+		attack = "HP"
 		attacking = 1
 	neutralAnimation()
 	if attacking:
@@ -97,10 +102,16 @@ func readInput():
 	else:
 		MP = 0
 		
+	if Input.get_action_strength("HP") > 0: 
+		HP += Input.get_action_strength("HP")
+	else:
+		HP = 0
+		
 	pass
 
 func animationFinished():
-	attacking = 0
+	set_deferred("attacking", 0)
+	action = "Neutral"
 	pass
 
 func neutralAnimation():
@@ -145,10 +156,19 @@ func setAnimation():
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
 		hitbox.get_parent().get_parent().getHit()
+		normalCancel = true
 	pass # Replace with function body.
 	
 func getHit():
+	hitboxes.disableHitboxes()
 	action = "Hitstun"
 	attacking = 0
 	hitstun = 15
 	pass
+	
+func endHitstun():
+	if hitstun == 0 && action == "Hitstun":
+		action = "Neutral"
+		hitboxes.enableHitboxes()
+	elif hitstun > 0:
+		hitstun = hitstun - 1
