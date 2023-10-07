@@ -1,3 +1,7 @@
 res://default_env.tres
 res://Player.tscn
 res://Bruh.tscn
+res://virtualController.tscn
+res://virtualController.gd
+res://Player.gd
+res://KinematicBody2D.gd

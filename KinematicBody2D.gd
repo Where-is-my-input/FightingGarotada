@@ -1,6 +1,5 @@
 extends CharacterBody2D
 #D:\Games\Game Dev sprites
-var directionX = 0
 var facing = 1
 var crouching = false
 var gravity = 50
@@ -20,18 +19,11 @@ var normalCancel = false
 var specialCancel = true
 var superCancel = true
 
-#attacks
-var LP = 0
-var MP = 0
-var HP = 0
-var LK = 0
-var MK = 0
-var HK = 0
-
 var hitstun = 0
 
 var speed = 500;
 
+@onready var parent = $".."
 @onready var animatedSprite = $AnimatedSprite2D
 @onready var animatedPlayer = $AnimatedSprite2D/AnimationPlayer
 @onready var animatedTree : AnimationTree = $AnimatedSprite2D/AnimationTree
@@ -41,6 +33,7 @@ var speed = 500;
 @onready var A_attacking = "parameters/Attacking/transition_request"
 @onready var A_neutral = "parameters/Neutral/transition_request"
 @onready var A_jump = "parameters/Jump/transition_request"
+@onready var virtualController = parent.virtualController
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,7 +43,6 @@ func _ready():
 func _physics_process(delta):
 	endHitstun()
 	gravity_fall()
-	readInput()
 	if (!attacking || normalCancel && action == "Attacking") && action != "Hitstun":
 		isAttacking()
 	
@@ -58,7 +50,7 @@ func _physics_process(delta):
 	walk()
 		
 	set_velocity(velocity)
-	set_up_direction(Vector2.UP)
+#	set_up_direction(Vector2.UP)
 	move_and_slide()
 	
 	setAnimation()
@@ -74,16 +66,15 @@ func gravity_fall():
 		velocity.y = terminalVelocity
 	elif is_on_floor():
 		velocity.y = 5
-	pass
 
 func isAttacking():
-	if LP == 1:
+	if parent.virtualController.LP == 1:
 		attack = "LP"
 		attacking = 1
-	if MP == 1: 
+	if parent.virtualController.MP == 1: 
 		attack = "MP"
 		attacking = 1
-	if HP == 1: 
+	if parent.virtualController.HP == 1: 
 		attack = "HP"
 		attacking = 1
 	neutralAnimation()
@@ -92,50 +83,26 @@ func isAttacking():
 		return
 	attacking = 0
 
-func readInput():
-	crouching = Input.get_action_strength("2")
-	if Input.get_action_strength("LP") > 0: 
-		LP += Input.get_action_strength("LP")
-		return
-	else:
-		LP = 0
-		
-	if Input.get_action_strength("MP") > 0: 
-		MP += Input.get_action_strength("MP")
-		return
-	else:
-		MP = 0
-		
-	if Input.get_action_strength("HP") > 0: 
-		HP += Input.get_action_strength("HP")
-		return
-	else:
-		HP = 0
-		
-	pass
-
 func animationFinished():
 	set_deferred("attacking", 0)
 	action = "Neutral"
 	normalCancel = false
-	pass
 
 func neutralAnimation():
 	if is_on_floor():
 		if crouching:
 			neutral = "crouch"
-		elif directionX == 0:
+		elif parent.virtualController.directionX == 0:
 			neutral = "idle"
 		else:
 			neutral = "walk"
-	pass
 	
 func flip():
 	return
 	if is_on_floor() && !attacking:
-		if directionX > 0:
+		if parent.virtualController.directionX > 0:
 			facing = -1
-		elif directionX < 0:
+		elif parent.virtualController.directionX < 0:
 			facing = 1
 	animatedSprite.scale.x = facing
 
@@ -143,9 +110,10 @@ func walk():
 	#apply movement
 	if action == "Hitstun":
 		return
-	directionX = Input.get_action_strength("6")-Input.get_action_strength("4")
+		
+	crouching = parent.virtualController.directionY > 0
 	if is_on_floor() && !crouching: 
-		velocity.x = directionX*speed
+		velocity.x = parent.virtualController.directionX*speed
 #	else:
 #		if (velocity.x * -facing) > 0: 
 #			velocity.x -= (speed/10) * -facing
@@ -155,7 +123,7 @@ func walk():
 func jump():
 	if action == "Hitstun":
 		return
-	if Input.get_action_strength("8") > 0 and is_on_floor() and !attacking:
+	if parent.virtualController.directionY < 0 and is_on_floor() and !attacking:
 		velocity.y = +strength
 		neutral = "jumping"
 	if velocity.y > 0:
@@ -168,20 +136,17 @@ func setAnimation():
 	animatedTree.set(A_neutral, neutral)
 	animatedTree.set(A_attacking, attack)
 	animatedTree.set(A_jump, jumpState)
-	pass
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
 		hitbox.get_parent().get_parent().getHit()
 		normalCancel = true
-	pass # Replace with function body.
 	
 func getHit():
 	hitboxes.disableHitboxes()
 	action = "Hitstun"
 	attacking = 0
 	hitstun = 60
-	pass
 	
 func endHitstun():
 	if hitstun == 0 && action == "Hitstun":
