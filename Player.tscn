@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=138 format=3 uid="uid://cbi3kopno23pf"]
 
 [ext_resource type="Texture2D" uid="uid://ulee81e28x3l" path="res://Characters/Jill Valentine/anim055.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bi4e6awwr73as" path="res://Characters/Jill Valentine/anim058.png" id="2"]
@@ -340,12 +340,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15")
 }],
 "loop": true,
 "name": &"Jump",
@@ -501,6 +495,20 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}],
+"loop": true,
+"name": &"jumpFalling",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -786,6 +794,62 @@ tracks/2/keys = {
 "values": [SubResource("3")]
 }
 
+[sub_resource type="Animation" id="Animation_urso6"]
+resource_name = "jumping"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_gvont"]
+resource_name = "jumpingFalling"
+length = 0.166668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jumpFalling"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.116667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
 [sub_resource type="Animation" id="Animation_umjm0"]
 resource_name = "midHitstun"
 tracks/0/type = "value"
@@ -1044,6 +1108,8 @@ _data = {
 "RESET": SubResource("6"),
 "WalkForward": SubResource("11"),
 "crouch": SubResource("10"),
+"jumping": SubResource("Animation_urso6"),
+"jumpingFalling": SubResource("Animation_gvont"),
 "midHitstun": SubResource("Animation_umjm0"),
 "sHP": SubResource("Animation_tmfak"),
 "sLP": SubResource("7"),
@@ -1084,6 +1150,14 @@ animation = &"sHP"
 [sub_resource type="AnimationNodeAnimation" id="16"]
 animation = &"Idle"
 
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_jgyhb"]
+input_0/name = "rising"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "falling"
+input_1/auto_advance = false
+input_1/reset = true
+
 [sub_resource type="AnimationNodeAnimation" id="14"]
 animation = &"sLP"
 
@@ -1100,11 +1174,21 @@ input_1/reset = true
 input_2/name = "crouch"
 input_2/auto_advance = false
 input_2/reset = true
+input_3/name = "jumping"
+input_3/auto_advance = false
+input_3/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="12"]
 animation = &"WalkForward"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qbig3"]
+animation = &"jumpingFalling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gswe2"]
+animation = &"jumping"
+
 [sub_resource type="AnimationNodeBlendTree" id="18"]
+graph_offset = Vector2(254.086, -115.412)
 nodes/Action/node = SubResource("17")
 nodes/Action/position = Vector2(1280, 80)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_0n5x5")
@@ -1112,21 +1196,27 @@ nodes/Animation/position = Vector2(1120, 340)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1120, 140)
 nodes/Crouch/node = SubResource("13")
-nodes/Crouch/position = Vector2(980, 40)
+nodes/Crouch/position = Vector2(980, -60)
 nodes/HP/node = SubResource("AnimationNodeAnimation_kshar")
-nodes/HP/position = Vector2(980, 280)
+nodes/HP/position = Vector2(980, 360)
 nodes/Idle/node = SubResource("16")
-nodes/Idle/position = Vector2(980, -100)
+nodes/Idle/position = Vector2(980, -180)
+nodes/Jump/node = SubResource("AnimationNodeTransition_jgyhb")
+nodes/Jump/position = Vector2(980, 60)
 nodes/LP/node = SubResource("14")
-nodes/LP/position = Vector2(980, 160)
+nodes/LP/position = Vector2(980, 240)
 nodes/MP/node = SubResource("15")
-nodes/MP/position = Vector2(860, 200)
+nodes/MP/position = Vector2(840, 260)
 nodes/Neutral/node = SubResource("19")
-nodes/Neutral/position = Vector2(1120, -80)
+nodes/Neutral/position = Vector2(1120, -100)
 "nodes/WalkForward /node" = SubResource("12")
-"nodes/WalkForward /position" = Vector2(820, -20)
+"nodes/WalkForward /position" = Vector2(820, -140)
+nodes/falling/node = SubResource("AnimationNodeAnimation_qbig3")
+nodes/falling/position = Vector2(800, 140)
 nodes/output/position = Vector2(1420, 80)
-node_connections = [&"output", 0, &"Action", &"Action", 0, &"Neutral", &"Action", 1, &"Attacking", &"Action", 2, &"Animation", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Neutral", 0, &"Idle", &"Neutral", 1, &"WalkForward ", &"Neutral", 2, &"Crouch"]
+nodes/rising/node = SubResource("AnimationNodeAnimation_gswe2")
+nodes/rising/position = Vector2(840, 20)
+node_connections = [&"output", 0, &"Action", &"Action", 0, &"Neutral", &"Action", 1, &"Attacking", &"Action", 2, &"Animation", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"Neutral", 0, &"Idle", &"Neutral", 1, &"WalkForward ", &"Neutral", 2, &"Crouch", &"Neutral", 3, &"Jump"]
 
 [node name="Player" type="Node2D"]
 scale = Vector2(-1, 1)
@@ -1178,14 +1268,18 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D/AnimatedSprite2D"]
 tree_root = SubResource("18")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Action/current_state = "Hitstun"
+active = true
+parameters/Action/current_state = "Neutral"
 parameters/Action/transition_request = ""
-parameters/Action/current_index = 2
+parameters/Action/current_index = 0
 parameters/Attacking/current_state = "LP"
 parameters/Attacking/transition_request = ""
 parameters/Attacking/current_index = 0
-parameters/Neutral/current_state = "idle"
+parameters/Jump/current_state = "falling"
+parameters/Jump/transition_request = ""
+parameters/Jump/current_index = 1
+parameters/Neutral/current_state = "jumping"
 parameters/Neutral/transition_request = ""
-parameters/Neutral/current_index = 0
+parameters/Neutral/current_index = 3
 
 [connection signal="area_entered" from="CharacterBody2D/AnimatedSprite2D/Hitboxes" to="CharacterBody2D" method="_on_hitboxes_area_entered"]

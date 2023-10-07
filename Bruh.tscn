@@ -62,6 +62,7 @@ sources/0 = SubResource("TileSetAtlasSource_x1wml")
 
 [node name="Player" parent="." instance=ExtResource("3")]
 position = Vector2(288, 234)
+scale = Vector2(1, 1)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 738.0

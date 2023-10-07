@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+#D:\Games\Game Dev sprites
 var directionX = 0
 var facing = 1
 var crouching = false
@@ -13,6 +13,7 @@ var attacking = false
 var action = "Neutral"
 var neutral = "idle"
 var attack = "LP"
+var jumpState = "rising"
 
 #cancel states
 var normalCancel = false
@@ -39,6 +40,7 @@ var speed = 500;
 @onready var A_action = "parameters/Action/transition_request"
 @onready var A_attacking = "parameters/Attacking/transition_request"
 @onready var A_neutral = "parameters/Neutral/transition_request"
+@onready var A_jump = "parameters/Jump/transition_request"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -94,16 +96,19 @@ func readInput():
 	crouching = Input.get_action_strength("2")
 	if Input.get_action_strength("LP") > 0: 
 		LP += Input.get_action_strength("LP")
+		return
 	else:
 		LP = 0
 		
 	if Input.get_action_strength("MP") > 0: 
 		MP += Input.get_action_strength("MP")
+		return
 	else:
 		MP = 0
 		
 	if Input.get_action_strength("HP") > 0: 
 		HP += Input.get_action_strength("HP")
+		return
 	else:
 		HP = 0
 		
@@ -112,6 +117,7 @@ func readInput():
 func animationFinished():
 	set_deferred("attacking", 0)
 	action = "Neutral"
+	normalCancel = false
 	pass
 
 func neutralAnimation():
@@ -125,6 +131,7 @@ func neutralAnimation():
 	pass
 	
 func flip():
+	return
 	if is_on_floor() && !attacking:
 		if directionX > 0:
 			facing = -1
@@ -134,23 +141,33 @@ func flip():
 
 func walk():
 	#apply movement
+	if action == "Hitstun":
+		return
 	directionX = Input.get_action_strength("6")-Input.get_action_strength("4")
 	if is_on_floor() && !crouching: 
-		velocity.x = abs(directionX*speed)*-facing
-	else:
-		if (velocity.x * -facing) > 0: 
-			velocity.x -= (speed/10) * -facing
-		else:
-			velocity.x = 0
+		velocity.x = directionX*speed
+#	else:
+#		if (velocity.x * -facing) > 0: 
+#			velocity.x -= (speed/10) * -facing
+#		else:
+#			velocity.x = 0
 
 func jump():
+	if action == "Hitstun":
+		return
 	if Input.get_action_strength("8") > 0 and is_on_floor() and !attacking:
 		velocity.y = +strength
+		neutral = "jumping"
+	if velocity.y > 0:
+		jumpState = "falling"
+	else:
+		jumpState = "rising"
 
 func setAnimation():
 	animatedTree.set(A_action, action)
 	animatedTree.set(A_neutral, neutral)
 	animatedTree.set(A_attacking, attack)
+	animatedTree.set(A_jump, jumpState)
 	pass
 
 func _on_hitboxes_area_entered(hitbox):
@@ -163,7 +180,7 @@ func getHit():
 	hitboxes.disableHitboxes()
 	action = "Hitstun"
 	attacking = 0
-	hitstun = 15
+	hitstun = 60
 	pass
 	
 func endHitstun():
