@@ -74,6 +74,47 @@ HK={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194444,"key_label":0,"unicode":54,"echo":false,"script":null)
 ]
 }
+p2LP={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":79,"key_label":0,"unicode":111,"echo":false,"script":null)
+]
+}
+p2MP={
+"deadzone": 0.5,
+"events": []
+}
+p2HP={
+"deadzone": 0.5,
+"events": []
+}
+p2LK={
+"deadzone": 0.5,
+"events": []
+}
+p2MK={
+"deadzone": 0.5,
+"events": []
+}
+p2HK={
+"deadzone": 0.5,
+"events": []
+}
+p2_8={
+"deadzone": 0.5,
+"events": []
+}
+p2_2={
+"deadzone": 0.5,
+"events": []
+}
+p2_4={
+"deadzone": 0.5,
+"events": []
+}
+p2_6={
+"deadzone": 0.5,
+"events": []
+}
 
 [layer_names]
 

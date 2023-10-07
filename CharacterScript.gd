@@ -1,9 +1,9 @@
 extends CharacterBody2D
 #D:\Games\Game Dev sprites
-var facing = 1
 var crouching = false
 var gravity = 50
 var terminalVelocity = 888
+var knockback = 0
 
 var strength = -1000
 var attacking = false
@@ -43,11 +43,12 @@ func _ready():
 func _physics_process(delta):
 	endHitstun()
 	gravity_fall()
-	if (!attacking || normalCancel && action == "Attacking") && action != "Hitstun":
-		isAttacking()
 	
-	jump()
-	walk()
+	if parent.virtualController != null:
+		if (!attacking || normalCancel && action == "Attacking") && action != "Hitstun":
+			isAttacking()
+		jump()
+		walk()
 		
 	set_velocity(velocity)
 #	set_up_direction(Vector2.UP)
@@ -98,22 +99,27 @@ func neutralAnimation():
 			neutral = "walk"
 	
 func flip():
-	return
 	if is_on_floor() && !attacking:
-		if parent.virtualController.directionX > 0:
-			facing = -1
-		elif parent.virtualController.directionX < 0:
-			facing = 1
-	animatedSprite.scale.x = facing
+		animatedSprite.scale.x = parent.facing
 
 func walk():
 	#apply movement
 	if action == "Hitstun":
+		if knockback > 0:
+			velocity.x = velocity.x+knockback
+			knockback = 0
+		elif abs(velocity.x) > 0:
+			velocity.x = velocity.x - 1 * parent.facing
+		else:
+			velocity.x = 0
 		return
-		
 	crouching = parent.virtualController.directionY > 0
-	if is_on_floor() && !crouching: 
+	if is_on_floor() && !crouching && !attacking: 
 		velocity.x = parent.virtualController.directionX*speed
+	elif abs(velocity.x) > 0 && neutral != "jumping":
+		velocity.x = velocity.x - 150 * (velocity.x/speed)
+	elif neutral != "jumping":
+		velocity.x = 0
 #	else:
 #		if (velocity.x * -facing) > 0: 
 #			velocity.x -= (speed/10) * -facing
@@ -143,10 +149,15 @@ func _on_hitboxes_area_entered(hitbox):
 		normalCancel = true
 	
 func getHit():
+	if action == "Hitstun":
+		#TODO loop hit animation
+		print(animatedTree)
 	hitboxes.disableHitboxes()
 	action = "Hitstun"
+	parent.HP = parent.HP - 10
 	attacking = 0
-	hitstun = 60
+	hitstun = 19
+	knockback = 35 * parent.facing
 	
 func endHitstun():
 	if hitstun == 0 && action == "Hitstun":
