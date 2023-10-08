@@ -14,19 +14,20 @@ script = ExtResource("1_s14ui")
 [node name="HPPlayer1" type="ProgressBar" parent="."]
 modulate = Color(0.835294, 0.631373, 0, 1)
 layout_mode = 0
-offset_left = 20.0
-offset_top = 15.0
-offset_right = 220.0
-offset_bottom = 43.0
-value = 100.0
+offset_left = 226.0
+offset_top = 42.0
+offset_right = 426.0
+offset_bottom = 70.0
+scale = Vector2(-1, -1)
+value = 70.0
 show_percentage = false
 
 [node name="HPPlayer2" type="ProgressBar" parent="."]
 modulate = Color(0.835294, 0.631373, 0, 1)
 layout_mode = 0
 offset_left = 292.0
-offset_top = 14.0
+offset_top = 15.0
 offset_right = 492.0
-offset_bottom = 42.0
+offset_bottom = 43.0
 value = 100.0
 show_percentage = false

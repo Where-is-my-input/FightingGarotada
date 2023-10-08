@@ -592,7 +592,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4kfw"]
-size = Vector2(33, 79)
+size = Vector2(36, 79)
 
 [sub_resource type="RectangleShape2D" id="5"]
 size = Vector2(77.5, 14)
@@ -1229,7 +1229,7 @@ material = SubResource("2")
 script = ExtResource("2_bd138")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-2, 14)
+position = Vector2(0, 14)
 shape = SubResource("3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -1245,7 +1245,7 @@ collision_mask = 0
 [node name="Hurtbox" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Hurtboxes"]
 light_mask = 2
 visibility_layer = 4
-position = Vector2(-2.5, 11.5)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_x4kfw")
 debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 

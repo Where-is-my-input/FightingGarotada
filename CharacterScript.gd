@@ -55,7 +55,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	setAnimation()
-	flip()
+#	flip()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -99,8 +99,8 @@ func neutralAnimation():
 			neutral = "walk"
 	
 func flip():
-	if is_on_floor() && !attacking:
-		animatedSprite.scale.x = parent.facing
+	if is_on_floor() && !attacking && scale != Vector2(parent.facing,-1):
+		scale = Vector2(parent.facing,-1)
 
 func walk():
 	#apply movement

@@ -10,26 +10,36 @@ var playerGroup
 var nearestPlayer
 var facing = 1
 
+var nearestPlayerX = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	virtualController = get_parent()
-#	if virtualController.name != "VirtualController":
-#		virtualController = null
+	playerGroup = get_tree().get_nodes_in_group("Player")
 	pass
 
 func _physics_process(delta):
-	playerGroup = get_tree().get_nodes_in_group("Player")
+#	scale.x *= -1
+	getNearesPlayer()
+	flip()
+#	print(self, nearestPlayer, nearestPlayer.position.x > self.position.x)
+	pass
+
+func getNearesPlayer():
 	for player in playerGroup:
+		if player == self:
+			continue
 		if nearestPlayer == null:
 			nearestPlayer = player
 		elif player.global_position.distance_to(self.global_position) < nearestPlayer.global_position.distance_to(self.global_position):
-				nearestPlayer = player
-	print(nearestPlayer.position.x)
-	if nearestPlayer.position.x > self.position.x:
-		facing = -1
-	else:
+			nearestPlayer = player
+	if nearestPlayer != null:
+		var child = nearestPlayer.get_child(0)
+		nearestPlayerX = child.global_position.x
+			
+func flip():
+	if nearestPlayerX > body.global_position.x:
 		facing = 1
-#	virtualController = get_parent()
-#	if virtualController.name != "VirtualController":
-#		virtualController = null
-	pass
+	else:
+		facing = -1
+	

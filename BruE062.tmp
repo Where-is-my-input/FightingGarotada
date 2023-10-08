@@ -88,5 +88,6 @@ scale = Vector2(1, 1)
 [node name="VirtualController2" parent="HPBars" instance=ExtResource("1_qqqc0")]
 
 [node name="Player2" parent="HPBars/VirtualController2" instance=ExtResource("3")]
-position = Vector2(174, 151)
-scale = Vector2(1, 1)
+position = Vector2(338, 242)
+rotation = -3.14159
+scale = Vector2(-1, -1)
