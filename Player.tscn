@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=188 format=3 uid="uid://cbi3kopno23pf"]
 
 [ext_resource type="Texture2D" uid="uid://ulee81e28x3l" path="res://Characters/Jill Valentine/anim055.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bi4e6awwr73as" path="res://Characters/Jill Valentine/anim058.png" id="2"]
@@ -77,35 +77,67 @@
 [ext_resource type="Texture2D" uid="uid://be5bffhgncylb" path="res://Characters/Jill Valentine/anim117.png" id="75"]
 [ext_resource type="Texture2D" uid="uid://c7kkmp1736tok" path="res://Characters/Jill Valentine/anim131.png" id="76"]
 [ext_resource type="Texture2D" uid="uid://cbt5gjx7xorou" path="res://Characters/Jill Valentine/anim133.png" id="77"]
+[ext_resource type="Texture2D" uid="uid://h71lsj41sauj" path="res://Characters/Jill Valentine/anim278.png" id="77_qltr2"]
 [ext_resource type="Texture2D" uid="uid://d4eopuplyxkky" path="res://Characters/Jill Valentine/anim135.png" id="78"]
+[ext_resource type="Texture2D" uid="uid://ch3r0tvp6tyr0" path="res://Characters/Jill Valentine/anim279.png" id="78_gvihr"]
 [ext_resource type="Texture2D" uid="uid://ecee3ubav70p" path="res://Characters/Jill Valentine/anim090.png" id="79"]
+[ext_resource type="Texture2D" uid="uid://u5jo6iogytfs" path="res://Characters/Jill Valentine/anim280.png" id="79_kjh14"]
 [ext_resource type="Texture2D" uid="uid://cob42bsl7n7fb" path="res://Characters/Jill Valentine/anim092.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://m2f7124c36b4" path="res://Characters/Jill Valentine/anim281.png" id="80_w3ecp"]
 [ext_resource type="Texture2D" uid="uid://dlxca04n0ytp" path="res://Characters/Jill Valentine/anim095.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://d3apvybiwoh3s" path="res://Characters/Jill Valentine/anim282.png" id="81_13r8n"]
 [ext_resource type="Texture2D" uid="uid://chya0cf16jfqa" path="res://Characters/Jill Valentine/anim097.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://c7wry7850j0cq" path="res://Characters/Jill Valentine/anim283.png" id="82_vtu4a"]
 [ext_resource type="Texture2D" uid="uid://buhvto0dtv6r5" path="res://Characters/Jill Valentine/anim098.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://dacwtd5nx31q7" path="res://Characters/Jill Valentine/anim284.png" id="83_n0f0o"]
 [ext_resource type="Texture2D" uid="uid://bi4jb4kjsj07r" path="res://Characters/Jill Valentine/anim088.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://m41lc64lemp0" path="res://Characters/Jill Valentine/anim285.png" id="84_6gjs1"]
 [ext_resource type="Texture2D" uid="uid://c8w67a2fty2do" path="res://Characters/Jill Valentine/anim091.png" id="85"]
+[ext_resource type="Texture2D" uid="uid://bknmyfd0f10i5" path="res://Characters/Jill Valentine/anim270.png" id="85_2ckq7"]
 [ext_resource type="Texture2D" uid="uid://b824t3tnau3y0" path="res://Characters/Jill Valentine/anim093.png" id="86"]
+[ext_resource type="Texture2D" uid="uid://d3du8epaf0dg7" path="res://Characters/Jill Valentine/anim271.png" id="86_qvcts"]
 [ext_resource type="Texture2D" uid="uid://bod1q6na6uc17" path="res://Characters/Jill Valentine/anim094.png" id="87"]
 [ext_resource type="Texture2D" uid="uid://ccyreswieo5cj" path="res://Characters/Jill Valentine/anim467.png" id="87_1i58r"]
+[ext_resource type="Texture2D" uid="uid://dyabp30xh1b5u" path="res://Characters/Jill Valentine/anim300.png" id="87_3hrqq"]
+[ext_resource type="Texture2D" uid="uid://0dv7nbvyrr0n" path="res://Characters/Jill Valentine/anim272.png" id="87_t6pfj"]
+[ext_resource type="Texture2D" uid="uid://di6o4soa0nnc5" path="res://Characters/Jill Valentine/anim307.png" id="87_vv5ly"]
 [ext_resource type="Texture2D" uid="uid://bro0nf6onok22" path="res://Characters/Jill Valentine/anim099.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://bejsqr7f0imov" path="res://Characters/Jill Valentine/anim301.png" id="88_8h6wy"]
 [ext_resource type="Texture2D" uid="uid://bu5ght442ejeg" path="res://Characters/Jill Valentine/anim468.png" id="88_7183d"]
+[ext_resource type="Texture2D" uid="uid://bosifea7jjyk3" path="res://Characters/Jill Valentine/anim273.png" id="88_h86yl"]
+[ext_resource type="Texture2D" uid="uid://d0hwgf0ksrq23" path="res://Characters/Jill Valentine/anim308.png" id="88_p1pmk"]
 [ext_resource type="Texture2D" uid="uid://chr3dqs755m5j" path="res://Characters/Jill Valentine/anim100.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://duuf16n32os56" path="res://Characters/Jill Valentine/anim302.png" id="89_1axd1"]
+[ext_resource type="Texture2D" uid="uid://533qdwwntxx" path="res://Characters/Jill Valentine/anim309.png" id="89_5kgh8"]
 [ext_resource type="Texture2D" uid="uid://g2x7rebvdlrx" path="res://Characters/Jill Valentine/anim469.png" id="89_k7nf2"]
+[ext_resource type="Texture2D" uid="uid://b0jql35qbi6fn" path="res://Characters/Jill Valentine/anim274.png" id="89_nsrb8"]
 [ext_resource type="Texture2D" uid="uid://b8util4yer7ta" path="res://Characters/Jill Valentine/anim087.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://cs3xlim7klyca" path="res://Characters/Jill Valentine/anim275.png" id="90_03i03"]
+[ext_resource type="Texture2D" uid="uid://c53j8tailhabi" path="res://Characters/Jill Valentine/anim303.png" id="90_71jil"]
+[ext_resource type="Texture2D" uid="uid://d1wvtl3o7apcq" path="res://Characters/Jill Valentine/anim310.png" id="90_85km1"]
 [ext_resource type="Texture2D" uid="uid://eax4qg7dibif" path="res://Characters/Jill Valentine/anim470.png" id="90_jhuie"]
 [ext_resource type="Texture2D" uid="uid://bk8iwxvuan4d1" path="res://Characters/Jill Valentine/anim101.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://djontpw1kog1q" path="res://Characters/Jill Valentine/anim276.png" id="91_mgghw"]
+[ext_resource type="Texture2D" uid="uid://b66f46aoetvxa" path="res://Characters/Jill Valentine/anim311.png" id="91_u06sk"]
 [ext_resource type="Texture2D" uid="uid://dqlao4hc1mb2w" path="res://Characters/Jill Valentine/anim096.png" id="92"]
+[ext_resource type="Texture2D" uid="uid://dm0vbhyq4g254" path="res://Characters/Jill Valentine/anim277.png" id="92_nlsk1"]
+[ext_resource type="Texture2D" uid="uid://m5vesu5m5xwk" path="res://Characters/Jill Valentine/anim312.png" id="92_nupaa"]
 [ext_resource type="Texture2D" uid="uid://d30v8jq6mxe0u" path="res://Characters/Jill Valentine/anim245.png" id="92_wam7j"]
 [ext_resource type="Texture2D" uid="uid://ddpoml14gaue0" path="res://Characters/Jill Valentine/anim102.png" id="93"]
+[ext_resource type="Texture2D" uid="uid://spi7122o2i4y" path="res://Characters/Jill Valentine/anim313.png" id="93_nuyjk"]
 [ext_resource type="Texture2D" uid="uid://nnk7yia2ofqm" path="res://Characters/Jill Valentine/anim246.png" id="93_s31sf"]
 [ext_resource type="Texture2D" uid="uid://5xklasapxp1c" path="res://Characters/Jill Valentine/anim089.png" id="94"]
 [ext_resource type="Texture2D" uid="uid://2b40g12dimvp" path="res://Characters/Jill Valentine/anim247.png" id="94_2s8qm"]
+[ext_resource type="Texture2D" uid="uid://dwnow522h5qvw" path="res://Characters/Jill Valentine/anim314.png" id="94_7v3jq"]
+[ext_resource type="Texture2D" uid="uid://c2denn1qw3xce" path="res://Characters/Jill Valentine/anim315.png" id="95_cttb7"]
 [ext_resource type="Texture2D" uid="uid://enx385c22kw3" path="res://Characters/Jill Valentine/anim248.png" id="95_plifq"]
 [ext_resource type="Texture2D" uid="uid://i468qme0060y" path="res://Characters/Jill Valentine/anim249.png" id="96_wi08q"]
 [ext_resource type="Texture2D" uid="uid://bi6s8fknsoqxp" path="res://Characters/Jill Valentine/anim250.png" id="97_fj844"]
 [ext_resource type="Texture2D" uid="uid://y1byx0x85g1t" path="res://Characters/Jill Valentine/anim251.png" id="98_u48ne"]
 [ext_resource type="Script" path="res://Hitboxes.gd" id="99_32v1y"]
+[ext_resource type="Texture2D" uid="uid://cvnml7w8tucbi" path="res://Characters/Jill Valentine/anim304.png" id="100_43l6h"]
+[ext_resource type="Texture2D" uid="uid://cnnkwj8tug1a5" path="res://Characters/Jill Valentine/anim305.png" id="101_vlmxa"]
+[ext_resource type="Texture2D" uid="uid://bsa2yhs18ti8j" path="res://Characters/Jill Valentine/anim306.png" id="102_gtr4o"]
 
 [sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
@@ -463,6 +495,69 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("77_qltr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_gvihr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_kjh14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_w3ecp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_13r8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_vtu4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_n0f0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_6gjs1")
+}],
+"loop": true,
+"name": &"cHP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_2ckq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_qvcts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_t6pfj")
+}],
+"loop": true,
+"name": &"cLP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("88_h86yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_nsrb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_03i03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_mgghw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_nlsk1")
+}],
+"loop": true,
+"name": &"cMP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4")
 }, {
 "duration": 1.0,
@@ -495,6 +590,75 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("87_vv5ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_p1pmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_5kgh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_85km1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_u06sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_nupaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_nuyjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_7v3jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_cttb7")
+}],
+"loop": true,
+"name": &"jHP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("87_3hrqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_8h6wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_1axd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_71jil")
+}],
+"loop": true,
+"name": &"jLP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("90_71jil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_43l6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_vlmxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_gtr4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_vv5ly")
+}],
+"loop": true,
+"name": &"jMP",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1104,12 +1268,276 @@ tracks/5/keys = {
 "values": [Vector2(59, -18)]
 }
 
+[sub_resource type="Animation" id="Animation_4tj7i"]
+resource_name = "jLP"
+length = 0.250002
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jLP"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0833333, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_lyube"]
+resource_name = "jMP"
+length = 0.416668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jMP"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_103l1"]
+resource_name = "jHP"
+length = 0.500002
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jHP"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0833333, 0.133333, 0.183333, 0.25, 0.316667, 0.383333, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_o5qs0"]
+resource_name = "cLP"
+length = 0.333335
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"cLP"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.216667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6ouhg"]
+resource_name = "cMP"
+length = 0.500002
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"cMP"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.133333, 0.233333, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7fbl6"]
+resource_name = "cHP"
+length = 0.533335
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"cHP"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.216667, 0.283333, 0.35, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.483333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2qeg7"]
 _data = {
 "Idle": SubResource("8"),
 "RESET": SubResource("6"),
 "WalkForward": SubResource("11"),
+"cHP": SubResource("Animation_7fbl6"),
+"cLP": SubResource("Animation_o5qs0"),
+"cMP": SubResource("Animation_6ouhg"),
 "crouch": SubResource("10"),
+"jHP": SubResource("Animation_103l1"),
+"jLP": SubResource("Animation_4tj7i"),
+"jMP": SubResource("Animation_lyube"),
 "jumping": SubResource("Animation_urso6"),
 "jumpingFalling": SubResource("Animation_gvont"),
 "midHitstun": SubResource("Animation_umjm0"),
@@ -1117,17 +1545,6 @@ _data = {
 "sLP": SubResource("7"),
 "sMP": SubResource("9")
 }
-
-[sub_resource type="AnimationNodeTransition" id="17"]
-input_0/name = "Neutral"
-input_0/auto_advance = false
-input_0/reset = true
-input_1/name = "Attacking"
-input_1/auto_advance = false
-input_1/reset = true
-input_2/name = "Hitstun"
-input_2/auto_advance = false
-input_2/reset = true
 
 [sub_resource type="AnimationNodeTransition" id="20"]
 input_0/name = "LP"
@@ -1143,8 +1560,38 @@ input_2/reset = true
 [sub_resource type="AnimationNodeAnimation" id="13"]
 animation = &"crouch"
 
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_tno34"]
+input_0/name = "LP"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "MP"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "HP"
+input_2/auto_advance = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ksbsh"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "blocking"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "attacking"
+input_2/auto_advance = false
+input_2/reset = true
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kshar"]
 animation = &"sHP"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_gyptk"]
+input_0/name = "block"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "hit"
+input_1/auto_advance = false
+input_1/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="16"]
 animation = &"Idle"
@@ -1157,28 +1604,75 @@ input_1/name = "falling"
 input_1/auto_advance = false
 input_1/reset = true
 
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_bps3t"]
+input_0/name = "LP"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "MP"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "HP"
+input_2/auto_advance = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_43hom"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "blocking"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "attacking"
+input_2/auto_advance = false
+input_2/reset = true
+
 [sub_resource type="AnimationNodeAnimation" id="14"]
 animation = &"sLP"
 
 [sub_resource type="AnimationNodeAnimation" id="15"]
 animation = &"sMP"
 
-[sub_resource type="AnimationNodeTransition" id="19"]
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_pyepl"]
 input_0/name = "idle"
 input_0/auto_advance = false
 input_0/reset = true
 input_1/name = "walk"
 input_1/auto_advance = false
 input_1/reset = true
-input_2/name = "crouch"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_2eds3"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "hit"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "attacking"
 input_2/auto_advance = false
 input_2/reset = true
-input_3/name = "jumping"
-input_3/auto_advance = false
-input_3/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="17"]
+input_0/name = "standing"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "crouching"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "jumping"
+input_2/auto_advance = false
+input_2/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="12"]
 animation = &"WalkForward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qty1o"]
+animation = &"cHP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fh6lj"]
+animation = &"cLP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7votr"]
+animation = &"cMP"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qbig3"]
 animation = &"jumpingFalling"
@@ -1186,39 +1680,72 @@ animation = &"jumpingFalling"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0n5x5"]
 animation = &"midHitstun"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r5hej"]
+animation = &"jHP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jg4d3"]
+animation = &"jLP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nahtu"]
+animation = &"jMP"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gswe2"]
 animation = &"jumping"
 
 [sub_resource type="AnimationNodeBlendTree" id="18"]
-graph_offset = Vector2(383.592, -145.381)
-nodes/Action/node = SubResource("17")
-nodes/Action/position = Vector2(1280, 80)
+graph_offset = Vector2(104.933, 113.35)
 nodes/Attacking/node = SubResource("20")
-nodes/Attacking/position = Vector2(1120, 140)
+nodes/Attacking/position = Vector2(1232, -396)
 nodes/Crouch/node = SubResource("13")
-nodes/Crouch/position = Vector2(980, -60)
+nodes/Crouch/position = Vector2(1034, -22)
+nodes/CrouchAttacking/node = SubResource("AnimationNodeTransition_tno34")
+nodes/CrouchAttacking/position = Vector2(1265, 99)
+nodes/CrouchingAction/node = SubResource("AnimationNodeTransition_ksbsh")
+nodes/CrouchingAction/position = Vector2(1485, -22)
 nodes/HP/node = SubResource("AnimationNodeAnimation_kshar")
-nodes/HP/position = Vector2(980, 360)
+nodes/HP/position = Vector2(935, -286)
+nodes/Hit/node = SubResource("AnimationNodeTransition_gyptk")
+nodes/Hit/position = Vector2(1375, -231)
 nodes/Idle/node = SubResource("16")
-nodes/Idle/position = Vector2(980, -180)
+nodes/Idle/position = Vector2(1221, -561)
 nodes/Jump/node = SubResource("AnimationNodeTransition_jgyhb")
-nodes/Jump/position = Vector2(980, 60)
+nodes/Jump/position = Vector2(1254, 451)
+nodes/JumpAttacking/node = SubResource("AnimationNodeTransition_bps3t")
+nodes/JumpAttacking/position = Vector2(1232, 704)
+nodes/JumpingAction/node = SubResource("AnimationNodeTransition_43hom")
+nodes/JumpingAction/position = Vector2(1397, 539)
 nodes/LP/node = SubResource("14")
-nodes/LP/position = Vector2(980, 240)
+nodes/LP/position = Vector2(924, -418)
 nodes/MP/node = SubResource("15")
-nodes/MP/position = Vector2(840, 260)
-nodes/Neutral/node = SubResource("19")
-nodes/Neutral/position = Vector2(1120, -100)
+nodes/MP/position = Vector2(1100, -341)
+nodes/Movement/node = SubResource("AnimationNodeTransition_pyepl")
+nodes/Movement/position = Vector2(1386, -484)
+nodes/StandingAction/node = SubResource("AnimationNodeTransition_2eds3")
+nodes/StandingAction/position = Vector2(1540, -374)
+nodes/State/node = SubResource("17")
+nodes/State/position = Vector2(1680, 80)
 "nodes/WalkForward /node" = SubResource("12")
-"nodes/WalkForward /position" = Vector2(820, -140)
+"nodes/WalkForward /position" = Vector2(1045, -495)
+nodes/cHP/node = SubResource("AnimationNodeAnimation_qty1o")
+nodes/cHP/position = Vector2(968, 286)
+nodes/cLP/node = SubResource("AnimationNodeAnimation_fh6lj")
+nodes/cLP/position = Vector2(924, 88)
+nodes/cMP/node = SubResource("AnimationNodeAnimation_7votr")
+nodes/cMP/position = Vector2(1045, 132)
 nodes/falling/node = SubResource("AnimationNodeAnimation_qbig3")
-nodes/falling/position = Vector2(800, 140)
+nodes/falling/position = Vector2(1056, 583)
 nodes/hitstun/node = SubResource("AnimationNodeAnimation_0n5x5")
-nodes/hitstun/position = Vector2(1120, 360)
-nodes/output/position = Vector2(1420, 80)
+nodes/hitstun/position = Vector2(1210, -154)
+nodes/jHP/node = SubResource("AnimationNodeAnimation_r5hej")
+nodes/jHP/position = Vector2(1067, 869)
+nodes/jLP/node = SubResource("AnimationNodeAnimation_jg4d3")
+nodes/jLP/position = Vector2(1012, 715)
+nodes/jMP/node = SubResource("AnimationNodeAnimation_nahtu")
+nodes/jMP/position = Vector2(902, 803)
+nodes/output/position = Vector2(1820, 80)
 nodes/rising/node = SubResource("AnimationNodeAnimation_gswe2")
-nodes/rising/position = Vector2(840, 20)
-node_connections = [&"output", 0, &"Action", &"Action", 0, &"Neutral", &"Action", 1, &"Attacking", &"Action", 2, &"hitstun", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"Neutral", 0, &"Idle", &"Neutral", 1, &"WalkForward ", &"Neutral", 2, &"Crouch", &"Neutral", 3, &"Jump"]
+nodes/rising/position = Vector2(1078, 451)
+node_connections = [&"output", 0, &"State", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 2, &"CrouchAttacking", &"Movement", 0, &"Idle", &"Movement", 1, &"WalkForward ", &"JumpingAction", 0, &"Jump", &"JumpingAction", 2, &"JumpAttacking", &"Hit", 1, &"hitstun", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP"]
 
 [node name="Player" type="Node2D" groups=["Player"]]
 scale = Vector2(-1, 1)
@@ -1270,18 +1797,35 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D/AnimatedSprite2D"]
 tree_root = SubResource("18")
 anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/Action/current_state = "Neutral"
-parameters/Action/transition_request = ""
-parameters/Action/current_index = 0
-parameters/Attacking/current_state = "LP"
-parameters/Attacking/transition_request = ""
-parameters/Attacking/current_index = 0
+parameters/Attacking/current_state = ""
+parameters/Attacking/transition_request = "LP"
+parameters/Attacking/current_index = -1
+parameters/CrouchAttacking/current_state = ""
+parameters/CrouchAttacking/transition_request = ""
+parameters/CrouchAttacking/current_index = -1
+parameters/CrouchingAction/current_state = ""
+parameters/CrouchingAction/transition_request = ""
+parameters/CrouchingAction/current_index = -1
+parameters/Hit/current_state = ""
+parameters/Hit/transition_request = ""
+parameters/Hit/current_index = -1
 parameters/Jump/current_state = "falling"
 parameters/Jump/transition_request = ""
 parameters/Jump/current_index = 1
-parameters/Neutral/current_state = "jumping"
-parameters/Neutral/transition_request = ""
-parameters/Neutral/current_index = 3
+parameters/JumpAttacking/current_state = ""
+parameters/JumpAttacking/transition_request = ""
+parameters/JumpAttacking/current_index = -1
+parameters/JumpingAction/current_state = "idle"
+parameters/JumpingAction/transition_request = ""
+parameters/JumpingAction/current_index = 0
+parameters/Movement/current_state = "idle"
+parameters/Movement/transition_request = ""
+parameters/Movement/current_index = 0
+parameters/StandingAction/current_state = "idle"
+parameters/StandingAction/transition_request = ""
+parameters/StandingAction/current_index = 0
+parameters/State/current_state = "jumping"
+parameters/State/transition_request = ""
+parameters/State/current_index = 2
 
 [connection signal="area_entered" from="CharacterBody2D/AnimatedSprite2D/Hitboxes" to="CharacterBody2D" method="_on_hitboxes_area_entered"]

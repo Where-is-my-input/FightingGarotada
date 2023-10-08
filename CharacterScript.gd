@@ -5,14 +5,18 @@ var gravity = 50
 var terminalVelocity = 888
 var knockback = 0
 
+var facing = 1
+
 var strength = -1000
 var attacking = false
 
 #states
-var action = "Neutral"
-var neutral = "idle"
+var state = "standing"
+var action = "idle"
+var movement = "idle"
 var attack = "LP"
 var jumpState = "rising"
+var hit = "hit"
 
 #cancel states
 var normalCancel = false
@@ -28,11 +32,19 @@ var speed = 500;
 @onready var animatedPlayer = $AnimatedSprite2D/AnimationPlayer
 @onready var animatedTree : AnimationTree = $AnimatedSprite2D/AnimationTree
 @onready var hitboxes = $AnimatedSprite2D/Hitboxes
+
 #animationTree
-@onready var A_action = "parameters/Action/transition_request"
-@onready var A_attacking = "parameters/Attacking/transition_request"
-@onready var A_neutral = "parameters/Neutral/transition_request"
-@onready var A_jump = "parameters/Jump/transition_request"
+@onready var A_State = "parameters/State/transition_request"
+@onready var A_StandingAction = "parameters/StandingAction/transition_request"
+@onready var A_CrouchingAction = "parameters/CrouchingAction/transition_request"
+@onready var A_JumpingAction = "parameters/JumpingAction/transition_request"
+@onready var A_Jump = "parameters/Jump/transition_request"
+@onready var A_Movement = "parameters/Movement/transition_request"
+@onready var A_Attacking = "parameters/Attacking/transition_request"
+@onready var A_Hit = "parameters/Hit/transition_request"
+@onready var A_JumpAttacking = "parameters/JumpAttacking/transition_request"
+@onready var A_CrouchAttacking = "parameters/CrouchAttacking/transition_request"
+#controller
 @onready var virtualController = parent.virtualController
 
 # Called when the node enters the scene tree for the first time.
@@ -45,7 +57,7 @@ func _physics_process(delta):
 	gravity_fall()
 	
 	if parent.virtualController != null:
-		if (!attacking || normalCancel && action == "Attacking") && action != "Hitstun":
+		if (!attacking || normalCancel && action == "attacking") && action != "hit":
 			isAttacking()
 		jump()
 		walk()
@@ -55,7 +67,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	setAnimation()
-#	flip()
+	flip()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -80,68 +92,72 @@ func isAttacking():
 		attacking = 1
 	neutralAnimation()
 	if attacking:
-		action = "Attacking"
+		action = "attacking"
 		return
 	attacking = 0
 
 func animationFinished():
 	set_deferred("attacking", 0)
-	action = "Neutral"
+	action = "idle"
 	normalCancel = false
 
 func neutralAnimation():
 	if is_on_floor():
 		if crouching:
-			neutral = "crouch"
+			state = "crouching"
 		elif parent.virtualController.directionX == 0:
-			neutral = "idle"
+			state = "standing"
+			movement = "idle"
 		else:
-			neutral = "walk"
+			movement = "walk"
 	
 func flip():
-	if is_on_floor() && !attacking && scale != Vector2(parent.facing,-1):
-		scale = Vector2(parent.facing,-1)
+	#TODO só flippar uma vez
+	if is_on_floor() && !attacking && parent.facing != facing:
+		scale.x = -1
+		facing = parent.facing
 
 func walk():
 	#apply movement
-	if action == "Hitstun":
-		if knockback > 0:
+	if action == "hit":
+		if abs(knockback) > 0:
 			velocity.x = velocity.x+knockback
 			knockback = 0
 		elif abs(velocity.x) > 0:
-			velocity.x = velocity.x - 1 * parent.facing
+			velocity.x = velocity.x - 1 
 		else:
 			velocity.x = 0
 		return
 	crouching = parent.virtualController.directionY > 0
 	if is_on_floor() && !crouching && !attacking: 
 		velocity.x = parent.virtualController.directionX*speed
-	elif abs(velocity.x) > 0 && neutral != "jumping":
+	elif abs(velocity.x) > 0 && state != "jumping":
 		velocity.x = velocity.x - 150 * (velocity.x/speed)
-	elif neutral != "jumping":
+	elif state != "jumping":
 		velocity.x = 0
-#	else:
-#		if (velocity.x * -facing) > 0: 
-#			velocity.x -= (speed/10) * -facing
-#		else:
-#			velocity.x = 0
 
 func jump():
-	if action == "Hitstun":
+	if action == "hit":
 		return
 	if parent.virtualController.directionY < 0 and is_on_floor() and !attacking:
 		velocity.y = +strength
-		neutral = "jumping"
+		state = "jumping"
 	if velocity.y > 0:
 		jumpState = "falling"
 	else:
 		jumpState = "rising"
 
 func setAnimation():
-	animatedTree.set(A_action, action)
-	animatedTree.set(A_neutral, neutral)
-	animatedTree.set(A_attacking, attack)
-	animatedTree.set(A_jump, jumpState)
+	animatedTree.set(A_State, state)
+	animatedTree.set(A_StandingAction, action)
+	animatedTree.set(A_CrouchingAction, action)
+	animatedTree.set(A_JumpingAction, action)
+	animatedTree.set(A_Jump, jumpState)
+	animatedTree.set(A_Movement, movement)
+	animatedTree.set(A_Attacking, attack)
+	animatedTree.set(A_Hit, hit)
+	animatedTree.set(A_JumpAttacking, attack)
+	animatedTree.set(A_CrouchAttacking, attack)
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
@@ -149,19 +165,19 @@ func _on_hitboxes_area_entered(hitbox):
 		normalCancel = true
 	
 func getHit():
-	if action == "Hitstun":
+	if action == "hit":
 		#TODO loop hit animation
 		print(animatedTree)
 	hitboxes.disableHitboxes()
-	action = "Hitstun"
+	action = "hit"
 	parent.HP = parent.HP - 10
 	attacking = 0
 	hitstun = 19
-	knockback = 35 * parent.facing
+	knockback = 35 * -parent.facing
 	
 func endHitstun():
-	if hitstun == 0 && action == "Hitstun":
-		action = "Neutral"
+	if hitstun == 0 && action == "hit":
+		action = "idle"
 		hitboxes.enableHitboxes()
 	elif hitstun > 0:
 		hitstun = hitstun - 1

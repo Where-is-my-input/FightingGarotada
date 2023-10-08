@@ -19,10 +19,8 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-#	scale.x *= -1
 	getNearesPlayer()
 	flip()
-#	print(self, nearestPlayer, nearestPlayer.position.x > self.position.x)
 	pass
 
 func getNearesPlayer():
@@ -31,13 +29,14 @@ func getNearesPlayer():
 			continue
 		if nearestPlayer == null:
 			nearestPlayer = player
-		elif player.global_position.distance_to(self.global_position) < nearestPlayer.global_position.distance_to(self.global_position):
+		elif player.global_position.distance_to(body.global_position) < nearestPlayer.global_position.distance_to(body.global_position):
 			nearestPlayer = player
 	if nearestPlayer != null:
 		var child = nearestPlayer.get_child(0)
 		nearestPlayerX = child.global_position.x
 			
 func flip():
+	#TODO flip facing the closest player
 	if nearestPlayerX > body.global_position.x:
 		facing = 1
 	else:
