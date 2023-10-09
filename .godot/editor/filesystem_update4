@@ -2,5 +2,4 @@ res://default_env.tres
 res://Bruh.tscn
 res://Player.tscn
 res://healthBars.tscn
-res://Player.gd
 res://CharacterScript.gd

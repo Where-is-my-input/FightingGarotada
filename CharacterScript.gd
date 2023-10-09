@@ -9,6 +9,7 @@ var facing = 1
 
 var strength = -1000
 var attacking = false
+var blocking = false
 
 #states
 var state = "standing"
@@ -79,6 +80,11 @@ func gravity_fall():
 		velocity.y = terminalVelocity
 	elif is_on_floor():
 		velocity.y = 5
+	if state == "jumping" && is_on_floor():
+		state = "standing"
+		action = "idle"
+		animationFinished()
+		
 
 func isAttacking():
 	if parent.virtualController.LP == 1:
@@ -102,6 +108,7 @@ func animationFinished():
 	normalCancel = false
 
 func neutralAnimation():
+	blocking = parent.virtualController.directionX * facing < 0
 	if is_on_floor():
 		if crouching:
 			state = "crouching"
@@ -109,10 +116,14 @@ func neutralAnimation():
 			state = "standing"
 			movement = "idle"
 		else:
-			movement = "walk"
+			state = "standing"
+			if parent.virtualController.directionX * facing > 0:
+				movement = "walk"
+			else:
+				movement = "walkback"
+				
 	
 func flip():
-	#TODO só flippar uma vez
 	if is_on_floor() && !attacking && parent.facing != facing:
 		scale.x = -1
 		facing = parent.facing
@@ -120,13 +131,10 @@ func flip():
 func walk():
 	#apply movement
 	if action == "hit":
-		if abs(knockback) > 0:
-			velocity.x = velocity.x+knockback
-			knockback = 0
-		elif abs(velocity.x) > 0:
-			velocity.x = velocity.x - 1 
+		if hit == "block":
+			applyKnockback(knockback/2)
 		else:
-			velocity.x = 0
+			applyKnockback(knockback)
 		return
 	crouching = parent.virtualController.directionY > 0
 	if is_on_floor() && !crouching && !attacking: 
@@ -135,6 +143,17 @@ func walk():
 		velocity.x = velocity.x - 150 * (velocity.x/speed)
 	elif state != "jumping":
 		velocity.x = 0
+
+func applyKnockback(knockbackApplied):
+	if abs(knockback) > 0:
+		velocity.x = velocity.x+knockbackApplied
+		knockback = 0
+	elif abs(velocity.x) > 0:
+		velocity.x = velocity.x - 1 
+	else:
+		velocity.x = 0
+	return
+
 
 func jump():
 	if action == "hit":
@@ -170,10 +189,16 @@ func getHit():
 		print(animatedTree)
 	hitboxes.disableHitboxes()
 	action = "hit"
-	parent.HP = parent.HP - 10
-	attacking = 0
-	hitstun = 19
-	knockback = 35 * -parent.facing
+	if !blocking:
+		parent.HP = parent.HP - 10
+		attacking = 0
+		hitstun = 19
+		knockback = 35 * -parent.facing
+		hit = "hit"
+	else:
+		knockback = 35 * -parent.facing
+		hitstun = 19
+		hit = "block"
 	
 func endHitstun():
 	if hitstun == 0 && action == "hit":
