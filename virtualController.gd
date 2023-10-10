@@ -51,10 +51,10 @@ func readButtons():
 	else:
 		MP = 0
 		
-	if Input.get_action_strength(inputHP) > 0 && HP < 3:
+	if Input.get_action_strength(inputHP) > 0:
 		HP += 1
-	elif HP > 0:
-		HP = HP - 1
+	else:
+		HP = 0
 		
 	if Input.get_action_strength(inputLK) > 0:
 		LK += 1

@@ -6,8 +6,9 @@ var terminalVelocity = 888
 var knockback = 0
 
 var facing = 1
+#var airborne = false
 
-var strength = -1000
+var strength = -900
 var attacking = false
 var blocking = false
 
@@ -18,6 +19,7 @@ var movement = "idle"
 var attack = "LP"
 var jumpState = "rising"
 var hit = "hit"
+var idleState = "idle"
 
 #cancel states
 var normalCancel = false
@@ -45,6 +47,7 @@ var speed = 500;
 @onready var A_Hit = "parameters/Hit/transition_request"
 @onready var A_JumpAttacking = "parameters/JumpAttacking/transition_request"
 @onready var A_CrouchAttacking = "parameters/CrouchAttacking/transition_request"
+@onready var A_IdleState = "parameters/IdleState/transition_request"
 #controller
 @onready var virtualController = parent.virtualController
 
@@ -63,12 +66,22 @@ func _physics_process(delta):
 		jump()
 		walk()
 		
-	set_velocity(velocity)
-#	set_up_direction(Vector2.UP)
+#	set_velocity(velocity)
+	set_up_direction(Vector2.UP)
 	move_and_slide()
-	
-	setAnimation()
+#	if move_and_slide():
+#		if state == "jumping":
+#			velocity.x = speed * facing
+#		else:
+#			for i in get_slide_collision_count():
+#				var collision = get_slide_collision(i)
+#				if collision.get_collider().name == "TileMap":
+#					airborne = false
+#				else:
+#					velocity.y = 5000
+#					velocity.x = 500 * facing
 	flip()
+	setAnimation()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -105,6 +118,7 @@ func isAttacking():
 func animationFinished():
 	set_deferred("attacking", 0)
 	action = "idle"
+	idleState = "idle"
 	normalCancel = false
 
 func neutralAnimation():
@@ -125,6 +139,7 @@ func neutralAnimation():
 	
 func flip():
 	if is_on_floor() && !attacking && parent.facing != facing:
+		idleState = "flip"
 		scale.x = -1
 		facing = parent.facing
 
@@ -137,6 +152,8 @@ func walk():
 			applyKnockback(knockback)
 		return
 	crouching = parent.virtualController.directionY > 0
+#	if airborne:
+#		return
 	if is_on_floor() && !crouching && !attacking: 
 		velocity.x = parent.virtualController.directionX*speed
 	elif abs(velocity.x) > 0 && state != "jumping":
@@ -161,6 +178,7 @@ func jump():
 	if parent.virtualController.directionY < 0 and is_on_floor() and !attacking:
 		velocity.y = +strength
 		state = "jumping"
+#		airborne = true
 	if velocity.y > 0:
 		jumpState = "falling"
 	else:
@@ -174,9 +192,10 @@ func setAnimation():
 	animatedTree.set(A_Jump, jumpState)
 	animatedTree.set(A_Movement, movement)
 	animatedTree.set(A_Attacking, attack)
-	animatedTree.set(A_Hit, hit)
 	animatedTree.set(A_JumpAttacking, attack)
 	animatedTree.set(A_CrouchAttacking, attack)
+	animatedTree.set(A_Hit, hit)
+	animatedTree.set(A_IdleState, idleState)
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
@@ -185,10 +204,11 @@ func _on_hitboxes_area_entered(hitbox):
 	
 func getHit():
 	if action == "hit":
-		#TODO loop hit animation
-		print(animatedTree)
+		animatedTree.advance(-0.25)
 	hitboxes.disableHitboxes()
 	action = "hit"
+	velocity.x = 0
+	velocity.y = 0
 	if !blocking:
 		parent.HP = parent.HP - 10
 		attacking = 0

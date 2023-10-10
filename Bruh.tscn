@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8dsl308vfypc"]
+[gd_scene load_steps=7 format=3 uid="uid://b8dsl308vfypc"]
 
-[ext_resource type="PackedScene" path="res://Character.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="1_qqqc0"]
 [ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://cbi3kopno23pf" path="res://Player.tscn" id="3"]
@@ -69,9 +68,6 @@ offset_right = 900.0
 offset_bottom = 77.0
 text = "Bruh"
 
-[node name="Character" parent="." instance=ExtResource("1")]
-position = Vector2(754, 517)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("2")
 format = 2
@@ -82,7 +78,7 @@ layer_0/tile_data = PackedInt32Array(16, 0, 0, 65552, 0, 0, 131088, 0, 0, 196624
 [node name="VirtualController" parent="HPBars" instance=ExtResource("1_qqqc0")]
 
 [node name="Player" parent="HPBars/VirtualController" instance=ExtResource("3")]
-position = Vector2(174, 253)
+position = Vector2(171, 160)
 scale = Vector2(1, 1)
 
 [node name="VirtualController2" parent="HPBars" instance=ExtResource("1_qqqc0")]
