@@ -17,7 +17,7 @@ func _ready():
 	playerGroup = get_tree().get_nodes_in_group("Player")
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	getNearesPlayer()
 	flip()
 	pass
@@ -37,7 +37,7 @@ func getNearesPlayer():
 func flip():
 	#TODO flip facing the closest player
 	if nearestPlayerX > body.global_position.x:
-		facing = 1
-	else:
 		facing = -1
+	else:
+		facing = 1
 	

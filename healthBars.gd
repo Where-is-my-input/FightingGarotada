@@ -12,6 +12,6 @@ func _ready():
 	player2 = self.get_node("VirtualController2/Player2")
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	hpBarP1.value = player1.HP
 	hpBarP2.value = player2.HP

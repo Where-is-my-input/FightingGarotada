@@ -4,6 +4,7 @@ var crouching = false
 var gravity = 50
 var terminalVelocity = 888
 var knockback = 0
+var knockbackVector:Vector2 = Vector2(1,1)
 
 var facing = 1
 #var airborne = false
@@ -23,18 +24,20 @@ var idleState = "idle"
 
 #cancel states
 var normalCancel = false
+@export var jumpCancel = false
 var specialCancel = true
 var superCancel = true
 
 var hitstun = 0
+var verticalHitstun = 0
 
 var speed = 500;
 
 @onready var parent = $".."
 @onready var animatedSprite = $AnimatedSprite2D
 @onready var animatedPlayer = $AnimatedSprite2D/AnimationPlayer
-@onready var animatedTree : AnimationTree = $AnimatedSprite2D/AnimationTree
 @onready var hitboxes = $AnimatedSprite2D/Hitboxes
+@onready var animatedTree = $AnimatedSprite2D/AnimationPlayer/AnimationTree
 
 #animationTree
 @onready var A_State = "parameters/State/transition_request"
@@ -56,7 +59,7 @@ func _ready():
 	setAnimation()
 	animatedTree.active = true
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	endHitstun()
 	gravity_fall()
 	
@@ -89,8 +92,16 @@ func _physics_process(delta):
 func gravity_fall():
 	velocity.y += gravity
 	
+	if verticalHitstun > 0:
+		verticalHitstun -= 1
+	elif velocity.y < 0 && state == "hit":
+		velocity.y = 0
+	
 	if velocity.y > terminalVelocity:
-		velocity.y = terminalVelocity
+		if state == "hit":
+			velocity.y = terminalVelocity / 2
+		else:
+			velocity.y = terminalVelocity
 	elif is_on_floor():
 		velocity.y = 5
 	if state == "jumping" && is_on_floor():
@@ -123,6 +134,8 @@ func animationFinished():
 
 func neutralAnimation():
 	blocking = parent.virtualController.directionX * facing < 0
+	if attacking:
+		return
 	if is_on_floor():
 		if crouching:
 			state = "crouching"
@@ -132,9 +145,9 @@ func neutralAnimation():
 		else:
 			state = "standing"
 			if parent.virtualController.directionX * facing > 0:
-				movement = "walk"
-			else:
 				movement = "walkback"
+			else:
+				movement = "walk"
 				
 	
 func flip():
@@ -162,6 +175,7 @@ func walk():
 		velocity.x = 0
 
 func applyKnockback(knockbackApplied):
+	velocity = knockbackVector
 	if abs(knockback) > 0:
 		velocity.x = velocity.x+knockbackApplied
 		knockback = 0
@@ -175,9 +189,13 @@ func applyKnockback(knockbackApplied):
 func jump():
 	if action == "hit":
 		return
-	if parent.virtualController.directionY < 0 and is_on_floor() and !attacking:
+	if parent.virtualController.directionY < 0 && is_on_floor() && (!attacking || jumpCancel):
 		velocity.y = +strength
 		state = "jumping"
+		action = "idle"
+		jumpCancel = false
+		jumpState = "rising"
+		attacking = false
 #		airborne = true
 	if velocity.y > 0:
 		jumpState = "falling"
@@ -199,10 +217,13 @@ func setAnimation():
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
-		hitbox.get_parent().get_parent().getHit()
+		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector)
 		normalCancel = true
 	
-func getHit():
+func getHit(stun = 19, hitVector = Vector2(100,-500), vstun = 60):
+	verticalHitstun = vstun
+	hitVector.x = hitVector.x * parent.facing
+	knockbackVector = hitVector
 	if action == "hit":
 		animatedTree.advance(-0.25)
 	hitboxes.disableHitboxes()
@@ -212,12 +233,12 @@ func getHit():
 	if !blocking:
 		parent.HP = parent.HP - 10
 		attacking = 0
-		hitstun = 19
-		knockback = 35 * -parent.facing
+		hitstun = stun
+		knockback = 35 * parent.facing
 		hit = "hit"
 	else:
-		knockback = 35 * -parent.facing
-		hitstun = 19
+		knockback = 35 * parent.facing
+		hitstun = stun
 		hit = "block"
 	
 func endHitstun():

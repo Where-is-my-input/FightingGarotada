@@ -1,8 +1,8 @@
 res://default_env.tres
-res://Bruh.tscn
-res://Player.tscn
-res://healthBars.tscn
 res://virtualController.tscn
-res://virtualController.gd
 res://CharacterScript.gd
+res://Player.tscn
+res://Bruh.tscn
+res://healthBars.tscn
 res://Player.gd
+res://Hitboxes.gd
