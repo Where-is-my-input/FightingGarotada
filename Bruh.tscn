@@ -78,10 +78,10 @@ layer_0/tile_data = PackedInt32Array(16, 0, 0, 65552, 0, 0, 131088, 0, 0, 196624
 [node name="VirtualController" parent="HPBars" instance=ExtResource("1_qqqc0")]
 
 [node name="Player" parent="HPBars/VirtualController" instance=ExtResource("3")]
-position = Vector2(120, 102)
+position = Vector2(126, 245)
 
 [node name="VirtualController2" parent="HPBars" instance=ExtResource("1_qqqc0")]
 position = Vector2(24, -1)
 
 [node name="Player2" parent="HPBars/VirtualController2" instance=ExtResource("3")]
-position = Vector2(408, 94)
+position = Vector2(403, 244)

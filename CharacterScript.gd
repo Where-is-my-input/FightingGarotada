@@ -64,7 +64,7 @@ func _physics_process(_delta):
 	gravity_fall()
 	
 	if parent.virtualController != null:
-		if (!attacking || normalCancel && action == "attacking") && action != "hit":
+		if (!attacking || normalCancel && action == "attacking" && buttonPressed()) && action != "hit":
 			isAttacking()
 		jump()
 		walk()
@@ -90,15 +90,17 @@ func _physics_process(_delta):
 #func _process(delta):
 #	pass
 func gravity_fall():
+	if action == "hit" && verticalHitstun > 0:
+		return
 	velocity.y += gravity
 	
 	if verticalHitstun > 0:
 		verticalHitstun -= 1
-	elif velocity.y < 0 && state == "hit":
+	elif velocity.y < 0 && action == "hit":
 		velocity.y = 0
 	
 	if velocity.y > terminalVelocity:
-		if state == "hit":
+		if action == "hit":
 			velocity.y = terminalVelocity / 2
 		else:
 			velocity.y = terminalVelocity
@@ -111,20 +113,28 @@ func gravity_fall():
 		
 
 func isAttacking():
-	if parent.virtualController.LP == 1:
-		attack = "LP"
-		attacking = 1
-	if parent.virtualController.MP == 1: 
-		attack = "MP"
-		attacking = 1
-	if parent.virtualController.HP == 1: 
-		attack = "HP"
-		attacking = 1
+	buttonPressed()
 	neutralAnimation()
 	if attacking:
 		action = "attacking"
 		return
 	attacking = 0
+	action = "idle"
+
+func buttonPressed():
+	if parent.virtualController.LP == 1:
+		attack = "LP"
+		attacking = 1
+		return true
+	if parent.virtualController.MP == 1: 
+		attack = "MP"
+		attacking = 1
+		return true
+	if parent.virtualController.HP == 1: 
+		attack = "HP"
+		attacking = 1
+		return true
+	return false
 
 func animationFinished():
 	set_deferred("attacking", 0)
@@ -133,9 +143,7 @@ func animationFinished():
 	normalCancel = false
 
 func neutralAnimation():
-	blocking = parent.virtualController.directionX * facing < 0
-	if attacking:
-		return
+	blocking = parent.virtualController.directionX * parent.facing > 0
 	if is_on_floor():
 		if crouching:
 			state = "crouching"
@@ -175,7 +183,8 @@ func walk():
 		velocity.x = 0
 
 func applyKnockback(knockbackApplied):
-	velocity = knockbackVector
+	velocity += knockbackVector
+	knockbackVector = Vector2(0,0)
 	if abs(knockback) > 0:
 		velocity.x = velocity.x+knockbackApplied
 		knockback = 0
@@ -197,6 +206,9 @@ func jump():
 		jumpState = "rising"
 		attacking = false
 #		airborne = true
+#	if !is_on_floor():
+#		state = "jumping"
+#		action = "idle"
 	if velocity.y > 0:
 		jumpState = "falling"
 	else:
@@ -217,10 +229,11 @@ func setAnimation():
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
-		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector)
+		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector, hitboxes.damage)
+		hitbox.set_deferred("disabled", true)
 		normalCancel = true
 	
-func getHit(stun = 19, hitVector = Vector2(100,-500), vstun = 60):
+func getHit(stun = 19, hitVector = Vector2(100,-500), damage = 10, vstun = 1):
 	verticalHitstun = vstun
 	hitVector.x = hitVector.x * parent.facing
 	knockbackVector = hitVector
@@ -231,11 +244,13 @@ func getHit(stun = 19, hitVector = Vector2(100,-500), vstun = 60):
 	velocity.x = 0
 	velocity.y = 0
 	if !blocking:
-		parent.HP = parent.HP - 10
+		parent.HP = parent.HP - damage
+		parent.comboDamage += damage
 		attacking = 0
 		hitstun = stun
 		knockback = 35 * parent.facing
 		hit = "hit"
+		parent.comboCounter += 1
 	else:
 		knockback = 35 * parent.facing
 		hitstun = stun
@@ -245,5 +260,7 @@ func endHitstun():
 	if hitstun == 0 && action == "hit":
 		action = "idle"
 		hitboxes.enableHitboxes()
+		parent.comboCounter = 0
+		parent.comboDamage = 0
 	elif hitstun > 0:
 		hitstun = hitstun - 1

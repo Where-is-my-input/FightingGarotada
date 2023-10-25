@@ -4,10 +4,13 @@ extends Node2D
 #@onready var virtualController = $"../VirtualController"
 #var teste = 1
 var virtualController
-var HP = 100
+var HP = 5000
 var playerGroup
 var nearestPlayer
 var facing = 1
+
+var comboCounter = 0
+var comboDamage = 0
 
 var nearestPlayerX = 0
 
