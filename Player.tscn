@@ -1,4 +1,4 @@
-[gd_scene load_steps=195 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=208 format=3 uid="uid://cbi3kopno23pf"]
 
 [ext_resource type="Texture2D" uid="uid://ulee81e28x3l" path="res://Characters/Jill Valentine/anim055.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bi4e6awwr73as" path="res://Characters/Jill Valentine/anim058.png" id="2"]
@@ -94,11 +94,14 @@
 [ext_resource type="Texture2D" uid="uid://m41lc64lemp0" path="res://Characters/Jill Valentine/anim285.png" id="84_6gjs1"]
 [ext_resource type="Texture2D" uid="uid://c8w67a2fty2do" path="res://Characters/Jill Valentine/anim091.png" id="85"]
 [ext_resource type="Texture2D" uid="uid://bknmyfd0f10i5" path="res://Characters/Jill Valentine/anim270.png" id="85_2ckq7"]
+[ext_resource type="Texture2D" uid="uid://c5oe3muf80wdm" path="res://Characters/Jill Valentine/anim286.png" id="85_ql2qa"]
 [ext_resource type="Texture2D" uid="uid://b824t3tnau3y0" path="res://Characters/Jill Valentine/anim093.png" id="86"]
 [ext_resource type="Texture2D" uid="uid://d3du8epaf0dg7" path="res://Characters/Jill Valentine/anim271.png" id="86_qvcts"]
+[ext_resource type="Texture2D" uid="uid://bcnni1o2jiqy" path="res://Characters/Jill Valentine/anim287.png" id="86_tmpq5"]
 [ext_resource type="Texture2D" uid="uid://bod1q6na6uc17" path="res://Characters/Jill Valentine/anim094.png" id="87"]
 [ext_resource type="Texture2D" uid="uid://ccyreswieo5cj" path="res://Characters/Jill Valentine/anim467.png" id="87_1i58r"]
 [ext_resource type="Texture2D" uid="uid://dyabp30xh1b5u" path="res://Characters/Jill Valentine/anim300.png" id="87_3hrqq"]
+[ext_resource type="Texture2D" uid="uid://bcko2x7hd32uw" path="res://Characters/Jill Valentine/anim288.png" id="87_sb4hv"]
 [ext_resource type="Texture2D" uid="uid://0dv7nbvyrr0n" path="res://Characters/Jill Valentine/anim272.png" id="87_t6pfj"]
 [ext_resource type="Texture2D" uid="uid://di6o4soa0nnc5" path="res://Characters/Jill Valentine/anim307.png" id="87_vv5ly"]
 [ext_resource type="Texture2D" uid="uid://bro0nf6onok22" path="res://Characters/Jill Valentine/anim099.png" id="88"]
@@ -132,7 +135,10 @@
 [ext_resource type="Texture2D" uid="uid://c2denn1qw3xce" path="res://Characters/Jill Valentine/anim315.png" id="95_cttb7"]
 [ext_resource type="Texture2D" uid="uid://enx385c22kw3" path="res://Characters/Jill Valentine/anim248.png" id="95_plifq"]
 [ext_resource type="Texture2D" uid="uid://i468qme0060y" path="res://Characters/Jill Valentine/anim249.png" id="96_wi08q"]
+[ext_resource type="Texture2D" uid="uid://dkqgv7qemittp" path="res://Characters/Jill Valentine/anim471.png" id="96_x1pny"]
 [ext_resource type="Texture2D" uid="uid://bi6s8fknsoqxp" path="res://Characters/Jill Valentine/anim250.png" id="97_fj844"]
+[ext_resource type="Texture2D" uid="uid://cinobo6f8c3q2" path="res://Characters/Jill Valentine/anim472.png" id="97_sh75b"]
+[ext_resource type="Texture2D" uid="uid://dowjmole3vkiw" path="res://Characters/Jill Valentine/anim473.png" id="98_qkmqm"]
 [ext_resource type="Texture2D" uid="uid://y1byx0x85g1t" path="res://Characters/Jill Valentine/anim251.png" id="98_u48ne"]
 [ext_resource type="Script" path="res://Hitboxes.gd" id="99_32v1y"]
 [ext_resource type="Texture2D" uid="uid://cvnml7w8tucbi" path="res://Characters/Jill Valentine/anim304.png" id="100_43l6h"]
@@ -525,6 +531,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("85_ql2qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_tmpq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_sb4hv")
+}],
+"loop": true,
+"name": &"cLK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("85_2ckq7")
 }, {
 "duration": 1.0,
@@ -555,6 +575,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"cMP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("96_x1pny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_sh75b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_qkmqm")
+}],
+"loop": true,
+"name": &"crouchHitstun",
 "speed": 5.0
 }, {
 "frames": [{
@@ -758,11 +792,11 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4kfw"]
 resource_local_to_scene = true
-size = Vector2(35, 79)
+size = Vector2(37, 79)
 
 [sub_resource type="RectangleShape2D" id="5"]
 resource_local_to_scene = true
-size = Vector2(49, 51.25)
+size = Vector2(65.5, 23.625)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
 resource_local_to_scene = true
@@ -1071,6 +1105,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [15]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Hitboxes:attackType")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_11del"]
 resource_name = "cLP"
@@ -1158,10 +1204,22 @@ tracks/6/path = NodePath("Hitboxes:stunVector")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0666668),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(5, -100)]
+"values": [Vector2(5, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitboxes:attackType")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_0hsc7"]
@@ -1250,10 +1308,22 @@ tracks/6/path = NodePath("Hitboxes:stunVector")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0500001),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2(5, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitboxes:attackType")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_slfyj"]
@@ -1436,6 +1506,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [20]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Hitboxes:attackType")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 
 [sub_resource type="Animation" id="Animation_esicg"]
 resource_name = "jLP"
@@ -1552,6 +1634,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [5]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Hitboxes:attackType")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 
 [sub_resource type="Animation" id="Animation_mkvxs"]
 resource_name = "jMP"
@@ -1643,6 +1737,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2(5, -10)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitboxes:attackType")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
 }
 
 [sub_resource type="Animation" id="Animation_q1b2y"]
@@ -1905,6 +2011,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [Vector2(5, 0)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Hitboxes:attackType")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_wqo8l"]
 resource_name = "sLP"
@@ -2021,6 +2139,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [5]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Hitboxes:attackType")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_6p61a"]
 resource_name = "sMP"
@@ -2124,6 +2254,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2(5, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Hitboxes:attackType")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_uxkvc"]
@@ -2370,15 +2512,204 @@ tracks/5/keys = {
 "values": [Vector2(-0.5, 11)]
 }
 
+[sub_resource type="Animation" id="Animation_i62ue"]
+resource_name = "cLK"
+length = 0.333335
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"cLK"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitboxes/Hitbox:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("5")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hitboxes/Hitbox:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(65.5, 23.625)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hitboxes/Hitbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(46.75, 40.8125)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Hitboxes:stunVector")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(5, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hitboxes:stun")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [25]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitboxes/Hitbox:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("..")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Hitboxes:attackType")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_1y35r"]
+resource_name = "crouchingBlocking"
+length = 1.00001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"CrouchingBlocking"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_do2c8"]
+resource_name = "crouchHitstun"
+length = 0.333335
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"crouchHitstun"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.116667, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xaxc"]
 resource_local_to_scene = true
 _data = {
 "Idle": SubResource("Animation_eslh7"),
 "WalkForward": SubResource("Animation_3feqb"),
 "cHP": SubResource("Animation_pdhf3"),
+"cLK": SubResource("Animation_i62ue"),
 "cLP": SubResource("Animation_11del"),
 "cMP": SubResource("Animation_0hsc7"),
 "crouch": SubResource("Animation_slfyj"),
+"crouchHitstun": SubResource("Animation_do2c8"),
+"crouchingBlocking": SubResource("Animation_1y35r"),
 "jHP": SubResource("Animation_f0och"),
 "jLP": SubResource("Animation_esicg"),
 "jMP": SubResource("Animation_mkvxs"),
@@ -2417,17 +2748,34 @@ input_1/reset = true
 input_2/name = "HP"
 input_2/auto_advance = false
 input_2/reset = true
+input_3/name = "LK"
+input_3/auto_advance = false
+input_3/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_rutvc"]
+input_0/name = "block"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "hit"
+input_1/auto_advance = false
+input_1/reset = true
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ksbsh"]
 input_0/name = "idle"
 input_0/auto_advance = false
 input_0/reset = true
-input_1/name = "blocking"
+input_1/name = "hit"
 input_1/auto_advance = false
 input_1/reset = true
 input_2/name = "attacking"
 input_2/auto_advance = false
 input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8c3si"]
+animation = &"Jill/crouchingBlocking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rt7ga"]
+animation = &"Jill/crouchHitstun"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oq511"]
 animation = &"Jill/standingFlip"
@@ -2529,6 +2877,9 @@ animation = &"Jill/WalkForward"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qty1o"]
 animation = &"Jill/cHP"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_66o44"]
+animation = &"Jill/cLK"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fh6lj"]
 animation = &"Jill/cLP"
 
@@ -2561,14 +2912,21 @@ animation = &"Jill/standingBlocking"
 animation = &"Jill/walkBack"
 
 [sub_resource type="AnimationNodeBlendTree" id="18"]
+graph_offset = Vector2(485.278, -98.368)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1232, -396)
 nodes/Crouch/node = SubResource("13")
-nodes/Crouch/position = Vector2(1034, -22)
+nodes/Crouch/position = Vector2(780, -100)
 nodes/CrouchAttacking/node = SubResource("AnimationNodeTransition_tno34")
 nodes/CrouchAttacking/position = Vector2(1265, 99)
+nodes/CrouchHit/node = SubResource("AnimationNodeTransition_rutvc")
+nodes/CrouchHit/position = Vector2(1300, -40)
 nodes/CrouchingAction/node = SubResource("AnimationNodeTransition_ksbsh")
 nodes/CrouchingAction/position = Vector2(1485, -22)
+nodes/CrouchingBlocking/node = SubResource("AnimationNodeAnimation_8c3si")
+nodes/CrouchingBlocking/position = Vector2(1020, -60)
+nodes/CrouchingHitstun/node = SubResource("AnimationNodeAnimation_rt7ga")
+nodes/CrouchingHitstun/position = Vector2(1000, 60)
 nodes/Flip/node = SubResource("AnimationNodeAnimation_oq511")
 nodes/Flip/position = Vector2(1100, -660)
 nodes/HP/node = SubResource("AnimationNodeAnimation_kshar")
@@ -2598,11 +2956,13 @@ nodes/State/position = Vector2(1680, 80)
 "nodes/WalkForward /node" = SubResource("12")
 "nodes/WalkForward /position" = Vector2(1060, -560)
 nodes/cHP/node = SubResource("AnimationNodeAnimation_qty1o")
-nodes/cHP/position = Vector2(968, 286)
+nodes/cHP/position = Vector2(880, 140)
+nodes/cLK/node = SubResource("AnimationNodeAnimation_66o44")
+nodes/cLK/position = Vector2(1060, 240)
 nodes/cLP/node = SubResource("AnimationNodeAnimation_fh6lj")
-nodes/cLP/position = Vector2(924, 88)
+nodes/cLP/position = Vector2(860, 0)
 nodes/cMP/node = SubResource("AnimationNodeAnimation_7votr")
-nodes/cMP/position = Vector2(1045, 132)
+nodes/cMP/position = Vector2(720, 40)
 nodes/falling/node = SubResource("AnimationNodeAnimation_qbig3")
 nodes/falling/position = Vector2(1056, 583)
 nodes/hitstun/node = SubResource("AnimationNodeAnimation_0n5x5")
@@ -2620,7 +2980,7 @@ nodes/standingBlocking/node = SubResource("AnimationNodeAnimation_c5rpv")
 nodes/standingBlocking/position = Vector2(1040, -200)
 nodes/walkBack/node = SubResource("AnimationNodeAnimation_epjdj")
 nodes/walkBack/position = Vector2(1240, -520)
-node_connections = [&"output", 0, &"State", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpingAction", 0, &"Jump", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction"]
+node_connections = [&"output", 0, &"State", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpingAction", 0, &"Jump", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun"]
 
 [node name="Player" type="Node2D" groups=["Player"]]
 scale = Vector2(-1, 1)
@@ -2639,7 +2999,7 @@ shape = SubResource("3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 use_parent_material = true
 sprite_frames = SubResource("4")
-animation = &"jHP"
+animation = &"midHitstun"
 offset = Vector2(36, 0)
 
 [node name="Hurtboxes" type="Area2D" parent="CharacterBody2D/AnimatedSprite2D" groups=["Hurtboxes"]]
@@ -2657,14 +3017,14 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("99_32v1y")
-stun = 25
-stunVector = Vector2(350, 550)
-damage = 20
+stun = 10
+stunVector = Vector2(20, 0)
+damage = 5
 
 [node name="Hitbox" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Hitboxes"]
 light_mask = 4
 visibility_layer = 2
-position = Vector2(45.1875, -45.375)
+position = Vector2(46.75, 40.8125)
 shape = SubResource("5")
 disabled = true
 debug_color = Color(1, 0, 0.0784314, 0.419608)
@@ -2685,6 +3045,9 @@ parameters/Attacking/current_index = 2
 parameters/CrouchAttacking/current_state = ""
 parameters/CrouchAttacking/transition_request = ""
 parameters/CrouchAttacking/current_index = -1
+parameters/CrouchHit/current_state = ""
+parameters/CrouchHit/transition_request = ""
+parameters/CrouchHit/current_index = -1
 parameters/CrouchingAction/current_state = ""
 parameters/CrouchingAction/transition_request = ""
 parameters/CrouchingAction/current_index = -1

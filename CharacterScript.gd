@@ -12,6 +12,7 @@ var facing = 1
 var strength = -900
 var attacking = false
 var blocking = false
+var lowBlock = false
 
 #states
 var state = "standing"
@@ -48,6 +49,7 @@ var speed = 500;
 @onready var A_Movement = "parameters/Movement/transition_request"
 @onready var A_Attacking = "parameters/Attacking/transition_request"
 @onready var A_Hit = "parameters/Hit/transition_request"
+@onready var A_CrouchHit = "parameters/CrouchHit/transition_request"
 @onready var A_JumpAttacking = "parameters/JumpAttacking/transition_request"
 @onready var A_CrouchAttacking = "parameters/CrouchAttacking/transition_request"
 @onready var A_IdleState = "parameters/IdleState/transition_request"
@@ -60,6 +62,8 @@ func _ready():
 	animatedTree.active = true
 	
 func _physics_process(_delta):
+	blocking = parent.virtualController.directionX * parent.facing > 0
+	lowBlock = parent.virtualController.directionY > 0
 	endHitstun()
 	gravity_fall()
 	
@@ -134,6 +138,10 @@ func buttonPressed():
 		attack = "HP"
 		attacking = 1
 		return true
+	if parent.virtualController.LK == 1: 
+		attack = "LK"
+		attacking = 1
+		return true
 	return false
 
 func animationFinished():
@@ -143,7 +151,6 @@ func animationFinished():
 	normalCancel = false
 
 func neutralAnimation():
-	blocking = parent.virtualController.directionX * parent.facing > 0
 	if is_on_floor():
 		if crouching:
 			state = "crouching"
@@ -225,15 +232,16 @@ func setAnimation():
 	animatedTree.set(A_JumpAttacking, attack)
 	animatedTree.set(A_CrouchAttacking, attack)
 	animatedTree.set(A_Hit, hit)
+	animatedTree.set(A_CrouchHit, hit)
 	animatedTree.set(A_IdleState, idleState)
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
-		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector, hitboxes.damage)
+		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector, hitboxes.damage, hitboxes.attackType)
 		hitbox.set_deferred("disabled", true)
 		normalCancel = true
 	
-func getHit(stun = 19, hitVector = Vector2(100,-500), damage = 10, vstun = 1):
+func getHit(stun = 19, hitVector = Vector2(100,-500), damage = 10, attackType = 0,vstun = 1):
 	verticalHitstun = vstun
 	hitVector.x = hitVector.x * parent.facing
 	knockbackVector = hitVector
@@ -243,7 +251,7 @@ func getHit(stun = 19, hitVector = Vector2(100,-500), damage = 10, vstun = 1):
 	action = "hit"
 	velocity.x = 0
 	velocity.y = 0
-	if !blocking:
+	if !blocking || (blocking && (!lowBlock && attackType == 1)) || (blocking && (lowBlock && attackType == 2)):
 		parent.HP = parent.HP - damage
 		parent.comboDamage += damage
 		attacking = 0

@@ -1,9 +1,12 @@
 extends Area2D
 
+enum blockType {MID, LOW, HIGH}
+
 var hitboxes;
 @export var stun = 19
 @export var stunVector:Vector2 = Vector2(1,-5)
 @export var damage = 0
+@export var attackType = blockType.MID
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hitboxes = get_children()
