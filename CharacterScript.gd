@@ -31,6 +31,7 @@ var superCancel = true
 
 var hitstun = 0
 var verticalHitstun = 0
+var hitstop = 0
 
 var speed = 500;
 
@@ -53,6 +54,7 @@ var speed = 500;
 @onready var A_JumpAttacking = "parameters/JumpAttacking/transition_request"
 @onready var A_CrouchAttacking = "parameters/CrouchAttacking/transition_request"
 @onready var A_IdleState = "parameters/IdleState/transition_request"
+@onready var A_TimeScale = "parameters/TimeScale/scale"
 #controller
 @onready var virtualController = parent.virtualController
 
@@ -62,10 +64,9 @@ func _ready():
 	animatedTree.active = true
 	
 func _physics_process(_delta):
+	
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
-	endHitstun()
-	gravity_fall()
 	
 	if parent.virtualController != null:
 		if (!attacking || normalCancel && action == "attacking" && buttonPressed()) && action != "hit":
@@ -73,9 +74,19 @@ func _physics_process(_delta):
 		jump()
 		walk()
 		
+	if hitstop > 0:
+		hitstop -= 1
+		animatedTree.set(A_TimeScale, 0)
+		return
+	else:
+		animatedTree.set(A_TimeScale, 1)
+		move_and_slide()
+		flip()
+		setAnimation()
+		endHitstun()
+		gravity_fall()
 #	set_velocity(velocity)
-	set_up_direction(Vector2.UP)
-	move_and_slide()
+#	set_up_direction(Vector2.UP)
 #	if move_and_slide():
 #		if state == "jumping":
 #			velocity.x = speed * facing
@@ -87,8 +98,6 @@ func _physics_process(_delta):
 #				else:
 #					velocity.y = 5000
 #					velocity.x = 500 * facing
-	flip()
-	setAnimation()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -237,11 +246,13 @@ func setAnimation():
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
-		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector, hitboxes.damage, hitboxes.attackType)
+		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector, hitboxes.damage, hitboxes.attackType, hitboxes.hitstop)
 		hitbox.set_deferred("disabled", true)
+		hitstop = hitboxes.hitstop
 		normalCancel = true
 	
-func getHit(stun = 19, hitVector = Vector2(100,-500), damage = 10, attackType = 0,vstun = 1):
+func getHit(stun = 19, hitVector = Vector2(100,-500), damage = 10, attackType = 0, attackHitstop = 5,vstun = 1):
+	hitstop = attackHitstop
 	verticalHitstun = vstun
 	hitVector.x = hitVector.x * parent.facing
 	knockbackVector = hitVector

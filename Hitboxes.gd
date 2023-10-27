@@ -7,6 +7,7 @@ var hitboxes;
 @export var stunVector:Vector2 = Vector2(1,-5)
 @export var damage = 0
 @export var attackType = blockType.MID
+@export var hitstop = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hitboxes = get_children()
