@@ -2990,7 +2990,7 @@ node_connections = [&"output", 0, &"TimeScale", &"Attacking", 0, &"LP", &"Attack
 scale = Vector2(-1, 1)
 script = ExtResource("19")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["CollisionBox"]]
 material = SubResource("2")
 floor_block_on_wall = false
 script = ExtResource("2_bd138")

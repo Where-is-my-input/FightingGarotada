@@ -3,6 +3,8 @@ extends CharacterBody2D
 var crouching = false
 var gravity = 50
 var terminalVelocity = 888
+var maxSpeed = 500
+var deceleration = 150
 var knockback = 0
 var knockbackVector:Vector2 = Vector2(1,1)
 
@@ -74,17 +76,22 @@ func _physics_process(_delta):
 		jump()
 		walk()
 		
-	if hitstop > 0:
-		hitstop -= 1
-		animatedTree.set(A_TimeScale, 0)
-		return
-	else:
-		animatedTree.set(A_TimeScale, 1)
-		move_and_slide()
-		flip()
-		setAnimation()
-		endHitstun()
-		gravity_fall()
+		if hitstop > 0:
+			hitstop -= 1
+			animatedTree.set(A_TimeScale, 0)
+			return
+		else:
+			animatedTree.set(A_TimeScale, 1)
+			if move_and_slide():
+				pass
+#				for i in get_slide_collision_count():
+#					var collision = get_slide_collision(i).get_collider()
+#					if collision.is_in_group("CollisionBox"):
+#						collision.velocity.x += velocity.x / 2
+			flip()
+			setAnimation()
+			endHitstun()
+			gravity_fall()
 #	set_velocity(velocity)
 #	set_up_direction(Vector2.UP)
 #	if move_and_slide():
@@ -194,9 +201,14 @@ func walk():
 	if is_on_floor() && !crouching && !attacking: 
 		velocity.x = parent.virtualController.directionX*speed
 	elif abs(velocity.x) > 0 && state != "jumping":
-		velocity.x = velocity.x - 150 * (velocity.x/speed)
+		velocity.x = velocity.x - deceleration * (velocity.x/speed)
 	elif state != "jumping":
 		velocity.x = 0
+#	if abs(velocity.x) > maxSpeed:
+#		velocity.x = maxSpeed * -parent.facing
+#	elif abs(velocity.x) > 0:
+#		velocity.x -= deceleration * parent.facing
+#		print(velocity.x)
 
 func applyKnockback(knockbackApplied):
 	velocity += knockbackVector
