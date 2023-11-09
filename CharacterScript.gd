@@ -42,6 +42,8 @@ var speed = 500;
 @onready var animatedPlayer = $AnimatedSprite2D/AnimationPlayer
 @onready var hitboxes = $AnimatedSprite2D/Hitboxes
 @onready var animatedTree = $AnimatedSprite2D/AnimationPlayer/AnimationTree
+@onready var collision_box = $CollisionBox
+
 
 #animationTree
 @onready var A_State = "parameters/State/transition_request"
@@ -65,8 +67,7 @@ func _ready():
 	setAnimation()
 	animatedTree.active = true
 	
-func _physics_process(_delta):
-	
+func _physics_process(_delta):	
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
 	
@@ -74,7 +75,6 @@ func _physics_process(_delta):
 		if (!attacking || normalCancel && action == "attacking" && buttonPressed()) && action != "hit":
 			isAttacking()
 		jump()
-		walk()
 		
 		if hitstop > 0:
 			hitstop -= 1
@@ -83,15 +83,21 @@ func _physics_process(_delta):
 		else:
 			animatedTree.set(A_TimeScale, 1)
 			if move_and_slide():
+				for i in get_slide_collision_count():
+					var collision = get_slide_collision(i).get_collider()
+					if collision.is_in_group("CollisionBox"):
+						collision.velocity.x += velocity.x / 2
+						if global_position.y < collision.global_position.y:
+							global_position.x += parent.facing * (collision.getHurtBoxSizeX() / 4)
+#							global_position.y += collision.getHurtBoxSizeY() / 8
+							collision.global_position.x += collision.parent.facing * (collision.getHurtBoxSizeX() / 4)
+#							move_and_slide()
 				pass
-#				for i in get_slide_collision_count():
-#					var collision = get_slide_collision(i).get_collider()
-#					if collision.is_in_group("CollisionBox"):
-#						collision.velocity.x += velocity.x / 2
 			flip()
 			setAnimation()
 			endHitstun()
 			gravity_fall()
+			walk()
 #	set_velocity(velocity)
 #	set_up_direction(Vector2.UP)
 #	if move_and_slide():
@@ -295,3 +301,9 @@ func endHitstun():
 		parent.comboDamage = 0
 	elif hitstun > 0:
 		hitstun = hitstun - 1
+
+func getHurtBoxSizeX():
+	return collision_box.shape.size.x
+	
+func getHurtBoxSizeY():
+	return collision_box.shape.size.y
