@@ -178,7 +178,7 @@ shader_parameter/tolerance = 0.5
 
 [sub_resource type="RectangleShape2D" id="3"]
 resource_local_to_scene = true
-size = Vector2(30, 75)
+size = Vector2(0, 0)
 
 [sub_resource type="SpriteFrames" id="4"]
 animations = [{
@@ -792,11 +792,11 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4kfw"]
 resource_local_to_scene = true
-size = Vector2(37, 79)
+size = Vector2(75, 76)
 
 [sub_resource type="RectangleShape2D" id="5"]
 resource_local_to_scene = true
-size = Vector2(65.5, 23.625)
+size = Vector2(74.1563, 12.25)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
 resource_local_to_scene = true
@@ -2984,7 +2984,7 @@ nodes/standingBlocking/node = SubResource("AnimationNodeAnimation_c5rpv")
 nodes/standingBlocking/position = Vector2(1040, -200)
 nodes/walkBack/node = SubResource("AnimationNodeAnimation_epjdj")
 nodes/walkBack/position = Vector2(1240, -520)
-node_connections = [&"output", 0, &"TimeScale", &"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpingAction", 0, &"Jump", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"TimeScale", 0, &"State"]
+node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpingAction", 0, &"Jump", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"TimeScale", 0, &"State", &"output", 0, &"TimeScale"]
 
 [node name="Player" type="Node2D" groups=["Player"]]
 scale = Vector2(-1, 1)
@@ -2997,13 +2997,13 @@ script = ExtResource("2_bd138")
 jumpCancel = true
 
 [node name="CollisionBox" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 13.5)
 shape = SubResource("3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 use_parent_material = true
 sprite_frames = SubResource("4")
-animation = &"StandingTurnAround"
+animation = &"sHP"
+frame = 6
 offset = Vector2(36, 0)
 
 [node name="Hurtboxes" type="Area2D" parent="CharacterBody2D/AnimatedSprite2D" groups=["Hurtboxes"]]
@@ -3013,7 +3013,7 @@ collision_mask = 0
 [node name="Hurtbox" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Hurtboxes"]
 light_mask = 2
 visibility_layer = 4
-position = Vector2(-0.5, 11)
+position = Vector2(18.5, 14)
 shape = SubResource("RectangleShape2D_x4kfw")
 debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 
@@ -3021,14 +3021,14 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("99_32v1y")
-stun = 10
-stunVector = Vector2(20, 0)
+stun = 38
+stunVector = Vector2(5, 0)
 damage = 5
 
 [node name="Hitbox" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Hitboxes"]
 light_mask = 4
 visibility_layer = 2
-position = Vector2(46.75, 40.8125)
+position = Vector2(74.0781, -15.875)
 shape = SubResource("5")
 disabled = true
 debug_color = Color(1, 0, 0.0784314, 0.419608)
@@ -3041,6 +3041,11 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D/AnimatedSprite2D/AnimationPlayer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_yv7pk"),
+"Jill": SubResource("AnimationLibrary_7xaxc")
+}
 tree_root = SubResource("18")
 anim_player = NodePath("..")
 parameters/Attacking/current_state = "HP"

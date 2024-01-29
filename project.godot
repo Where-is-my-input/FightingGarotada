@@ -12,7 +12,7 @@ config_version=5
 
 config/name="FightingGarotada"
 run/main_scene="res://Bruh.tscn"
-config/features=PackedStringArray("4.1")
+config/features=PackedStringArray("4.2")
 config/icon="res://img/LDG.png"
 
 [display]

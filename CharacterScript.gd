@@ -39,7 +39,6 @@ var speed = 500;
 
 @onready var parent = $".."
 @onready var animatedSprite = $AnimatedSprite2D
-@onready var animatedPlayer = $AnimatedSprite2D/AnimationPlayer
 @onready var hitboxes = $AnimatedSprite2D/Hitboxes
 @onready var animatedTree = $AnimatedSprite2D/AnimationPlayer/AnimationTree
 @onready var collision_box = $CollisionBox
