@@ -42,6 +42,7 @@ var speed = 500;
 @onready var hitboxes = $AnimatedSprite2D/Hitboxes
 @onready var animatedTree = $AnimatedSprite2D/AnimationPlayer/AnimationTree
 @onready var collision_box = $CollisionBox
+@onready var marker_2d = $Marker2D
 
 
 #animationTree
@@ -65,8 +66,12 @@ var speed = 500;
 func _ready():
 	setAnimation()
 	animatedTree.active = true
-	
-func _physics_process(_delta):	
+
+#func _process(delta):
+	#print(marker_2d.global_position)
+
+func _physics_process(_delta):
+	print(isGrounded())
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
 	
@@ -110,6 +115,16 @@ func _physics_process(_delta):
 #				else:
 #					velocity.y = 5000
 #					velocity.x = 500 * facing
+
+func isGrounded():
+	var raycastLength: float = 1
+	var raycastTo: Vector2 = marker_2d.global_position + Vector2(0, raycastLength)
+	
+	var spaceState = get_world_2d().direct_space_state
+	var create = PhysicsRayQueryParameters2D.create(marker_2d.global_position, raycastTo)
+	var rayResult = spaceState.intersect_ray(create)
+	
+	return rayResult != null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
