@@ -39,6 +39,7 @@ func _process(_delta):
 	directionY = Input.get_action_strength(down)-Input.get_action_strength(up)
 	
 	readButtons()
+	#print(LP, MP, HP, LK, MK, HK)
 
 func readButtons():
 	if Input.get_action_strength(inputLP) > 0:

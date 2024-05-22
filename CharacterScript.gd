@@ -71,7 +71,7 @@ func _ready():
 	#print(marker_2d.global_position)
 
 func _physics_process(_delta):
-	print(isGrounded())
+	#print(isGrounded())
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
 	
@@ -176,6 +176,14 @@ func buttonPressed():
 		return true
 	if parent.virtualController.LK == 1: 
 		attack = "LK"
+		attacking = 1
+		return true
+	if parent.virtualController.MK == 1: 
+		attack = "MK"
+		attacking = 1
+		return true
+	if parent.virtualController.HK == 1: 
+		attack = "HK"
 		attacking = 1
 		return true
 	return false
