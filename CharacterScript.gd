@@ -67,11 +67,7 @@ func _ready():
 	setAnimation()
 	animatedTree.active = true
 
-#func _process(delta):
-	#print(marker_2d.global_position)
-
-func _physics_process(_delta):
-	#print(isGrounded())
+func _physics_process(delta):
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
 	
@@ -83,20 +79,31 @@ func _physics_process(_delta):
 		if hitstop > 0:
 			hitstop -= 1
 			animatedTree.set(A_TimeScale, 0)
-			return
+			#return
 		else:
 			animatedTree.set(A_TimeScale, 1)
 			if move_and_slide():
 				for i in get_slide_collision_count():
-					var collision = get_slide_collision(i).get_collider()
+					var slideCollision = get_slide_collision(i)
+					if slideCollision == null: continue
+					var collision = slideCollision.get_collider()
 					if collision.is_in_group("CollisionBox"):
+#https://www.reddit.com/r/godot/comments/dwcs2l/2d_fighting_game_push_collision/
+#var c = move_and_collide(velocity * delta)
+#if c && c.normal != null:
+#velocity = velocity.slide(c.normal)
+#var motion = c.remainder.slide(c.normal)
+#move_and_collide(motion)
 						collision.velocity.x += velocity.x / 2
+						var pushDirection = 1
+						if global_position.x < collision.global_position.x:
+							pushDirection = -1
+						print(pushDirection)
 						if global_position.y < collision.global_position.y:
-							global_position.x += parent.facing * (collision.getHurtBoxSizeX() / 4)
-#							global_position.y += collision.getHurtBoxSizeY() / 8
-							collision.global_position.x += collision.parent.facing * (collision.getHurtBoxSizeX() / 4)
-#							move_and_slide()
-				pass
+							global_position.x += pushDirection * (collision.getHurtBoxSizeX() / 2)
+							collision.global_position.x += pushDirection * -1 * (collision.getHurtBoxSizeX() / 4)
+							move_and_slide()
+							#ApplyImpulse(Vector2(global_position.x - collision.global_position.x, 0).normalized())
 			flip()
 			setAnimation()
 			endHitstun()
