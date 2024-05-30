@@ -3,6 +3,7 @@ extends Control
 @onready var button = $btnRemap
 @onready var text = $lblText
 @onready var txtButton = $lblButton
+@onready var tmr_set = $tmrSet
 
 @export var player: String = "1"
 
@@ -43,10 +44,20 @@ func remapButtons():
 	txtButton.text = str(inputArray[actionIndex])
 
 func _input(event):
-	if remapping:
-		if event is InputEventKey:
+	if remapping && tmr_set.is_stopped():
+		if event is InputEventKey || event is InputEventJoypadButton:
 			if event.pressed:
-				InputMap.action_erase_events(currentAction)
-				InputMap.action_add_event(currentAction, event)
-				print(currentAction, " - set")
-				remapButtons()
+				remmapEvent(event)
+		elif event is InputEventJoypadMotion:
+			if event.axis_value != 0:
+				remmapEvent(event)
+
+func remmapEvent(event):
+	InputMap.action_erase_events(currentAction)
+	InputMap.action_add_event(currentAction, event)
+	print(currentAction, " - set")
+	tmr_set.start(0.25)
+	remapButtons()
+
+func _on_tmr_set_timeout():
+	tmr_set.stop()

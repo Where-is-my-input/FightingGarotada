@@ -27,3 +27,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "LP"
 horizontal_alignment = 1
+
+[node name="tmrSet" type="Timer" parent="."]
+
+[connection signal="timeout" from="tmrSet" to="." method="_on_tmr_set_timeout"]
