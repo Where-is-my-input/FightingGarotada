@@ -1,6 +1,150 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0cqqg2xcvlfi"]
+[gd_scene load_steps=14 format=3 uid="uid://d0cqqg2xcvlfi"]
 
 [ext_resource type="Script" path="res://virtualController.gd" id="1_fummv"]
+[ext_resource type="Texture2D" uid="uid://drk7cbw0qf4cp" path="res://img/sprites/input_viewer/input-lp.png" id="2_3dwr2"]
+[ext_resource type="Texture2D" uid="uid://b7blyfg5x38ap" path="res://img/sprites/input_viewer/input-mp.png" id="3_3jaao"]
+[ext_resource type="Texture2D" uid="uid://bh5p7a8h5jxjs" path="res://img/sprites/input_viewer/input-hp.png" id="4_p5grm"]
+[ext_resource type="Texture2D" uid="uid://c7cr3gqkh86k3" path="res://img/sprites/input_viewer/input-lk.png" id="5_fnivq"]
+[ext_resource type="Texture2D" uid="uid://dyyh6biy7i388" path="res://img/sprites/input_viewer/input-mk.png" id="6_8u400"]
+[ext_resource type="Texture2D" uid="uid://bhesaj3e26rur" path="res://img/sprites/input_viewer/input-hk.png" id="7_pid38"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufgrh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3dwr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73jix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3jaao")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lspt6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p5grm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_twitr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fnivq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lp0pu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8u400")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2l53l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_pid38")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="VirtualController" type="Node2D"]
+position = Vector2(120, 88)
 script = ExtResource("1_fummv")
+
+[node name="VisualController" type="Node2D" parent="."]
+
+[node name="sprLP" type="AnimatedSprite2D" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+sprite_frames = SubResource("SpriteFrames_ufgrh")
+
+[node name="sprMP" type="AnimatedSprite2D" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(32, 0)
+sprite_frames = SubResource("SpriteFrames_73jix")
+
+[node name="sprHP" type="AnimatedSprite2D" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(64, 0)
+sprite_frames = SubResource("SpriteFrames_lspt6")
+
+[node name="sprLK" type="AnimatedSprite2D" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(0, 32)
+sprite_frames = SubResource("SpriteFrames_twitr")
+
+[node name="sprMK" type="AnimatedSprite2D" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_lp0pu")
+
+[node name="sprHK" type="AnimatedSprite2D" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(64, 32)
+sprite_frames = SubResource("SpriteFrames_2l53l")
+
+[node name="lblUp" type="Label" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+offset_left = -95.0
+offset_top = 7.0
+offset_right = -55.0
+offset_bottom = 76.0
+rotation = -1.57096
+theme_override_font_sizes/font_size = 50
+text = ">"
+
+[node name="lblDown" type="Label" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+offset_left = -24.0
+offset_top = 33.0
+offset_right = 16.0
+offset_bottom = 102.0
+rotation = -4.71217
+theme_override_font_sizes/font_size = 50
+text = ">"
+
+[node name="lblRight" type="Label" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+offset_left = -47.0
+offset_top = -16.0
+offset_right = -7.0
+offset_bottom = 53.0
+rotation = 0.000865292
+theme_override_font_sizes/font_size = 50
+text = ">"
+
+[node name="lblLeft" type="Label" parent="VisualController"]
+modulate = Color(1, 1, 1, 0.196078)
+offset_left = -72.0
+offset_top = 56.0
+offset_right = -32.0
+offset_bottom = 125.0
+rotation = -3.14176
+theme_override_font_sizes/font_size = 50
+text = ">"

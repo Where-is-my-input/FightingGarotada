@@ -100,6 +100,7 @@ func _physics_process(delta):
 							pushDirection = -1
 						print(pushDirection)
 						if global_position.y < collision.global_position.y:
+							global_position.y += getHurtBoxSizeY() / 4
 							global_position.x += pushDirection * (collision.getHurtBoxSizeX() / 2)
 							collision.global_position.x += pushDirection * -1 * (collision.getHurtBoxSizeX() / 4)
 							move_and_slide()
@@ -243,7 +244,6 @@ func walk():
 #		velocity.x = maxSpeed * -parent.facing
 #	elif abs(velocity.x) > 0:
 #		velocity.x -= deceleration * parent.facing
-#		print(velocity.x)
 
 func applyKnockback(knockbackApplied):
 	velocity += knockbackVector

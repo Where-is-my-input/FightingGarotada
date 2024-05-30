@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceajyw4r80aev"]
+
+[ext_resource type="Script" path="res://Scenes/menu/buttonRemap.gd" id="1_ji83h"]
+
+[node name="inputRemapper" type="VBoxContainer"]
+script = ExtResource("1_ji83h")
+
+[node name="lblPlayer" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Player 1"
+horizontal_alignment = 1
+
+[node name="btnRemap" type="Button" parent="."]
+layout_mode = 2
+text = "Remap Buttons"
+
+[node name="lblText" type="Label" parent="."]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Press a Button to remap:"
+
+[node name="lblButton" type="Label" parent="."]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "LP"
+horizontal_alignment = 1

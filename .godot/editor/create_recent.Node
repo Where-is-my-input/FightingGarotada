@@ -1,6 +1,14 @@
+TextureRect
+VBoxContainer
+Button
+Label
+HBoxContainer
+Node2D
+AnimatedSprite2D
+GridContainer
+CenterContainer
 CollisionShape2D
 Node
 Marker2D
-Label
 ProgressBar
 Area2D

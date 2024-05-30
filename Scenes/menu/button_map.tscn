@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://cewoaklc61xg2"]
+
+[ext_resource type="Script" path="res://Scenes/menu/button_map.gd" id="1_q0bfq"]
+
+[node name="ButtonMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q0bfq")
+actionItems = Array[String](["2", "8", "4", "6", "LP", "MP", "HP", "LK", "MK", "HK"])
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Botão"

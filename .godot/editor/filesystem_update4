@@ -2,5 +2,11 @@ res://default_env.tres
 res://Player.tscn
 res://Bruh.tscn
 res://healthBars.tscn
+res://Scenes/menu/main_menu.tscn
+res://Scenes/menu/button_map.tscn
 res://virtualController.tscn
-res://CharacterScript.gd
+res://Scenes/menu/button_remap.tscn
+res://Scenes/menu/buttonRemap.gd
+res://Scenes/menu/input_remapper.tscn
+res://Scenes/menu/main_menu.gd
+res://Scenes/menu/menuRemap.gd
