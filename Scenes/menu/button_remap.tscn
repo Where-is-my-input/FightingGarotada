@@ -33,16 +33,23 @@ layout_mode = 2
 player = "2"
 array = ["p2_2", "p2_4", "p2_8", "p2_6", "p2LP", "p2MP", "p2HP", "p2LK", "p2MK", "p2HK"]
 
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="VirtualController" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control" instance=ExtResource("2_o3vnq")]
+position = Vector2(-1006, 328)
+
+[node name="VirtualController2" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control" instance=ExtResource("2_o3vnq")]
+position = Vector2(-798, 328)
+player = 2
+
 [node name="btnMainMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "Main Menu"
-
-[node name="VirtualController" parent="." instance=ExtResource("2_o3vnq")]
-position = Vector2(152, 328)
-
-[node name="VirtualController2" parent="." instance=ExtResource("2_o3vnq")]
-position = Vector2(360, 328)
-player = 2
 
 [connection signal="pressed" from="VBoxContainer/btnMainMenu" to="." method="_on_btn_main_menu_pressed"]

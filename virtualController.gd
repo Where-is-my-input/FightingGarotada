@@ -57,16 +57,20 @@ func modulateVisualController():
 	if directionX != 0:
 		if directionX > 0:
 			modulateSprite(lbl_right, 1)
+			modulateSprite(lbl_left, 0)
 		else:
 			modulateSprite(lbl_left, 1)
+			modulateSprite(lbl_right, 0)
 	else:
 		modulateSprite(lbl_left, 0)
 		modulateSprite(lbl_right, 0)
 	if directionY != 0:
 		if directionY > 0:
 			modulateSprite(lbl_down, 1)
+			modulateSprite(lbl_up, 0)
 		else:
 			modulateSprite(lbl_up, 1)
+			modulateSprite(lbl_down, 0)
 	else:
 		modulateSprite(lbl_down, 0)
 		modulateSprite(lbl_up, 0)

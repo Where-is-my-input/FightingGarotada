@@ -4,10 +4,12 @@ extends Node2D
 #@onready var virtualController = $"../VirtualController"
 #var teste = 1
 var virtualController
-var HP = 5000
+var HP = 500
 var playerGroup
 var nearestPlayer
 var facing = 1
+
+signal gotHit()
 
 var comboCounter = 0
 var comboDamage = 0
@@ -44,3 +46,8 @@ func flip():
 	else:
 		facing = 1
 	
+func getHit(damage = 20):
+	HP = HP - damage
+	comboDamage += damage
+	comboCounter += 1
+	gotHit.emit()

@@ -19,7 +19,7 @@ offset_top = 42.0
 offset_right = 426.0
 offset_bottom = 70.0
 scale = Vector2(-1, -1)
-max_value = 5000.0
+max_value = 500.0
 value = 70.0
 show_percentage = false
 
@@ -30,7 +30,7 @@ offset_left = 292.0
 offset_top = 15.0
 offset_right = 492.0
 offset_bottom = 43.0
-max_value = 5000.0
+max_value = 500.0
 value = 100.0
 show_percentage = false
 
@@ -65,3 +65,10 @@ offset_top = 69.0
 offset_right = 378.0
 offset_bottom = 95.0
 text = "0"
+
+[node name="tmComboPlayer1" type="Timer" parent="."]
+
+[node name="tmComboPlayer2" type="Timer" parent="."]
+
+[connection signal="timeout" from="tmComboPlayer1" to="." method="_on_tm_combo_player_1_timeout"]
+[connection signal="timeout" from="tmComboPlayer2" to="." method="_on_tm_combo_player_2_timeout"]

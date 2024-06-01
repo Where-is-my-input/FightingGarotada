@@ -1,6 +1,7 @@
 Timer
-TextureRect
+Control
 VBoxContainer
+TextureRect
 Button
 Label
 HBoxContainer
@@ -11,5 +12,3 @@ CenterContainer
 CollisionShape2D
 Node
 Marker2D
-ProgressBar
-Area2D

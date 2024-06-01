@@ -98,7 +98,6 @@ func _physics_process(delta):
 						var pushDirection = 1
 						if global_position.x < collision.global_position.x:
 							pushDirection = -1
-						print(pushDirection)
 						if global_position.y < collision.global_position.y:
 							global_position.y += getHurtBoxSizeY() / 4
 							global_position.x += pushDirection * (collision.getHurtBoxSizeX() / 2)
@@ -310,13 +309,11 @@ func getHit(stun = 19, hitVector = Vector2(100,-500), damage = 10, attackType = 
 	velocity.x = 0
 	velocity.y = 0
 	if !blocking || (blocking && (!lowBlock && attackType == 1)) || (blocking && (lowBlock && attackType == 2)):
-		parent.HP = parent.HP - damage
-		parent.comboDamage += damage
 		attacking = 0
 		hitstun = stun
 		knockback = 35 * parent.facing
 		hit = "hit"
-		parent.comboCounter += 1
+		parent.getHit(damage)
 	else:
 		knockback = 35 * parent.facing
 		hitstun = stun
