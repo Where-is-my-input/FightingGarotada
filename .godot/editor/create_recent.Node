@@ -1,9 +1,9 @@
 Timer
+Label
 Control
 VBoxContainer
 TextureRect
 Button
-Label
 HBoxContainer
 Node2D
 AnimatedSprite2D

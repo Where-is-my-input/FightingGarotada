@@ -10,9 +10,12 @@ var nearestPlayer
 var facing = 1
 
 signal gotHit()
+signal KO()
 
 var comboCounter = 0
 var comboDamage = 0
+
+var KOed = false
 
 var nearestPlayerX = 0
 
@@ -51,3 +54,6 @@ func getHit(damage = 20):
 	comboDamage += damage
 	comboCounter += 1
 	gotHit.emit()
+	if HP <= 0 && !KOed:
+		KOed = true
+		KO.emit()

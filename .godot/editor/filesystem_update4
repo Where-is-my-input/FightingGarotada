@@ -4,12 +4,9 @@ res://Scenes/menu/buttonRemap.gd
 res://Bruh.tscn
 res://healthBars.tscn
 res://Scenes/menu/main_menu.tscn
-res://Scenes/menu/button_map.tscn
 res://virtualController.tscn
 res://Scenes/menu/button_remap.tscn
 res://Scenes/menu/input_remapper.tscn
-res://virtualController.gd
-res://CharacterScript.gd
-res://scripts/global.gd
 res://healthBars.gd
 res://Player.gd
+res://scripts/global.gd
