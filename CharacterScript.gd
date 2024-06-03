@@ -169,27 +169,27 @@ func isAttacking():
 	action = "idle"
 
 func buttonPressed():
-	if parent.virtualController.LP == 1:
+	if parent.virtualController.LP == 1 || parent.virtualController.bufferedAction == "LP":
 		attack = "LP"
 		attacking = 1
 		return true
-	if parent.virtualController.MP == 1: 
+	if parent.virtualController.MP == 1 || parent.virtualController.bufferedAction == "MP": 
 		attack = "MP"
 		attacking = 1
 		return true
-	if parent.virtualController.HP == 1: 
+	if parent.virtualController.HP == 1 || parent.virtualController.bufferedAction == "HP": 
 		attack = "HP"
 		attacking = 1
 		return true
-	if parent.virtualController.LK == 1: 
+	if parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK": 
 		attack = "LK"
 		attacking = 1
 		return true
-	if parent.virtualController.MK == 1: 
+	if parent.virtualController.MK == 1 || parent.virtualController.bufferedAction == "MK": 
 		attack = "MK"
 		attacking = 1
 		return true
-	if parent.virtualController.HK == 1: 
+	if parent.virtualController.HK == 1 || parent.virtualController.bufferedAction == "HK": 
 		attack = "HK"
 		attacking = 1
 		return true

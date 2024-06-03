@@ -38,6 +38,9 @@ var LK = 0
 var MK = 0
 var HK = 0
 
+var bufferedAction = ""
+@onready var tmr_buffer = $tmrBuffer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var child = self.get_child(1)
@@ -87,31 +90,37 @@ func _process(_delta):
 func readButtons():
 	if Input.get_action_strength(inputLP) > 0:
 		LP += 1
+		if LP == 1: setBufferedAction("LP")
 	else:
 		LP = 0
 		
 	if Input.get_action_strength(inputMP) > 0:
 		MP += 1
+		if MP == 1: setBufferedAction("MP")
 	else:
 		MP = 0
 		
 	if Input.get_action_strength(inputHP) > 0:
 		HP += 1
+		if HP == 1: setBufferedAction("HP")
 	else:
 		HP = 0
 		
 	if Input.get_action_strength(inputLK) > 0:
 		LK += 1
+		if LK == 1: setBufferedAction("LK")
 	else:
 		LK = 0
 		
 	if Input.get_action_strength(inputMK) > 0:
 		MK += 1
+		if MK == 1: setBufferedAction("MK")
 	else:
 		MK = 0
 		
 	if Input.get_action_strength(inputHK) > 0:
 		HK += 1
+		if HK == 1: setBufferedAction("HK")
 	else:
 		HK = 0
 	
@@ -127,3 +136,10 @@ func setInputsP2():
 	down = "p2_2"
 	left = "p2_4"
 	right = "p2_6"
+
+func setBufferedAction(v):
+	bufferedAction = v
+	tmr_buffer.start(0.04)
+
+func _on_tmr_buffer_timeout():
+	bufferedAction = ""
