@@ -4,6 +4,6 @@ res://Scenes/menu/buttonRemap.gd
 res://Player.tscn
 res://Bruh.tscn
 res://Scenes/menu/main_menu.tscn
-res://Hitboxes.gd
-res://Player.gd
+res://Scenes/menu/main_menu.gd
 res://healthBars.tscn
+res://healthBars.gd

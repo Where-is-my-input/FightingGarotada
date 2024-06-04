@@ -1,21 +1,20 @@
 extends Control
 
-
-@onready var hpBarP1 = $HPPlayer1
-@onready var hpBarP2 = $HPPlayer2
-@onready var combo_counter_1 = $ComboCounter1
-@onready var combo_damage_1 = $ComboDamage1
-@onready var combo_counter_2 = $ComboCounter2
-@onready var combo_damage_2 = $ComboDamage2
-@onready var tm_combo_player_1 = $tmComboPlayer1
-@onready var tm_combo_player_2 = $tmComboPlayer2
-@onready var lb_ko = $lbKO
-@onready var lbl_player_wins = $lblPlayerWins
-@onready var tmr_ko = $tmrKO
-@onready var lbl_player_1_win_count = $lblPlayer1WinCount
-@onready var lbl_player_2_win_count = $lblPlayer2WinCount
-@onready var lbl_timer = $lblTimer
-@onready var tmr_timer = $tmrTimer
+@onready var hpBarP1 = $CanvasLayer/HPPlayer1
+@onready var hpBarP2 = $CanvasLayer/HPPlayer2
+@onready var combo_counter_1 = $CanvasLayer/ComboCounter1
+@onready var combo_damage_1 = $CanvasLayer/ComboDamage1
+@onready var combo_counter_2 = $CanvasLayer/ComboCounter2
+@onready var combo_damage_2 = $CanvasLayer/ComboDamage2
+@onready var tm_combo_player_1 = $CanvasLayer/tmComboPlayer1
+@onready var tm_combo_player_2 = $CanvasLayer/tmComboPlayer2
+@onready var lb_ko = $CanvasLayer/lbKO
+@onready var lbl_player_wins = $CanvasLayer/lblPlayerWins
+@onready var tmr_ko = $CanvasLayer/tmrKO
+@onready var lbl_player_1_win_count = $CanvasLayer/lblPlayer1WinCount
+@onready var lbl_player_2_win_count = $CanvasLayer/lblPlayer2WinCount
+@onready var lbl_timer = $CanvasLayer/lblTimer
+@onready var tmr_timer = $CanvasLayer/tmrTimer
 
 var player1
 var player2

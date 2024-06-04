@@ -11,9 +11,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s14ui")
 
-[node name="HPPlayer1" type="ProgressBar" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HPPlayer1" type="ProgressBar" parent="CanvasLayer"]
 modulate = Color(0.835294, 0.631373, 0, 1)
-layout_mode = 0
 offset_left = 226.0
 offset_top = 42.0
 offset_right = 426.0
@@ -23,9 +24,8 @@ max_value = 5000.0
 value = 70.0
 show_percentage = false
 
-[node name="HPPlayer2" type="ProgressBar" parent="."]
+[node name="HPPlayer2" type="ProgressBar" parent="CanvasLayer"]
 modulate = Color(0.835294, 0.631373, 0, 1)
-layout_mode = 0
 offset_left = 292.0
 offset_top = 15.0
 offset_right = 492.0
@@ -34,44 +34,39 @@ max_value = 5000.0
 value = 100.0
 show_percentage = false
 
-[node name="ComboCounter1" type="Label" parent="."]
-layout_mode = 0
+[node name="ComboCounter1" type="Label" parent="CanvasLayer"]
 offset_left = 176.0
 offset_top = 52.0
 offset_right = 216.0
 offset_bottom = 78.0
 text = "0"
 
-[node name="ComboDamage1" type="Label" parent="."]
-layout_mode = 0
+[node name="ComboDamage1" type="Label" parent="CanvasLayer"]
 offset_left = 158.0
 offset_top = 70.0
 offset_right = 198.0
 offset_bottom = 96.0
 text = "0"
 
-[node name="ComboCounter2" type="Label" parent="."]
-layout_mode = 0
+[node name="ComboCounter2" type="Label" parent="CanvasLayer"]
 offset_left = 320.0
 offset_top = 51.0
 offset_right = 360.0
 offset_bottom = 77.0
 text = "0"
 
-[node name="ComboDamage2" type="Label" parent="."]
-layout_mode = 0
+[node name="ComboDamage2" type="Label" parent="CanvasLayer"]
 offset_left = 338.0
 offset_top = 69.0
 offset_right = 378.0
 offset_bottom = 95.0
 text = "0"
 
-[node name="tmComboPlayer1" type="Timer" parent="."]
+[node name="tmComboPlayer1" type="Timer" parent="CanvasLayer"]
 
-[node name="tmComboPlayer2" type="Timer" parent="."]
+[node name="tmComboPlayer2" type="Timer" parent="CanvasLayer"]
 
-[node name="lbKO" type="Label" parent="."]
-layout_mode = 0
+[node name="lbKO" type="Label" parent="CanvasLayer"]
 offset_left = 187.0
 offset_top = 120.0
 offset_right = 272.0
@@ -82,8 +77,7 @@ text = "KO!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="lblPlayerWins" type="Label" parent="."]
-layout_mode = 0
+[node name="lblPlayerWins" type="Label" parent="CanvasLayer"]
 offset_left = 81.0
 offset_top = 211.0
 offset_right = 413.0
@@ -93,10 +87,9 @@ text = "Player 1 wins!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tmrKO" type="Timer" parent="."]
+[node name="tmrKO" type="Timer" parent="CanvasLayer"]
 
-[node name="lblPlayer1WinCount" type="Label" parent="."]
-layout_mode = 0
+[node name="lblPlayer1WinCount" type="Label" parent="CanvasLayer"]
 offset_left = 190.0
 offset_top = 1.0
 offset_right = 343.0
@@ -105,8 +98,7 @@ scale = Vector2(0.172656, 0.172656)
 theme_override_font_sizes/font_size = 50
 text = "0 wins"
 
-[node name="lblPlayer2WinCount" type="Label" parent="."]
-layout_mode = 0
+[node name="lblPlayer2WinCount" type="Label" parent="CanvasLayer"]
 offset_left = 301.0
 offset_top = 1.0
 offset_right = 454.0
@@ -115,8 +107,7 @@ scale = Vector2(0.169662, 0.169662)
 theme_override_font_sizes/font_size = 50
 text = "0 wins"
 
-[node name="lblTimer" type="Label" parent="."]
-layout_mode = 0
+[node name="lblTimer" type="Label" parent="CanvasLayer"]
 offset_left = 230.0
 offset_top = -9.0
 offset_right = 288.0
@@ -124,9 +115,9 @@ offset_bottom = 60.0
 theme_override_font_sizes/font_size = 50
 text = "99"
 
-[node name="tmrTimer" type="Timer" parent="."]
+[node name="tmrTimer" type="Timer" parent="CanvasLayer"]
 
-[connection signal="timeout" from="tmComboPlayer1" to="." method="_on_tm_combo_player_1_timeout"]
-[connection signal="timeout" from="tmComboPlayer2" to="." method="_on_tm_combo_player_2_timeout"]
-[connection signal="timeout" from="tmrKO" to="." method="_on_tmr_ko_timeout"]
-[connection signal="timeout" from="tmrTimer" to="." method="_on_tmr_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/tmComboPlayer1" to="." method="_on_tm_combo_player_1_timeout"]
+[connection signal="timeout" from="CanvasLayer/tmComboPlayer2" to="." method="_on_tm_combo_player_2_timeout"]
+[connection signal="timeout" from="CanvasLayer/tmrKO" to="." method="_on_tmr_ko_timeout"]
+[connection signal="timeout" from="CanvasLayer/tmrTimer" to="." method="_on_tmr_timer_timeout"]

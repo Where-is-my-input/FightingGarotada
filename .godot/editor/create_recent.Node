@@ -1,3 +1,5 @@
+CanvasLayer
+Camera2D
 Timer
 Label
 Control
@@ -11,4 +13,3 @@ GridContainer
 CenterContainer
 CollisionShape2D
 Node
-Marker2D
