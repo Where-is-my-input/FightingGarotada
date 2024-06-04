@@ -1,5 +1,6 @@
-CanvasLayer
 Camera2D
+RemoteTransform2D
+CanvasLayer
 Timer
 Label
 Control
@@ -11,5 +12,3 @@ Node2D
 AnimatedSprite2D
 GridContainer
 CenterContainer
-CollisionShape2D
-Node

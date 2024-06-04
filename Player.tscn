@@ -1958,7 +1958,7 @@ tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(15, 0)]
 }
 tracks/9/type = "value"
@@ -4604,10 +4604,10 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("99_32v1y")
-stun = 25
-stunVector = Vector2(350, 550)
-damage = 500
-attackType = 2
+stun = 35
+stunVector = Vector2(15, 0)
+damage = 175
+attackType = 1
 hitstop = 15
 
 [node name="Hitbox" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Hitboxes"]
@@ -4670,5 +4670,7 @@ parameters/TimeScale/scale = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
 position = Vector2(0, 49)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [connection signal="area_entered" from="CharacterBody2D/AnimatedSprite2D/Hitboxes" to="CharacterBody2D" method="_on_hitboxes_area_entered"]

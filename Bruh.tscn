@@ -60,7 +60,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x1wml")
 
 [node name="Main" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [270.0]
+metadata/_edit_horizontal_guides_ = [270.0, 875.0]
 
 [node name="Label" type="Label" parent="."]
 offset_left = 738.0
@@ -81,18 +81,20 @@ offset_right = 704.0
 offset_bottom = 272.0
 
 [node name="VirtualController" parent="HPBars" instance=ExtResource("1_qqqc0")]
-position = Vector2(106, 69)
+position = Vector2(140, 264)
 
 [node name="Player" parent="HPBars/VirtualController" instance=ExtResource("3")]
-position = Vector2(9, 156)
+position = Vector2(-20, 232)
 
 [node name="VirtualController2" parent="HPBars" instance=ExtResource("1_qqqc0")]
-position = Vector2(403, 78)
+position = Vector2(412, 262)
 player = 2
 
 [node name="Player2" parent="HPBars/VirtualController2" instance=ExtResource("3")]
-position = Vector2(52, 180)
+position = Vector2(9, 236)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(965, 679)
+[node name="Camera2D" type="Camera2D" parent="HPBars"]
+position = Vector2(120, 496)
+rotation = 3.14159
+scale = Vector2(1, -1)
 zoom = Vector2(3, 3)

@@ -1,9 +1,7 @@
 res://default_env.tres
-res://virtualController.tscn
+res://Bruh.tscn
 res://Scenes/menu/buttonRemap.gd
 res://Player.tscn
-res://Bruh.tscn
-res://Scenes/menu/main_menu.tscn
-res://Scenes/menu/main_menu.gd
+res://virtualController.tscn
 res://healthBars.tscn
-res://healthBars.gd
+res://Player.gd

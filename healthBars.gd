@@ -15,6 +15,7 @@ extends Control
 @onready var lbl_player_2_win_count = $CanvasLayer/lblPlayer2WinCount
 @onready var lbl_timer = $CanvasLayer/lblTimer
 @onready var tmr_timer = $CanvasLayer/tmrTimer
+@onready var camera_2d = $Camera2D
 
 var player1
 var player2
@@ -30,6 +31,8 @@ func _ready():
 	player2.connect("gotHit", player2GotHit)
 	player1.connect("KO", player1KO)
 	player2.connect("KO", player2KO)
+	player1.setCamera(camera_2d.get_path())
+	#player2.setCamera(camera_2d.get_path())
 	setDefault()
 
 func _process(delta):

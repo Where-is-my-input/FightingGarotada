@@ -1,6 +1,7 @@
 extends Node2D
-
+@onready var remote_transform_2d = $RemoteTransform2D
 @onready var body = $CharacterBody2D
+
 #@onready var virtualController = $"../VirtualController"
 #var teste = 1
 var virtualController
@@ -57,3 +58,7 @@ func getHit(damage = 20):
 	if HP <= 0 && !KOed:
 		KOed = true
 		KO.emit()
+
+func setCamera(c):
+	remote_transform_2d.remote_path = c
+	#remote_transform_2d.force_update_cache()
