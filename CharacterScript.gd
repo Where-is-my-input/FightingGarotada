@@ -35,7 +35,7 @@ var hitstun = 0
 var verticalHitstun = 0
 var hitstop = 0
 
-var speed = 500;
+var speed = 250;
 
 @onready var parent = $".."
 @onready var animatedSprite = $AnimatedSprite2D
@@ -267,6 +267,8 @@ func jump():
 		jumpCancel = false
 		jumpState = "rising"
 		attacking = false
+		if abs(parent.virtualController.directionX) > 0:
+			velocity.x = parent.virtualController.directionX*speed
 #		airborne = true
 #	if !is_on_floor():
 #		state = "jumping"
