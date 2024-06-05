@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8dsl308vfypc"]
+[gd_scene load_steps=8 format=3 uid="uid://b8dsl308vfypc"]
 
 [ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="1_qqqc0"]
 [ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://cbi3kopno23pf" path="res://Player.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://healthBars.tscn" id="3_qyq2c"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="5_dclaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1wml"]
 texture = ExtResource("2")
@@ -98,3 +99,8 @@ position = Vector2(120, 496)
 rotation = 3.14159
 scale = Vector2(1, -1)
 zoom = Vector2(3, 3)
+limit_left = 200
+limit_top = 230
+limit_right = 1725
+limit_bottom = 875
+script = ExtResource("5_dclaj")

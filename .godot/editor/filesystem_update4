@@ -1,7 +1,11 @@
 res://default_env.tres
-res://Bruh.tscn
-res://Scenes/menu/buttonRemap.gd
 res://Player.tscn
+res://Scenes/menu/buttonRemap.gd
 res://virtualController.tscn
+res://Bruh.tscn
 res://healthBars.tscn
+res://Characters/Lilith/spr_lilit.tscn
+res://Characters/Lilith/spr_lilit.gdshader
 res://Player.gd
+res://CharacterScript.gd
+res://Camera2D.gd

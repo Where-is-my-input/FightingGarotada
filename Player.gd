@@ -24,7 +24,6 @@ var nearestPlayerX = 0
 func _ready():
 	virtualController = get_parent()
 	playerGroup = get_tree().get_nodes_in_group("Player")
-	pass
 
 func _physics_process(_delta):
 	getNearesPlayer()
@@ -62,3 +61,6 @@ func getHit(damage = 20):
 func setCamera(c):
 	remote_transform_2d.remote_path = c
 	#remote_transform_2d.force_update_cache()
+
+func getGlobalPos():
+	return body.global_position

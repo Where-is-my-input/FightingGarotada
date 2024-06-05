@@ -64,6 +64,9 @@ var speed = 250;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if randi_range(0,100) > 50:
+		var palette = load("res://Characters/Jill Valentine/4by4Palette.jpg")
+		material.set_shader_parameter("palette",palette)
 	setAnimation()
 	animatedTree.active = true
 

@@ -1,0 +1,116 @@
+[gd_scene load_steps=27 format=3 uid="uid://b04qo40ok06mm"]
+
+[ext_resource type="Shader" path="res://Characters/Lilith/spr_lilit.gdshader" id="1_hgp07"]
+[ext_resource type="Texture2D" uid="uid://syxh0dsevvsg" path="res://Characters/Lilith/JPEG/VS2_Lilith_49356.jpg" id="1_jw7fc"]
+[ext_resource type="Texture2D" uid="uid://cff4ce56qwrke" path="res://Characters/Jill Valentine/jillColorPalette3.jpg" id="2_dbwlk"]
+[ext_resource type="Texture2D" uid="uid://bjh77rcpg3ig2" path="res://Characters/Lilith/JPEG/VS2_Lilith_49380.jpg" id="2_x2dbt"]
+[ext_resource type="Texture2D" uid="uid://dokeeuun66bbh" path="res://Characters/Lilith/JPEG/VS2_Lilith_49404.jpg" id="3_tj3yt"]
+[ext_resource type="Texture2D" uid="uid://bc0wd32870ku4" path="res://Characters/Lilith/JPEG/VS2_Lilith_49428.jpg" id="4_h6q6h"]
+[ext_resource type="Texture2D" uid="uid://cmsrkdblm3s4w" path="res://Characters/Lilith/JPEG/VS2_Lilith_49452.jpg" id="5_7me37"]
+[ext_resource type="Texture2D" uid="uid://dtv8i6ah24sbm" path="res://Characters/Lilith/JPEG/VS2_Lilith_49476.jpg" id="6_0ht0i"]
+[ext_resource type="Texture2D" uid="uid://cm10x1h7guqgu" path="res://Characters/Lilith/JPEG/VS2_Lilith_49500.jpg" id="7_yl0aq"]
+[ext_resource type="Texture2D" uid="uid://bxscp564dk0fl" path="res://Characters/Lilith/JPEG/VS2_Lilith_49524.jpg" id="8_8pchj"]
+[ext_resource type="Texture2D" uid="uid://do0yokmvndkij" path="res://Characters/Lilith/JPEG/VS2_Lilith_49548.jpg" id="9_8755o"]
+[ext_resource type="Texture2D" uid="uid://ctnycrk8n4ofq" path="res://Characters/Lilith/JPEG/VS2_Lilith_49572.jpg" id="10_qa7ed"]
+[ext_resource type="Texture2D" uid="uid://ddh3m2b0rran1" path="res://Characters/Lilith/JPEG/VS2_Lilith_49596.jpg" id="11_7b2uf"]
+[ext_resource type="Texture2D" uid="uid://cfjadsw47rigx" path="res://Characters/Lilith/JPEG/VS2_Lilith_49620.jpg" id="12_2nijd"]
+[ext_resource type="Texture2D" uid="uid://cmkfotpvsgqki" path="res://Characters/Lilith/JPEG/VS2_Lilith_49644.jpg" id="13_wwuju"]
+[ext_resource type="Texture2D" uid="uid://ixwpupxo3cmy" path="res://Characters/Lilith/JPEG/VS2_Lilith_49668.jpg" id="14_rry4s"]
+[ext_resource type="Texture2D" uid="uid://cimk1rm5b7g3l" path="res://Characters/Lilith/JPEG/VS2_Lilith_49692.jpg" id="15_mfe44"]
+[ext_resource type="Texture2D" uid="uid://cwgckwkyhqm1x" path="res://Characters/Lilith/JPEG/VS2_Lilith_49716.jpg" id="16_1537j"]
+[ext_resource type="Texture2D" uid="uid://4g6xbolyisej" path="res://Characters/Lilith/JPEG/VS2_Lilith_49740.jpg" id="17_1os7w"]
+[ext_resource type="Texture2D" uid="uid://btgjne8y1k1te" path="res://Characters/Lilith/JPEG/VS2_Lilith_49764.jpg" id="18_u4wht"]
+[ext_resource type="Texture2D" uid="uid://bj3k4mhgcd8hk" path="res://Characters/Lilith/JPEG/VS2_Lilith_49788.jpg" id="19_0eolc"]
+[ext_resource type="Texture2D" uid="uid://b1lfj7c0h7b3u" path="res://Characters/Lilith/JPEG/VS2_Lilith_49812.jpg" id="20_bbcul"]
+[ext_resource type="Texture2D" path="res://Characters/Lilith/JPEG/Godot/FightingGarotada/FightingGarotada/Characters/Lilith/JPEG/VS2_Lilith_60384.png" id="23_auofo"]
+[ext_resource type="Texture2D" path="res://Characters/Lilith/JPEG/Godot/FightingGarotada/FightingGarotada/Characters/Lilith/JPEG/Godot/FightingGarotada/FightingGarotada/Characters/Lilith/JPEG/VS2_Lilith_60360.png" id="24_a2oap"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fo1di"]
+shader = ExtResource("1_hgp07")
+shader_parameter/palette = ExtResource("2_dbwlk")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4muu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jw7fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x2dbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tj3yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h6q6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7me37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0ht0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yl0aq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8pchj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8755o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qa7ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7b2uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2nijd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wwuju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rry4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_mfe44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1537j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1os7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u4wht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0eolc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bbcul")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_auofo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_a2oap")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="sprLilit" type="AnimatedSprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_fo1di")
+sprite_frames = SubResource("SpriteFrames_a4muu")
+animation = &"new_animation"
+frame_progress = 0.113763
