@@ -35,7 +35,7 @@ func _ready():
 	#player2.setCamera(camera_2d.get_path())
 	setDefault()
 
-func _process(delta):
+func _process(_delta):
 	lbl_timer.text = str("%2d"%tmr_timer.time_left)
 
 func player1GotHit():

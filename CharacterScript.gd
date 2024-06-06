@@ -36,6 +36,8 @@ var verticalHitstun = 0
 var hitstop = 0
 
 var speed = 250;
+var jumpSpeed = 200
+var jumpDirection = 0
 
 @onready var parent = $".."
 @onready var animatedSprite = $AnimatedSprite2D
@@ -54,6 +56,7 @@ var speed = 250;
 @onready var A_Movement = "parameters/Movement/transition_request"
 @onready var A_Attacking = "parameters/Attacking/transition_request"
 @onready var A_Hit = "parameters/Hit/transition_request"
+@onready var A_JumpHit = "parameters/JumpHit/transition_request"
 @onready var A_CrouchHit = "parameters/CrouchHit/transition_request"
 @onready var A_JumpAttacking = "parameters/JumpAttacking/transition_request"
 @onready var A_CrouchAttacking = "parameters/CrouchAttacking/transition_request"
@@ -70,7 +73,7 @@ func _ready():
 	setAnimation()
 	animatedTree.active = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
 	
@@ -101,9 +104,12 @@ func _physics_process(delta):
 						var pushDirection = 1
 						if global_position.x < collision.global_position.x:
 							pushDirection = -1
-						if global_position.y < collision.global_position.y:
-							global_position.y += getHurtBoxSizeY() / 4
+						if floor(global_position.y) < floor(collision.global_position.y) && velocity.y > -1:
+							# && global_position.y < collision.global_position.y + collision.getHurtBoxSizeY()
+							global_position.y += getHurtBoxSizeY() / 8
 							global_position.x += pushDirection * (collision.getHurtBoxSizeX() / 2)
+							velocity.x = 0
+							jumpDirection = 0
 							collision.global_position.x += pushDirection * -1 * (collision.getHurtBoxSizeX() / 4)
 							move_and_slide()
 							#ApplyImpulse(Vector2(global_position.x - collision.global_position.x, 0).normalized())
@@ -232,6 +238,8 @@ func walk():
 			applyKnockback(knockback/2)
 		else:
 			applyKnockback(knockback)
+		if !is_on_floor():
+			state = "jumping"
 		return
 	crouching = parent.virtualController.directionY > 0
 #	if airborne:
@@ -257,7 +265,6 @@ func applyKnockback(knockbackApplied):
 		velocity.x = velocity.x - 1 
 	else:
 		velocity.x = 0
-	return
 
 
 func jump():
@@ -270,12 +277,15 @@ func jump():
 		jumpCancel = false
 		jumpState = "rising"
 		attacking = false
-		if abs(parent.virtualController.directionX) > 0:
-			velocity.x = parent.virtualController.directionX*speed
+		jumpDirection = parent.virtualController.directionX
+		if abs(jumpDirection) > 0:
+			velocity.x = parent.virtualController.directionX*jumpSpeed
 #		airborne = true
 #	if !is_on_floor():
 #		state = "jumping"
 #		action = "idle"
+	if jumpDirection != 0 && !is_on_floor():
+		velocity.x = jumpDirection*jumpSpeed
 	if velocity.y > 0:
 		jumpState = "falling"
 	else:
@@ -293,6 +303,7 @@ func setAnimation():
 	animatedTree.set(A_CrouchAttacking, attack)
 	animatedTree.set(A_Hit, hit)
 	animatedTree.set(A_CrouchHit, hit)
+	animatedTree.set(A_JumpHit, hit)
 	animatedTree.set(A_IdleState, idleState)
 
 func _on_hitboxes_area_entered(hitbox):

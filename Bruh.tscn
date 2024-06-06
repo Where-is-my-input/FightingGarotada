@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8dsl308vfypc"]
+[gd_scene load_steps=10 format=3 uid="uid://b8dsl308vfypc"]
 
 [ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="1_qqqc0"]
 [ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="2"]
@@ -60,7 +60,34 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x1wml")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgjce"]
+
+[sub_resource type="GDScript" id="GDScript_8u6lv"]
+script/source = "extends Node
+
+var nextFrame = false
+
+func _process(delta):
+	if get_tree().paused == false and nextFrame == true:
+		get_tree().paused = true
+
+	if Input.is_action_just_pressed(\"pause\"):
+		if get_tree().paused == false:
+			get_tree().paused = true
+		elif get_tree().paused == true:
+			nextFrame = false
+			get_tree().paused = false
+	
+	if Input.is_action_just_pressed(\"frameAdvance\"):
+		if get_tree().paused == false:
+			get_tree().paused = true
+		nextFrame = true
+		get_tree().paused = false
+		print(\"next frame\")
+"
+
 [node name="Main" type="Node2D"]
+process_mode = 1
 metadata/_edit_horizontal_guides_ = [270.0, 875.0]
 
 [node name="Label" type="Label" parent="."]
@@ -82,20 +109,20 @@ offset_right = 704.0
 offset_bottom = 272.0
 
 [node name="VirtualController" parent="HPBars" instance=ExtResource("1_qqqc0")]
-position = Vector2(140, 264)
+position = Vector2(-312, 30)
 
 [node name="Player" parent="HPBars/VirtualController" instance=ExtResource("3")]
-position = Vector2(-20, 232)
+position = Vector2(391, 465)
 
 [node name="VirtualController2" parent="HPBars" instance=ExtResource("1_qqqc0")]
-position = Vector2(412, 262)
+position = Vector2(856, 27)
 player = 2
 
 [node name="Player2" parent="HPBars/VirtualController2" instance=ExtResource("3")]
-position = Vector2(9, 236)
+position = Vector2(-432, 474)
 
 [node name="Camera2D" type="Camera2D" parent="HPBars"]
-position = Vector2(120, 496)
+position = Vector2(256, 396)
 rotation = 3.14159
 scale = Vector2(1, -1)
 zoom = Vector2(3, 3)
@@ -104,3 +131,20 @@ limit_top = 230
 limit_right = 1725
 limit_bottom = 875
 script = ExtResource("5_dclaj")
+
+[node name="cornerBounds" type="CharacterBody2D" parent="HPBars/Camera2D"]
+position = Vector2(-956.002, -602.998)
+
+[node name="rightBound" type="CollisionShape2D" parent="HPBars/Camera2D/cornerBounds"]
+position = Vector2(592.001, 500.998)
+scale = Vector2(4.40043, 59.7184)
+shape = SubResource("RectangleShape2D_qgjce")
+
+[node name="leftBound" type="CollisionShape2D" parent="HPBars/Camera2D/cornerBounds"]
+position = Vector2(1320, 489.997)
+scale = Vector2(4.39955, 59.7126)
+shape = SubResource("RectangleShape2D_qgjce")
+
+[node name="debugger" type="Node" parent="."]
+process_mode = 3
+script = SubResource("GDScript_8u6lv")
