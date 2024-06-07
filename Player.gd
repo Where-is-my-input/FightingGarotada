@@ -28,7 +28,6 @@ func _ready():
 func _physics_process(_delta):
 	getNearesPlayer()
 	flip()
-	pass
 
 func getNearesPlayer():
 	for player in playerGroup:
