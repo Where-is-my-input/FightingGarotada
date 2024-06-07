@@ -45,6 +45,7 @@ var jumpDirection = 0
 @onready var hitboxes = $AnimatedSprite2D/Hitboxes
 @onready var animatedTree = $AnimatedSprite2D/AnimationPlayer/AnimationTree
 @onready var collision_box = $CollisionBox
+@onready var collision_area = $collisionArea
 @onready var marker_2d = $anchorPoint/Marker2D
 @onready var anchor_point = $anchorPoint
 
@@ -95,38 +96,8 @@ func _physics_process(_delta):
 			#return
 		else:
 			animatedTree.set(A_TimeScale, 1)
-			if move_and_slide():
-				for i in get_slide_collision_count():
-					var slideCollision = get_slide_collision(i)
-					if slideCollision == null: continue
-					var collision = slideCollision.get_collider()
-					if collision.is_in_group("CollisionBox"):
-						collision_box.disabled = true
-#https://www.reddit.com/r/godot/comments/dwcs2l/2d_fighting_game_push_collision/
-#var c = move_and_collide(velocity * delta)
-#if c && c.normal != null:
-#velocity = velocity.slide(c.normal)
-#var motion = c.remainder.slide(c.normal)
-#move_and_collide(motion)
-						#collision.velocity.x += velocity.x / 2
-						var pushDirection = 1
-						if global_position.x < collision.global_position.x:
-							pushDirection = -1
-						if floor(global_position.y) < floor(collision.global_position.y) && velocity.y > -1:
-							var distance = abs(global_position - collision.global_position)
-							print(distance, " - ", global_position, " - ", collision.global_position)
-							# && global_position.y < collision.global_position.y + collision.getHurtBoxSizeY()
-							global_position.y += getHurtBoxSizeY() / 8
-							#global_position.x += pushDirection * (collision.getHurtBoxSizeX() / 2)
-							global_position.x += pushDirection * (distance.x / 2)
-							collision.global_position.x -= pushDirection * (distance.x / 2)
-							velocity.x = 0
-							jumpDirection = 0
-							#collision.global_position.x += pushDirection * -1 * (collision.getHurtBoxSizeX() / 4)
-							move_and_slide()
-							#ApplyImpulse(Vector2(global_position.x - collision.global_position.x, 0).normalized())
-			#else:
-				#collision_box.disabled = false
+			move_and_slide()
+			playerCollision()
 			flip()
 			setAnimation()
 			endHitstun()
@@ -145,6 +116,44 @@ func _physics_process(_delta):
 #				else:
 #					velocity.y = 5000
 #					velocity.x = 500 * facing
+
+func playerCollision():
+	var overlappingPlayer = collision_area.get_overlapping_areas()
+	#var slideCollision = get_slide_collision(i)
+	if !overlappingPlayer: return
+	overlappingPlayer = overlappingPlayer[0]
+	#if !overlappingPlayer[0].has_method("getCollider"): return
+	var collision = overlappingPlayer.getCollider()
+	if collision.is_in_group("CollisionBox"):
+		#collision_box.disabled = true
+#https://www.reddit.com/r/godot/comments/dwcs2l/2d_fighting_game_push_collision/
+#var c = move_and_collide(velocity * delta)
+#if c && c.normal != null:
+#velocity = velocity.slide(c.normal)
+#var motion = c.remainder.slide(c.normal)
+#move_and_collide(motion)
+		#collision.velocity.x += velocity.x / 2
+		var pushDirection = 1
+		if global_position.x < collision.global_position.x:
+			pushDirection = -1
+		var distance = abs(global_position - collision.global_position)
+		if !grounded && velocity.y > -1:
+			print(distance, " - ", global_position, " - ", collision.global_position)
+			# && global_position.y < collision.global_position.y + collision.getHurtBoxSizeY()
+			global_position.y += getHurtBoxSizeY() / 8
+			#global_position.x += pushDirection * (collision.getHurtBoxSizeX() / 2)
+			global_position.x += pushDirection * (distance.x / 2)
+			overlappingPlayer.setPlayerGlobalPosition(-pushDirection * (distance.x / 2), 0)
+			velocity.x = 0
+			jumpDirection = 0
+			#collision.global_position.x += pushDirection * -1 * (collision.getHurtBoxSizeX() / 4)
+			#ApplyImpulse(Vector2(global_position.x - collision.global_position.x, 0).normalized())
+		elif grounded && overlappingPlayer.isGrounded():
+			var push = pushDirection * (distance.x / 2)
+			global_position.x += push
+			#overlappingPlayer.setPlayerGlobalPosition(push, 0)
+		move_and_slide()
+			
 
 func isGrounded():
 	var raycastLength: float = 1
