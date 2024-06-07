@@ -78,9 +78,10 @@ func _ready():
 	animatedTree.active = true
 
 func _physics_process(_delta):
-	if grounded:
+	if grounded && action != "hit":
 		if anchor_point.global_position.y > Global.ground:
 			velocity.y = 0
+			global_position.y = Global.ground
 	collision_box.disabled = false
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
@@ -137,8 +138,7 @@ func playerCollision():
 		if global_position.x < collision.global_position.x:
 			pushDirection = -1
 		var distance = abs(global_position - collision.global_position)
-		if !grounded && velocity.y > -1:
-			print(distance, " - ", global_position, " - ", collision.global_position)
+		if grounded != overlappingPlayer.isGrounded() && velocity.y > -1:
 			# && global_position.y < collision.global_position.y + collision.getHurtBoxSizeY()
 			global_position.y += getHurtBoxSizeY() / 8
 			#global_position.x += pushDirection * (collision.getHurtBoxSizeX() / 2)
@@ -148,8 +148,9 @@ func playerCollision():
 			jumpDirection = 0
 			#collision.global_position.x += pushDirection * -1 * (collision.getHurtBoxSizeX() / 4)
 			#ApplyImpulse(Vector2(global_position.x - collision.global_position.x, 0).normalized())
-		elif grounded && overlappingPlayer.isGrounded():
-			var push = pushDirection * (distance.x / 2)
+		elif grounded == overlappingPlayer.isGrounded():
+			var push = pushDirection * ((speed / 2) * (1 / distance.x))
+			if velocity.x > 0: velocity.x = speed/8
 			global_position.x += push
 			#overlappingPlayer.setPlayerGlobalPosition(push, 0)
 		move_and_slide()

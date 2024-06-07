@@ -6,4 +6,3 @@ res://CharacterScript.gd
 res://virtualController.tscn
 res://Bruh.tscn
 res://healthBars.tscn
-res://collisionArea.gd
