@@ -1,4 +1,4 @@
-[gd_scene load_steps=284 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=286 format=3 uid="uid://cbi3kopno23pf"]
 
 [ext_resource type="Texture2D" uid="uid://ulee81e28x3l" path="res://Characters/Jill Valentine/anim055.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bi4e6awwr73as" path="res://Characters/Jill Valentine/anim058.png" id="2"]
@@ -2664,7 +2664,7 @@ tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(50, -18)]
 }
 tracks/8/type = "value"
@@ -3122,6 +3122,63 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_3oxx0"]
+resource_name = "jumpBloackstun"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jumpBloackstun"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_bwebm"]
+resource_name = "jumpHitstun"
+length = 0.750002
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jumpHitstun"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.216667, 0.35, 0.483333, 0.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="Animation" id="Animation_q1b2y"]
@@ -4257,63 +4314,6 @@ tracks/3/keys = {
 "values": [Vector2(-0.5, 11)]
 }
 
-[sub_resource type="Animation" id="Animation_bwebm"]
-resource_name = "jumpHitstun"
-length = 0.750002
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"jumpHitstun"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.216667, 0.35, 0.483333, 0.65),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_3oxx0"]
-resource_name = "jumpBloackstun"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"jumpBloackstun"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xaxc"]
 resource_local_to_scene = true
 _data = {
@@ -4610,7 +4610,6 @@ animation = &"Jill/standingBlocking"
 animation = &"Jill/walkBack"
 
 [sub_resource type="AnimationNodeBlendTree" id="18"]
-graph_offset = Vector2(187.484, 270.056)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1240, -400)
 nodes/Crouch/node = SubResource("13")
@@ -4704,12 +4703,20 @@ nodes/walkBack/node = SubResource("AnimationNodeAnimation_epjdj")
 nodes/walkBack/position = Vector2(1240, -520)
 node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Attacking", 3, &"LK", &"Attacking", 4, &"MK", &"Attacking", 5, &"HK", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchAttacking", 4, &"cMK", &"CrouchAttacking", 5, &"cHK", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpAttacking", 3, &"jLK", &"JumpAttacking", 4, &"jMK", &"JumpAttacking", 5, &"jHK", &"JumpHit", 0, &"jumpBlockstun", &"JumpHit", 1, &"jumpHitstun", &"JumpingAction", 0, &"Jump", &"JumpingAction", 1, &"JumpHit", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"TimeScale", 0, &"State", &"output", 0, &"TimeScale"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l40to"]
+size = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfye"]
+size = Vector2(32, 80)
+
 [node name="Player" type="Node2D" groups=["Player"]]
 scale = Vector2(-1, 1)
 script = ExtResource("19")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["CollisionBox"]]
 material = SubResource("2")
+collision_layer = 0
+collision_mask = 4
 floor_block_on_wall = false
 script = ExtResource("2_bd138")
 jumpCancel = true
@@ -4739,9 +4746,9 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("99_32v1y")
-stun = 30
-stunVector = Vector2(15, 0)
-damage = 575
+stun = 13
+stunVector = Vector2(50, -18)
+damage = 50
 attackType = 2
 hitstop = 15
 
@@ -4807,9 +4814,26 @@ parameters/State/transition_request = ""
 parameters/State/current_index = 0
 parameters/TimeScale/scale = 1.0
 
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
-position = Vector2(0, 49)
+[node name="anchorPoint" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(0, 48)
+
+[node name="anchorCollision" type="CollisionShape2D" parent="CharacterBody2D/anchorPoint"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_l40to")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D/anchorPoint"]
+position = Vector2(0, 48)
+
+[node name="collisionArea" type="Area2D" parent="CharacterBody2D"]
+
+[node name="collisionAreaCollision" type="CollisionShape2D" parent="CharacterBody2D/collisionArea"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_mmfye")
+debug_color = Color(0.105957, 0, 0.732455, 0.42)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [connection signal="area_entered" from="CharacterBody2D/AnimatedSprite2D/Hitboxes" to="CharacterBody2D" method="_on_hitboxes_area_entered"]
+[connection signal="body_entered" from="CharacterBody2D/anchorPoint" to="CharacterBody2D" method="_on_anchor_point_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/anchorPoint" to="CharacterBody2D" method="_on_anchor_point_body_exited"]

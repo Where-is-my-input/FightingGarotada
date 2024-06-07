@@ -1,9 +1,9 @@
-res://Bruh.tscn::42aa56099330678e110d4368b8763b3d::1717630665::res://.godot/exported/133200997/export-6d1002f8834739dd6dec8a3a69b2f354-Bruh.scn
+res://Bruh.tscn::962e3457cba391d03a27a6e3d80e09c8::1717713615::res://.godot/exported/133200997/export-6d1002f8834739dd6dec8a3a69b2f354-Bruh.scn
 res://Character.tscn::607d3ae54ca60ecf60d39ab950c397a4::1696281213::res://.godot/exported/133200997/export-37614bcb0cd948c43c76059b78781fef-Character.scn
-res://default_env.tres::3f1ece73175a53815b771f1a567dd234::1717630665::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res
-res://healthBars.tscn::169be3aa8c4e41a3746c681b402a6b24::1717630665::res://.godot/exported/133200997/export-3cbd8ea29e3843d1d623b89cec4f3d45-healthBars.scn
-res://Player.tscn::f76f2c5b6eb9864e2699bca70060be85::1717630665::res://.godot/exported/133200997/export-90e1ff3baa03524a506ff0f7a9d78dcf-Player.scn
-res://virtualController.tscn::8fb088b271f3fea8f83205e2979891cf::1717630665::res://.godot/exported/133200997/export-79d8533f9fc7ddc06b424232f9611912-virtualController.scn
+res://default_env.tres::3f1ece73175a53815b771f1a567dd234::1717713615::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res
+res://healthBars.tscn::169be3aa8c4e41a3746c681b402a6b24::1717713615::res://.godot/exported/133200997/export-3cbd8ea29e3843d1d623b89cec4f3d45-healthBars.scn
+res://Player.tscn::07b67497fc16cf07d478d3926ca13b9f::1717713615::res://.godot/exported/133200997/export-90e1ff3baa03524a506ff0f7a9d78dcf-Player.scn
+res://virtualController.tscn::8fb088b271f3fea8f83205e2979891cf::1717713615::res://.godot/exported/133200997/export-79d8533f9fc7ddc06b424232f9611912-virtualController.scn
 res://Scenes/menu/button_map.tscn::98bfd02b55ef7101f55f5b51d5345780::1717262086::res://.godot/exported/133200997/export-266bcc1af4c107d6ec33bb962d0523d2-button_map.scn
 res://Scenes/menu/button_remap.tscn::4b05695cdb026a08b7b94170a0183b30::1717345492::res://.godot/exported/133200997/export-ded286887135149d1d844e7abb94f83c-button_remap.scn
 res://Scenes/menu/main_menu.tscn::2988fa384277f6767925c88d9b5a33c5::1717540277::res://.godot/exported/133200997/export-f1ef8c0bb25278be4ced2a19c6b5afd7-main_menu.scn
