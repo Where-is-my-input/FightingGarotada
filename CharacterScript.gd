@@ -11,6 +11,8 @@ var knockbackVector:Vector2 = Vector2(1,1)
 var facing = 1
 var grounded = true
 var knockdown = false
+var jumpStartUp = false
+var jumping = false
 #var airborne = false
 
 var strength = -900
@@ -138,6 +140,7 @@ func playerCollision():
 func gravity_fall():
 	if action == "hit" && verticalHitstun > 0:
 		verticalHitstun -= 1
+		if verticalHitstun <= 0: velocity.y = 0
 		return
 	velocity.y += gravity
 	
@@ -153,7 +156,8 @@ func gravity_fall():
 			velocity.y = terminalVelocity
 	elif grounded:
 		velocity.y = 5
-	if state == "jumping" && grounded:
+	if jumping && grounded && !jumpStartUp:
+		jumping = false
 		state = "standing"
 		action = "idle"
 		animationFinished()
@@ -165,45 +169,49 @@ func isAttacking():
 		action = "attacking"
 		return
 	attacking = 0
-	action = "idle"
+	if !jumpStartUp: action = "idle"
 
 func buttonPressed():
 	if parent.virtualController.LP == 1 || parent.virtualController.bufferedAction == "LP":
 		attack = "LP"
 		attacking = 1
 		return true
-	if parent.virtualController.MP == 1 || parent.virtualController.bufferedAction == "MP": 
+	if parent.virtualController.MP == 1 || parent.virtualController.bufferedAction == "MP":
 		attack = "MP"
 		attacking = 1
 		return true
-	if parent.virtualController.HP == 1 || parent.virtualController.bufferedAction == "HP": 
+	if parent.virtualController.HP == 1 || parent.virtualController.bufferedAction == "HP":
 		attack = "HP"
 		attacking = 1
 		return true
-	if parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK": 
+	if parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK":
 		attack = "LK"
 		attacking = 1
 		return true
-	if parent.virtualController.MK == 1 || parent.virtualController.bufferedAction == "MK": 
+	if parent.virtualController.MK == 1 || parent.virtualController.bufferedAction == "MK":
 		attack = "MK"
 		attacking = 1
 		return true
-	if parent.virtualController.HK == 1 || parent.virtualController.bufferedAction == "HK": 
+	if parent.virtualController.HK == 1 || parent.virtualController.bufferedAction == "HK":
 		attack = "HK"
 		attacking = 1
 		return true
 	return false
 
 func animationFinished():
+	jumpStartUp = false
 	knockdown = false
 	set_deferred("attacking", 0)
 	if !(hitstun > 0): action = "idle"
-	state = "standing"
+	if grounded:
+		state = "standing"
+	else:
+		state = "jumping"
 	idleState = "idle"
 	normalCancel = false
 
 func neutralAnimation():
-	if grounded:
+	if grounded && !jumpStartUp:
 		if crouching:
 			state = "crouching"
 		elif parent.virtualController.directionX == 0:
@@ -236,7 +244,7 @@ func walk():
 	crouching = parent.virtualController.directionY > 0
 #	if airborne:
 #		return
-	if grounded && !crouching && !attacking: 
+	if grounded && !crouching && !attacking && !jumpStartUp: 
 		velocity.x = parent.virtualController.directionX*speed
 	elif abs(velocity.x) > 0 && state != "jumping":
 		velocity.x = velocity.x - deceleration * (velocity.x/speed)
@@ -258,22 +266,34 @@ func jump():
 	if action == "hit":
 		return
 	if parent.virtualController.directionY < 0 && grounded && (!attacking || jumpCancel):
-		grounded = false
-		velocity.y = +strength
-		state = "jumping"
+		#grounded = false
+		state = "standing"
 		action = "idle"
 		jumpCancel = false
-		jumpState = "rising"
+		movement = "jumpStartUp"
+		jumpStartUp = true
 		attacking = false
 		jumpDirection = parent.virtualController.directionX
-		if abs(jumpDirection) > 0:
-			velocity.x = parent.virtualController.directionX*jumpSpeed
-	if jumpDirection != 0 && !grounded:
-		velocity.x = jumpDirection*jumpSpeed
+		velocity.x = 0
+		return
 	if velocity.y > 0:
 		jumpState = "falling"
-	else:
+	elif !jumpStartUp:
 		jumpState = "rising"
+
+func startJump():
+	if abs(jumpDirection) > 0:
+		#velocity.x = parent.virtualController.directionX*jumpSpeed #allow to change direction post start up
+		velocity.x = jumpDirection*jumpSpeed
+	if jumpDirection != 0 && !grounded:
+		velocity.x = jumpDirection*jumpSpeed
+	hitboxes.disableHitboxes()
+	jumping = true
+	state = "jumping"
+	grounded = false
+	jumpState = "rising"
+	velocity.y = +strength
+	jumpStartUp = false
 
 func setAnimation():
 	animatedTree.set(A_State, state)
@@ -303,10 +323,9 @@ func getHit(hitbox):
 	verticalHitstun = hitbox.vstun
 	#hitbox.stunVector.x = hitbox.stunVector.x * parent.facing
 	knockbackVector = Vector2(hitbox.stunVector.x * parent.facing, hitbox.stunVector.y)
-	print(hitbox.hitProperty)
-	if hitbox.hitProperty != 1: 
+	if hitbox.hitProperty == 0: 
 		knockbackVector.y = 0
-	else:
+	elif hitbox.hitProperty == 2:
 		knockdown = true
 		state = "knockdown"
 		knockdownState = "airborne"
@@ -323,6 +342,8 @@ func getHit(hitbox):
 		hit = "hit"
 		parent.getHit(hitbox.damage)
 	else:
+		if grounded:
+			knockbackVector.y = 0
 		knockback = 35 * parent.facing
 		hitstun = hitbox.stun
 		hit = "block"
@@ -368,6 +389,7 @@ func _on_anchor_point_body_exited(body):
 		grounded = false
 
 #should it be a timer called in _on_anchor_point_body_entered?
+#allow otg "recombo"
 func wakeUp():
 	velocity.x = 0
 	#knockdown = false
