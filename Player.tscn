@@ -3068,7 +3068,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0.15),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(91, 31)]
 }
 tracks/4/type = "value"
@@ -3080,7 +3080,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0.15),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(59.5, -4.5)]
 }
 tracks/5/type = "value"
@@ -4439,6 +4439,49 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2(0, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_yiy1m"]
+resource_name = "jumpStartUp"
+length = 0.0666683
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jumptStartUp"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0166667, 0.0333333, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"startJump"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_q1b2y"]
@@ -6343,49 +6386,6 @@ tracks/5/keys = {
 "values": [Vector2(0, 8)]
 }
 
-[sub_resource type="Animation" id="Animation_yiy1m"]
-resource_name = "jumpStartUp"
-length = 0.0666683
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"jumptStartUp"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0166667, 0.0333333, 0.05),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.0666667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"startJump"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xaxc"]
 resource_local_to_scene = true
 _data = {
@@ -6865,9 +6865,10 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("99_32v1y")
-stun = 35
-stunVector = Vector2(50, -900)
-damage = 350
+stun = 30
+stunVector = Vector2(15, 0)
+damage = 575
+attackType = 2
 hitstop = 15
 vstun = 10
 

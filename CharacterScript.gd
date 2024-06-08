@@ -35,6 +35,7 @@ var normalCancel = false
 @export var jumpCancel = false
 var specialCancel = true
 var superCancel = true
+var gatlingPriority = 0
 
 var hitstun = 0
 var verticalHitstun = 0
@@ -87,10 +88,6 @@ func _physics_process(_delta):
 	lowBlock = parent.virtualController.directionY > 0
 	
 	if parent.virtualController != null:
-		if (!attacking || normalCancel && action == "attacking" && buttonPressed()) && action != "hit":
-			isAttacking()
-		jump()
-		
 		if hitstop > 0:
 			hitstop -= 1
 			animatedTree.set(A_TimeScale, 0)
@@ -100,10 +97,13 @@ func _physics_process(_delta):
 			move_and_slide()
 			playerCollision()
 			flip()
-			setAnimation()
 			endHitstun()
 			if !grounded: gravity_fall()
 			walk()
+			if (!attacking || normalCancel && action == "attacking" && buttonPressed()) && action != "hit":
+				isAttacking()
+			jump()
+			setAnimation()
 
 func playerCollision():
 	var overlappingPlayer = collision_area.get_overlapping_areas()
@@ -165,36 +165,43 @@ func gravity_fall():
 func isAttacking():
 	buttonPressed()
 	neutralAnimation()
-	if attacking:
-		action = "attacking"
-		return
-	attacking = 0
-	if !jumpStartUp: action = "idle"
+	if !jumpStartUp: 
+		if attacking:
+			action = "attacking"
+			return
+		attacking = 0
+		action = "idle"
 
 func buttonPressed():
-	if parent.virtualController.LP == 1 || parent.virtualController.bufferedAction == "LP":
+	if (parent.virtualController.LP == 1 || parent.virtualController.bufferedAction == "LP") && gatlingPriority < 1:
 		attack = "LP"
 		attacking = 1
+		gatlingPriority = 1
 		return true
-	if parent.virtualController.MP == 1 || parent.virtualController.bufferedAction == "MP":
+	if (parent.virtualController.MP == 1 || parent.virtualController.bufferedAction == "MP") && gatlingPriority < 2:
 		attack = "MP"
-		attacking = 1
+		attacking = 2
+		gatlingPriority = 2
 		return true
-	if parent.virtualController.HP == 1 || parent.virtualController.bufferedAction == "HP":
+	if (parent.virtualController.HP == 1 || parent.virtualController.bufferedAction == "HP") && gatlingPriority < 3:
 		attack = "HP"
-		attacking = 1
+		attacking = 3
+		gatlingPriority = 3
 		return true
-	if parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK":
+	if (parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK") && gatlingPriority < 1:
 		attack = "LK"
 		attacking = 1
+		gatlingPriority = 1
 		return true
-	if parent.virtualController.MK == 1 || parent.virtualController.bufferedAction == "MK":
+	if (parent.virtualController.MK == 1 || parent.virtualController.bufferedAction == "MK") && gatlingPriority < 2:
 		attack = "MK"
-		attacking = 1
+		attacking = 2
+		gatlingPriority = 2
 		return true
-	if parent.virtualController.HK == 1 || parent.virtualController.bufferedAction == "HK":
+	if (parent.virtualController.HK == 1 || parent.virtualController.bufferedAction == "HK") && gatlingPriority < 3:
 		attack = "HK"
-		attacking = 1
+		attacking = 3
+		gatlingPriority = 3
 		return true
 	return false
 
@@ -208,6 +215,7 @@ func animationFinished():
 	else:
 		state = "jumping"
 	idleState = "idle"
+	gatlingPriority = 0
 	normalCancel = false
 
 func neutralAnimation():
@@ -267,6 +275,7 @@ func jump():
 		return
 	if parent.virtualController.directionY < 0 && grounded && (!attacking || jumpCancel):
 		#grounded = false
+		gatlingPriority = 0
 		state = "standing"
 		action = "idle"
 		jumpCancel = false
