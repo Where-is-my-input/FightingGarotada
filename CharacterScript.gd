@@ -78,10 +78,6 @@ func _ready():
 	animatedTree.active = true
 
 func _physics_process(_delta):
-	if grounded && action != "hit":
-		if anchor_point.global_position.y > Global.ground:
-			velocity.y = 0
-			global_position.y = Global.ground
 	collision_box.disabled = false
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
@@ -114,28 +110,28 @@ func playerCollision():
 		var pushDirection = 1
 		if global_position.x < collision.global_position.x:
 			pushDirection = -1
-		var distance = abs(global_position - collision.global_position)
+		var distance = getHurtBoxSizeX() / 2 + collision.shape.size.x / 2 - abs(global_position.x - collision.global_position.x)
 		if grounded != overlappingPlayer.isGrounded() && velocity.y > -1:
-			global_position.y += getHurtBoxSizeY() / 8
-			global_position.x += pushDirection * (distance.x / 2)
-			overlappingPlayer.setPlayerGlobalPosition(-pushDirection * (distance.x / 2), 0)
+			global_position.x += pushDirection * (distance / 8)
+			overlappingPlayer.setPlayerGlobalPosition(-pushDirection * (distance / 2), 0)
 			velocity.x = 0
 			jumpDirection = 0
 		elif grounded == overlappingPlayer.isGrounded():
-			var push = pushDirection * ((speed / 2) * (1 / distance.x))
+			distance = abs(global_position.x - collision.global_position.x)
+			var push = pushDirection * ((speed / 2) * (1 / distance))
 			if velocity.x > 0: velocity.x = speed/8
 			global_position.x += push
 		move_and_slide()
 
-func isGrounded():
-	var raycastLength: float = 1
-	var raycastTo: Vector2 = marker_2d.global_position + Vector2(0, raycastLength)
-	
-	var spaceState = get_world_2d().direct_space_state
-	var create = PhysicsRayQueryParameters2D.create(marker_2d.global_position, raycastTo)
-	var rayResult = spaceState.intersect_ray(create)
-	
-	return rayResult != null
+#func isGrounded():
+	#var raycastLength: float = 1
+	#var raycastTo: Vector2 = marker_2d.global_position + Vector2(0, raycastLength)
+	#
+	#var spaceState = get_world_2d().direct_space_state
+	#var create = PhysicsRayQueryParameters2D.create(marker_2d.global_position, raycastTo)
+	#var rayResult = spaceState.intersect_ray(create)
+	#
+	#return rayResult != null
 
 func gravity_fall():
 	if action == "hit" && verticalHitstun > 0:
@@ -198,7 +194,8 @@ func buttonPressed():
 
 func animationFinished():
 	set_deferred("attacking", 0)
-	action = "idle"
+	if !(hitstun > 0): action = "idle"
+	state = "standing"
 	idleState = "idle"
 	normalCancel = false
 
@@ -292,41 +289,49 @@ func setAnimation():
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
-		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector, hitboxes.damage, hitboxes.attackType, hitboxes.hitstop, hitboxes.vstun)
+		hitbox.get_parent().get_parent().getHit(hitboxes)
 		hitbox.set_deferred("disabled", true)
 		hitstop = hitboxes.hitstop
 		normalCancel = true
 	
-func getHit(stun = 19, hitVector = Vector2(100,-500), damage = 10, attackType = 0, attackHitstop = 5,vstun = 1):
-	hitstop = attackHitstop
-	verticalHitstun = vstun
-	hitVector.x = hitVector.x * parent.facing
-	knockbackVector = hitVector
+func getHit(hitbox):
+	hitstop = hitbox.hitstop
+	verticalHitstun = hitbox.vstun
+	#hitbox.stunVector.x = hitbox.stunVector.x * parent.facing
+	knockbackVector = Vector2(hitbox.stunVector.x * parent.facing, hitbox.stunVector.y)
+	print(hitbox.hitProperty)
+	if hitbox.hitProperty != 1: knockbackVector.y = 0
 	if action == "hit":
 		animatedTree.advance(-0.25)
 	velocity.x = 0
 	velocity.y = 0
 	hitboxes.disableHitboxes()
 	action = "hit"
-	if action == "hit" || !blocking || (blocking && (!lowBlock && attackType == 1)) || (blocking && (lowBlock && attackType == 2)):
+	if hitstun > 0 || !blocking || (blocking && (!lowBlock && hitbox.attackType == 1)) || (blocking && (lowBlock && hitbox.attackType == 2)):
 		attacking = 0
-		hitstun = stun
+		hitstun = hitbox.stun
 		knockback = 35 * parent.facing
 		hit = "hit"
-		parent.getHit(damage)
+		parent.getHit(hitbox.damage)
 	else:
 		knockback = 35 * parent.facing
-		hitstun = stun
+		hitstun = hitbox.stun
 		hit = "block"
 	
 func endHitstun():
 	if hitstun == 0 && action == "hit":
 		action = "idle"
-		hitboxes.enableHitboxes()
+		#hitboxes.enableHitboxes()
 		parent.comboCounter = 0
 		parent.comboDamage = 0
 	elif hitstun > 0:
 		hitstun = hitstun - 1
+		if velocity.y > 0: checkGround()
+
+func checkGround():
+	if anchor_point.global_position.y > Global.ground:
+		velocity.y = 0
+		global_position.y = Global.ground
 
 func getHurtBoxSizeX():
 	return collision_box.shape.size.x
@@ -337,6 +342,7 @@ func getHurtBoxSizeY():
 func _on_anchor_point_body_entered(body):
 	if body.is_in_group("ground"):
 		grounded = true
+		animationFinished()
 		if anchor_point.global_position.y > Global.ground:
 			collision_box.disabled = false
 			velocity.y = 0

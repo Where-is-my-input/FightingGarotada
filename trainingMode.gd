@@ -10,7 +10,7 @@ func _ready():
 	player2.connect("gotHit", player2GotHit)
 
 func player2GotHit():
-	tmr_block.start(3)
+	tmr_block.start(1)
 	block = true
 
 func holdBlock():
@@ -22,4 +22,5 @@ func _process(_delta):
 
 
 func _on_tmr_block_timeout():
+	player2.HP = 5000
 	block = false

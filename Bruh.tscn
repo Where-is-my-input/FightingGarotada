@@ -134,6 +134,7 @@ limit_left = 200
 limit_top = 230
 limit_right = 1725
 limit_bottom = 875
+position_smoothing_enabled = true
 script = ExtResource("5_dclaj")
 
 [node name="cornerBounds" type="CharacterBody2D" parent="HPBars/Camera2D"]
