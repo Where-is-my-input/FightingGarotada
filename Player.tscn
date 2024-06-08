@@ -1,4 +1,4 @@
-[gd_scene load_steps=287 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=298 format=3 uid="uid://cbi3kopno23pf"]
 
 [ext_resource type="Texture2D" uid="uid://ulee81e28x3l" path="res://Characters/Jill Valentine/anim055.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bi4e6awwr73as" path="res://Characters/Jill Valentine/anim058.png" id="2"]
@@ -184,9 +184,14 @@
 [ext_resource type="Texture2D" uid="uid://dlbmmfpbakar2" path="res://Characters/Jill Valentine/anim264.png" id="159_k5kkr"]
 [ext_resource type="Texture2D" uid="uid://3if07hp0ndod" path="res://Characters/Jill Valentine/anim265.png" id="160_kk4fh"]
 [ext_resource type="Texture2D" uid="uid://b82kp0hgx5ihn" path="res://Characters/Jill Valentine/anim266.png" id="161_av2lj"]
+[ext_resource type="Texture2D" uid="uid://dlsgwhhbcbjvo" path="res://Characters/Jill Valentine/anim491.png" id="162_tg0xu"]
 [ext_resource type="Texture2D" uid="uid://b2fhvqynht6ma" path="res://Characters/Jill Valentine/anim267.png" id="162_uh1qu"]
+[ext_resource type="Texture2D" uid="uid://be64gp03t1tt7" path="res://Characters/Jill Valentine/anim492.png" id="163_oc2gy"]
 [ext_resource type="Texture2D" uid="uid://onhqcx8pgn8g" path="res://Characters/Jill Valentine/anim268.png" id="163_thvmu"]
+[ext_resource type="Texture2D" uid="uid://vs2wcuyb1c55" path="res://Characters/Jill Valentine/anim493.png" id="164_b1nfq"]
 [ext_resource type="Texture2D" uid="uid://ojpp5bqciebo" path="res://Characters/Jill Valentine/anim269.png" id="164_tp3jm"]
+[ext_resource type="Texture2D" uid="uid://d3lmxy7d15g58" path="res://Characters/Jill Valentine/anim494.png" id="165_4delh"]
+[ext_resource type="Texture2D" uid="uid://cresin1nhvl41" path="res://Characters/Jill Valentine/anim495.png" id="166_ax1yh"]
 [ext_resource type="Texture2D" uid="uid://85eff2bs24vm" path="res://Characters/Jill Valentine/anim252.png" id="173_rfqie"]
 [ext_resource type="Texture2D" uid="uid://bevys3w1h5iwm" path="res://Characters/Jill Valentine/anim253.png" id="174_k1nuv"]
 [ext_resource type="Texture2D" uid="uid://cs83x52pf28wa" path="res://Characters/Jill Valentine/anim254.png" id="175_ox2ep"]
@@ -934,6 +939,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("162_tg0xu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_oc2gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_b1nfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_4delh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_ax1yh")
+}],
+"loop": true,
+"name": &"otg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("155_4iik7")
 }, {
 "duration": 1.0,
@@ -1078,6 +1103,23 @@ animations = [{
 "loop": true,
 "name": &"sMP",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63")
+}],
+"loop": true,
+"name": &"wakeUp",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4kfw"]
@@ -1221,6 +1263,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hurtboxes/Hurtbox:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
@@ -2588,7 +2642,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(47, 67)]
 }
 tracks/3/type = "value"
@@ -2600,7 +2654,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, 17.5)]
 }
 
@@ -5335,6 +5389,127 @@ tracks/3/keys = {
 "values": [Vector2(-0.5, 11)]
 }
 
+[sub_resource type="Animation" id="Animation_5sc5t"]
+resource_name = "otg"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"otg"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.116667, 0.2, 0.366667, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hurtboxes/Hurtbox:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(79, 56), Vector2(127, 32)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hurtboxes/Hurtbox:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.5, 28), Vector2(-0.5, 40)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.833333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"wakeUp"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_hda2p"]
+resource_name = "wakeUp"
+length = 0.500002
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"wakeUp"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hurtboxes/Hurtbox:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xaxc"]
 resource_local_to_scene = true
 _data = {
@@ -5360,6 +5535,7 @@ _data = {
 "jumping": SubResource("Animation_q1b2y"),
 "jumpingFalling": SubResource("Animation_4my04"),
 "midHitstun": SubResource("Animation_xxx4n"),
+"otg": SubResource("Animation_5sc5t"),
 "sHK": SubResource("Animation_khk4x"),
 "sHP": SubResource("Animation_q4cf5"),
 "sLK": SubResource("Animation_0376u"),
@@ -5368,6 +5544,7 @@ _data = {
 "sMP": SubResource("Animation_6p61a"),
 "standingBlocking": SubResource("Animation_uxkvc"),
 "standingFlip": SubResource("Animation_i31sl"),
+"wakeUp": SubResource("Animation_hda2p"),
 "walkBack": SubResource("Animation_t7ihw")
 }
 
@@ -5566,11 +5743,17 @@ input_1/reset = true
 input_2/name = "jumping"
 input_2/auto_advance = false
 input_2/reset = true
+input_3/name = "knockdown"
+input_3/auto_advance = false
+input_3/reset = true
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_uhuok"]
 
 [sub_resource type="AnimationNodeAnimation" id="12"]
 animation = &"Jill/WalkForward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7nf65"]
+animation = &"Jill/jumpHitstun"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wei0a"]
 animation = &"Jill/cHK"
@@ -5621,17 +5804,34 @@ animation = &"Jill/jumpBloackstun"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r37j0"]
 animation = &"Jill/jumpHitstun"
 
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_lqffq"]
+input_0/name = "airborne"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "otg"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "wakeUp"
+input_2/auto_advance = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tgult"]
+animation = &"Jill/otg"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gswe2"]
 animation = &"Jill/jumping"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5rpv"]
 animation = &"Jill/standingBlocking"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nstri"]
+animation = &"Jill/wakeUp"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_epjdj"]
 animation = &"Jill/walkBack"
 
 [sub_resource type="AnimationNodeBlendTree" id="18"]
-graph_offset = Vector2(231.873, -188.145)
+graph_offset = Vector2(622.202, 262.514)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1240, -400)
 nodes/Crouch/node = SubResource("13")
@@ -5665,7 +5865,7 @@ nodes/JumpAttacking/position = Vector2(1232, 704)
 nodes/JumpHit/node = SubResource("AnimationNodeTransition_ppl63")
 nodes/JumpHit/position = Vector2(840, 560)
 nodes/JumpingAction/node = SubResource("AnimationNodeTransition_43hom")
-nodes/JumpingAction/position = Vector2(1397, 539)
+nodes/JumpingAction/position = Vector2(1440, 220)
 nodes/LK/node = SubResource("AnimationNodeAnimation_q6a8w")
 nodes/LK/position = Vector2(1020, -380)
 nodes/LP/node = SubResource("14")
@@ -5684,6 +5884,8 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_uhuok")
 nodes/TimeScale/position = Vector2(1940, 60)
 "nodes/WalkForward /node" = SubResource("12")
 "nodes/WalkForward /position" = Vector2(1060, -560)
+nodes/airHitstun/node = SubResource("AnimationNodeAnimation_7nf65")
+nodes/airHitstun/position = Vector2(1440, 460)
 nodes/cHK/node = SubResource("AnimationNodeAnimation_wei0a")
 nodes/cHK/position = Vector2(880, 360)
 nodes/cHP/node = SubResource("AnimationNodeAnimation_qty1o")
@@ -5716,14 +5918,20 @@ nodes/jumpBlockstun/node = SubResource("AnimationNodeAnimation_i3w07")
 nodes/jumpBlockstun/position = Vector2(640, 480)
 nodes/jumpHitstun/node = SubResource("AnimationNodeAnimation_r37j0")
 nodes/jumpHitstun/position = Vector2(576.546, 637.737)
+nodes/knockDownAction/node = SubResource("AnimationNodeTransition_lqffq")
+nodes/knockDownAction/position = Vector2(1820, 340)
+nodes/otg/node = SubResource("AnimationNodeAnimation_tgult")
+nodes/otg/position = Vector2(1680, 500)
 nodes/output/position = Vector2(2180, 100)
 nodes/rising/node = SubResource("AnimationNodeAnimation_gswe2")
 nodes/rising/position = Vector2(1078, 451)
 nodes/standingBlocking/node = SubResource("AnimationNodeAnimation_c5rpv")
 nodes/standingBlocking/position = Vector2(1040, -200)
+nodes/wakeUp/node = SubResource("AnimationNodeAnimation_nstri")
+nodes/wakeUp/position = Vector2(1650.66, 683.498)
 nodes/walkBack/node = SubResource("AnimationNodeAnimation_epjdj")
 nodes/walkBack/position = Vector2(1240, -520)
-node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Attacking", 3, &"LK", &"Attacking", 4, &"MK", &"Attacking", 5, &"HK", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchAttacking", 4, &"cMK", &"CrouchAttacking", 5, &"cHK", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpAttacking", 3, &"jLK", &"JumpAttacking", 4, &"jMK", &"JumpAttacking", 5, &"jHK", &"JumpHit", 0, &"jumpBlockstun", &"JumpHit", 1, &"jumpHitstun", &"JumpingAction", 0, &"Jump", &"JumpingAction", 1, &"JumpHit", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"TimeScale", 0, &"State", &"output", 0, &"TimeScale"]
+node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Attacking", 3, &"LK", &"Attacking", 4, &"MK", &"Attacking", 5, &"HK", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchAttacking", 4, &"cMK", &"CrouchAttacking", 5, &"cHK", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpAttacking", 3, &"jLK", &"JumpAttacking", 4, &"jMK", &"JumpAttacking", 5, &"jHK", &"JumpHit", 0, &"jumpBlockstun", &"JumpHit", 1, &"jumpHitstun", &"JumpingAction", 0, &"Jump", &"JumpingAction", 1, &"JumpHit", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"State", 3, &"knockDownAction", &"TimeScale", 0, &"State", &"knockDownAction", 0, &"airHitstun", &"knockDownAction", 1, &"otg", &"knockDownAction", 2, &"wakeUp", &"output", 0, &"TimeScale"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l40to"]
 size = Vector2(1, 1)
@@ -5834,6 +6042,9 @@ parameters/State/current_state = "standing"
 parameters/State/transition_request = ""
 parameters/State/current_index = 0
 parameters/TimeScale/scale = 1.0
+parameters/knockDownAction/current_state = ""
+parameters/knockDownAction/transition_request = "airborne"
+parameters/knockDownAction/current_index = -1
 
 [node name="anchorPoint" type="Area2D" parent="CharacterBody2D"]
 position = Vector2(0, 48)

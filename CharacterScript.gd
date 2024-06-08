@@ -10,6 +10,7 @@ var knockbackVector:Vector2 = Vector2(1,1)
 
 var facing = 1
 var grounded = true
+var knockdown = false
 #var airborne = false
 
 var strength = -900
@@ -25,6 +26,7 @@ var attack = "LP"
 var jumpState = "rising"
 var hit = "hit"
 var idleState = "idle"
+var knockdownState = "airborne"
 
 #cancel states
 var normalCancel = false
@@ -65,6 +67,7 @@ var jumpDirection = 0
 @onready var A_CrouchAttacking = "parameters/CrouchAttacking/transition_request"
 @onready var A_IdleState = "parameters/IdleState/transition_request"
 @onready var A_TimeScale = "parameters/TimeScale/scale"
+@onready var A_KnockDownAction = "parameters/knockDownAction/transition_request"
 #controller
 @onready var virtualController = parent.virtualController
 
@@ -78,7 +81,6 @@ func _ready():
 	animatedTree.active = true
 
 func _physics_process(_delta):
-	collision_box.disabled = false
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
 	
@@ -193,6 +195,7 @@ func buttonPressed():
 	return false
 
 func animationFinished():
+	knockdown = false
 	set_deferred("attacking", 0)
 	if !(hitstun > 0): action = "idle"
 	state = "standing"
@@ -227,7 +230,7 @@ func walk():
 			applyKnockback(knockback/2)
 		else:
 			applyKnockback(knockback)
-		if !grounded:
+		if !grounded && !knockdown:
 			state = "jumping"
 		return
 	crouching = parent.virtualController.directionY > 0
@@ -286,6 +289,7 @@ func setAnimation():
 	animatedTree.set(A_CrouchHit, hit)
 	animatedTree.set(A_JumpHit, hit)
 	animatedTree.set(A_IdleState, idleState)
+	animatedTree.set(A_KnockDownAction, knockdownState)
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
@@ -300,7 +304,12 @@ func getHit(hitbox):
 	#hitbox.stunVector.x = hitbox.stunVector.x * parent.facing
 	knockbackVector = Vector2(hitbox.stunVector.x * parent.facing, hitbox.stunVector.y)
 	print(hitbox.hitProperty)
-	if hitbox.hitProperty != 1: knockbackVector.y = 0
+	if hitbox.hitProperty != 1: 
+		knockbackVector.y = 0
+	else:
+		knockdown = true
+		state = "knockdown"
+		knockdownState = "airborne"
 	if action == "hit":
 		animatedTree.advance(-0.25)
 	velocity.x = 0
@@ -325,7 +334,10 @@ func endHitstun():
 		parent.comboCounter = 0
 		parent.comboDamage = 0
 	elif hitstun > 0:
-		hitstun = hitstun - 1
+		if knockdown:
+			hitstun = 1
+		else:
+			hitstun = hitstun - 1
 		if velocity.y > 0: checkGround()
 
 func checkGround():
@@ -342,12 +354,21 @@ func getHurtBoxSizeY():
 func _on_anchor_point_body_entered(body):
 	if body.is_in_group("ground"):
 		grounded = true
-		animationFinished()
+		if knockdownState == "airborne": knockdownState = "otg"
+		if !knockdown: 
+			animationFinished()
+		else:
+			velocity.x = 0 #set to 0 for now, otherwise the dummy slides over the ground
 		if anchor_point.global_position.y > Global.ground:
-			collision_box.disabled = false
 			velocity.y = 0
 			global_position.y = Global.ground
 
 func _on_anchor_point_body_exited(body):
 	if body.is_in_group("ground"):
 		grounded = false
+
+#should it be a timer called in _on_anchor_point_body_entered?
+func wakeUp():
+	velocity.x = 0
+	#knockdown = false
+	knockdownState = "wakeUp"
