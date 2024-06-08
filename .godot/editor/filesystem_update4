@@ -1,8 +1,9 @@
 res://default_env.tres
-res://Player.tscn
+res://virtualController.tscn
 res://Scenes/menu/buttonRemap.gd
 res://Characters/Lilith/spr_lilit.gdshader
-res://CharacterScript.gd
-res://virtualController.tscn
+res://Player.tscn
 res://Bruh.tscn
 res://healthBars.tscn
+res://CharacterScript.gd
+res://scripts/global.gd

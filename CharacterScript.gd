@@ -102,59 +102,30 @@ func _physics_process(_delta):
 			flip()
 			setAnimation()
 			endHitstun()
-			gravity_fall()
+			if !grounded: gravity_fall()
 			walk()
-#	set_velocity(velocity)
-#	set_up_direction(Vector2.UP)
-#	if move_and_slide():
-#		if state == "jumping":
-#			velocity.x = speed * facing
-#		else:
-#			for i in get_slide_collision_count():
-#				var collision = get_slide_collision(i)
-#				if collision.get_collider().name == "TileMap":
-#					airborne = false
-#				else:
-#					velocity.y = 5000
-#					velocity.x = 500 * facing
 
 func playerCollision():
 	var overlappingPlayer = collision_area.get_overlapping_areas()
-	#var slideCollision = get_slide_collision(i)
 	if !overlappingPlayer: return
 	overlappingPlayer = overlappingPlayer[0]
-	#if !overlappingPlayer[0].has_method("getCollider"): return
 	var collision = overlappingPlayer.getCollider()
 	if collision.is_in_group("CollisionBox"):
-		#collision_box.disabled = true
-#https://www.reddit.com/r/godot/comments/dwcs2l/2d_fighting_game_push_collision/
-#var c = move_and_collide(velocity * delta)
-#if c && c.normal != null:
-#velocity = velocity.slide(c.normal)
-#var motion = c.remainder.slide(c.normal)
-#move_and_collide(motion)
-		#collision.velocity.x += velocity.x / 2
 		var pushDirection = 1
 		if global_position.x < collision.global_position.x:
 			pushDirection = -1
 		var distance = abs(global_position - collision.global_position)
 		if grounded != overlappingPlayer.isGrounded() && velocity.y > -1:
-			# && global_position.y < collision.global_position.y + collision.getHurtBoxSizeY()
 			global_position.y += getHurtBoxSizeY() / 8
-			#global_position.x += pushDirection * (collision.getHurtBoxSizeX() / 2)
 			global_position.x += pushDirection * (distance.x / 2)
 			overlappingPlayer.setPlayerGlobalPosition(-pushDirection * (distance.x / 2), 0)
 			velocity.x = 0
 			jumpDirection = 0
-			#collision.global_position.x += pushDirection * -1 * (collision.getHurtBoxSizeX() / 4)
-			#ApplyImpulse(Vector2(global_position.x - collision.global_position.x, 0).normalized())
 		elif grounded == overlappingPlayer.isGrounded():
 			var push = pushDirection * ((speed / 2) * (1 / distance.x))
 			if velocity.x > 0: velocity.x = speed/8
 			global_position.x += push
-			#overlappingPlayer.setPlayerGlobalPosition(push, 0)
 		move_and_slide()
-			
 
 func isGrounded():
 	var raycastLength: float = 1
@@ -166,18 +137,16 @@ func isGrounded():
 	
 	return rayResult != null
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 func gravity_fall():
 	if action == "hit" && verticalHitstun > 0:
+		verticalHitstun -= 1
 		return
 	velocity.y += gravity
 	
 	if verticalHitstun > 0:
 		verticalHitstun -= 1
-	elif velocity.y < 0 && action == "hit":
-		velocity.y = 0
+	#elif velocity.y < 0 && action == "hit":
+		#velocity.y = 0
 	
 	if velocity.y > terminalVelocity:
 		if action == "hit":
@@ -190,7 +159,6 @@ func gravity_fall():
 		state = "standing"
 		action = "idle"
 		animationFinished()
-		
 
 func isAttacking():
 	buttonPressed()
@@ -274,10 +242,6 @@ func walk():
 		velocity.x = velocity.x - deceleration * (velocity.x/speed)
 	elif state != "jumping":
 		velocity.x = 0
-#	if abs(velocity.x) > maxSpeed:
-#		velocity.x = maxSpeed * -parent.facing
-#	elif abs(velocity.x) > 0:
-#		velocity.x -= deceleration * parent.facing
 
 func applyKnockback(knockbackApplied):
 	velocity += knockbackVector
@@ -289,7 +253,6 @@ func applyKnockback(knockbackApplied):
 		velocity.x = velocity.x - 1 
 	else:
 		velocity.x = 0
-
 
 func jump():
 	if action == "hit":
@@ -305,10 +268,6 @@ func jump():
 		jumpDirection = parent.virtualController.directionX
 		if abs(jumpDirection) > 0:
 			velocity.x = parent.virtualController.directionX*jumpSpeed
-#		airborne = true
-#	if !is_on_floor():
-#		state = "jumping"
-#		action = "idle"
 	if jumpDirection != 0 && !grounded:
 		velocity.x = jumpDirection*jumpSpeed
 	if velocity.y > 0:
@@ -333,7 +292,7 @@ func setAnimation():
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
-		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector, hitboxes.damage, hitboxes.attackType, hitboxes.hitstop)
+		hitbox.get_parent().get_parent().getHit(hitboxes.stun, hitboxes.stunVector, hitboxes.damage, hitboxes.attackType, hitboxes.hitstop, hitboxes.vstun)
 		hitbox.set_deferred("disabled", true)
 		hitstop = hitboxes.hitstop
 		normalCancel = true
@@ -345,11 +304,11 @@ func getHit(stun = 19, hitVector = Vector2(100,-500), damage = 10, attackType = 
 	knockbackVector = hitVector
 	if action == "hit":
 		animatedTree.advance(-0.25)
-	hitboxes.disableHitboxes()
-	action = "hit"
 	velocity.x = 0
 	velocity.y = 0
-	if !blocking || (blocking && (!lowBlock && attackType == 1)) || (blocking && (lowBlock && attackType == 2)):
+	hitboxes.disableHitboxes()
+	action = "hit"
+	if action == "hit" || !blocking || (blocking && (!lowBlock && attackType == 1)) || (blocking && (lowBlock && attackType == 2)):
 		attacking = 0
 		hitstun = stun
 		knockback = 35 * parent.facing
@@ -375,7 +334,6 @@ func getHurtBoxSizeX():
 func getHurtBoxSizeY():
 	return collision_box.shape.size.y
 
-
 func _on_anchor_point_body_entered(body):
 	if body.is_in_group("ground"):
 		grounded = true
@@ -383,7 +341,6 @@ func _on_anchor_point_body_entered(body):
 			collision_box.disabled = false
 			velocity.y = 0
 			global_position.y = Global.ground
-
 
 func _on_anchor_point_body_exited(body):
 	if body.is_in_group("ground"):

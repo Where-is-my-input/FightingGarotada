@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8dsl308vfypc"]
+[gd_scene load_steps=12 format=3 uid="uid://b8dsl308vfypc"]
 
 [ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="1_qqqc0"]
 [ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://cbi3kopno23pf" path="res://Player.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://healthBars.tscn" id="3_qyq2c"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_dclaj"]
+[ext_resource type="Script" path="res://trainingMode.gd" id="6_wsjpw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1wml"]
 texture = ExtResource("2")
@@ -169,3 +170,11 @@ position = Vector2(1705, 520)
 scale = Vector2(3.99834, -43.6312)
 shape = SubResource("RectangleShape2D_1p8bk")
 debug_color = Color(0.340613, 0.404992, 0.39985, 0.42)
+
+[node name="trainingMode" type="Node" parent="."]
+script = ExtResource("6_wsjpw")
+
+[node name="tmrBlock" type="Timer" parent="trainingMode"]
+one_shot = true
+
+[connection signal="timeout" from="trainingMode/tmrBlock" to="trainingMode" method="_on_tmr_block_timeout"]

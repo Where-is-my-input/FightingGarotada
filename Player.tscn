@@ -1082,7 +1082,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4kfw"]
 resource_local_to_scene = true
-size = Vector2(37, 79)
+size = Vector2(47, 47.5)
 
 [sub_resource type="RectangleShape2D" id="5"]
 resource_local_to_scene = true
@@ -1185,6 +1185,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [15]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Hitboxes:vstun")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
@@ -1461,6 +1473,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [40]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_pdhf3"]
 resource_name = "cHP"
@@ -1613,6 +1637,18 @@ tracks/11/keys = {
 "update": 1,
 "values": [9]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Hitboxes:vstun")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [25]
+}
 
 [sub_resource type="Animation" id="Animation_i62ue"]
 resource_name = "cLK"
@@ -1752,6 +1788,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_11del"]
@@ -1893,6 +1941,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [100]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_73jve"]
 resource_name = "cMK"
@@ -2033,6 +2093,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [35]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_0hsc7"]
 resource_name = "cMP"
@@ -2172,6 +2244,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [175]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_slfyj"]
@@ -2424,6 +2508,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [30]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
 
 [sub_resource type="Animation" id="Animation_f0och"]
 resource_name = "jHP"
@@ -2563,6 +2659,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [12]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [25]
 }
 
 [sub_resource type="Animation" id="Animation_1yyat"]
@@ -2704,6 +2812,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [5]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
 
 [sub_resource type="Animation" id="Animation_esicg"]
 resource_name = "jLP"
@@ -2794,7 +2914,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(15, -10)]
+"values": [Vector2(15, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -2839,6 +2959,18 @@ tracks/10/path = NodePath("Hitboxes:hitstop")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -2984,6 +3116,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [8]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
 
 [sub_resource type="Animation" id="Animation_mkvxs"]
 resource_name = "jMP"
@@ -3074,7 +3218,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(5, -10)]
+"values": [Vector2(5, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -3123,6 +3267,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [8]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
 }
 
 [sub_resource type="Animation" id="Animation_3oxx0"]
@@ -3429,6 +3585,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [10]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_q4cf5"]
 resource_name = "sHP"
@@ -3581,6 +3749,18 @@ tracks/11/keys = {
 "update": 1,
 "values": [9]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Hitboxes:vstun")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_0376u"]
 resource_name = "sLK"
@@ -3720,6 +3900,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [3]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_wqo8l"]
@@ -3861,6 +4053,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [3]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_eiqu5"]
 resource_name = "sMK"
@@ -4001,6 +4205,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [8]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_6p61a"]
 resource_name = "sMP"
@@ -4140,6 +4356,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [7]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitboxes:vstun")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_uxkvc"]
@@ -4747,11 +4975,11 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("99_32v1y")
-stun = 13
-stunVector = Vector2(50, -18)
-damage = 50
-attackType = 2
+stun = 35
+stunVector = Vector2(50, -300)
+damage = 350
 hitstop = 15
+vstun = 10
 
 [node name="Hitbox" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/Hitboxes"]
 light_mask = 4
