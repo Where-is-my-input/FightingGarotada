@@ -37,6 +37,10 @@ alignment = 1
 layout_mode = 2
 text = "Versus"
 
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Training"
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -56,4 +60,5 @@ texture = ExtResource("2_vh4sg")
 expand_mode = 4
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/btnVersus" to="." method="_on_btn_versus_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2/btnButtonMap" to="." method="_on_btn_button_map_pressed"]

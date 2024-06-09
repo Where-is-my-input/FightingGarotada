@@ -1686,7 +1686,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [2]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -6865,10 +6865,10 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("99_32v1y")
-stun = 30
-stunVector = Vector2(15, 0)
-damage = 575
-attackType = 2
+stun = 40
+stunVector = Vector2(-100, -35)
+damage = 400
+attackType = 1
 hitstop = 15
 vstun = 10
 

@@ -1,5 +1,7 @@
 extends Node
 
+enum mode {VERSUS, TRAINING}
+
 signal player1KO()
 signal player2KO()
 signal debugPause()
@@ -10,6 +12,12 @@ var player2Wins = 0
 
 var ground = 785
 
+var gameMode = mode.VERSUS
+
 func _input(event):
 	if event.is_action_pressed("mainmenu"):
 		get_tree().change_scene_to_file("res://Scenes/menu/main_menu.tscn")
+
+func setGameMode(v):
+	print("game mode set to - ", v)
+	gameMode = v

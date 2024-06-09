@@ -69,6 +69,10 @@ script/source = "extends Node
 
 var nextFrame = false
 
+func _ready():
+	if Global.gameMode != Global.mode.TRAINING:
+		queue_free()
+
 func _process(_delta):
 	if get_tree().paused == false and nextFrame == true:
 		get_tree().paused = true

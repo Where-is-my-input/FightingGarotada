@@ -7,6 +7,8 @@ extends Node
 var block = false
 
 func _ready():
+	if Global.gameMode != Global.mode.TRAINING:
+		queue_free()
 	player2.connect("gotHit", player2GotHit)
 
 func player2GotHit():
