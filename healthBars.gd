@@ -18,6 +18,8 @@ extends Control
 @onready var camera_2d = $Camera2D
 @onready var lbl_player_1_win_streak = $CanvasLayer/lblPlayer1WinStreak
 @onready var lbl_player_2_win_streak = $CanvasLayer/lblPlayer2WinStreak
+@onready var lbl_leader_2 = $CanvasLayer/lblLeader2
+@onready var lbl_leader_1 = $CanvasLayer/lblLeader1
 
 var player1
 var player2
@@ -48,6 +50,7 @@ func player1GotHit():
 	combo_counter_1.text = str(player1.comboCounter)
 	combo_damage_1.text = str(player1.comboDamage)
 	tm_combo_player_1.start(1)
+	setLeader()
 
 func player2GotHit():
 	hpBarP2.value = player2.HP
@@ -56,6 +59,18 @@ func player2GotHit():
 	combo_counter_2.text = str(player2.comboCounter)
 	combo_damage_2.text = str(player2.comboDamage)
 	tm_combo_player_2.start(1)
+	setLeader()
+
+func setLeader():
+	if player1.HP > player2.HP:
+		lbl_leader_1.visible = true
+		lbl_leader_2.visible = false
+	elif player1.HP < player2.HP:
+		lbl_leader_2.visible = true
+		lbl_leader_1.visible = false
+	else:
+		lbl_leader_2.visible = false
+		lbl_leader_1.visible = false
 
 func _on_tm_combo_player_1_timeout():
 	combo_counter_1.visible = false

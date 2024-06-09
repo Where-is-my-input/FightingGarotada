@@ -126,6 +126,26 @@ scale = Vector2(0.169662, 0.169662)
 theme_override_font_sizes/font_size = 50
 text = "0 wins"
 
+[node name="lblLeader1" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 736.0
+offset_top = 80.0
+offset_right = 889.0
+offset_bottom = 149.0
+scale = Vector2(0.169662, 0.169662)
+theme_override_font_sizes/font_size = 50
+text = "Leader"
+
+[node name="lblLeader2" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 1160.0
+offset_top = 80.0
+offset_right = 1313.0
+offset_bottom = 149.0
+scale = Vector2(0.169662, 0.169662)
+theme_override_font_sizes/font_size = 50
+text = "Leader"
+
 [node name="lblTimer" type="Label" parent="CanvasLayer"]
 offset_left = 932.0
 offset_top = 24.0
