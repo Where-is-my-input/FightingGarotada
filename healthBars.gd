@@ -16,6 +16,8 @@ extends Control
 @onready var lbl_timer = $CanvasLayer/lblTimer
 @onready var tmr_timer = $CanvasLayer/tmrTimer
 @onready var camera_2d = $Camera2D
+@onready var lbl_player_1_win_streak = $CanvasLayer/lblPlayer1WinStreak
+@onready var lbl_player_2_win_streak = $CanvasLayer/lblPlayer2WinStreak
 
 var player1
 var player2
@@ -32,6 +34,7 @@ func _ready():
 	player1.connect("KO", player1KO)
 	player2.connect("KO", player2KO)
 	player1.setCamera(camera_2d.get_path())
+	setWinStreak()
 	#player2.setCamera(camera_2d.get_path())
 	setDefault()
 
@@ -74,12 +77,27 @@ func setDefault():
 func player1KO():
 	lbl_player_wins.text = "Player 2 Wins!"
 	Global.player2Wins += 1
+	Global.player2WinStreak += 1
+	Global.player1WinStreak = 0
+	lbl_player_1_win_streak.visible = false
+	lbl_player_2_win_streak.visible = true
 	lbl_player_2_win_count.text = str(Global.player2Wins, " wins")
 	KO()
+
+func setWinStreak():
+	if Global.player1WinStreak > 0: lbl_player_2_win_streak.visible = false
+	if Global.player2WinStreak > 0: lbl_player_1_win_streak.visible = false
+	lbl_player_1_win_streak.text = str(Global.player1WinStreak, " Wins")
+	lbl_player_2_win_streak.text = str(Global.player2WinStreak, " Wins")
+	
 
 func player2KO():
 	lbl_player_wins.text = "Player 1 Wins!"
 	Global.player1Wins += 1
+	Global.player1WinStreak += 1
+	Global.player2WinStreak = 0
+	lbl_player_1_win_streak.visible = true
+	lbl_player_2_win_streak.visible = false
 	lbl_player_1_win_count.text = str(Global.player1Wins, " wins")
 	KO()
 

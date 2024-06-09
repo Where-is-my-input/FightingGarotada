@@ -389,7 +389,7 @@ func getHit(hitbox):
 		if grounded:
 			knockbackVector.y = 0
 		knockback = 35 * parent.facing
-		hitstun = hitbox.stun
+		hitstun = hitbox.blockStun
 		hit = "block"
 	
 func endHitstun():
@@ -463,7 +463,6 @@ func KO():
 	tmr_knockdown.start(1)
 	state = "knockdown"
 	if knockdownState != "otg": knockdownState = "airborne"
-	print("KO")
 	knockdown = true
 	action = "hit"
 	setAnimation()

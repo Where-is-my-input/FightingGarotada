@@ -8,3 +8,6 @@ res://healthBars.tscn
 res://Scenes/menu/main_menu.tscn
 res://virtualController.gd
 res://CharacterScript.gd
+res://Hitboxes.gd
+res://healthBars.gd
+res://scripts/global.gd

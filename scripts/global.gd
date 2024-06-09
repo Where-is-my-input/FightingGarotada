@@ -12,6 +12,10 @@ signal debugFrameAdvance()
 var player1Wins = 0
 var player2Wins = 0
 
+var player1WinStreak = 0
+var player2WinStreak = 0
+
+
 var ground = 785
 
 var gameMode = mode.VERSUS
