@@ -14,6 +14,8 @@ var motionBackwards = [Vector2(1,0), Vector2(1,1), Vector2(0,1)]
 var facing = 1
 var grounded = true
 var knockdown = false
+var beingGrabbed = false
+var grabbedPlayer = null
 var jumpStartUp = false
 var jumping = false
 #var airborne = false
@@ -56,10 +58,10 @@ var jumpDirection = 0
 @onready var hitboxes = $AnimatedSprite2D/Hitboxes
 @onready var animatedTree = $AnimatedSprite2D/AnimationPlayer/AnimationTree
 @onready var collision_box = $CollisionBox
-@onready var collision_area = $collisionArea
 @onready var marker_2d = $anchorPoint/Marker2D
 @onready var anchor_point = $anchorPoint
 @onready var tmr_knockdown = $tmrKnockdown
+@onready var collision_area = $AnimatedSprite2D/collisionArea
 
 #animationTree
 @onready var A_State = "parameters/State/transition_request"
@@ -105,7 +107,10 @@ func _physics_process(_delta):
 			flip()
 			endHitstun()
 			if !grounded && !disableGravity: gravity_fall()
-			walk()
+			if !beingGrabbed: 
+				walk()
+			else:
+				velocity.x = 0
 			if (!attacking || normalCancel && action == "attacking" && buttonPressed()) && action != "hit":
 				isAttacking()
 			jump()
@@ -173,6 +178,8 @@ func buttonPressed():
 	if (parent.virtualController.LP == 1 || parent.virtualController.bufferedAction == "LP"):
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special1", 1, 4)
+		if (parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK"):
+			setAttack("Grab", 1, 4)
 		if gatlingPriority < 1:
 			setAttack("LP", 1, 1)
 		return true
@@ -201,6 +208,8 @@ func setAttack(atk, isAtk, gatling):
 	gatlingPriority = gatling
 
 func animationFinished():
+	if grabbedPlayer != null: grabbedPlayer.release()
+	beingGrabbed = false
 	disableGravity = false
 	jumpStartUp = false
 	knockdown = false
@@ -230,7 +239,7 @@ func neutralAnimation():
 				
 	
 func flip():
-	if grounded && !attacking && parent.facing != facing:
+	if grounded && !attacking && parent.facing != facing && !knockdown:
 		idleState = "flip"
 		scale.x = -1
 		facing = parent.facing
@@ -318,33 +327,48 @@ func setAnimation():
 
 func _on_hitboxes_area_entered(hitbox):
 	if hitbox.get_parent() != animatedSprite:
-		hitbox.get_parent().get_parent().getHit(hitboxes)
-		hitbox.set_deferred("disabled", true)
-		hitstop = hitboxes.hitstop
-		normalCancel = true
-	
-func getHit(hitbox):
+		var hitParent = hitbox.get_parent().get_parent()
+		if hitboxes.hitProperty == Global.hitType.GRAB:
+			if hitbox.is_in_group("CollisionBox"):
+				disableGravity = true
+				velocity = Vector2(0,0)
+				hitParent.defaultGetHitEffects(hitboxes)
+				hitbox.set_deferred("disabled", true)
+				hitbox.grabbed()
+				grabbedPlayer = hitbox
+				setAttack("Throw", 1, 4)
+		else:
+			hitParent.getHit(hitboxes)
+			hitbox.set_deferred("disabled", true)
+			hitstop = hitboxes.hitstop
+			normalCancel = true
+
+func defaultGetHitEffects(hitbox):
 	hitstop = hitbox.hitstop
 	verticalHitstun = hitbox.vstun
 	#hitbox.stunVector.x = hitbox.stunVector.x * parent.facing
 	knockbackVector = Vector2(hitbox.stunVector.x * parent.facing, hitbox.stunVector.y)
-	if hitbox.hitProperty == 0: 
+	velocity.x = 0
+	velocity.y = 0
+	hitboxes.disableHitboxes()
+	hitbox.disableHitboxes() #change to priority system? Otherwise enable hitboxes every other frame for multihits
+	action = "hit"
+
+func getHit(hitbox):
+	defaultGetHitEffects(hitbox)
+	if hitbox.hitProperty == Global.hitType.NORMAL: 
 		knockbackVector.y = 0
-	elif hitbox.hitProperty == 2:
+	elif hitbox.hitProperty == Global.hitType.KNOCKDOWN:
 		#collision_area.set_deferred("disabled", true)
 		#grounded = false
 		tmr_knockdown.start(1)
 		#disableGravity = true
 		knockdown = true
 		state = "knockdown"
-		knockdownState = "airborne"
+		if knockdownState != "otg": knockdownState = "airborne"
 	if action == "hit":
 		animatedTree.advance(-0.25)
-	velocity.x = 0
-	velocity.y = 0
-	hitboxes.disableHitboxes()
-	action = "hit"
-	if hitstun > 0 && !isBlocking || !blocking || (blocking && (!lowBlock && hitbox.attackType == 1)) || (blocking && (lowBlock && hitbox.attackType == 2)):
+	if beingGrabbed || hitstun > 0 && !isBlocking || !blocking || (blocking && (!lowBlock && hitbox.attackType == Global.blockType.LOW)) || (blocking && (lowBlock && hitbox.attackType == Global.blockType.HIGH)):
 		attacking = 0
 		hitstun = hitbox.stun
 		knockback = 35 * parent.facing
@@ -416,6 +440,11 @@ func wakeUp():
 func setMoveVelocity():
 	velocity = moveSpeed * facing * -1
 
+func grabbed():
+	beingGrabbed = true
+
+func release():
+	beingGrabbed = false
 
 func _on_tmr_knockdown_timeout():
 	if grounded:
