@@ -40,6 +40,7 @@ var normalCancel = false
 var specialCancel = true
 var superCancel = true
 var gatlingPriority = 0
+@export var disableGravity = false
 
 @export var moveSpeed = Vector2(0,0)
 var hitstun = 0
@@ -58,7 +59,7 @@ var jumpDirection = 0
 @onready var collision_area = $collisionArea
 @onready var marker_2d = $anchorPoint/Marker2D
 @onready var anchor_point = $anchorPoint
-
+@onready var tmr_knockdown = $tmrKnockdown
 
 #animationTree
 @onready var A_State = "parameters/State/transition_request"
@@ -99,11 +100,11 @@ func _physics_process(_delta):
 			#return
 		else:
 			animatedTree.set(A_TimeScale, 1)
-			move_and_slide()
 			playerCollision()
+			move_and_slide()
 			flip()
 			endHitstun()
-			if !grounded: gravity_fall()
+			if !grounded && !disableGravity: gravity_fall()
 			walk()
 			if (!attacking || normalCancel && action == "attacking" && buttonPressed()) && action != "hit":
 				isAttacking()
@@ -128,19 +129,10 @@ func playerCollision():
 		elif grounded == overlappingPlayer.isGrounded():
 			distance = abs(global_position.x - collision.global_position.x)
 			var push = pushDirection * ((speed / 2) * (1 / distance))
-			if velocity.x > 0: velocity.x = speed/8
+			if velocity.x > 0 && !disableGravity: velocity.x = speed/8
 			global_position.x += push
-		move_and_slide()
-
-#func isGrounded():
-	#var raycastLength: float = 1
-	#var raycastTo: Vector2 = marker_2d.global_position + Vector2(0, raycastLength)
-	#
-	#var spaceState = get_world_2d().direct_space_state
-	#var create = PhysicsRayQueryParameters2D.create(marker_2d.global_position, raycastTo)
-	#var rayResult = spaceState.intersect_ray(create)
-	#
-	#return rayResult != null
+			#print(velocity)
+		#move_and_slide()
 
 func gravity_fall():
 	if action == "hit" && verticalHitstun > 0:
@@ -179,7 +171,7 @@ func isAttacking():
 
 func buttonPressed():
 	if (parent.virtualController.LP == 1 || parent.virtualController.bufferedAction == "LP"):
-		if parent.virtualController.checkMotionExecuted(motionForward):
+		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special1", 1, 4)
 		if gatlingPriority < 1:
 			setAttack("LP", 1, 1)
@@ -192,6 +184,8 @@ func buttonPressed():
 		return true
 	if (parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK") && gatlingPriority < 1:
 		setAttack("LK", 1, 1)
+		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
+			setAttack("Special2", 1, 4)
 		return true
 	if (parent.virtualController.MK == 1 || parent.virtualController.bufferedAction == "MK") && gatlingPriority < 2:
 		setAttack("MK", 2, 2)
@@ -207,6 +201,7 @@ func setAttack(atk, isAtk, gatling):
 	gatlingPriority = gatling
 
 func animationFinished():
+	disableGravity = false
 	jumpStartUp = false
 	knockdown = false
 	set_deferred("attacking", 0)
@@ -255,9 +250,9 @@ func walk():
 #		return
 	if grounded && !crouching && !attacking && !jumpStartUp: 
 		velocity.x = parent.virtualController.directionX*speed
-	elif abs(velocity.x) > 0 && state != "jumping":
+	elif abs(velocity.x) > 0 && state != "jumping" && !disableGravity:
 		velocity.x = velocity.x - deceleration * (velocity.x/speed)
-	elif state != "jumping":
+	elif state != "jumping" && !disableGravity:
 		velocity.x = 0
 
 func applyKnockback(knockbackApplied):
@@ -336,6 +331,10 @@ func getHit(hitbox):
 	if hitbox.hitProperty == 0: 
 		knockbackVector.y = 0
 	elif hitbox.hitProperty == 2:
+		#collision_area.set_deferred("disabled", true)
+		#grounded = false
+		tmr_knockdown.start(1)
+		#disableGravity = true
 		knockdown = true
 		state = "knockdown"
 		knockdownState = "airborne"
@@ -369,6 +368,8 @@ func endHitstun():
 	elif hitstun > 0:
 		if knockdown:
 			hitstun = 1
+			#if checkGround():
+				#land()
 		else:
 			hitstun = hitstun - 1
 		if velocity.y > 0: checkGround()
@@ -377,6 +378,7 @@ func checkGround():
 	if anchor_point.global_position.y > Global.ground:
 		velocity.y = 0
 		global_position.y = Global.ground
+		return true
 
 func getHurtBoxSizeX():
 	return collision_box.shape.size.x
@@ -386,15 +388,18 @@ func getHurtBoxSizeY():
 
 func _on_anchor_point_body_entered(body):
 	if body.is_in_group("ground"):
-		grounded = true
-		if knockdownState == "airborne": knockdownState = "otg"
-		if !knockdown: 
-			animationFinished()
-		else:
-			velocity.x = 0 #set to 0 for now, otherwise the dummy slides over the ground
-		if anchor_point.global_position.y > Global.ground:
-			velocity.y = 0
-			global_position.y = Global.ground
+		land()
+	
+func land():
+	grounded = true
+	if knockdownState == "airborne": knockdownState = "otg"
+	if !knockdown: 
+		animationFinished()
+	else:
+		velocity.x = 0 #set to 0 for now, otherwise the dummy slides over the ground
+	if anchor_point.global_position.y > Global.ground:
+		velocity.y = 0
+		global_position.y = Global.ground
 
 func _on_anchor_point_body_exited(body):
 	if body.is_in_group("ground"):
@@ -403,9 +408,15 @@ func _on_anchor_point_body_exited(body):
 #should it be a timer called in _on_anchor_point_body_entered?
 #allow otg "recombo"
 func wakeUp():
-	velocity.x = 0
-	#knockdown = false
-	knockdownState = "wakeUp"
+	if parent.HP > 0:
+		velocity.x = 0
+		#knockdown = false
+		knockdownState = "wakeUp"
 
 func setMoveVelocity():
-	velocity = moveSpeed * facing
+	velocity = moveSpeed * facing * -1
+
+
+func _on_tmr_knockdown_timeout():
+	if grounded:
+		land()

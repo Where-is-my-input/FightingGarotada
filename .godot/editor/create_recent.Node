@@ -1,8 +1,8 @@
+Timer
+CollisionShape2D
 Label
 Button
-Timer
 Node
-CollisionShape2D
 Area2D
 StaticBody2D
 ColorRect
