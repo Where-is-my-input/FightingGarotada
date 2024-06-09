@@ -105,6 +105,7 @@ func KO():
 	lb_ko.visible = true
 	lbl_player_wins.visible = true
 	tmr_ko.start(5)
+	setWinStreak()
 
 func _on_tmr_ko_timeout():
 	get_tree().change_scene_to_file("res://Bruh.tscn")
