@@ -12,3 +12,4 @@ res://trainingMode.gd
 res://CharacterScript.gd
 res://Player.gd
 res://Scenes/menu/input_remapper.tscn
+res://virtualController.gd

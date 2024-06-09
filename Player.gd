@@ -49,9 +49,10 @@ func flip():
 		facing = 1
 	
 func getHit(damage = 20):
+	comboCounter += 1
+	damage = damage + comboCounter / comboCounter #simple scalling
 	HP = HP - damage
 	comboDamage += damage
-	comboCounter += 1
 	gotHit.emit()
 	if HP <= 0 && !KOed:
 		KOed = true

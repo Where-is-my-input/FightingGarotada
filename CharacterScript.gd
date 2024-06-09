@@ -8,6 +8,9 @@ var deceleration = 150
 var knockback = 0
 var knockbackVector:Vector2 = Vector2(1,1)
 
+var motionForward = [Vector2(0,1), Vector2(1,1), Vector2(1,0)]
+var motionBackwards = [Vector2(1,0), Vector2(1,1), Vector2(0,1)]
+
 var facing = 1
 var grounded = true
 var knockdown = false
@@ -38,6 +41,7 @@ var specialCancel = true
 var superCancel = true
 var gatlingPriority = 0
 
+@export var moveSpeed = Vector2(0,0)
 var hitstun = 0
 var verticalHitstun = 0
 var hitstop = 0
@@ -174,37 +178,33 @@ func isAttacking():
 		action = "idle"
 
 func buttonPressed():
-	if (parent.virtualController.LP == 1 || parent.virtualController.bufferedAction == "LP") && gatlingPriority < 1:
-		attack = "LP"
-		attacking = 1
-		gatlingPriority = 1
+	if (parent.virtualController.LP == 1 || parent.virtualController.bufferedAction == "LP"):
+		if parent.virtualController.checkMotionExecuted(motionForward):
+			setAttack("Special1", 1, 4)
+		if gatlingPriority < 1:
+			setAttack("LP", 1, 1)
 		return true
 	if (parent.virtualController.MP == 1 || parent.virtualController.bufferedAction == "MP") && gatlingPriority < 2:
-		attack = "MP"
-		attacking = 2
-		gatlingPriority = 2
+		setAttack("MP", 2, 2)
 		return true
 	if (parent.virtualController.HP == 1 || parent.virtualController.bufferedAction == "HP") && gatlingPriority < 3:
-		attack = "HP"
-		attacking = 3
-		gatlingPriority = 3
+		setAttack("HP", 3, 3)
 		return true
 	if (parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK") && gatlingPriority < 1:
-		attack = "LK"
-		attacking = 1
-		gatlingPriority = 1
+		setAttack("LK", 1, 1)
 		return true
 	if (parent.virtualController.MK == 1 || parent.virtualController.bufferedAction == "MK") && gatlingPriority < 2:
-		attack = "MK"
-		attacking = 2
-		gatlingPriority = 2
+		setAttack("MK", 2, 2)
 		return true
 	if (parent.virtualController.HK == 1 || parent.virtualController.bufferedAction == "HK") && gatlingPriority < 3:
-		attack = "HK"
-		attacking = 3
-		gatlingPriority = 3
+		setAttack("HK", 3, 3)
 		return true
 	return false
+
+func setAttack(atk, isAtk, gatling):
+	attack = atk
+	attacking = isAtk
+	gatlingPriority = gatling
 
 func animationFinished():
 	jumpStartUp = false
@@ -406,3 +406,6 @@ func wakeUp():
 	velocity.x = 0
 	#knockdown = false
 	knockdownState = "wakeUp"
+
+func setMoveVelocity():
+	velocity = moveSpeed * facing

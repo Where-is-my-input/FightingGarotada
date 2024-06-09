@@ -41,6 +41,9 @@ var HK = 0
 var bufferedAction = ""
 @onready var tmr_buffer = $tmrBuffer
 
+var motionArray:Array = []
+var motionBuffer = 15
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var child = self.get_child(1)
@@ -81,12 +84,19 @@ func modulateVisualController():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	directionX = Input.get_action_strength(right)-Input.get_action_strength(left)
-	directionY = Input.get_action_strength(down)-Input.get_action_strength(up)
-	
+	motion()
 	readButtons() #change to input event to not call everyframe?
 	modulateVisualController()
 
+func motion():
+	directionX = Input.get_action_strength(right)-Input.get_action_strength(left)
+	directionY = Input.get_action_strength(down)-Input.get_action_strength(up)
+	motionArray.push_back(Vector2(directionX, directionY))
+	if motionArray.size() > motionBuffer:
+		motionArray.pop_front()
+	#print(motionArray)
+	#print(motionArray[0])
+	
 func readButtons():
 	if Input.get_action_strength(inputLP) > 0:
 		LP += 1
@@ -143,3 +153,13 @@ func setBufferedAction(v):
 
 func _on_tmr_buffer_timeout():
 	bufferedAction = ""
+
+func checkMotionExecuted(motion):
+	var motionIndex = 0
+	for m in motionArray:
+		#print(motion[motionIndex], m)
+		if motion[motionIndex] == m:
+			motionIndex += 1
+			if motionIndex + 1 > motion.size():
+				return true
+	return false
