@@ -11,11 +11,13 @@ extends Control
 #var p2Array = ["p2_2","p2_4","p2_8","p2_6","p2LP","p2MP","p2HP","p2LK","p2MK","p2HK"]
 
 var inputArray = ["down","left","up","right","LP","MP","HP","LK","MK","HK"]
+var globalInputs = ["ui_down","ui_left","ui_up","ui_right","ui_accept","ui_cancel"]
 
 var remapping = false
 var currentAction = ""
 var actionIndex = 0
 var actionSize = 0
+var globalIndex = 0
 
 func _ready():
 	lbl_player.text = "Player " + player
@@ -27,6 +29,7 @@ func _on_btn_remap_pressed():
 	text.visible = true
 	txtButton.visible = true
 	actionIndex = 0
+	globalIndex = 0
 	actionSize = array.size()
 	currentAction = array[actionIndex]
 	txtButton.text = str(inputArray[actionIndex])
@@ -43,6 +46,13 @@ func remapButtons():
 	currentAction = array[actionIndex]
 	txtButton.text = str(inputArray[actionIndex])
 
+func setGlobalInputs(event):
+	if globalIndex < globalInputs.size():
+		InputMap.action_erase_events(globalInputs[globalIndex])
+		InputMap.action_add_event(globalInputs[globalIndex], event)
+		print(globalInputs[globalIndex], " - set")
+		globalIndex += 1
+
 func _input(event):
 	if remapping && tmr_set.is_stopped():
 		if event is InputEventKey || event is InputEventJoypadButton:
@@ -51,8 +61,9 @@ func _input(event):
 		elif event is InputEventJoypadMotion:
 			if event.axis_value != 0:
 				remmapEvent(event)
-
+#["down","left","up","right","LP","MP","HP","LK","MK","HK"]
 func remmapEvent(event):
+	setGlobalInputs(event)
 	InputMap.action_erase_events(currentAction)
 	InputMap.action_add_event(currentAction, event)
 	print(currentAction, " - set")

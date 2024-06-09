@@ -69,9 +69,9 @@ script/source = "extends Node
 
 var nextFrame = false
 
-func _ready():
-	if Global.gameMode != Global.mode.TRAINING:
-		queue_free()
+#func _ready():
+	#if Global.gameMode != Global.mode.TRAINING:
+		#queue_free()
 
 func _process(_delta):
 	if get_tree().paused == false and nextFrame == true:
@@ -181,5 +181,15 @@ script = ExtResource("6_wsjpw")
 
 [node name="tmrBlock" type="Timer" parent="trainingMode"]
 one_shot = true
+
+[node name="lblStun" type="Label" parent="trainingMode"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 25
+
+[node name="lblStun2" type="Label" parent="trainingMode"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 25
 
 [connection signal="timeout" from="trainingMode/tmrBlock" to="trainingMode" method="_on_tmr_block_timeout"]

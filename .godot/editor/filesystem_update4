@@ -9,3 +9,6 @@ res://Scenes/menu/main_menu.tscn
 res://Scenes/menu/main_menu.gd
 res://scripts/global.gd
 res://trainingMode.gd
+res://CharacterScript.gd
+res://Player.gd
+res://Scenes/menu/input_remapper.tscn

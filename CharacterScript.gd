@@ -19,6 +19,7 @@ var strength = -900
 var attacking = false
 var blocking = false
 var lowBlock = false
+var isBlocking = false
 
 #states
 var state = "standing"
@@ -344,13 +345,15 @@ func getHit(hitbox):
 	velocity.y = 0
 	hitboxes.disableHitboxes()
 	action = "hit"
-	if hitstun > 0 || !blocking || (blocking && (!lowBlock && hitbox.attackType == 1)) || (blocking && (lowBlock && hitbox.attackType == 2)):
+	if hitstun > 0 && !isBlocking || !blocking || (blocking && (!lowBlock && hitbox.attackType == 1)) || (blocking && (lowBlock && hitbox.attackType == 2)):
 		attacking = 0
 		hitstun = hitbox.stun
 		knockback = 35 * parent.facing
 		hit = "hit"
+		isBlocking = false
 		parent.getHit(hitbox.damage)
 	else:
+		isBlocking = true
 		if grounded:
 			knockbackVector.y = 0
 		knockback = 35 * parent.facing

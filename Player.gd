@@ -63,3 +63,6 @@ func setCamera(c):
 
 func getGlobalPos():
 	return body.global_position
+
+func getStun():
+	return body.hitstun
