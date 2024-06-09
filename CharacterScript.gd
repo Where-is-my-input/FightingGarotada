@@ -10,6 +10,7 @@ var knockbackVector:Vector2 = Vector2(1,1)
 
 var motionForward = [Vector2(0,1), Vector2(1,1), Vector2(1,0)]
 var motionBackwards = [Vector2(1,0), Vector2(1,1), Vector2(0,1)]
+var motionDash = [Vector2(1,0), Vector2(0,0), Vector2(1,0)]
 
 var facing = 1
 var grounded = true
@@ -17,6 +18,7 @@ var knockdown = false
 var beingGrabbed = false
 var grabbedPlayer = null
 var jumpStartUp = false
+var dashing = false
 var jumping = false
 #var airborne = false
 
@@ -90,6 +92,7 @@ func _ready():
 		material.set_shader_parameter("palette",palette)
 	setAnimation()
 	animatedTree.active = true
+	parent.connect("KO",KO)
 
 func _physics_process(_delta):
 	blocking = parent.virtualController.directionX * parent.facing > 0
@@ -136,7 +139,6 @@ func playerCollision():
 			var push = pushDirection * ((speed / 2) * (1 / distance))
 			if velocity.x > 0 && !disableGravity: velocity.x = speed/8
 			global_position.x += push
-			#print(velocity)
 		#move_and_slide()
 
 func gravity_fall():
@@ -169,6 +171,7 @@ func isAttacking():
 	neutralAnimation()
 	if !jumpStartUp: 
 		if attacking:
+			if dashing: velocity.x = 0
 			action = "attacking"
 			return
 		attacking = 0
@@ -208,6 +211,7 @@ func setAttack(atk, isAtk, gatling):
 	gatlingPriority = gatling
 
 func animationFinished():
+	dashing = false
 	if grabbedPlayer != null: grabbedPlayer.release()
 	beingGrabbed = false
 	disableGravity = false
@@ -226,17 +230,21 @@ func animationFinished():
 func neutralAnimation():
 	if grounded && !jumpStartUp:
 		if crouching:
+			if dashing: animationFinished()
+			dashing = false
 			state = "crouching"
-		elif parent.virtualController.directionX == 0:
+		elif parent.virtualController.directionX == 0 && !dashing:
 			state = "standing"
 			movement = "idle"
-		else:
+		elif !dashing:
 			state = "standing"
 			if parent.virtualController.directionX * facing > 0:
 				movement = "walkback"
 			else:
 				movement = "walk"
-				
+		if parent.virtualController.checkMotionExecuted(motionDash, facing, 3):
+			dashing = true
+			movement = "dash"
 	
 func flip():
 	if grounded && !attacking && parent.facing != facing && !knockdown:
@@ -257,7 +265,7 @@ func walk():
 	crouching = parent.virtualController.directionY > 0
 #	if airborne:
 #		return
-	if grounded && !crouching && !attacking && !jumpStartUp: 
+	if grounded && !crouching && !attacking && !jumpStartUp && !dashing: 
 		velocity.x = parent.virtualController.directionX*speed
 	elif abs(velocity.x) > 0 && state != "jumping" && !disableGravity:
 		velocity.x = velocity.x - deceleration * (velocity.x/speed)
@@ -337,7 +345,7 @@ func _on_hitboxes_area_entered(hitbox):
 				hitbox.grabbed()
 				grabbedPlayer = hitbox
 				setAttack("Throw", 1, 4)
-		else:
+		elif hitbox.is_in_group("Hurtboxes"):
 			hitParent.getHit(hitboxes)
 			hitbox.set_deferred("disabled", true)
 			hitstop = hitboxes.hitstop
@@ -367,8 +375,9 @@ func getHit(hitbox):
 		state = "knockdown"
 		if knockdownState != "otg": knockdownState = "airborne"
 	if action == "hit":
-		animatedTree.advance(-0.25)
-	if beingGrabbed || hitstun > 0 && !isBlocking || !blocking || (blocking && (!lowBlock && hitbox.attackType == Global.blockType.LOW)) || (blocking && (lowBlock && hitbox.attackType == Global.blockType.HIGH)):
+		animatedTree.set_deferred("advance", -0.25)
+		#animatedTree.advance(-0.25)
+	if hitbox.attackType == Global.blockType.UNBLOCKABLE || beingGrabbed || hitstun > 0 && !isBlocking || !blocking || (blocking && (!lowBlock && hitbox.attackType == Global.blockType.LOW)) || (blocking && (lowBlock && hitbox.attackType == Global.blockType.HIGH)):
 		attacking = 0
 		hitstun = hitbox.stun
 		knockback = 35 * parent.facing
@@ -449,3 +458,12 @@ func release():
 func _on_tmr_knockdown_timeout():
 	if grounded:
 		land()
+
+func KO():
+	tmr_knockdown.start(1)
+	state = "knockdown"
+	if knockdownState != "otg": knockdownState = "airborne"
+	print("KO")
+	knockdown = true
+	action = "hit"
+	setAnimation()

@@ -86,7 +86,6 @@ func modulateVisualController():
 func _process(_delta):
 	motion()
 	readButtons() #change to input event to not call everyframe?
-	#print(LP) 
 	modulateVisualController()
 
 func motion():
@@ -153,11 +152,12 @@ func setBufferedAction(v):
 func _on_tmr_buffer_timeout():
 	bufferedAction = ""
 
-func checkMotionExecuted(motion, facing = 1):
+func checkMotionExecuted(motion, facing = 1, maxBuffer = 10):
 	var motionIndex = 0
 	for m in motionArray:
 		if (motion[motionIndex].x * facing) * -1 == m.x && motion[motionIndex].y == m.y:
 			motionIndex += 1
+			if motionIndex > maxBuffer: return false
 			if motionIndex + 1 > motion.size():
 				return true
 	return false

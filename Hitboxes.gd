@@ -7,7 +7,7 @@ var hitboxes;
 @export var attackType = Global.blockType.MID
 @export var hitstop = 7
 @export var vstun = 1
-@export var hitProperty = Global.hitType.NORMAL
+@export var hitProperty: Global.hitType = Global.hitType.NORMAL
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hitboxes = get_children()
