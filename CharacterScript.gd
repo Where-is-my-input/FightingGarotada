@@ -9,8 +9,9 @@ var knockback = 0
 var knockbackVector:Vector2 = Vector2(1,1)
 
 var motionForward = [Vector2(0,1), Vector2(1,1), Vector2(1,0)]
-var motionBackwards = [Vector2(1,0), Vector2(1,1), Vector2(0,1)]
+var motionBackwards = [Vector2(0,1), Vector2(-1,1), Vector2(-1,0)]
 var motionDash = [Vector2(1,0), Vector2(0,0), Vector2(1,0)]
+var motionBackdash = [Vector2(-1,0), Vector2(0,0), Vector2(-1,0)]
 
 var facing = 1
 var grounded = true
@@ -56,9 +57,10 @@ var jumpSpeed = 200
 var jumpDirection = 0
 
 @onready var parent = $".."
-@onready var animatedSprite = $sprJill
+@export var animatedSprite:AnimatedSprite2D
 @onready var hitboxes = $Hitboxes
 @onready var animatedTree = $AnimationPlayer/AnimationTree
+@onready var animation_player = $AnimationPlayer
 @onready var collision_box = $CollisionBox
 @onready var marker_2d = $anchorPoint/Marker2D
 @onready var anchor_point = $anchorPoint
@@ -86,6 +88,7 @@ var jumpDirection = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	animation_player.root_node = animatedSprite.get_path()
 	global_position.y = Global.ground
 	if randi_range(0,100) > 50:
 		var palette = load("res://Characters/Jill Valentine/4by4Palette.jpg")
@@ -196,12 +199,18 @@ func buttonPressed():
 		setAttack("LK", 1, 1)
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special2", 1, 4)
+		if specialCancel && parent.virtualController.checkMotionExecuted(motionBackwards, facing):
+			setAttack("Special5", 1, 4)
 		return true
 	if (parent.virtualController.MK == 1 || parent.virtualController.bufferedAction == "MK") && gatlingPriority < 2:
 		setAttack("MK", 2, 2)
+		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
+			setAttack("Special3", 1, 4)
 		return true
 	if (parent.virtualController.HK == 1 || parent.virtualController.bufferedAction == "HK") && gatlingPriority < 3:
 		setAttack("HK", 3, 3)
+		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
+			setAttack("Special4", 1, 4)
 		return true
 	return false
 
@@ -245,6 +254,9 @@ func neutralAnimation():
 		if parent.virtualController.checkMotionExecuted(motionDash, facing, 3):
 			dashing = true
 			movement = "dash"
+		elif parent.virtualController.checkMotionExecuted(motionBackdash, facing, 3):
+			dashing = true
+			movement = "backdash"
 	
 func flip():
 	if grounded && !attacking && parent.facing != facing && !knockdown:

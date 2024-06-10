@@ -155,6 +155,7 @@ func _on_tmr_buffer_timeout():
 func checkMotionExecuted(motion, facing = 1, maxBuffer = 10):
 	var motionIndex = 0
 	for m in motionArray:
+		#if maxBuffer == 10: print((motion[motionIndex].x * facing) * -1, m.x && motion[motionIndex].y == m.y)
 		if (motion[motionIndex].x * facing) * -1 == m.x && motion[motionIndex].y == m.y:
 			motionIndex += 1
 			if motionIndex > maxBuffer: return false

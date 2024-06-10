@@ -1,4 +1,6 @@
 ColorRect
+TextureRect
+AnimatedSprite2D
 Timer
 CollisionShape2D
 Label
@@ -7,8 +9,6 @@ Node
 Area2D
 StaticBody2D
 CharacterBody2D
-AnimatedSprite2D
 Camera2D
 RemoteTransform2D
 CanvasLayer
-Control

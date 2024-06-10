@@ -3,6 +3,7 @@ extends Control
 
 func _ready():
 	btn_versus.grab_focus()
+	RenderingServer.set_default_clear_color(Color.BLACK)
 
 func _on_btn_versus_pressed():
 	Global.setGameMode(Global.mode.VERSUS)

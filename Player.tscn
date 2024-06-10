@@ -1,241 +1,11 @@
-[gd_scene load_steps=353 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=130 format=3 uid="uid://cbi3kopno23pf"]
 
-[ext_resource type="Texture2D" uid="uid://ulee81e28x3l" path="res://Characters/Jill Valentine/anim055.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://bi4e6awwr73as" path="res://Characters/Jill Valentine/anim058.png" id="2"]
 [ext_resource type="Script" path="res://CharacterScript.gd" id="2_bd138"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_ecalt"]
-[ext_resource type="Texture2D" uid="uid://b8tboc02hvaa0" path="res://Characters/Jill Valentine/anim111.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://br53p53io5knj" path="res://Characters/Jill Valentine/anim053.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://jvnc7ehedrwx" path="res://Characters/Jill Valentine/anim109.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://d1kvexcjil7fo" path="res://Characters/Jill Valentine/anim084.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://8dqddt7p33qo" path="res://Characters/Jill Valentine/anim054.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://5l45l0sdoah5" path="res://Characters/Jill Valentine/anim110.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://b4ypyyg1f40t6" path="res://Characters/Jill Valentine/anim105.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://c0mxww54pl8yl" path="res://Characters/Jill Valentine/anim106.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://bngbgvfwn1nli" path="res://Characters/Jill Valentine/anim107.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://dj7fs5xlaohxo" path="res://Characters/Jill Valentine/anim082.png" id="12"]
-[ext_resource type="Texture2D" uid="uid://04f4rdw42uni" path="res://Characters/Jill Valentine/anim060.png" id="13"]
-[ext_resource type="Texture2D" uid="uid://cusk4aiaxn7kj" path="res://Characters/Jill Valentine/anim056.png" id="14"]
-[ext_resource type="Texture2D" uid="uid://dvmjtonskj8ax" path="res://Characters/Jill Valentine/anim112.png" id="15"]
-[ext_resource type="Texture2D" uid="uid://5sxj8ycx4h2a" path="res://Characters/Jill Valentine/anim086.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://dpmiocrqdmywu" path="res://Characters/Jill Valentine/anim085.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://c0p40wik66b0n" path="res://Characters/Jill Valentine/anim108.png" id="18"]
+[ext_resource type="PackedScene" uid="uid://h2cxolpx00yq" path="res://Scenes/characters/spr_jill.tscn" id="4_sfrd1"]
 [ext_resource type="Script" path="res://Player.gd" id="19"]
-[ext_resource type="Texture2D" uid="uid://dg8h6gajravaa" path="res://Characters/Jill Valentine/anim080.png" id="20"]
-[ext_resource type="Texture2D" uid="uid://btade3xf1eteb" path="res://Characters/Jill Valentine/anim079.png" id="21"]
-[ext_resource type="Texture2D" uid="uid://brk86gguv7hx2" path="res://Characters/Jill Valentine/anim078.png" id="22"]
-[ext_resource type="Texture2D" uid="uid://7e6oebkc3mi4" path="res://Characters/Jill Valentine/anim081.png" id="23"]
-[ext_resource type="Texture2D" uid="uid://cx2tni2akm5h7" path="res://Characters/Jill Valentine/anim061.png" id="24"]
-[ext_resource type="Texture2D" uid="uid://ccsgvm0q8htr1" path="res://Characters/Jill Valentine/anim059.png" id="25"]
-[ext_resource type="Texture2D" uid="uid://bxcec25bl73lc" path="res://Characters/Jill Valentine/anim062.png" id="26"]
-[ext_resource type="Texture2D" uid="uid://c1qfl52oqe73u" path="res://Characters/Jill Valentine/anim057.png" id="27"]
-[ext_resource type="Texture2D" uid="uid://clummjp4i55x6" path="res://Characters/Jill Valentine/anim083.png" id="28"]
-[ext_resource type="Texture2D" uid="uid://bimv4bqtinmuw" path="res://Characters/Jill Valentine/anim238.png" id="30"]
-[ext_resource type="Texture2D" uid="uid://6843ftnlkbpq" path="res://Characters/Jill Valentine/anim239.png" id="31"]
-[ext_resource type="Texture2D" uid="uid://c865kemyona51" path="res://Characters/Jill Valentine/anim237.png" id="32"]
-[ext_resource type="Texture2D" uid="uid://d1ju3yjb43ys4" path="res://Characters/Jill Valentine/anim242.png" id="33"]
-[ext_resource type="Texture2D" uid="uid://wx1m11nob7j0" path="res://Characters/Jill Valentine/anim243.png" id="34"]
-[ext_resource type="Texture2D" uid="uid://ce21qjogw7mh7" path="res://Characters/Jill Valentine/anim241.png" id="35"]
-[ext_resource type="Texture2D" uid="uid://c8vdxq0fusg2y" path="res://Characters/Jill Valentine/anim244.png" id="36"]
-[ext_resource type="Texture2D" uid="uid://lbtwg5l4jt0a" path="res://Characters/Jill Valentine/anim240.png" id="37"]
-[ext_resource type="Texture2D" uid="uid://bvrisbplgt2ut" path="res://Characters/Jill Valentine/anim076.png" id="38"]
-[ext_resource type="Texture2D" uid="uid://dyp2afpir8764" path="res://Characters/Jill Valentine/anim077.png" id="39"]
-[ext_resource type="Texture2D" uid="uid://dkcb5nx5hi22y" path="res://Characters/Jill Valentine/anim073.png" id="40"]
-[ext_resource type="Texture2D" uid="uid://5n7msu2pbmnw" path="res://Characters/Jill Valentine/anim072.png" id="41"]
-[ext_resource type="Texture2D" uid="uid://bp4ym33ld87t2" path="res://Characters/Jill Valentine/anim075.png" id="42"]
-[ext_resource type="Texture2D" uid="uid://bxrd1mlyh2qxp" path="res://Characters/Jill Valentine/anim074.png" id="43"]
-[ext_resource type="Texture2D" uid="uid://bwgv116ivpmh2" path="res://Characters/Jill Valentine/anim103.png" id="44"]
-[ext_resource type="Texture2D" uid="uid://bllikqoo7467q" path="res://Characters/Jill Valentine/anim113.png" id="45"]
-[ext_resource type="Texture2D" uid="uid://chpuubyya76j5" path="res://Characters/Jill Valentine/anim104.png" id="46"]
-[ext_resource type="Texture2D" uid="uid://01ucjm2xfaqp" path="res://Characters/Jill Valentine/anim114.png" id="47"]
-[ext_resource type="Texture2D" uid="uid://bt344e36j5g66" path="res://Characters/Jill Valentine/anim137.png" id="48"]
-[ext_resource type="Texture2D" uid="uid://7lme10wqgriq" path="res://Characters/Jill Valentine/anim115.png" id="49"]
-[ext_resource type="Texture2D" uid="uid://bcepaej2f56ir" path="res://Characters/Jill Valentine/anim138.png" id="50"]
-[ext_resource type="Texture2D" uid="uid://bcb06al3d7ib7" path="res://Characters/Jill Valentine/anim139.png" id="51"]
-[ext_resource type="Texture2D" uid="uid://b4643jrmvx2s8" path="res://Characters/Jill Valentine/anim134.png" id="52"]
-[ext_resource type="Texture2D" uid="uid://cfb8dq228ja3b" path="res://Characters/Jill Valentine/anim141.png" id="53"]
-[ext_resource type="Texture2D" uid="uid://bovjc3evovdns" path="res://Characters/Jill Valentine/anim145.png" id="54"]
-[ext_resource type="Texture2D" uid="uid://b5nag7kjmp820" path="res://Characters/Jill Valentine/anim146.png" id="55"]
-[ext_resource type="Texture2D" uid="uid://bjaichdbtml7g" path="res://Characters/Jill Valentine/anim126.png" id="56"]
-[ext_resource type="Texture2D" uid="uid://u4qnoq1oqj4u" path="res://Characters/Jill Valentine/anim128.png" id="57"]
-[ext_resource type="Texture2D" uid="uid://bceuglkanufp0" path="res://Characters/Jill Valentine/anim140.png" id="58"]
-[ext_resource type="Texture2D" uid="uid://d1cobpj3d1m5n" path="res://Characters/Jill Valentine/anim130.png" id="59"]
-[ext_resource type="Texture2D" uid="uid://dvxq7ibuo6rp3" path="res://Characters/Jill Valentine/anim116.png" id="60"]
-[ext_resource type="Texture2D" uid="uid://0ixehxl165wj" path="res://Characters/Jill Valentine/anim123.png" id="61"]
-[ext_resource type="Texture2D" uid="uid://daligtu8orvdy" path="res://Characters/Jill Valentine/anim129.png" id="62"]
-[ext_resource type="Texture2D" uid="uid://cwlwk18ud2sn5" path="res://Characters/Jill Valentine/anim147.png" id="63"]
-[ext_resource type="Texture2D" uid="uid://cavliky5okdaq" path="res://Characters/Jill Valentine/anim122.png" id="64"]
-[ext_resource type="Texture2D" uid="uid://c8kung7sp28g6" path="res://Characters/Jill Valentine/anim136.png" id="65"]
-[ext_resource type="Texture2D" uid="uid://cttuf2a8wqrvu" path="res://Characters/Jill Valentine/anim144.png" id="66"]
-[ext_resource type="Texture2D" uid="uid://3b1reuhan4r1" path="res://Characters/Jill Valentine/anim127.png" id="67"]
-[ext_resource type="Texture2D" uid="uid://cswhloxlptlin" path="res://Characters/Jill Valentine/anim119.png" id="68"]
-[ext_resource type="Texture2D" uid="uid://fy25tiu0vqok" path="res://Characters/Jill Valentine/anim124.png" id="69"]
-[ext_resource type="Texture2D" uid="uid://dvvxbbipcfpor" path="res://Characters/Jill Valentine/anim132.png" id="70"]
-[ext_resource type="Texture2D" uid="uid://xtux5ybjxbmj" path="res://Characters/Jill Valentine/anim125.png" id="71"]
-[ext_resource type="Texture2D" uid="uid://bn5t7cdekjeb7" path="res://Characters/Jill Valentine/anim121.png" id="72"]
-[ext_resource type="Texture2D" uid="uid://p7nxdwxf1egy" path="res://Characters/Jill Valentine/anim118.png" id="73"]
-[ext_resource type="Texture2D" uid="uid://bt8e20d4iv0tt" path="res://Characters/Jill Valentine/anim120.png" id="74"]
-[ext_resource type="Texture2D" uid="uid://be5bffhgncylb" path="res://Characters/Jill Valentine/anim117.png" id="75"]
-[ext_resource type="Texture2D" uid="uid://c7kkmp1736tok" path="res://Characters/Jill Valentine/anim131.png" id="76"]
-[ext_resource type="Texture2D" uid="uid://cbt5gjx7xorou" path="res://Characters/Jill Valentine/anim133.png" id="77"]
-[ext_resource type="Texture2D" uid="uid://h71lsj41sauj" path="res://Characters/Jill Valentine/anim278.png" id="77_qltr2"]
-[ext_resource type="Texture2D" uid="uid://d4eopuplyxkky" path="res://Characters/Jill Valentine/anim135.png" id="78"]
-[ext_resource type="Texture2D" uid="uid://b0knmpi206170" path="res://Characters/Jill Valentine/anim294.png" id="78_gc3ph"]
-[ext_resource type="Texture2D" uid="uid://ch3r0tvp6tyr0" path="res://Characters/Jill Valentine/anim279.png" id="78_gvihr"]
-[ext_resource type="Texture2D" uid="uid://ecee3ubav70p" path="res://Characters/Jill Valentine/anim090.png" id="79"]
-[ext_resource type="Texture2D" uid="uid://dahom1c1nvqfu" path="res://Characters/Jill Valentine/anim295.png" id="79_44fqr"]
-[ext_resource type="Texture2D" uid="uid://u5jo6iogytfs" path="res://Characters/Jill Valentine/anim280.png" id="79_kjh14"]
-[ext_resource type="Texture2D" uid="uid://cob42bsl7n7fb" path="res://Characters/Jill Valentine/anim092.png" id="80"]
-[ext_resource type="Texture2D" uid="uid://csmogjhaokq8j" path="res://Characters/Jill Valentine/anim296.png" id="80_8jiu4"]
-[ext_resource type="Texture2D" uid="uid://m2f7124c36b4" path="res://Characters/Jill Valentine/anim281.png" id="80_w3ecp"]
-[ext_resource type="Texture2D" uid="uid://dlxca04n0ytp" path="res://Characters/Jill Valentine/anim095.png" id="81"]
-[ext_resource type="Texture2D" uid="uid://bnmodqwmovy2u" path="res://Characters/Jill Valentine/anim297.png" id="81_8eldo"]
-[ext_resource type="Texture2D" uid="uid://d3apvybiwoh3s" path="res://Characters/Jill Valentine/anim282.png" id="81_13r8n"]
-[ext_resource type="Texture2D" uid="uid://chya0cf16jfqa" path="res://Characters/Jill Valentine/anim097.png" id="82"]
-[ext_resource type="Texture2D" uid="uid://3h8fl4xowbvu" path="res://Characters/Jill Valentine/anim298.png" id="82_lghft"]
-[ext_resource type="Texture2D" uid="uid://c7wry7850j0cq" path="res://Characters/Jill Valentine/anim283.png" id="82_vtu4a"]
-[ext_resource type="Texture2D" uid="uid://buhvto0dtv6r5" path="res://Characters/Jill Valentine/anim098.png" id="83"]
-[ext_resource type="Texture2D" uid="uid://dacwtd5nx31q7" path="res://Characters/Jill Valentine/anim284.png" id="83_n0f0o"]
-[ext_resource type="Texture2D" uid="uid://cchrvmflvj1uw" path="res://Characters/Jill Valentine/anim299.png" id="83_ohdwn"]
-[ext_resource type="Texture2D" uid="uid://bi4jb4kjsj07r" path="res://Characters/Jill Valentine/anim088.png" id="84"]
-[ext_resource type="Texture2D" uid="uid://m41lc64lemp0" path="res://Characters/Jill Valentine/anim285.png" id="84_6gjs1"]
-[ext_resource type="Texture2D" uid="uid://c8w67a2fty2do" path="res://Characters/Jill Valentine/anim091.png" id="85"]
-[ext_resource type="Texture2D" uid="uid://bknmyfd0f10i5" path="res://Characters/Jill Valentine/anim270.png" id="85_2ckq7"]
-[ext_resource type="Texture2D" uid="uid://c5oe3muf80wdm" path="res://Characters/Jill Valentine/anim286.png" id="85_ql2qa"]
-[ext_resource type="Texture2D" uid="uid://b824t3tnau3y0" path="res://Characters/Jill Valentine/anim093.png" id="86"]
-[ext_resource type="Texture2D" uid="uid://d3du8epaf0dg7" path="res://Characters/Jill Valentine/anim271.png" id="86_qvcts"]
-[ext_resource type="Texture2D" uid="uid://bcnni1o2jiqy" path="res://Characters/Jill Valentine/anim287.png" id="86_tmpq5"]
-[ext_resource type="Texture2D" uid="uid://bod1q6na6uc17" path="res://Characters/Jill Valentine/anim094.png" id="87"]
-[ext_resource type="Texture2D" uid="uid://ccyreswieo5cj" path="res://Characters/Jill Valentine/anim467.png" id="87_1i58r"]
-[ext_resource type="Texture2D" uid="uid://dyabp30xh1b5u" path="res://Characters/Jill Valentine/anim300.png" id="87_3hrqq"]
-[ext_resource type="Texture2D" uid="uid://bcko2x7hd32uw" path="res://Characters/Jill Valentine/anim288.png" id="87_sb4hv"]
-[ext_resource type="Texture2D" uid="uid://0dv7nbvyrr0n" path="res://Characters/Jill Valentine/anim272.png" id="87_t6pfj"]
-[ext_resource type="Texture2D" uid="uid://di6o4soa0nnc5" path="res://Characters/Jill Valentine/anim307.png" id="87_vv5ly"]
-[ext_resource type="Texture2D" uid="uid://bro0nf6onok22" path="res://Characters/Jill Valentine/anim099.png" id="88"]
-[ext_resource type="Texture2D" uid="uid://bejsqr7f0imov" path="res://Characters/Jill Valentine/anim301.png" id="88_8h6wy"]
-[ext_resource type="Texture2D" uid="uid://bu5ght442ejeg" path="res://Characters/Jill Valentine/anim468.png" id="88_7183d"]
-[ext_resource type="Texture2D" uid="uid://bosifea7jjyk3" path="res://Characters/Jill Valentine/anim273.png" id="88_h86yl"]
-[ext_resource type="Texture2D" uid="uid://d0hwgf0ksrq23" path="res://Characters/Jill Valentine/anim308.png" id="88_p1pmk"]
-[ext_resource type="Texture2D" uid="uid://chr3dqs755m5j" path="res://Characters/Jill Valentine/anim100.png" id="89"]
-[ext_resource type="Texture2D" uid="uid://duuf16n32os56" path="res://Characters/Jill Valentine/anim302.png" id="89_1axd1"]
-[ext_resource type="Texture2D" uid="uid://533qdwwntxx" path="res://Characters/Jill Valentine/anim309.png" id="89_5kgh8"]
-[ext_resource type="Texture2D" uid="uid://g2x7rebvdlrx" path="res://Characters/Jill Valentine/anim469.png" id="89_k7nf2"]
-[ext_resource type="Texture2D" uid="uid://b0jql35qbi6fn" path="res://Characters/Jill Valentine/anim274.png" id="89_nsrb8"]
-[ext_resource type="Texture2D" uid="uid://b8util4yer7ta" path="res://Characters/Jill Valentine/anim087.png" id="90"]
-[ext_resource type="Texture2D" uid="uid://cs3xlim7klyca" path="res://Characters/Jill Valentine/anim275.png" id="90_03i03"]
-[ext_resource type="Texture2D" uid="uid://c53j8tailhabi" path="res://Characters/Jill Valentine/anim303.png" id="90_71jil"]
-[ext_resource type="Texture2D" uid="uid://d1wvtl3o7apcq" path="res://Characters/Jill Valentine/anim310.png" id="90_85km1"]
-[ext_resource type="Texture2D" uid="uid://eax4qg7dibif" path="res://Characters/Jill Valentine/anim470.png" id="90_jhuie"]
-[ext_resource type="Texture2D" uid="uid://bk8iwxvuan4d1" path="res://Characters/Jill Valentine/anim101.png" id="91"]
-[ext_resource type="Texture2D" uid="uid://ct0um58bcvkvp" path="res://Characters/Jill Valentine/anim289.png" id="91_4gmkq"]
-[ext_resource type="Texture2D" uid="uid://djontpw1kog1q" path="res://Characters/Jill Valentine/anim276.png" id="91_mgghw"]
-[ext_resource type="Texture2D" uid="uid://b66f46aoetvxa" path="res://Characters/Jill Valentine/anim311.png" id="91_u06sk"]
-[ext_resource type="Texture2D" uid="uid://dqlao4hc1mb2w" path="res://Characters/Jill Valentine/anim096.png" id="92"]
-[ext_resource type="Texture2D" uid="uid://dm0vbhyq4g254" path="res://Characters/Jill Valentine/anim277.png" id="92_nlsk1"]
-[ext_resource type="Texture2D" uid="uid://m5vesu5m5xwk" path="res://Characters/Jill Valentine/anim312.png" id="92_nupaa"]
-[ext_resource type="Texture2D" uid="uid://crmtcbqtq2g0d" path="res://Characters/Jill Valentine/anim290.png" id="92_rdo1y"]
-[ext_resource type="Texture2D" uid="uid://d30v8jq6mxe0u" path="res://Characters/Jill Valentine/anim245.png" id="92_wam7j"]
-[ext_resource type="Texture2D" uid="uid://ddpoml14gaue0" path="res://Characters/Jill Valentine/anim102.png" id="93"]
-[ext_resource type="Texture2D" uid="uid://cbtoa6nrjpjiq" path="res://Characters/Jill Valentine/anim291.png" id="93_2yivw"]
-[ext_resource type="Texture2D" uid="uid://spi7122o2i4y" path="res://Characters/Jill Valentine/anim313.png" id="93_nuyjk"]
-[ext_resource type="Texture2D" uid="uid://nnk7yia2ofqm" path="res://Characters/Jill Valentine/anim246.png" id="93_s31sf"]
-[ext_resource type="Texture2D" uid="uid://5xklasapxp1c" path="res://Characters/Jill Valentine/anim089.png" id="94"]
-[ext_resource type="Texture2D" uid="uid://2b40g12dimvp" path="res://Characters/Jill Valentine/anim247.png" id="94_2s8qm"]
-[ext_resource type="Texture2D" uid="uid://dwnow522h5qvw" path="res://Characters/Jill Valentine/anim314.png" id="94_7v3jq"]
-[ext_resource type="Texture2D" uid="uid://cdjcyox2om7v1" path="res://Characters/Jill Valentine/anim292.png" id="94_d01bl"]
-[ext_resource type="Texture2D" uid="uid://c2denn1qw3xce" path="res://Characters/Jill Valentine/anim315.png" id="95_cttb7"]
-[ext_resource type="Texture2D" uid="uid://enx385c22kw3" path="res://Characters/Jill Valentine/anim248.png" id="95_plifq"]
-[ext_resource type="Texture2D" uid="uid://dk2kcm85ecy8m" path="res://Characters/Jill Valentine/anim293.png" id="95_yj1xa"]
-[ext_resource type="Texture2D" uid="uid://i468qme0060y" path="res://Characters/Jill Valentine/anim249.png" id="96_wi08q"]
-[ext_resource type="Texture2D" uid="uid://dkqgv7qemittp" path="res://Characters/Jill Valentine/anim471.png" id="96_x1pny"]
-[ext_resource type="Texture2D" uid="uid://bi6s8fknsoqxp" path="res://Characters/Jill Valentine/anim250.png" id="97_fj844"]
-[ext_resource type="Texture2D" uid="uid://cinobo6f8c3q2" path="res://Characters/Jill Valentine/anim472.png" id="97_sh75b"]
-[ext_resource type="Texture2D" uid="uid://dowjmole3vkiw" path="res://Characters/Jill Valentine/anim473.png" id="98_qkmqm"]
-[ext_resource type="Texture2D" uid="uid://y1byx0x85g1t" path="res://Characters/Jill Valentine/anim251.png" id="98_u48ne"]
 [ext_resource type="Script" path="res://Hitboxes.gd" id="99_32v1y"]
-[ext_resource type="Texture2D" uid="uid://cvnml7w8tucbi" path="res://Characters/Jill Valentine/anim304.png" id="100_43l6h"]
-[ext_resource type="Texture2D" uid="uid://cnnkwj8tug1a5" path="res://Characters/Jill Valentine/anim305.png" id="101_vlmxa"]
-[ext_resource type="Texture2D" uid="uid://bsa2yhs18ti8j" path="res://Characters/Jill Valentine/anim306.png" id="102_gtr4o"]
-[ext_resource type="Texture2D" uid="uid://2uyubp5hmm2p" path="res://Characters/Jill Valentine/anim324.png" id="120_ycvvu"]
-[ext_resource type="Texture2D" uid="uid://b2qdyjoqmsry1" path="res://Characters/Jill Valentine/anim325.png" id="121_k04d5"]
-[ext_resource type="Texture2D" uid="uid://bgbucwi1tokuh" path="res://Characters/Jill Valentine/anim326.png" id="122_ka3d6"]
-[ext_resource type="Texture2D" uid="uid://buc4wr5ic1m75" path="res://Characters/Jill Valentine/anim327.png" id="123_i7vh1"]
-[ext_resource type="Texture2D" uid="uid://pld2wkuehaal" path="res://Characters/Jill Valentine/anim328.png" id="124_6k2ob"]
-[ext_resource type="Texture2D" uid="uid://o1uihxk00bgb" path="res://Characters/Jill Valentine/anim329.png" id="125_rbghf"]
-[ext_resource type="Texture2D" uid="uid://ddmln1ijj24hn" path="res://Characters/Jill Valentine/anim330.png" id="126_y8k6f"]
-[ext_resource type="Texture2D" uid="uid://b41617gdnpia" path="res://Characters/Jill Valentine/anim316.png" id="136_pf2tg"]
-[ext_resource type="Texture2D" uid="uid://elyby2fjc3uy" path="res://Characters/Jill Valentine/anim317.png" id="137_24avr"]
-[ext_resource type="Texture2D" uid="uid://dv4owud1sjhq1" path="res://Characters/Jill Valentine/anim318.png" id="138_6hae0"]
-[ext_resource type="Texture2D" uid="uid://dbnog6bfcmtn5" path="res://Characters/Jill Valentine/anim319.png" id="139_d0mn8"]
-[ext_resource type="Texture2D" uid="uid://cri7i87i1ade8" path="res://Characters/Jill Valentine/anim320.png" id="144_kih56"]
-[ext_resource type="Texture2D" uid="uid://bi02qergw1dh4" path="res://Characters/Jill Valentine/anim321.png" id="145_r3tr1"]
-[ext_resource type="Texture2D" uid="uid://bgy737ihdglhv" path="res://Characters/Jill Valentine/anim322.png" id="146_g71a6"]
-[ext_resource type="Texture2D" uid="uid://cqsi2s8vxdhud" path="res://Characters/Jill Valentine/anim323.png" id="147_1qjy6"]
-[ext_resource type="Texture2D" uid="uid://ds5t0c3byeqs5" path="res://Characters/Jill Valentine/anim485.png" id="152_st5es"]
-[ext_resource type="Texture2D" uid="uid://cif2ythb4bo1v" path="res://Characters/Jill Valentine/anim486.png" id="153_aw5dh"]
-[ext_resource type="Texture2D" uid="uid://bl6ce1icxci32" path="res://Characters/Jill Valentine/anim487.png" id="154_pcdle"]
-[ext_resource type="Texture2D" uid="uid://doxr3esa3jffi" path="res://Characters/Jill Valentine/anim256.png" id="155_4iik7"]
-[ext_resource type="Texture2D" uid="uid://b250s8aifmedx" path="res://Characters/Jill Valentine/anim488.png" id="155_dxau5"]
-[ext_resource type="Texture2D" uid="uid://dlmo6bshxcvmp" path="res://Characters/Jill Valentine/anim261.png" id="156_5mtrn"]
-[ext_resource type="Texture2D" uid="uid://bjwrgehb1s3nq" path="res://Characters/Jill Valentine/anim489.png" id="156_jfrn3"]
-[ext_resource type="Texture2D" uid="uid://3fln8kkh2mq4" path="res://Characters/Jill Valentine/anim490.png" id="157_eug74"]
-[ext_resource type="Texture2D" uid="uid://byxsx3vot43mr" path="res://Characters/Jill Valentine/anim262.png" id="157_ivgw2"]
-[ext_resource type="Texture2D" uid="uid://bbrhmha1dduf2" path="res://Characters/Jill Valentine/anim263.png" id="158_c754n"]
-[ext_resource type="Texture2D" uid="uid://cflpddgc7wfjp" path="res://Characters/Jill Valentine/anim331.png" id="158_ix8bh"]
-[ext_resource type="Texture2D" uid="uid://chinucsnl1ab2" path="res://Characters/Jill Valentine/anim332.png" id="159_24rqm"]
-[ext_resource type="Texture2D" uid="uid://dlbmmfpbakar2" path="res://Characters/Jill Valentine/anim264.png" id="159_k5kkr"]
-[ext_resource type="Texture2D" uid="uid://d0g2kruuasjvy" path="res://Characters/Jill Valentine/anim333.png" id="160_c0e1x"]
-[ext_resource type="Texture2D" uid="uid://3if07hp0ndod" path="res://Characters/Jill Valentine/anim265.png" id="160_kk4fh"]
-[ext_resource type="Texture2D" uid="uid://b82kp0hgx5ihn" path="res://Characters/Jill Valentine/anim266.png" id="161_av2lj"]
-[ext_resource type="Texture2D" uid="uid://bq7uy5pvswom3" path="res://Characters/Jill Valentine/anim334.png" id="161_h8gt4"]
-[ext_resource type="Texture2D" uid="uid://c4l1pbsyh8um3" path="res://Characters/Jill Valentine/anim335.png" id="162_kmdfw"]
-[ext_resource type="Texture2D" uid="uid://dlsgwhhbcbjvo" path="res://Characters/Jill Valentine/anim491.png" id="162_tg0xu"]
-[ext_resource type="Texture2D" uid="uid://b2fhvqynht6ma" path="res://Characters/Jill Valentine/anim267.png" id="162_uh1qu"]
-[ext_resource type="Texture2D" uid="uid://bks8ocxcrc5im" path="res://Characters/Jill Valentine/anim336.png" id="163_8mu0l"]
-[ext_resource type="Texture2D" uid="uid://be64gp03t1tt7" path="res://Characters/Jill Valentine/anim492.png" id="163_oc2gy"]
-[ext_resource type="Texture2D" uid="uid://onhqcx8pgn8g" path="res://Characters/Jill Valentine/anim268.png" id="163_thvmu"]
-[ext_resource type="Texture2D" uid="uid://vs2wcuyb1c55" path="res://Characters/Jill Valentine/anim493.png" id="164_b1nfq"]
-[ext_resource type="Texture2D" uid="uid://dn53wltvll041" path="res://Characters/Jill Valentine/anim337.png" id="164_k57wi"]
-[ext_resource type="Texture2D" uid="uid://ojpp5bqciebo" path="res://Characters/Jill Valentine/anim269.png" id="164_tp3jm"]
-[ext_resource type="Texture2D" uid="uid://d3lmxy7d15g58" path="res://Characters/Jill Valentine/anim494.png" id="165_4delh"]
-[ext_resource type="Texture2D" uid="uid://bvru1hd667mdy" path="res://Characters/Jill Valentine/anim338.png" id="165_lwlap"]
-[ext_resource type="Texture2D" uid="uid://cresin1nhvl41" path="res://Characters/Jill Valentine/anim495.png" id="166_ax1yh"]
-[ext_resource type="Texture2D" uid="uid://cxwvd4tsh6iyj" path="res://Characters/Jill Valentine/anim339.png" id="166_u75lb"]
-[ext_resource type="Texture2D" uid="uid://bor3w5gbpt5oh" path="res://Characters/Jill Valentine/anim340.png" id="167_j2b0f"]
-[ext_resource type="Texture2D" uid="uid://85eff2bs24vm" path="res://Characters/Jill Valentine/anim252.png" id="173_rfqie"]
-[ext_resource type="Texture2D" uid="uid://bevys3w1h5iwm" path="res://Characters/Jill Valentine/anim253.png" id="174_k1nuv"]
-[ext_resource type="Texture2D" uid="uid://cs83x52pf28wa" path="res://Characters/Jill Valentine/anim254.png" id="175_ox2ep"]
-[ext_resource type="Texture2D" uid="uid://dqu47hcbjr8ak" path="res://Characters/Jill Valentine/anim255.png" id="176_ppk63"]
-[ext_resource type="Texture2D" uid="uid://behcqsc11xn1u" path="res://Characters/Jill Valentine/anim257.png" id="180_7afdg"]
-[ext_resource type="Texture2D" uid="uid://boxehga0vqb3w" path="res://Characters/Jill Valentine/anim258.png" id="181_4udda"]
-[ext_resource type="Texture2D" uid="uid://n786kqqterso" path="res://Characters/Jill Valentine/anim259.png" id="182_0ayrj"]
-[ext_resource type="Texture2D" uid="uid://di6oxxuvccod2" path="res://Characters/Jill Valentine/anim260.png" id="183_qw781"]
 [ext_resource type="Script" path="res://collisionArea.gd" id="196_djj2p"]
-[ext_resource type="Texture2D" uid="uid://7dlayta641hh" path="res://Characters/Jill Valentine/anim400.png" id="200_4v10a"]
-[ext_resource type="Texture2D" uid="uid://3jxa1fldpk16" path="res://Characters/Jill Valentine/anim401.png" id="201_wxf2u"]
-[ext_resource type="Texture2D" uid="uid://crsxihrs1w76a" path="res://Characters/Jill Valentine/anim402.png" id="202_m5wfw"]
-[ext_resource type="Texture2D" uid="uid://bkbgrnyy71v6x" path="res://Characters/Jill Valentine/anim403.png" id="203_dtmk3"]
-[ext_resource type="Texture2D" uid="uid://ci3stxnfb45sk" path="res://Characters/Jill Valentine/anim404.png" id="204_avj4s"]
-[ext_resource type="Texture2D" uid="uid://bbl3gmggoc5ky" path="res://Characters/Jill Valentine/anim405.png" id="205_uabc0"]
-[ext_resource type="Texture2D" uid="uid://dwutrxxyn3rwa" path="res://Characters/Jill Valentine/anim406.png" id="206_w2r62"]
-[ext_resource type="Texture2D" uid="uid://bn2v7syvq8jox" path="res://Characters/Jill Valentine/anim407.png" id="207_lhj0w"]
-[ext_resource type="Texture2D" uid="uid://csuykp8ggoef6" path="res://Characters/Jill Valentine/anim408.png" id="208_hda45"]
-[ext_resource type="Texture2D" uid="uid://cbvmn1encmtno" path="res://Characters/Jill Valentine/anim378.png" id="209_hh40l"]
-[ext_resource type="Texture2D" uid="uid://2h5w00nkpbss" path="res://Characters/Jill Valentine/anim379.png" id="210_tecgu"]
-[ext_resource type="Texture2D" uid="uid://ovjvxytc17j6" path="res://Characters/Jill Valentine/anim380.png" id="211_dn6uw"]
-[ext_resource type="Texture2D" uid="uid://b2fuaego5fn3s" path="res://Characters/Jill Valentine/anim381.png" id="212_lfc5y"]
-[ext_resource type="Texture2D" uid="uid://crwj06wq000dv" path="res://Characters/Jill Valentine/anim382.png" id="213_ye7u3"]
-[ext_resource type="Texture2D" uid="uid://xvpwhrg4vf5p" path="res://Characters/Jill Valentine/anim383.png" id="214_gwqup"]
-[ext_resource type="Texture2D" uid="uid://jr72bili0ysa" path="res://Characters/Jill Valentine/anim384.png" id="215_uxymm"]
-[ext_resource type="Texture2D" uid="uid://brm85k2q4i7yn" path="res://Characters/Jill Valentine/anim385.png" id="216_oix1y"]
-[ext_resource type="Texture2D" uid="uid://dvse26u1sqqmj" path="res://Characters/Jill Valentine/anim386.png" id="217_eqgrc"]
-[ext_resource type="Texture2D" uid="uid://brh6rkqvvpqmx" path="res://Characters/Jill Valentine/anim393.png" id="218_inm3o"]
-[ext_resource type="Texture2D" uid="uid://do4gtjsycnwuf" path="res://Characters/Jill Valentine/anim394.png" id="219_p6gbi"]
-[ext_resource type="Texture2D" uid="uid://cgqdk53xrg7sr" path="res://Characters/Jill Valentine/anim395.png" id="220_0sc54"]
-[ext_resource type="Texture2D" uid="uid://v1ptvm5tlatk" path="res://Characters/Jill Valentine/anim396.png" id="221_exm21"]
-[ext_resource type="Texture2D" uid="uid://b4rfkn0thea6j" path="res://Characters/Jill Valentine/anim397.png" id="222_eixs6"]
-[ext_resource type="Texture2D" uid="uid://b2dxkluqb7g1n" path="res://Characters/Jill Valentine/anim398.png" id="223_38fl1"]
-[ext_resource type="Texture2D" uid="uid://dt38g6jnj8bys" path="res://Characters/Jill Valentine/anim399.png" id="224_0ykl3"]
 
 [sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
@@ -276,1046 +46,6 @@ shader_parameter/palette = ExtResource("2_ecalt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_educ5"]
 size = Vector2(34, 88)
-
-[sub_resource type="SpriteFrames" id="4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("41")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39")
-}],
-"loop": true,
-"name": &"2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16")
-}, {
-"duration": 1.0,
-"texture": ExtResource("90")
-}, {
-"duration": 1.0,
-"texture": ExtResource("84")
-}, {
-"duration": 1.0,
-"texture": ExtResource("94")
-}, {
-"duration": 1.0,
-"texture": ExtResource("79")
-}, {
-"duration": 1.0,
-"texture": ExtResource("85")
-}, {
-"duration": 1.0,
-"texture": ExtResource("80")
-}, {
-"duration": 1.0,
-"texture": ExtResource("86")
-}, {
-"duration": 1.0,
-"texture": ExtResource("87")
-}, {
-"duration": 1.0,
-"texture": ExtResource("81")
-}],
-"loop": true,
-"name": &"4",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("22")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16")
-}],
-"loop": true,
-"name": &"6",
-"speed": 11.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15")
-}],
-"loop": false,
-"name": &"8",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("48")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51")
-}],
-"loop": true,
-"name": &"CrouchingBlocking",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("70")
-}, {
-"duration": 1.0,
-"texture": ExtResource("77")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52")
-}],
-"loop": true,
-"name": &"CrouchingTurnAround",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("92")
-}, {
-"duration": 1.0,
-"texture": ExtResource("82")
-}, {
-"duration": 1.0,
-"texture": ExtResource("83")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88")
-}, {
-"duration": 1.0,
-"texture": ExtResource("89")
-}, {
-"duration": 1.0,
-"texture": ExtResource("91")
-}, {
-"duration": 1.0,
-"texture": ExtResource("93")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46")
-}],
-"loop": true,
-"name": &"DashForward",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8")
-}],
-"loop": true,
-"name": &"Jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("60")
-}, {
-"duration": 1.0,
-"texture": ExtResource("75")
-}, {
-"duration": 1.0,
-"texture": ExtResource("73")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68")
-}, {
-"duration": 1.0,
-"texture": ExtResource("74")
-}, {
-"duration": 1.0,
-"texture": ExtResource("72")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61")
-}, {
-"duration": 1.0,
-"texture": ExtResource("69")
-}, {
-"duration": 1.0,
-"texture": ExtResource("71")
-}],
-"loop": true,
-"name": &"JumpBackwards",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("58")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53")
-}],
-"loop": true,
-"name": &"JumpingBlocking",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("45")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49")
-}],
-"loop": true,
-"name": &"Landing",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("56")
-}, {
-"duration": 1.0,
-"texture": ExtResource("67")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57")
-}],
-"loop": true,
-"name": &"LandingBackwards",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("78")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65")
-}],
-"loop": true,
-"name": &"StandingBlocking",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("62")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59")
-}, {
-"duration": 1.0,
-"texture": ExtResource("76")
-}],
-"loop": true,
-"name": &"StandingTurnAround",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("66")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55")
-}, {
-"duration": 1.0,
-"texture": ExtResource("63")
-}],
-"loop": true,
-"name": &"WakeUp",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("95_yj1xa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("78_gc3ph")
-}, {
-"duration": 1.0,
-"texture": ExtResource("79_44fqr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("80_8jiu4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("81_8eldo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("82_lghft")
-}, {
-"duration": 1.0,
-"texture": ExtResource("83_ohdwn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("95_yj1xa")
-}],
-"loop": true,
-"name": &"cHK",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("77_qltr2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("78_gvihr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("79_kjh14")
-}, {
-"duration": 1.0,
-"texture": ExtResource("80_w3ecp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("81_13r8n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("82_vtu4a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("83_n0f0o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("84_6gjs1")
-}],
-"loop": true,
-"name": &"cHP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("85_ql2qa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("86_tmpq5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("87_sb4hv")
-}],
-"loop": true,
-"name": &"cLK",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("85_2ckq7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("86_qvcts")
-}, {
-"duration": 1.0,
-"texture": ExtResource("87_t6pfj")
-}],
-"loop": true,
-"name": &"cLP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("85_ql2qa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("91_4gmkq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("92_rdo1y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("93_2yivw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("94_d01bl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("95_yj1xa")
-}],
-"loop": true,
-"name": &"cMK",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("88_h86yl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("89_nsrb8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("90_03i03")
-}, {
-"duration": 1.0,
-"texture": ExtResource("91_mgghw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("92_nlsk1")
-}],
-"loop": true,
-"name": &"cMP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("96_x1pny")
-}, {
-"duration": 1.0,
-"texture": ExtResource("97_sh75b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("98_qkmqm")
-}],
-"loop": true,
-"name": &"crouchHitstun",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("92")
-}, {
-"duration": 1.0,
-"texture": ExtResource("82")
-}, {
-"duration": 1.0,
-"texture": ExtResource("83")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88")
-}, {
-"duration": 1.0,
-"texture": ExtResource("89")
-}],
-"loop": true,
-"name": &"dash",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("120_ycvvu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("121_k04d5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("122_ka3d6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("123_i7vh1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("124_6k2ob")
-}, {
-"duration": 1.0,
-"texture": ExtResource("125_rbghf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("126_y8k6f")
-}],
-"loop": true,
-"name": &"jHK",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("87_vv5ly")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88_p1pmk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("89_5kgh8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("90_85km1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("91_u06sk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("92_nupaa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("93_nuyjk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("94_7v3jq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("95_cttb7")
-}],
-"loop": true,
-"name": &"jHP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("136_pf2tg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("137_24avr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("138_6hae0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("139_d0mn8")
-}],
-"loop": true,
-"name": &"jLK",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("87_3hrqq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88_8h6wy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("89_1axd1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("90_71jil")
-}],
-"loop": true,
-"name": &"jLP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("139_d0mn8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("144_kih56")
-}, {
-"duration": 1.0,
-"texture": ExtResource("145_r3tr1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("146_g71a6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("147_1qjy6")
-}],
-"loop": true,
-"name": &"jMK",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("90_71jil")
-}, {
-"duration": 1.0,
-"texture": ExtResource("100_43l6h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("101_vlmxa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("102_gtr4o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("87_vv5ly")
-}],
-"loop": true,
-"name": &"jMP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("58")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53")
-}],
-"loop": true,
-"name": &"jumpBloackstun",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15")
-}],
-"loop": true,
-"name": &"jumpFalling",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("152_st5es")
-}, {
-"duration": 1.0,
-"texture": ExtResource("153_aw5dh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("154_pcdle")
-}, {
-"duration": 1.0,
-"texture": ExtResource("155_dxau5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("156_jfrn3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("157_eug74")
-}],
-"loop": true,
-"name": &"jumpHitstun",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("45")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60")
-}],
-"loop": true,
-"name": &"jumptStartUp",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("158_ix8bh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("159_24rqm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("160_c0e1x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("161_h8gt4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("162_kmdfw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("163_8mu0l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("164_k57wi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("165_lwlap")
-}, {
-"duration": 1.0,
-"texture": ExtResource("166_u75lb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("167_j2b0f")
-}],
-"loop": true,
-"name": &"knifeAttack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("87_1i58r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88_7183d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("89_k7nf2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("90_jhuie")
-}],
-"loop": true,
-"name": &"midHitstun",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("162_tg0xu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("163_oc2gy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("164_b1nfq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("165_4delh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("166_ax1yh")
-}],
-"loop": true,
-"name": &"otg",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("155_4iik7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("156_5mtrn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("157_ivgw2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("158_c754n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("159_k5kkr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("160_kk4fh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("161_av2lj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("162_uh1qu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("163_thvmu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("164_tp3jm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("155_4iik7")
-}],
-"loop": true,
-"name": &"sHK",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("36")
-}, {
-"duration": 1.0,
-"texture": ExtResource("92_wam7j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("93_s31sf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("94_2s8qm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("95_plifq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("96_wi08q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("97_fj844")
-}, {
-"duration": 1.0,
-"texture": ExtResource("98_u48ne")
-}],
-"loop": true,
-"name": &"sHP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("155_4iik7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("173_rfqie")
-}, {
-"duration": 1.0,
-"texture": ExtResource("174_k1nuv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("175_ox2ep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("176_ppk63")
-}, {
-"duration": 1.0,
-"texture": ExtResource("155_4iik7")
-}],
-"loop": true,
-"name": &"sLK",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("32")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31")
-}],
-"loop": true,
-"name": &"sLP",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("155_4iik7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("180_7afdg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("181_4udda")
-}, {
-"duration": 1.0,
-"texture": ExtResource("182_0ayrj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("183_qw781")
-}, {
-"duration": 1.0,
-"texture": ExtResource("155_4iik7")
-}],
-"loop": true,
-"name": &"sMK",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("37")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36")
-}],
-"loop": true,
-"name": &"sMP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("200_4v10a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("201_wxf2u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("202_m5wfw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("203_dtmk3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("204_avj4s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("205_uabc0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("206_w2r62")
-}, {
-"duration": 1.0,
-"texture": ExtResource("207_lhj0w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("208_hda45")
-}],
-"loop": true,
-"name": &"special1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("209_hh40l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("210_tecgu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("211_dn6uw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("212_lfc5y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("213_ye7u3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("214_gwqup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("215_uxymm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("216_oix1y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("217_eqgrc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("218_inm3o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("219_p6gbi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("220_0sc54")
-}, {
-"duration": 1.0,
-"texture": ExtResource("221_exm21")
-}, {
-"duration": 1.0,
-"texture": ExtResource("222_eixs6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("223_38fl1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("224_0ykl3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("200_4v10a")
-}],
-"loop": true,
-"name": &"special2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("66")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55")
-}, {
-"duration": 1.0,
-"texture": ExtResource("63")
-}],
-"loop": true,
-"name": &"wakeUp",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l40to"]
 size = Vector2(1, 1)
@@ -6840,7 +5570,7 @@ tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.133334),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, 0), Vector2(500, 0)]
 }
 tracks/11/type = "value"
@@ -6864,7 +5594,7 @@ tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(800, -80)]
 }
 tracks/13/type = "value"
@@ -7392,6 +6122,570 @@ tracks/5/keys = {
 "values": [Vector2(0, 8)]
 }
 
+[sub_resource type="Animation" id="Animation_p2lnd"]
+resource_name = "backdash"
+length = 0.416668
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"backdash"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.183333, 0.266667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hurtboxes/Hurtbox:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(47, 91)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtboxes/Hurtbox:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 5.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../collisionArea/collisionAreaCollision:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../collisionArea/collisionAreaCollision:shape:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(32, 80)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0166667, 0.3, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"setMoveVelocity"
+}, {
+"args": [],
+"method": &"setMoveVelocity"
+}, {
+"args": [],
+"method": &"animationFinished"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("..:moveSpeed")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-350, 0), Vector2(-50, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("..:disableGravity")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8qd67"]
+resource_name = "special3"
+length = 0.666668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"special3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.15, 0.216667, 0.35, 0.433333, 0.516667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtboxes/Hurtbox:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(37, 79)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtboxes/Hurtbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-0.5, 11)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../collisionArea/collisionAreaCollision:shape:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(32, 80)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../collisionArea/collisionAreaCollision:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 8)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Hitboxes/Hitbox:shape:size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.216667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(44, 40)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Hitboxes/Hitbox:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.216667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(18, -4)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Hitboxes/Hitbox:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.216667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Hitboxes:hitProperty")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Hitboxes:stunVector")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(800, -80)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Hitboxes:damage")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [750]
+}
+
+[sub_resource type="Animation" id="Animation_jkri8"]
+resource_name = "special4"
+length = 0.666668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"special4"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.15, 0.216667, 0.35, 0.433333, 0.516667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtboxes/Hurtbox:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(37, 79)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtboxes/Hurtbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-0.5, 11)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../collisionArea/collisionAreaCollision:shape:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(32, 80)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../collisionArea/collisionAreaCollision:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 8)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Hitboxes/Hitbox:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Hitboxes:hitProperty")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Hitboxes:stunVector")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(800, -80)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Hitboxes:damage")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [750]
+}
+
+[sub_resource type="Animation" id="Animation_7y1qj"]
+resource_name = "special5"
+length = 0.916668
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"reload"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0833333, 0.116667, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.483333, 0.516667, 0.566667, 0.633333, 0.7, 0.783333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animationFinished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtboxes/Hurtbox:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(37, 79)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtboxes/Hurtbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-0.5, 11)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../collisionArea/collisionAreaCollision:shape:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(32, 80)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../collisionArea/collisionAreaCollision:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 8)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Hitboxes/Hitbox:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Hitboxes:hitProperty")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Hitboxes:stunVector")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(800, -80)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Hitboxes:damage")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [750]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xaxc"]
 resource_local_to_scene = true
 _data = {
@@ -7399,6 +6693,7 @@ _data = {
 "Idle": SubResource("Animation_eslh7"),
 "Throw": SubResource("Animation_atxst"),
 "WalkForward": SubResource("Animation_3feqb"),
+"backdash": SubResource("Animation_p2lnd"),
 "cHK": SubResource("Animation_h7oaw"),
 "cHP": SubResource("Animation_pdhf3"),
 "cLK": SubResource("Animation_i62ue"),
@@ -7430,6 +6725,9 @@ _data = {
 "sMP": SubResource("Animation_6p61a"),
 "special1": SubResource("Animation_cwji2"),
 "special2": SubResource("Animation_2wac7"),
+"special3": SubResource("Animation_8qd67"),
+"special4": SubResource("Animation_jkri8"),
+"special5": SubResource("Animation_7y1qj"),
 "standingBlocking": SubResource("Animation_uxkvc"),
 "standingFlip": SubResource("Animation_i31sl"),
 "wakeUp": SubResource("Animation_hda2p"),
@@ -7475,6 +6773,15 @@ input_8/reset = true
 input_9/name = "Throw"
 input_9/auto_advance = false
 input_9/reset = true
+input_10/name = "Special3"
+input_10/auto_advance = false
+input_10/reset = true
+input_11/name = "Special4"
+input_11/auto_advance = false
+input_11/reset = true
+input_12/name = "Special5"
+input_12/auto_advance = false
+input_12/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="13"]
 animation = &"Jill/crouch"
@@ -7654,6 +6961,9 @@ input_3/reset = true
 input_4/name = "dash"
 input_4/auto_advance = false
 input_4/reset = true
+input_5/name = "backdash"
+input_5/auto_advance = false
+input_5/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iu5f5"]
 animation = &"Jill/special1"
@@ -7663,6 +6973,15 @@ animation = &"Jill/special2"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_21u75"]
 animation = &"Jill/special2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yinc4"]
+animation = &"Jill/special3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yfk6f"]
+animation = &"Jill/special4"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_as5s7"]
+animation = &"Jill/special5"
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_2eds3"]
 input_0/name = "idle"
@@ -7699,6 +7018,9 @@ animation = &"Jill/WalkForward"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7nf65"]
 animation = &"Jill/jumpHitstun"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pdeln"]
+animation = &"Jill/backdash"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l371l"]
 animation = &"Jill/Grab"
@@ -7803,6 +7125,7 @@ animation = &"Jill/wakeUp"
 animation = &"Jill/walkBack"
 
 [sub_resource type="AnimationNodeBlendTree" id="18"]
+graph_offset = Vector2(207.897, -528.048)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1240, -480)
 nodes/Crouch/node = SubResource("13")
@@ -7855,6 +7178,12 @@ nodes/Special2/node = SubResource("AnimationNodeAnimation_21u75")
 nodes/Special2/position = Vector2(626.037, -397.156)
 "nodes/Special2 2/node" = SubResource("AnimationNodeAnimation_klev6")
 "nodes/Special2 2/position" = Vector2(430.501, 134.397)
+nodes/Special3/node = SubResource("AnimationNodeAnimation_yinc4")
+nodes/Special3/position = Vector2(600, -280)
+nodes/Special4/node = SubResource("AnimationNodeAnimation_yfk6f")
+nodes/Special4/position = Vector2(660, -500)
+nodes/Special5/node = SubResource("AnimationNodeAnimation_as5s7")
+nodes/Special5/position = Vector2(482.897, -454.048)
 nodes/StandingAction/node = SubResource("AnimationNodeTransition_2eds3")
 nodes/StandingAction/position = Vector2(1600, -380)
 nodes/State/node = SubResource("17")
@@ -7867,6 +7196,8 @@ nodes/TimeScale/position = Vector2(1940, 60)
 "nodes/WalkForward /position" = Vector2(1060, -560)
 nodes/airHitstun/node = SubResource("AnimationNodeAnimation_7nf65")
 nodes/airHitstun/position = Vector2(1440, 460)
+nodes/backdash/node = SubResource("AnimationNodeAnimation_pdeln")
+nodes/backdash/position = Vector2(1740, -660)
 nodes/cGrab/node = SubResource("AnimationNodeAnimation_l371l")
 nodes/cGrab/position = Vector2(384.521, 325.577)
 nodes/cHK/node = SubResource("AnimationNodeAnimation_wei0a")
@@ -7925,12 +7256,12 @@ nodes/output/position = Vector2(2180, 100)
 nodes/rising/node = SubResource("AnimationNodeAnimation_gswe2")
 nodes/rising/position = Vector2(1000, 360)
 nodes/standingBlocking/node = SubResource("AnimationNodeAnimation_c5rpv")
-nodes/standingBlocking/position = Vector2(1060, -180)
+nodes/standingBlocking/position = Vector2(980, -120)
 nodes/wakeUp/node = SubResource("AnimationNodeAnimation_nstri")
 nodes/wakeUp/position = Vector2(1650.66, 683.498)
 nodes/walkBack/node = SubResource("AnimationNodeAnimation_epjdj")
 nodes/walkBack/position = Vector2(1240, -520)
-node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Attacking", 3, &"LK", &"Attacking", 4, &"MK", &"Attacking", 5, &"HK", &"Attacking", 6, &"Special01", &"Attacking", 7, &"Special2", &"Attacking", 8, &"Grab", &"Attacking", 9, &"Throw", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchAttacking", 4, &"cMK", &"CrouchAttacking", 5, &"cHK", &"CrouchAttacking", 6, &"cSpecial1", &"CrouchAttacking", 7, &"Special2 2", &"CrouchAttacking", 8, &"cGrab", &"CrouchAttacking", 9, &"cThrow", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpAttacking", 3, &"jLK", &"JumpAttacking", 4, &"jMK", &"JumpAttacking", 5, &"jHK", &"JumpAttacking", 6, &"jSpecial01", &"JumpAttacking", 7, &"jSpecial2", &"JumpAttacking", 8, &"jGrab", &"JumpAttacking", 9, &"jThrow", &"JumpHit", 0, &"jumpBlockstun", &"JumpHit", 1, &"jumpHitstun", &"JumpingAction", 0, &"Jump", &"JumpingAction", 1, &"JumpHit", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"Movement", 3, &"jumpStartUp", &"Movement", 4, &"dash", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"State", 3, &"knockDownAction", &"TimeScale", 0, &"State", &"knockDownAction", 0, &"airHitstun", &"knockDownAction", 1, &"otg", &"knockDownAction", 2, &"wakeUp", &"output", 0, &"TimeScale"]
+node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Attacking", 3, &"LK", &"Attacking", 4, &"MK", &"Attacking", 5, &"HK", &"Attacking", 6, &"Special01", &"Attacking", 7, &"Special2", &"Attacking", 8, &"Grab", &"Attacking", 9, &"Throw", &"Attacking", 10, &"Special3", &"Attacking", 11, &"Special4", &"Attacking", 12, &"Special5", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchAttacking", 4, &"cMK", &"CrouchAttacking", 5, &"cHK", &"CrouchAttacking", 6, &"cSpecial1", &"CrouchAttacking", 7, &"Special2 2", &"CrouchAttacking", 8, &"cGrab", &"CrouchAttacking", 9, &"cThrow", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpAttacking", 3, &"jLK", &"JumpAttacking", 4, &"jMK", &"JumpAttacking", 5, &"jHK", &"JumpAttacking", 6, &"jSpecial01", &"JumpAttacking", 7, &"jSpecial2", &"JumpAttacking", 8, &"jGrab", &"JumpAttacking", 9, &"jThrow", &"JumpHit", 0, &"jumpBlockstun", &"JumpHit", 1, &"jumpHitstun", &"JumpingAction", 0, &"Jump", &"JumpingAction", 1, &"JumpHit", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"Movement", 3, &"jumpStartUp", &"Movement", 4, &"dash", &"Movement", 5, &"backdash", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"State", 3, &"knockDownAction", &"TimeScale", 0, &"State", &"knockDownAction", 0, &"airHitstun", &"knockDownAction", 1, &"otg", &"knockDownAction", 2, &"wakeUp", &"output", 0, &"TimeScale"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfye"]
 resource_local_to_scene = true
@@ -7940,7 +7271,7 @@ size = Vector2(32, 88)
 scale = Vector2(-1, 1)
 script = ExtResource("19")
 
-[node name="charBody2D" type="CharacterBody2D" parent="." groups=["CollisionBox"]]
+[node name="charBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animatedSprite") groups=["CollisionBox"]]
 material = SubResource("2")
 collision_layer = 0
 collision_mask = 4
@@ -7948,16 +7279,17 @@ floor_block_on_wall = false
 script = ExtResource("2_bd138")
 jumpCancel = true
 disableGravity = true
+moveSpeed = Vector2(500, 0)
+animatedSprite = NodePath("sprJill")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="charBody2D"]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_educ5")
 
-[node name="sprJill" type="AnimatedSprite2D" parent="charBody2D"]
-texture_filter = 1
-use_parent_material = true
-sprite_frames = SubResource("4")
-offset = Vector2(36, 0)
+[node name="sprJill" parent="charBody2D" instance=ExtResource("4_sfrd1")]
+animation = &"default"
+frame = 0
+frame_progress = 0.0
 
 [node name="anchorPoint" type="Area2D" parent="charBody2D"]
 position = Vector2(0, 48)
@@ -7993,7 +7325,7 @@ script = ExtResource("99_32v1y")
 stun = 40
 stunVector = Vector2(500, -50)
 damage = 750
-attackType = 1
+attackType = 3
 hitstop = 15
 vstun = 10
 
