@@ -1,3 +1,4 @@
+ColorRect
 Timer
 CollisionShape2D
 Label
@@ -5,7 +6,6 @@ Button
 Node
 Area2D
 StaticBody2D
-ColorRect
 CharacterBody2D
 AnimatedSprite2D
 Camera2D
