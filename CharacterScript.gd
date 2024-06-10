@@ -54,6 +54,7 @@ var hitstop = 0
 
 var speed = 250;
 var jumpSpeed = 200
+var preservedJumpSpeed = jumpSpeed
 var jumpDirection = 0
 
 @onready var parent = $".."
@@ -98,6 +99,7 @@ func _ready():
 	parent.connect("KO",KO)
 
 func _physics_process(_delta):
+	print(velocity)
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
 	
@@ -299,8 +301,9 @@ func applyKnockback(knockbackApplied):
 func jump():
 	if action == "hit":
 		return
-	if parent.virtualController.directionY < 0 && grounded && (!attacking || jumpCancel):
+	if parent.virtualController.directionY < 0 && grounded && (!attacking || jumpCancel) && !jumpStartUp:
 		#grounded = false
+		disableGravity = false
 		gatlingPriority = 0
 		state = "standing"
 		action = "idle"
@@ -309,7 +312,11 @@ func jump():
 		jumpStartUp = true
 		attacking = false
 		jumpDirection = parent.virtualController.directionX
-		velocity.x = 0
+		if !dashing: 
+			velocity.x = 0
+			preservedJumpSpeed = 0
+		else:
+			preservedJumpSpeed = velocity.x
 		return
 	if velocity.y > 0:
 		jumpState = "falling"
@@ -319,9 +326,12 @@ func jump():
 func startJump():
 	if abs(jumpDirection) > 0:
 		#velocity.x = parent.virtualController.directionX*jumpSpeed #allow to change direction post start up
-		velocity.x = jumpDirection*jumpSpeed
-	if jumpDirection != 0 && !grounded:
-		velocity.x = jumpDirection*jumpSpeed
+		if preservedJumpSpeed != 0:
+			velocity.x = jumpDirection*abs(preservedJumpSpeed)
+		else:
+			velocity.x = jumpDirection*jumpSpeed
+	#if jumpDirection != 0 && !grounded:
+		#velocity.x = jumpDirection*jumpSpeed
 	hitboxes.disableHitboxes()
 	jumping = true
 	state = "jumping"
