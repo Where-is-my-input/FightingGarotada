@@ -1,6 +1,6 @@
 extends Node2D
 @onready var remote_transform_2d = $RemoteTransform2D
-@onready var body = $CharacterBody2D
+@onready var body = $cb2Jill
 
 #@onready var virtualController = $"../VirtualController"
 #var teste = 1
