@@ -220,6 +220,7 @@ func setAttack(atk, isAtk, gatling):
 	gatlingPriority = gatling
 
 func animationFinished():
+	jumpCancel = false
 	dashing = false
 	if grabbedPlayer != null: grabbedPlayer.release()
 	beingGrabbed = false

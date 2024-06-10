@@ -24,6 +24,9 @@ extends Control
 var player1
 var player2
 
+var player1KOed = false
+var player2KOed = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	tmr_timer.start(99)
@@ -90,6 +93,7 @@ func setDefault():
 	setWins()
 	
 func player1KO():
+	player1KOed = true
 	lbl_player_wins.text = "Player 2 Wins!"
 	Global.player2Wins += 1
 	Global.player2WinStreak += 1
@@ -97,16 +101,13 @@ func player1KO():
 	lbl_player_1_win_streak.visible = false
 	lbl_player_2_win_streak.visible = true
 	lbl_player_2_win_count.text = str(Global.player2Wins, " wins")
-	KO()
-
-func setWinStreak():
-	if Global.player1WinStreak > 0: lbl_player_2_win_streak.visible = false
-	if Global.player2WinStreak > 0: lbl_player_1_win_streak.visible = false
-	lbl_player_1_win_streak.text = str(Global.player1WinStreak, " Wins")
-	lbl_player_2_win_streak.text = str(Global.player2WinStreak, " Wins")
-	
+	if player2KOed: 
+		doubleKO()
+	else:
+		KO()
 
 func player2KO():
+	player2KOed = true
 	lbl_player_wins.text = "Player 1 Wins!"
 	Global.player1Wins += 1
 	Global.player1WinStreak += 1
@@ -114,6 +115,24 @@ func player2KO():
 	lbl_player_1_win_streak.visible = true
 	lbl_player_2_win_streak.visible = false
 	lbl_player_1_win_count.text = str(Global.player1Wins, " wins")
+	if player1KOed: 
+		doubleKO()
+	else:
+		KO()
+
+func setWinStreak():
+	if Global.player1WinStreak == 0 || Global.player2WinStreak == 0:
+		if Global.player1WinStreak > 0: lbl_player_2_win_streak.visible = false
+		if Global.player2WinStreak > 0: lbl_player_1_win_streak.visible = false
+	lbl_player_1_win_streak.text = str(Global.player1WinStreak, " Wins")
+	lbl_player_2_win_streak.text = str(Global.player2WinStreak, " Wins")
+
+func doubleKO():
+	lbl_player_wins.text = "Double KO!"
+	Global.player1WinStreak = 1
+	Global.player2WinStreak = 1
+	lbl_player_1_win_streak.visible = true
+	lbl_player_2_win_streak.visible = true
 	KO()
 
 func KO():
