@@ -162,3 +162,6 @@ func checkMotionExecuted(motion, facing = 1, maxBuffer = 10):
 			if motionIndex + 1 > motion.size():
 				return true
 	return false
+
+func buttonPressed():
+	return LP > 0 || MP > 0 || HP > 0 || LK > 0 || MK > 0 || HK > 0

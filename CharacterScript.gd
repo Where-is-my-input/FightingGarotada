@@ -99,7 +99,6 @@ func _ready():
 	parent.connect("KO",KO)
 
 func _physics_process(_delta):
-	print(velocity)
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
 	
@@ -119,7 +118,7 @@ func _physics_process(_delta):
 				walk()
 			else:
 				velocity.x = 0
-			if (!attacking || normalCancel && action == "attacking" && buttonPressed()) && action != "hit":
+			if (!attacking || normalCancel && action == "attacking" && parent.virtualController.buttonPressed()) && action != "hit":
 				isAttacking()
 			jump()
 			setAnimation()
@@ -172,49 +171,55 @@ func gravity_fall():
 		animationFinished()
 
 func isAttacking():
-	buttonPressed()
+	attackPressed()
 	neutralAnimation()
 	if !jumpStartUp: 
 		if attacking:
-			if dashing: velocity.x = 0
+			if dashing && !jumping: velocity.x = 0
 			action = "attacking"
 			return
 		attacking = 0
 		action = "idle"
 
-func buttonPressed():
-	if (parent.virtualController.LP == 1 || parent.virtualController.bufferedAction == "LP"):
+#TODO improve this
+func attackPressed():
+	if (checkActionPressed(parent.virtualController.LP, parent.virtualController.bufferedAction, "LP")):
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special1", 1, 4)
-		if (parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK"):
+		if checkActionPressed(parent.virtualController.LK, parent.virtualController.bufferedAction, "LK"):
 			setAttack("Grab", 1, 4)
 		if gatlingPriority < 1:
-			setAttack("LP", 1, 1)
+			setAttack("LP", 1, 0)
 		return true
-	if (parent.virtualController.MP == 1 || parent.virtualController.bufferedAction == "MP") && gatlingPriority < 2:
-		setAttack("MP", 2, 2)
-		return true
-	if (parent.virtualController.HP == 1 || parent.virtualController.bufferedAction == "HP") && gatlingPriority < 3:
-		setAttack("HP", 3, 3)
-		return true
-	if (parent.virtualController.LK == 1 || parent.virtualController.bufferedAction == "LK") && gatlingPriority < 1:
+	if checkActionPressed(parent.virtualController.LK, parent.virtualController.bufferedAction, "LK") && gatlingPriority < 2:
 		setAttack("LK", 1, 1)
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special2", 1, 4)
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionBackwards, facing):
 			setAttack("Special5", 1, 4)
 		return true
-	if (parent.virtualController.MK == 1 || parent.virtualController.bufferedAction == "MK") && gatlingPriority < 2:
-		setAttack("MK", 2, 2)
+	if checkActionPressed(parent.virtualController.MP, parent.virtualController.bufferedAction, "MP") && gatlingPriority < 3:
+		setAttack("MP", 2, 2)
+		return true
+	if checkActionPressed(parent.virtualController.MK, parent.virtualController.bufferedAction, "MK"):
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special3", 1, 4)
+			return true
+		if  gatlingPriority < 2: 
+			setAttack("MK", 2, 3)
+			return true
+	if checkActionPressed(parent.virtualController.HP, parent.virtualController.bufferedAction,"HP") && gatlingPriority < 4:
+		setAttack("HP", 3, 4)
 		return true
-	if (parent.virtualController.HK == 1 || parent.virtualController.bufferedAction == "HK") && gatlingPriority < 3:
-		setAttack("HK", 3, 3)
+	if checkActionPressed(parent.virtualController.HK, parent.virtualController.bufferedAction, "HK") && gatlingPriority < 5:
+		setAttack("HK", 3, 5)
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special4", 1, 4)
 		return true
 	return false
+
+func checkActionPressed(vcAction, bufferAction, action):
+	return vcAction == 1 || bufferAction == action
 
 func setAttack(atk, isAtk, gatling):
 	attack = atk
@@ -448,6 +453,7 @@ func _on_anchor_point_body_entered(body):
 	
 func land():
 	grounded = true
+	jumping = false
 	if knockdownState == "airborne": knockdownState = "otg"
 	if !knockdown: 
 		animationFinished()

@@ -1,7 +1,7 @@
 extends Control
 
-@onready var hpBarP1 = $CanvasLayer/HPPlayer1
-@onready var hpBarP2 = $CanvasLayer/HPPlayer2
+#@onready var hpBarP1 = $CanvasLayer/HPPlayer1
+#@onready var hpBarP2 = $CanvasLayer/HPPlayer2
 @onready var combo_counter_1 = $CanvasLayer/ComboCounter1
 @onready var combo_damage_1 = $CanvasLayer/ComboDamage1
 @onready var combo_counter_2 = $CanvasLayer/ComboCounter2
@@ -20,6 +20,8 @@ extends Control
 @onready var lbl_player_2_win_streak = $CanvasLayer/lblPlayer2WinStreak
 @onready var lbl_leader_2 = $CanvasLayer/lblLeader2
 @onready var lbl_leader_1 = $CanvasLayer/lblLeader1
+@onready var hpBarP1 = $CanvasLayer/tpHPPlayer1
+@onready var hpBarP2 = $CanvasLayer/tpHPPlayer2
 
 var player1
 var player2
@@ -27,9 +29,11 @@ var player2
 var player1KOed = false
 var player2KOed = false
 
+var timerPause = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tmr_timer.start(99)
+	if !timerPause: tmr_timer.start(99)
 	lb_ko.visible = false
 	lbl_player_wins.visible = false
 	player1 = self.get_node("VirtualController/Player")
@@ -164,3 +168,9 @@ func _on_tmr_timer_timeout():
 	else:
 		draw()
 	tmr_timer.stop()
+
+func pauseTimer():
+	if tmr_timer != null: tmr_timer.stop()
+
+func resumeTimer():
+	tmr_timer.start(tmr_timer.get_time_left())

@@ -161,6 +161,36 @@ position = Vector2(1320, 477.999)
 scale = Vector2(4.39955, 59.7126)
 shape = SubResource("RectangleShape2D_qgjce")
 
+[node name="trainingMode" type="Node" parent="HPBars"]
+script = ExtResource("6_wsjpw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="HPBars/trainingMode"]
+
+[node name="tmrBlock" type="Timer" parent="HPBars/trainingMode/CanvasLayer"]
+one_shot = true
+
+[node name="lblStun" type="Label" parent="HPBars/trainingMode/CanvasLayer"]
+offset_left = 837.0
+offset_top = 1028.0
+offset_right = 877.0
+offset_bottom = 1063.0
+theme_override_font_sizes/font_size = 25
+
+[node name="lblStun2" type="Label" parent="HPBars/trainingMode/CanvasLayer"]
+offset_left = 1036.0
+offset_top = 1026.0
+offset_right = 1076.0
+offset_bottom = 1061.0
+theme_override_font_sizes/font_size = 25
+
+[node name="lbFrameAdvantage" type="Label" parent="HPBars/trainingMode/CanvasLayer"]
+offset_left = 933.0
+offset_top = 984.0
+offset_right = 1003.0
+offset_bottom = 1125.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+
 [node name="debugger" type="Node" parent="."]
 process_mode = 3
 script = SubResource("GDScript_8u6lv")
@@ -209,20 +239,4 @@ offset_bottom = 93.5
 scale = Vector2(0.0551778, 14.53)
 color = Color(0.381474, 0.274218, 0.0731015, 1)
 
-[node name="trainingMode" type="Node" parent="."]
-script = ExtResource("6_wsjpw")
-
-[node name="tmrBlock" type="Timer" parent="trainingMode"]
-one_shot = true
-
-[node name="lblStun" type="Label" parent="trainingMode"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 25
-
-[node name="lblStun2" type="Label" parent="trainingMode"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 25
-
-[connection signal="timeout" from="trainingMode/tmrBlock" to="trainingMode" method="_on_tmr_block_timeout"]
+[connection signal="timeout" from="HPBars/trainingMode/CanvasLayer/tmrBlock" to="HPBars/trainingMode" method="_on_tmr_block_timeout"]

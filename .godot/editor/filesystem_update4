@@ -11,3 +11,6 @@ res://healthBars.tscn
 res://Scenes/characters/spr_jill.tscn
 res://Scenes/characters/spr_lilith.tscn
 res://healthBars.gd
+res://virtualController.gd
+res://trainingMode.gd
+res://Scenes/menu/main_menu.gd

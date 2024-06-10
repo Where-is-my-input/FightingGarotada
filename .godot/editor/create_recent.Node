@@ -1,9 +1,11 @@
+TextureProgressBar
+CanvasLayer
+Label
 ColorRect
 TextureRect
 AnimatedSprite2D
 Timer
 CollisionShape2D
-Label
 Button
 Node
 Area2D
@@ -11,4 +13,3 @@ StaticBody2D
 CharacterBody2D
 Camera2D
 RemoteTransform2D
-CanvasLayer
