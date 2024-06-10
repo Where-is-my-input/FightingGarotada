@@ -259,10 +259,10 @@ func neutralAnimation():
 				movement = "walkback"
 			else:
 				movement = "walk"
-		if parent.virtualController.checkMotionExecuted(motionDash, facing, 3):
+		if parent.virtualController.checkMotionExecuted(motionDash, facing, 3) && !dashing:
 			dashing = true
 			movement = "dash"
-		elif parent.virtualController.checkMotionExecuted(motionBackdash, facing, 3):
+		elif parent.virtualController.checkMotionExecuted(motionBackdash, facing, 3) && !dashing:
 			dashing = true
 			movement = "backdash"
 	
@@ -394,18 +394,18 @@ func getHit(hitbox):
 	defaultGetHitEffects(hitbox)
 	if hitbox.hitProperty == Global.hitType.NORMAL: 
 		knockbackVector.y = 0
-	elif hitbox.hitProperty == Global.hitType.KNOCKDOWN:
-		#collision_area.set_deferred("disabled", true)
-		#grounded = false
-		tmr_knockdown.start(1)
-		#disableGravity = true
-		knockdown = true
-		state = "knockdown"
-		if knockdownState != "otg": knockdownState = "airborne"
 	if action == "hit":
 		animatedTree.set_deferred("advance", -0.25)
 		#animatedTree.advance(-0.25)
 	if hitbox.attackType == Global.blockType.UNBLOCKABLE || beingGrabbed || hitstun > 0 && !isBlocking || !blocking || (blocking && (!lowBlock && hitbox.attackType == Global.blockType.LOW)) || (blocking && (lowBlock && hitbox.attackType == Global.blockType.HIGH)):
+		if hitbox.hitProperty == Global.hitType.KNOCKDOWN:
+			#collision_area.set_deferred("disabled", true)
+			#grounded = false
+			tmr_knockdown.start(1)
+			#disableGravity = true
+			knockdown = true
+			state = "knockdown"
+			if knockdownState != "otg": knockdownState = "airborne"
 		attacking = 0
 		hitstun = hitbox.stun
 		knockback = 35 * parent.facing
