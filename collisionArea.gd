@@ -1,6 +1,6 @@
 extends Area2D
 @onready var collision_area_collision = $collisionAreaCollision
-@onready var character_body_2d = $"../.."
+@onready var character_body_2d = $".."
 
 
 func getCollider():

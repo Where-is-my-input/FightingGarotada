@@ -56,14 +56,14 @@ var jumpSpeed = 200
 var jumpDirection = 0
 
 @onready var parent = $".."
-@onready var animatedSprite = $AnimatedSprite2D
-@onready var hitboxes = $AnimatedSprite2D/Hitboxes
-@onready var animatedTree = $AnimatedSprite2D/AnimationPlayer/AnimationTree
+@onready var animatedSprite = $sprJill
+@onready var hitboxes = $Hitboxes
+@onready var animatedTree = $AnimationPlayer/AnimationTree
 @onready var collision_box = $CollisionBox
 @onready var marker_2d = $anchorPoint/Marker2D
 @onready var anchor_point = $anchorPoint
 @onready var tmr_knockdown = $tmrKnockdown
-@onready var collision_area = $AnimatedSprite2D/collisionArea
+@onready var collision_area = $collisionArea
 
 #animationTree
 @onready var A_State = "parameters/State/transition_request"
@@ -334,8 +334,8 @@ func setAnimation():
 	animatedTree.set(A_KnockDownAction, knockdownState)
 
 func _on_hitboxes_area_entered(hitbox):
-	if hitbox.get_parent() != animatedSprite:
-		var hitParent = hitbox.get_parent().get_parent()
+	if hitbox.get_parent() != self:
+		var hitParent = hitbox.get_parent()
 		if hitboxes.hitProperty == Global.hitType.GRAB:
 			if hitbox.is_in_group("CollisionBox"):
 				disableGravity = true

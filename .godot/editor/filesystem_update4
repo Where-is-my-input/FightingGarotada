@@ -7,3 +7,6 @@ res://Bruh.tscn
 res://Scenes/menu/main_menu.tscn
 res://healthBars.tscn
 res://Player.gd
+res://CharacterScript.gd
+res://Character.gd
+res://collisionArea.gd

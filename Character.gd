@@ -9,7 +9,7 @@ var strength = -1000
 
 var speed = 500;
 
-@onready var animatedSprite = $AnimatedSprite2D
+@onready var animatedSprite = $sprJill
 @onready var body = $"."
 
 # Declare member variables here. Examples:
