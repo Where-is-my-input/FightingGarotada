@@ -85,6 +85,7 @@ var jumpDirection = 0
 @onready var A_IdleState = "parameters/IdleState/transition_request"
 @onready var A_TimeScale = "parameters/TimeScale/scale"
 @onready var A_KnockDownAction = "parameters/knockDownAction/transition_request"
+
 #controller
 @onready var virtualController = parent.virtualController
 

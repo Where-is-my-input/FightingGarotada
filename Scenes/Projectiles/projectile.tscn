@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfjlrtpddd5pd"]
+
+[ext_resource type="Script" path="res://Hitboxes.gd" id="1_j748k"]
+[ext_resource type="Script" path="res://Scenes/Projectiles/projectile.gd" id="1_mtvw5"]
+[ext_resource type="Texture2D" uid="uid://cpm2glo1hy1ke" path="res://Characters/Jill Valentine/anim646.png" id="2_6i4w0"]
+[ext_resource type="Shader" path="res://Scenes/Projectiles/projectile.gdshader" id="2_onxoc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdkkp"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujm1w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opabo"]
+shader = ExtResource("2_onxoc")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e460b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6i4w0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nymjj"]
+
+[node name="Projectile" type="CharacterBody2D"]
+script = ExtResource("1_mtvw5")
+
+[node name="hitbox" type="Area2D" parent="."]
+script = ExtResource("1_j748k")
+
+[node name="csHitbox" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_cdkkp")
+debug_color = Color(0.992157, 0, 0.25098, 0.701961)
+
+[node name="hurtbox" type="Area2D" parent="." groups=["Hurtboxes"]]
+
+[node name="csHurtbox" type="CollisionShape2D" parent="hurtbox"]
+shape = SubResource("RectangleShape2D_ujm1w")
+debug_color = Color(3.08037e-06, 0.590256, 0.332557, 0.42)
+
+[node name="asProjectile" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_opabo")
+position = Vector2(39, -50)
+sprite_frames = SubResource("SpriteFrames_e460b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nymjj")

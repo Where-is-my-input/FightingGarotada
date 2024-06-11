@@ -1,4 +1,6 @@
 CollisionShape2D
+CharacterBody2D
+AnimatedSprite2D
 Area2D
 StaticBody2D
 TextureProgressBar
@@ -6,9 +8,7 @@ CanvasLayer
 Label
 ColorRect
 TextureRect
-AnimatedSprite2D
 Timer
 Button
 Node
-CharacterBody2D
 Camera2D
