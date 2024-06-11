@@ -1,3 +1,4 @@
+StaticBody2D
 TextureProgressBar
 CanvasLayer
 Label
@@ -9,7 +10,5 @@ CollisionShape2D
 Button
 Node
 Area2D
-StaticBody2D
 CharacterBody2D
 Camera2D
-RemoteTransform2D

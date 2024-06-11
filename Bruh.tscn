@@ -96,7 +96,7 @@ func _process(_delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p8bk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl8iv"]
-size = Vector2(1450, 59.5)
+size = Vector2(1450, 25)
 
 [node name="Main" type="Node2D"]
 process_mode = 1
@@ -195,35 +195,23 @@ text = "0"
 process_mode = 3
 script = SubResource("GDScript_8u6lv")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["ground"]]
+[node name="corners" type="StaticBody2D" parent="." groups=["ground"]]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="leftCorner" type="CollisionShape2D" parent="corners"]
 position = Vector2(216, 481)
 scale = Vector2(3.99834, -43.6312)
 shape = SubResource("RectangleShape2D_1p8bk")
 debug_color = Color(0.340613, 0.404992, 0.39985, 0.42)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="rightCorner" type="CollisionShape2D" parent="corners"]
 position = Vector2(1705, 520)
 scale = Vector2(3.99834, -43.6312)
 shape = SubResource("RectangleShape2D_1p8bk")
 debug_color = Color(0.340613, 0.404992, 0.39985, 0.42)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" groups=["ground"]]
-position = Vector2(964, 865)
-shape = SubResource("RectangleShape2D_bl8iv")
-debug_color = Color(0.341176, 0.403922, 0.4, 0.419608)
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = 230.0
-offset_top = 837.0
-offset_right = 1680.0
-offset_bottom = 896.5
-color = Color(0.381474, 0.274218, 0.0731015, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
+[node name="ColorRect2" type="ColorRect" parent="corners"]
 offset_left = 175.0
 offset_top = 46.0
 offset_right = 1625.0
@@ -231,12 +219,29 @@ offset_bottom = 105.5
 scale = Vector2(0.0551778, 14.53)
 color = Color(0.381474, 0.274218, 0.0731015, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="StaticBody2D"]
+[node name="ColorRect3" type="ColorRect" parent="corners"]
 offset_left = 1665.0
 offset_top = 34.0
 offset_right = 3115.0
 offset_bottom = 93.5
 scale = Vector2(0.0551778, 14.53)
 color = Color(0.381474, 0.274218, 0.0731015, 1)
+
+[node name="ground" type="StaticBody2D" parent="." groups=["ground"]]
+collision_layer = 256
+collision_mask = 256
+
+[node name="ColorRect" type="ColorRect" parent="ground"]
+visible = false
+offset_left = 230.0
+offset_top = 837.0
+offset_right = 1680.0
+offset_bottom = 896.5
+color = Color(0.381474, 0.274218, 0.0731015, 1)
+
+[node name="ground" type="CollisionShape2D" parent="ground"]
+position = Vector2(964, 843.125)
+shape = SubResource("RectangleShape2D_bl8iv")
+debug_color = Color(0.341176, 0.403922, 0.4, 0.419608)
 
 [connection signal="timeout" from="HPBars/trainingMode/CanvasLayer/tmrBlock" to="HPBars/trainingMode" method="_on_tmr_block_timeout"]

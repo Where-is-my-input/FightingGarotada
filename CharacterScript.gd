@@ -106,7 +106,6 @@ func _physics_process(_delta):
 		if hitstop > 0:
 			hitstop -= 1
 			animatedTree.set(A_TimeScale, 0)
-			#return
 		else:
 			animatedTree.set(A_TimeScale, 1)
 			playerCollision()
@@ -433,7 +432,7 @@ func endHitstun():
 				#land()
 		else:
 			hitstun = hitstun - 1
-		if velocity.y > 0: checkGround()
+		#if velocity.y > 0: checkGround()
 
 func checkGround():
 	if anchor_point.global_position.y > Global.ground:
@@ -448,7 +447,7 @@ func getHurtBoxSizeY():
 	return collision_box.shape.size.y
 
 func _on_anchor_point_body_entered(body):
-	if body.is_in_group("ground"):
+	if body.is_in_group("ground") && !attacking:
 		land()
 	
 func land():
@@ -465,7 +464,10 @@ func land():
 
 func _on_anchor_point_body_exited(body):
 	if body.is_in_group("ground"):
-		grounded = false
+		if velocity.y > 0:
+			land()
+		else:
+			grounded = false
 
 #should it be a timer called in _on_anchor_point_body_entered?
 #allow otg "recombo"
