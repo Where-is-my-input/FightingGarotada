@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=131 format=3 uid="uid://cbi3kopno23pf"]
 
 [ext_resource type="Script" path="res://CharacterScript.gd" id="2_bd138"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_ecalt"]
@@ -240,6 +240,18 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector2(500, -50)]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../grabPosition:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, -16)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
 resource_local_to_scene = true
@@ -249,7 +261,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_8au6d"]
 resource_name = "Grab"
-length = 0.333335
+length = 0.500003
 loop_mode = 1
 step = 0.0166667
 tracks/0/type = "value"
@@ -259,10 +271,10 @@ tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [&"knifeAttack"]
+"values": [&"knifeAttack", &"jumpFalling"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -271,10 +283,10 @@ tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.166667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.166667, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0, 1, 2, 3, 3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -285,7 +297,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(47, 91)]
 }
 tracks/3/type = "value"
@@ -297,7 +309,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, 5.5)]
 }
 tracks/4/type = "value"
@@ -309,7 +321,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(32, 80)]
 }
 tracks/5/type = "value"
@@ -321,7 +333,7 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, 8)]
 }
 tracks/6/type = "method"
@@ -331,7 +343,7 @@ tracks/6/path = NodePath("..")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.333333),
+"times": PackedFloat32Array(0.433334),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -359,7 +371,7 @@ tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(40, 78)]
 }
 tracks/9/type = "value"
@@ -371,7 +383,7 @@ tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(44, 9)]
 }
 tracks/10/type = "value"
@@ -397,6 +409,18 @@ tracks/11/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../grabPosition:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(56, 0), Vector2(56, -16)]
 }
 
 [sub_resource type="Animation" id="Animation_eslh7"]
@@ -637,6 +661,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Hitboxes:damage")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [250]
 }
 
 [sub_resource type="Animation" id="Animation_3feqb"]
@@ -7278,6 +7314,9 @@ node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking"
 resource_local_to_scene = true
 size = Vector2(32, 88)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53n7y"]
+size = Vector2(1, 1)
+
 [node name="Player" type="Node2D" groups=["Player"]]
 scale = Vector2(-1, 1)
 script = ExtResource("19")
@@ -7335,7 +7374,7 @@ collision_mask = 10
 script = ExtResource("99_32v1y")
 stun = 10
 stunVector = Vector2(500, -50)
-damage = 150
+damage = 750
 hitstop = 15
 vstun = 10
 
@@ -7414,6 +7453,11 @@ script = ExtResource("196_djj2p")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_mmfye")
 debug_color = Color(0.105957, 0, 0.732455, 0.42)
+
+[node name="grabPosition" type="CollisionShape2D" parent="charBody2D"]
+position = Vector2(56, -16)
+shape = SubResource("RectangleShape2D_53n7y")
+debug_color = Color(0.398854, 0.0011998, 0.59075, 0.42)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 

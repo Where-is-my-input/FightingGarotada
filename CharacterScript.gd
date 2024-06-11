@@ -67,6 +67,7 @@ var jumpDirection = 0
 @onready var anchor_point = $anchorPoint
 @onready var tmr_knockdown = $tmrKnockdown
 @onready var collision_area = $collisionArea
+@onready var grab_position = $grabPosition
 
 #animationTree
 @onready var A_State = "parameters/State/transition_request"
@@ -101,6 +102,8 @@ func _ready():
 func _physics_process(_delta):
 	blocking = parent.virtualController.directionX * parent.facing > 0
 	lowBlock = parent.virtualController.directionY > 0
+	
+	if grabbedPlayer != null && !grabbedPlayer.setGrabbedGlobalPosition(grab_position.global_position): grabbedPlayer = null
 	
 	if parent.virtualController != null:
 		if hitstop > 0:
@@ -186,19 +189,23 @@ func attackPressed():
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special1", 1, 4)
 		if checkActionPressed(parent.virtualController.LK, parent.virtualController.bufferedAction, "LK"):
-			setAttack("Grab", 1, 4)
+			setAttack("Grab", 6, 4)
 		if gatlingPriority < 1:
 			setAttack("LP", 1, 0)
 		return true
-	if checkActionPressed(parent.virtualController.LK, parent.virtualController.bufferedAction, "LK") && gatlingPriority < 2:
-		setAttack("LK", 1, 1)
+	if checkActionPressed(parent.virtualController.LK, parent.virtualController.bufferedAction, "LK"):
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special2", 1, 4)
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionBackwards, facing):
 			setAttack("Special5", 1, 4)
+		if gatlingPriority < 2:
+			setAttack("LK", 1, 1)
+		#TODO Grab leniency
+		#if attack == "LP":
+			#setAttack("Grab", 6, 4)
 		return true
-	if checkActionPressed(parent.virtualController.MP, parent.virtualController.bufferedAction, "MP") && gatlingPriority < 3:
-		setAttack("MP", 2, 2)
+	if checkActionPressed(parent.virtualController.MP, parent.virtualController.bufferedAction, "MP"):
+		if gatlingPriority < 3: setAttack("MP", 2, 2)
 		return true
 	if checkActionPressed(parent.virtualController.MK, parent.virtualController.bufferedAction, "MK"):
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
@@ -207,13 +214,13 @@ func attackPressed():
 		if  gatlingPriority < 2: 
 			setAttack("MK", 2, 3)
 			return true
-	if checkActionPressed(parent.virtualController.HP, parent.virtualController.bufferedAction,"HP") && gatlingPriority < 4:
-		setAttack("HP", 3, 4)
+	if checkActionPressed(parent.virtualController.HP, parent.virtualController.bufferedAction,"HP"):
+		if gatlingPriority < 4: setAttack("HP", 3, 4)
 		return true
-	if checkActionPressed(parent.virtualController.HK, parent.virtualController.bufferedAction, "HK") && gatlingPriority < 5:
-		setAttack("HK", 3, 5)
+	if checkActionPressed(parent.virtualController.HK, parent.virtualController.bufferedAction, "HK"):
 		if specialCancel && parent.virtualController.checkMotionExecuted(motionForward, facing):
 			setAttack("Special4", 1, 4)
+		if gatlingPriority < 1: setAttack("HK", 3, 5)
 		return true
 	return false
 
@@ -370,7 +377,7 @@ func _on_hitboxes_area_entered(hitbox):
 				hitParent.defaultGetHitEffects(hitboxes)
 				hitbox.set_deferred("disabled", true)
 				hitbox.grabbed()
-				grabbedPlayer = hitbox
+				grabbedPlayer = hitParent
 				setAttack("Throw", 1, 4)
 		elif hitbox.is_in_group("Hurtboxes"):
 			hitParent.getHit(hitboxes)
@@ -497,3 +504,9 @@ func KO():
 	knockdown = true
 	action = "hit"
 	setAnimation()
+
+func setGrabbedGlobalPosition(p):
+	if beingGrabbed:
+		global_position = p
+		return true
+	return false
