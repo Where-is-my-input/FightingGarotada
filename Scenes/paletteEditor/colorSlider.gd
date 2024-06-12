@@ -30,7 +30,16 @@ func setColor(c):
 	if c == null: 
 		visible = false
 		return
-	color_rect.color = Color(c.x, c.y, c.z, c.w)
+	if c is Color:
+		r.value = c.r * 255
+		g.value = c.g * 255
+		b.value = c.b * 255
+		color_rect.color = Color(c.r, c.g, c.b, c.a)
+	else:
+		r.value = c.x * 255
+		g.value = c.y * 255
+		b.value = c.z * 255
+		color_rect.color = Color(c.x, c.y, c.z, c.w)
 
 func getColor():
 	return color_rect.color

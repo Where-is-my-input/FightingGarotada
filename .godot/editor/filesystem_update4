@@ -8,3 +8,6 @@ res://virtualController.tscn
 res://Player.tscn
 res://Bruh.tscn
 res://Scenes/menu/main_menu.tscn
+res://Scenes/paletteEditor/colorPicker.tscn
+res://Scenes/paletteEditor/colorSlider.gd
+res://Scenes/characters/Jill/jill.gd
