@@ -83,7 +83,7 @@ func modulateVisualController():
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(delta):
 	motion()
 	readButtons() #change to input event to not call everyframe?
 	modulateVisualController()

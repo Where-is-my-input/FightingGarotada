@@ -1,6 +1,8 @@
 extends Node2D
 @onready var remote_transform_2d = $RemoteTransform2D
 @onready var body = $charBody2D
+@onready var hurtboxes = $charBody2D/Hurtboxes
+@onready var hitboxes = $charBody2D/Hitboxes
 
 #@onready var virtualController = $"../VirtualController"
 #var teste = 1
@@ -67,3 +69,9 @@ func getGlobalPos():
 
 func getStun():
 	return body.hitstun
+
+func getHurtboxes():
+	return hurtboxes.get_children()
+	
+func getHitboxes():
+	return hitboxes.get_children()
