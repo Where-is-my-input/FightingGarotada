@@ -3,6 +3,7 @@ extends Node2D
 @onready var body = $charBody2D
 @onready var hurtboxes = $charBody2D/Hurtboxes
 @onready var hitboxes = $charBody2D/Hitboxes
+@onready var collision_area = $charBody2D/collisionArea
 
 #@onready var virtualController = $"../VirtualController"
 #var teste = 1
@@ -75,3 +76,6 @@ func getHurtboxes():
 	
 func getHitboxes():
 	return hitboxes.get_children()
+
+func getCollisionBox():
+	return collision_area.getCollision()

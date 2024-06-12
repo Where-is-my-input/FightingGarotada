@@ -32,6 +32,13 @@ uniform vec4 color15: source_color = vec4(248.0,0.0,248.0,255.0);
 uniform vec4 color16: source_color = vec4(248.0,0.0,248.0,255.0);
 uniform vec4 color17: source_color = vec4(248.0,0.0,248.0,255.0);
 uniform vec4 color18: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 color19: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 color20: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 color21: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 color22: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 color23: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 color24: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 color25: source_color = vec4(248.0,0.0,248.0,255.0);
 //New palette
 uniform vec4 newColor1: source_color = vec4(68.0,88.0,219.0,255.0);
 uniform vec4 newColor2: source_color = vec4(69.0,118.0,255.0,255.0);
@@ -51,11 +58,18 @@ uniform vec4 newColor15: source_color = vec4(248.0,0.0,248.0,255.0);
 uniform vec4 newColor16: source_color = vec4(248.0,0.0,248.0,255.0);
 uniform vec4 newColor17: source_color = vec4(248.0,0.0,248.0,255.0);
 uniform vec4 newColor18: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor19: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor20: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor21: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor22: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor23: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor24: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor25: source_color = vec4(248.0,0.0,248.0,255.0);
 
 vec4 swap_color(vec4 color){
-	vec4 original_colors[18] = vec4[18] (color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11, color12, color13, color14, color15, color16, color17, color18);
-	vec4 replace_colors[18] = vec4[18] (newColor1, newColor2, newColor3, newColor4, newColor5, newColor6, newColor7, newColor8, newColor9, newColor10, newColor11, newColor12, newColor13, newColor14, newColor15, newColor16, newColor17, newColor18);
-	for (int i = 0; i < 18; i ++) {
+	vec4 original_colors[25] = vec4[25] (color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11, color12, color13, color14, color15, color16, color17, color18, color19, color20, color21, color22, color23, color24, color25);
+	vec4 replace_colors[25] = vec4[25] (newColor1, newColor2, newColor3, newColor4, newColor5, newColor6, newColor7, newColor8, newColor9, newColor10, newColor11, newColor12, newColor13, newColor14, newColor15, newColor16, newColor17, newColor18, newColor19, newColor20, newColor21, newColor22, newColor23, newColor24, newColor25);
+	for (int i = 0; i < 25; i ++) {
 		if (distance(color, original_colors[i]) <= precision){
 			return replace_colors[i];
 		}
@@ -114,27 +128,41 @@ shader_parameter/color12 = Color(0.933333, 0.6, 0.4, 1)
 shader_parameter/color13 = Color(0.733333, 0.4, 0.2, 1)
 shader_parameter/color14 = Color(1, 0.8, 0.6, 1)
 shader_parameter/color15 = Color(1, 0.933333, 0.733333, 1)
-shader_parameter/color16 = Color(1, 1, 0, 1)
-shader_parameter/color17 = Color(248, 0, 248, 255)
-shader_parameter/color18 = Color(248, 0, 248, 255)
-shader_parameter/newColor1 = Color(1, 0.901961, 0, 255)
+shader_parameter/color16 = Color(0.533333, 0.6, 0.666667, 1)
+shader_parameter/color17 = Color(0.266667, 0.333333, 0.4, 1)
+shader_parameter/color18 = Color(0.4, 0.466667, 0.533333, 1)
+shader_parameter/color19 = Color(0.733333, 0.8, 0.866667, 1)
+shader_parameter/color20 = Color(0.866667, 0.933333, 1, 1)
+shader_parameter/color21 = Color(0.133333, 0.2, 0.266667, 1)
+shader_parameter/color22 = Color(0.6, 0.4, 0, 1)
+shader_parameter/color23 = Color(0.866667, 0.6, 0, 1)
+shader_parameter/color24 = Color(248, 0, 248, 255)
+shader_parameter/color25 = Color(248, 0, 248, 255)
+shader_parameter/newColor1 = Color(1, 1, 0, 1)
 shader_parameter/newColor2 = Color(1, 1, 0, 1)
-shader_parameter/newColor3 = Color(0.670867, 0.670867, 3.85046e-07, 1)
-shader_parameter/newColor4 = Color(0.298959, 0.298959, 0, 1)
-shader_parameter/newColor5 = Color(0.490196, 0.541176, 0, 1)
+shader_parameter/newColor3 = Color(1, 1, 0, 1)
+shader_parameter/newColor4 = Color(1, 1, 0, 1)
+shader_parameter/newColor5 = Color(1, 1, 0, 1)
 shader_parameter/newColor6 = Color(1, 1, 0, 1)
-shader_parameter/newColor7 = Color(0.219658, 0.219658, 0, 1)
-shader_parameter/newColor8 = Color(0.0819393, 0.082452, 1.8049e-08, 1)
-shader_parameter/newColor9 = Color(0.907942, 0.907942, 0.907942, 1)
-shader_parameter/newColor10 = Color(0.272342, 0.272342, 0, 1)
-shader_parameter/newColor11 = Color(0.142741, 0.00129536, 0.000718508, 1)
-shader_parameter/newColor12 = Color(0.484154, 0.01408, 0.00780758, 1)
-shader_parameter/newColor13 = Color(0.157676, 0.00154171, 0.000855157, 1)
-shader_parameter/newColor14 = Color(1, 0.615315, 0.545849, 1)
-shader_parameter/newColor15 = Color(0.999114, 0.734614, 0.691658, 1)
-shader_parameter/newColor16 = Color(0.997819, 0.496044, 0.429153, 1)
-shader_parameter/newColor17 = Color(248, 0, 0, 255)
+shader_parameter/newColor7 = Color(1, 1, 0, 1)
+shader_parameter/newColor8 = Color(1, 1, 0, 1)
+shader_parameter/newColor9 = Color(1, 1, 0, 1)
+shader_parameter/newColor10 = Color(1, 1, 0, 1)
+shader_parameter/newColor11 = Color(1, 1, 0, 1)
+shader_parameter/newColor12 = Color(1, 1, 0, 1)
+shader_parameter/newColor13 = Color(1, 1, 0, 1)
+shader_parameter/newColor14 = Color(1, 1, 0, 1)
+shader_parameter/newColor15 = Color(1, 1, 0, 1)
+shader_parameter/newColor16 = Color(1, 1, 0, 1)
+shader_parameter/newColor17 = Color(1, 1, 0, 1)
 shader_parameter/newColor18 = Color(1, 1, 0, 1)
+shader_parameter/newColor19 = Color(1, 1, 0, 1)
+shader_parameter/newColor20 = Color(1, 1, 0, 1)
+shader_parameter/newColor21 = Color(248, 0, 248, 255)
+shader_parameter/newColor22 = Color(248, 0, 248, 255)
+shader_parameter/newColor23 = Color(248, 0, 248, 255)
+shader_parameter/newColor24 = Color(248, 0, 248, 255)
+shader_parameter/newColor25 = Color(248, 0, 248, 255)
 shader_parameter/palette = ExtResource("2_ecalt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_educ5"]
@@ -7420,6 +7448,7 @@ collision_layer = 0
 collision_mask = 4
 floor_block_on_wall = false
 script = ExtResource("3_2jnjg")
+moveSpeed = Vector2(500, 0)
 animatedSprite = NodePath("sprJill")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="charBody2D"]
@@ -7465,6 +7494,8 @@ collision_layer = 4
 collision_mask = 10
 script = ExtResource("99_32v1y")
 stunVector = Vector2(500, -50)
+damage = 750
+attackType = 3
 hitstop = 15
 vstun = 10
 
@@ -7548,6 +7579,7 @@ debug_color = Color(0.105957, 0, 0.732455, 0.42)
 [node name="grabPosition" type="CollisionShape2D" parent="charBody2D"]
 position = Vector2(56, -16)
 shape = SubResource("RectangleShape2D_53n7y")
+disabled = true
 debug_color = Color(0.398854, 0.0011998, 0.59075, 0.42)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
