@@ -1,0 +1,184 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsrwgeqc8i1mg"]
+
+[ext_resource type="Script" path="res://Scenes/paletteEditor/palette_editor.gd" id="1_w6caq"]
+[ext_resource type="PackedScene" uid="uid://cuae3v35mxgx8" path="res://Scenes/paletteEditor/colorPicker.tscn" id="2_p150k"]
+[ext_resource type="PackedScene" uid="uid://cbi3kopno23pf" path="res://Player.tscn" id="3_1q030"]
+[ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="3_w3d0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf7p3"]
+size = Vector2(18.5035, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldo53"]
+size = Vector2(1450, 25)
+
+[node name="PaletteEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w6caq")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="btPrint" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Print values"
+
+[node name="colorPickerContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/colorPickerContainer"]
+layout_mode = 2
+
+[node name="colorPicker" type="VBoxContainer" parent="CenterContainer/VBoxContainer/colorPickerContainer"]
+layout_mode = 2
+
+[node name="color" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color2" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color3" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color4" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color5" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color6" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color7" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color8" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color9" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color10" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="colorPicker2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/colorPickerContainer"]
+layout_mode = 2
+
+[node name="color" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color2" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color3" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color4" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color5" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color6" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color7" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color8" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color9" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color10" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="colorPicker3" type="VBoxContainer" parent="CenterContainer/VBoxContainer/colorPickerContainer"]
+layout_mode = 2
+
+[node name="color" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color2" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color3" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color4" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color5" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color6" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color7" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color8" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color9" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="color10" parent="CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3" instance=ExtResource("2_p150k")]
+layout_mode = 2
+
+[node name="btMainMenu" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="VirtualController" parent="." instance=ExtResource("3_w3d0w")]
+position = Vector2(580, 212)
+
+[node name="Player" parent="VirtualController" instance=ExtResource("3_1q030")]
+position = Vector2(-356, -27)
+rotation = 3.14159
+scale = Vector2(3.32739, -3.32739)
+
+[node name="corners" type="StaticBody2D" parent="." groups=["ground"]]
+position = Vector2(-184, 128)
+collision_layer = 4
+collision_mask = 4
+
+[node name="leftCorner" type="CollisionShape2D" parent="corners"]
+position = Vector2(232, 464)
+scale = Vector2(3.99834, -43.6312)
+shape = SubResource("RectangleShape2D_kf7p3")
+debug_color = Color(0.340613, 0.404992, 0.39985, 0.42)
+
+[node name="rightCorner" type="CollisionShape2D" parent="corners"]
+position = Vector2(624, 464)
+scale = Vector2(3.99834, -43.6312)
+shape = SubResource("RectangleShape2D_kf7p3")
+debug_color = Color(0.340613, 0.404992, 0.39985, 0.42)
+
+[node name="ground" type="StaticBody2D" parent="." groups=["ground"]]
+position = Vector2(24, 72)
+scale = Vector2(0.232831, 1.07925)
+collision_layer = 256
+collision_mask = 256
+
+[node name="ground" type="CollisionShape2D" parent="ground"]
+position = Vector2(964, 843.125)
+shape = SubResource("RectangleShape2D_ldo53")
+debug_color = Color(0.341176, 0.403922, 0.4, 0.419608)
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/btPrint" to="." method="_on_bt_print_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/btMainMenu" to="." method="_on_bt_main_menu_pressed"]

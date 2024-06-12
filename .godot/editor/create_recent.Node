@@ -1,3 +1,9 @@
+Button
+VBoxContainer
+ColorRect
+HBoxContainer
+HSlider
+CenterContainer
 CollisionShape2D
 CharacterBody2D
 AnimatedSprite2D
@@ -6,9 +12,3 @@ StaticBody2D
 TextureProgressBar
 CanvasLayer
 Label
-ColorRect
-TextureRect
-Timer
-Button
-Node
-Camera2D

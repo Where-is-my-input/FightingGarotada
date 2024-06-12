@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuae3v35mxgx8"]
+
+[ext_resource type="Script" path="res://Scenes/paletteEditor/colorSlider.gd" id="1_aqqw7"]
+
+[node name="color" type="HBoxContainer" groups=["colorPicker"]]
+script = ExtResource("1_aqqw7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="sliders" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="R" type="HSlider" parent="sliders"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 2
+max_value = 255.0
+
+[node name="G" type="HSlider" parent="sliders"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 2
+max_value = 255.0
+
+[node name="B" type="HSlider" parent="sliders"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 2
+max_value = 255.0
+
+[connection signal="drag_ended" from="sliders/R" to="." method="_on_r_drag_ended"]
+[connection signal="drag_ended" from="sliders/G" to="." method="_on_g_drag_ended"]
+[connection signal="drag_ended" from="sliders/B" to="." method="_on_b_drag_ended"]

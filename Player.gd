@@ -79,3 +79,9 @@ func getHitboxes():
 
 func getCollisionBox():
 	return collision_area.getCollision()
+
+func getShaderPar(p):
+	return body.material.get(p)
+
+func setShaderPar(p, v):
+	body.material.set(p, v)
