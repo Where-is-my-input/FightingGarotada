@@ -17,3 +17,6 @@ func grabbed():
 
 func release():
 	character_body_2d.release()
+
+func getCollision():
+	return collision_area_collision

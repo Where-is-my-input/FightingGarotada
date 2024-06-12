@@ -404,7 +404,7 @@ func getHit(hitbox):
 	if action == "hit":
 		animatedTree.set_deferred("advance", -0.25)
 		#animatedTree.advance(-0.25)
-	if hitbox.attackType == Global.blockType.UNBLOCKABLE || beingGrabbed || hitstun > 0 && !isBlocking || !blocking || (blocking && (!lowBlock && hitbox.attackType == Global.blockType.LOW)) || (blocking && (lowBlock && hitbox.attackType == Global.blockType.HIGH)):
+	if hitbox.attackType == Global.blockType.UNBLOCKABLE || beingGrabbed || attacking || hitstun > 0 && !isBlocking || !blocking || (blocking && (!lowBlock && hitbox.attackType == Global.blockType.LOW)) || (blocking && (lowBlock && hitbox.attackType == Global.blockType.HIGH)):
 		if hitbox.hitProperty == Global.hitType.KNOCKDOWN:
 			#collision_area.set_deferred("disabled", true)
 			#grounded = false

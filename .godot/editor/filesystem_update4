@@ -14,3 +14,6 @@ res://Scenes/characters/spr_lilith.tscn
 res://Scenes/Projectiles/projectile.tscn
 res://Scenes/characters/Jill/jill.gd
 res://virtualController.gd
+res://collisionArea.gd
+res://Player.gd
+res://trainingMode.gd

@@ -47,6 +47,13 @@ func getHitHurtBoxes(p):
 		add_child(node)
 		hurtboxes.push_back(node)
 		hurtboxesPointers.push_back(i)
+	var colBox = p.getCollisionBox()
+	var node = ColorRect.new()
+	node.color = Color.BLUE
+	node.self_modulate.a = 0.5
+	add_child(node)
+	hurtboxes.push_back(node)
+	hurtboxesPointers.push_back(colBox)
 
 func alignHurtboxes():
 	for i in hurtboxes.size():
