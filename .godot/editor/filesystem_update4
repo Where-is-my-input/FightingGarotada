@@ -12,3 +12,4 @@ res://healthBars.tscn
 res://Scenes/characters/spr_jill.tscn
 res://Scenes/characters/spr_lilith.tscn
 res://Scenes/Projectiles/projectile.tscn
+res://Player.gd
