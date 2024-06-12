@@ -48,7 +48,8 @@ func _ready():
 	setDefault()
 
 func _process(_delta):
-	lbl_timer.text = str("%2d"%tmr_timer.time_left)
+	var timer = tmr_timer.time_left + 1
+	if !tmr_timer.is_stopped(): lbl_timer.text = str("%2d"%timer)
 
 func player1GotHit():
 	hpBarP1.value = player1.HP
@@ -168,6 +169,7 @@ func _on_tmr_timer_timeout():
 	else:
 		draw()
 	tmr_timer.stop()
+	lbl_timer.text = str("%2d"%tmr_timer.time_left)
 
 func pauseTimer():
 	if tmr_timer != null: tmr_timer.stop()
