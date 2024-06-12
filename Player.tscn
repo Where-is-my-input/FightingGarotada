@@ -14,6 +14,13 @@ code = "shader_type canvas_item;
 //uniform vec4 chroma_key_replace: source_color = vec4(0.0,0.0,0.0,0.0);
 //uniform float tolerance: hint_range(0.0,1.0) = 0.5;
 uniform sampler2D palette;
+uniform vec4 color1: source_color = vec4(51.0,170.0,255.0,255.0);
+uniform vec4 color2: source_color = vec4(51.0,170.0,255.0,255.0);
+uniform vec4 color3: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor1: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor2: source_color = vec4(248.0,0.0,248.0,255.0);
+uniform vec4 newColor3: source_color = vec4(248.0,0.0,248.0,255.0);
+
 
 void fragment(){
 	vec4 color_a = texture(TEXTURE, UV);
@@ -31,17 +38,31 @@ void fragment(){
 	if (color_a.r < 248.0 && color_a.g == 0.0 && color_a.b < 248.00) { //Opacity
         color_a.a = 0.0;
     }
-	vec4 rgba = texture(TEXTURE, UV);
-	vec4 finalColor = texture(palette, vec2(rgba.r, rgba.g));
-	finalColor.a = color_a.a;
+	//color_a = vec4(color_a.r, color_a.g, 0, color_a.a);
+	if (color_a.r == color1.r && color_a.g == color1.g && color_a.b == color1.b) {
+        color_a = vec4(newColor1.r, newColor1.g, newColor1.b, color_a.a);
+    }else if (color_a.r == color2.r && color_a.g == color2.g && color_a.b == color2.b) {
+        color_a = vec4(newColor2.r, newColor2.g, newColor2.b, color_a.a);
+    }else if (color_a.r == color3.r && color_a.g == color3.g && color_a.b == color3.b) {
+        color_a = vec4(newColor3.r, newColor3.g, newColor3.b, color_a.a);
+    }
+	//vec4 rgba = texture(TEXTURE, UV);
+	//vec4 finalColor = texture(palette, vec2(color_a.r, color_a.g));
+	//finalColor.a = color_a.a;
 	
-	COLOR = finalColor;
-	//COLOR = color_a;
+	//COLOR = finalColor;
+	COLOR = color_a;
 }"
 
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
 shader = SubResource("1")
+shader_parameter/color1 = Color(51, 170, 255, 255)
+shader_parameter/color2 = Color(0.333333, 0.866667, 1, 1)
+shader_parameter/color3 = Color(0.266667, 0.4, 0.866667, 255)
+shader_parameter/newColor1 = Color(0.91268, 0.803735, 1.54018e-06, 1)
+shader_parameter/newColor2 = Color(1.46799e-06, 0.462727, 0.184004, 1)
+shader_parameter/newColor3 = Color(0.713311, 8.66354e-07, 0.390593, 1)
 shader_parameter/palette = ExtResource("2_ecalt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_educ5"]
