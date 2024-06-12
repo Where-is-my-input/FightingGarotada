@@ -115,8 +115,8 @@ shader_parameter/color13 = Color(0.733333, 0.4, 0.2, 1)
 shader_parameter/color14 = Color(1, 0.8, 0.6, 1)
 shader_parameter/color15 = Color(1, 0.933333, 0.733333, 1)
 shader_parameter/color16 = Color(1, 1, 0, 1)
-shader_parameter/color17 = Color(248, 0, 248, 255)
-shader_parameter/color18 = Color(248, 0, 248, 255)
+shader_parameter/color17 = Color(0.266667, 0.333333, 0.4, 1)
+shader_parameter/color18 = Color(0.733333, 0.8, 0.866667, 1)
 shader_parameter/newColor1 = Color(68, 88, 219, 255)
 shader_parameter/newColor2 = Color(69, 118, 255, 255)
 shader_parameter/newColor3 = Color(0.670867, 0.670867, 3.85046e-07, 1)
@@ -133,7 +133,7 @@ shader_parameter/newColor13 = Color(0.157676, 0.00154171, 0.000855157, 1)
 shader_parameter/newColor14 = Color(1, 0.615315, 0.545849, 1)
 shader_parameter/newColor15 = Color(0.999114, 0.734614, 0.691658, 1)
 shader_parameter/newColor16 = Color(0.997819, 0.496044, 0.429153, 1)
-shader_parameter/newColor17 = Color(248, 0, 0, 255)
+shader_parameter/newColor17 = Color(248, 0, 0, 257)
 shader_parameter/newColor18 = Color(1, 1, 0, 1)
 shader_parameter/palette = ExtResource("2_ecalt")
 
@@ -7465,6 +7465,7 @@ collision_layer = 4
 collision_mask = 10
 script = ExtResource("99_32v1y")
 stunVector = Vector2(500, -50)
+damage = 750
 hitstop = 15
 vstun = 10
 
