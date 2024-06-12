@@ -1,5 +1,5 @@
 res://default_env.tres
-res://Player.tscn
+res://Scenes/menu/main_menu.tscn
 res://theme.tres
 res://Scenes/menu/buttonRemap.gd
 res://Scenes/Projectiles/projectile.gdshader
