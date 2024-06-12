@@ -162,6 +162,18 @@ func checkMotionExecuted(motion, facing = 1, maxBuffer = 10):
 			if motionIndex + 1 > motion.size():
 				return true
 	return false
+	
+func checkMotionExecutedExcept(motion, motionLockout, facing = 1, maxBuffer = 10):
+	var motionIndex = 0
+	for m in motionArray:
+		if (motionLockout.x * facing) * -1 == m.x && motionLockout.y == m.y:
+			return false
+		if (motion[motionIndex].x * facing) * -1 == m.x && motion[motionIndex].y == m.y:
+			motionIndex += 1
+			if motionIndex > maxBuffer: return false
+			if motionIndex + 1 > motion.size():
+				return true
+	return false
 
 func buttonPressed():
 	return LP > 0 || MP > 0 || HP > 0 || LK > 0 || MK > 0 || HK > 0

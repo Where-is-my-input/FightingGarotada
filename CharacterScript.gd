@@ -266,10 +266,10 @@ func neutralAnimation():
 				movement = "walkback"
 			else:
 				movement = "walk"
-		if parent.virtualController.checkMotionExecuted(motionDash, facing, 3) && !dashing:
+		if parent.virtualController.checkMotionExecutedExcept(motionDash, Vector2(-1,0), facing, 3) && !dashing:
 			dashing = true
 			movement = "dash"
-		elif parent.virtualController.checkMotionExecuted(motionBackdash, facing, 3) && !dashing:
+		elif parent.virtualController.checkMotionExecutedExcept(motionBackdash, Vector2(1,0), facing, 3) && !dashing:
 			dashing = true
 			movement = "backdash"
 	
