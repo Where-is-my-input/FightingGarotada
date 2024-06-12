@@ -1,16 +1,6 @@
 res://default_env.tres
-res://Player.tscn
+res://Scenes/menu/main_menu.tscn
 res://theme.tres
 res://Scenes/menu/buttonRemap.gd
 res://Scenes/Projectiles/projectile.gdshader
 res://Characters/Lilith/spr_lilit.gdshader
-res://CharacterScript.gd
-res://virtualController.tscn
-res://Bruh.tscn
-res://Scenes/menu/main_menu.tscn
-res://healthBars.tscn
-res://Scenes/characters/spr_jill.tscn
-res://Scenes/characters/spr_lilith.tscn
-res://Scenes/Projectiles/projectile.tscn
-res://Scenes/characters/Jill/jill.gd
-res://virtualController.gd
