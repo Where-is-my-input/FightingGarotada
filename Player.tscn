@@ -181,6 +181,7 @@ size = Vector2(0, 0)
 
 [sub_resource type="Animation" id="Animation_ml7xx"]
 length = 0.001
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -7479,6 +7480,7 @@ collision_layer = 0
 collision_mask = 4
 floor_block_on_wall = false
 script = ExtResource("3_2jnjg")
+jumpCancel = true
 moveSpeed = Vector2(500, 0)
 animatedSprite = NodePath("sprJill")
 
@@ -7522,9 +7524,9 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("99_32v1y")
+stun = 35
 stunVector = Vector2(500, -50)
-damage = 750
-attackType = 3
+damage = 350
 hitstop = 15
 vstun = 10
 

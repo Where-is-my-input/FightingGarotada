@@ -30,7 +30,7 @@ var player2
 var player1KOed = false
 var player2KOed = false
 
-#var timerPause = true
+var timerPause = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -184,4 +184,4 @@ func resumeTimer():
 
 func _on_tmr_round_start_timeout():
 	Global.roundStarted.emit()
-	tmr_timer.start(99)
+	if !timerPause: tmr_timer.start(99)
