@@ -52,6 +52,7 @@ func _ready():
 
 func setPalette():
 	var child = get_child(2)
+	if child == null: return
 	child.setPalette(player)
 
 func modulateSprite(sprite, value = 0.2):
@@ -87,7 +88,7 @@ func modulateVisualController():
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	motion()
 	readButtons() #change to input event to not call everyframe?
 	modulateVisualController()
@@ -156,25 +157,25 @@ func setBufferedAction(v):
 func _on_tmr_buffer_timeout():
 	bufferedAction = ""
 
-func checkMotionExecuted(motion, facing = 1, maxBuffer = 10):
+func checkMotionExecuted(motionCheck, facing = 1, maxBuffer = 10):
 	var motionIndex = 0
 	for m in motionArray:
-		if (motion[motionIndex].x * facing) * -1 == m.x && motion[motionIndex].y == m.y:
+		if (motionCheck[motionIndex].x * facing) * -1 == m.x && motionCheck[motionIndex].y == m.y:
 			motionIndex += 1
 			if motionIndex > maxBuffer: return false
-			if motionIndex + 1 > motion.size():
+			if motionIndex + 1 > motionCheck.size():
 				return true
 	return false
 	
-func checkMotionExecutedExcept(motion, motionLockout, facing = 1, maxBuffer = 10):
+func checkMotionExecutedExcept(motionCheck, motionLockout, facing = 1, maxBuffer = 10):
 	var motionIndex = 0
 	for m in motionArray:
 		if (motionLockout.x * facing) * -1 == m.x && motionLockout.y == m.y:
 			return false
-		if (motion[motionIndex].x * facing) * -1 == m.x && motion[motionIndex].y == m.y:
+		if (motionCheck[motionIndex].x * facing) * -1 == m.x && motionCheck[motionIndex].y == m.y:
 			motionIndex += 1
 			if motionIndex > maxBuffer: return false
-			if motionIndex + 1 > motion.size():
+			if motionIndex + 1 > motionCheck.size():
 				return true
 	return false
 

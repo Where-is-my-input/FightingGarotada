@@ -1,7 +1,7 @@
 extends Node
 
 enum mode {VERSUS, TRAINING}
-enum hitType {NORMAL, LAUNCHER, KNOCKDOWN, GRAB} #STAGGER, BOUNCES
+enum hitType {NORMAL, LAUNCHER, KNOCKDOWN, GRAB, PROJECTILE} #STAGGER, BOUNCES
 enum blockType {MID, LOW, HIGH, UNBLOCKABLE}
 
 signal player1KO()

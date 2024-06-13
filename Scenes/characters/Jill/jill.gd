@@ -1,6 +1,6 @@
 extends "res://CharacterScript.gd"
 
-#var granade = preload("res://Scenes/Projectiles/projectile.tscn")
+var granade = preload("res://Scenes/Projectiles/projectile.tscn")
 
 #func special5():
 	#var projectile = granade.instantiate()
@@ -34,3 +34,9 @@ func setPalette(p):
 		var b = paletteArray[index].b
 		index += 1
 		material.set(m, Vector4(r,g,b,255.0))
+
+func spawnGranade():
+	var nade = granade.instantiate()
+	nade.globalPos = grab_position.global_position
+	nade.velX = nade.velX * facing * -1
+	parent.add_child(nade)

@@ -225,8 +225,8 @@ func attackPressed():
 		return true
 	return false
 
-func checkActionPressed(vcAction, bufferAction, action):
-	return vcAction == 1 || bufferAction == action
+func checkActionPressed(vcAction, bufferAction, act):
+	return vcAction == 1 || bufferAction == act
 
 func setAttack(atk, isAtk, gatling):
 	attack = atk
@@ -368,23 +368,23 @@ func setAnimation():
 	animatedTree.set(A_IdleState, idleState)
 	animatedTree.set(A_KnockDownAction, knockdownState)
 
-func _on_hitboxes_area_entered(hitbox):
-	if hitbox.get_parent() != self:
-		var hitParent = hitbox.get_parent()
-		if hitboxes.hitProperty == Global.hitType.GRAB:
-			if hitbox.is_in_group("CollisionBox"):
-				disableGravity = true
-				velocity = Vector2(0,0)
-				hitParent.defaultGetHitEffects(hitboxes)
-				hitbox.set_deferred("disabled", true)
-				hitbox.grabbed()
-				grabbedPlayer = hitParent
-				setAttack("Throw", 1, 4)
-		elif hitbox.is_in_group("Hurtboxes"):
-			hitParent.getHit(hitboxes)
-			hitbox.set_deferred("disabled", true)
-			hitstop = hitboxes.hitstop
-			normalCancel = true
+#func _on_hitboxes_area_entered(hitbox):
+	#if hitbox.get_parent() != self:
+		#var hitParent = hitbox.get_parent()
+		#if hitboxes.hitProperty == Global.hitType.GRAB:
+			#if hitbox.is_in_group("CollisionBox"):
+				#disableGravity = true
+				#velocity = Vector2(0,0)
+				#hitParent.defaultGetHitEffects(hitboxes)
+				#hitbox.set_deferred("disabled", true)
+				#hitbox.grabbed()
+				#grabbedPlayer = hitParent
+				#setAttack("Throw", 1, 4)
+		#elif hitbox.is_in_group("Hurtboxes"):
+			#hitParent.getHit(hitboxes)
+			#hitbox.set_deferred("disabled", true)
+			#hitstop = hitboxes.hitstop
+			#normalCancel = true
 
 func defaultGetHitEffects(hitbox):
 	hitstop = hitbox.hitstop

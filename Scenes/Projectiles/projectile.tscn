@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfjlrtpddd5pd"]
+[gd_scene load_steps=11 format=3 uid="uid://cfjlrtpddd5pd"]
 
 [ext_resource type="Script" path="res://Hitboxes.gd" id="1_j748k"]
 [ext_resource type="Script" path="res://Scenes/Projectiles/projectile.gd" id="1_mtvw5"]
@@ -26,10 +26,17 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nymjj"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4m6"]
+size = Vector2(1, 1)
+
 [node name="Projectile" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_mtvw5")
 
 [node name="hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 10
 script = ExtResource("1_j748k")
 
 [node name="csHitbox" type="CollisionShape2D" parent="hitbox"]
@@ -44,8 +51,19 @@ debug_color = Color(3.08037e-06, 0.590256, 0.332557, 0.42)
 
 [node name="asProjectile" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_opabo")
-position = Vector2(39, -50)
+position = Vector2(-56, 24)
+rotation = 3.68336
 sprite_frames = SubResource("SpriteFrames_e460b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nymjj")
+
+[node name="arDetectBoundaries" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="dbCollision" type="CollisionShape2D" parent="arDetectBoundaries"]
+shape = SubResource("RectangleShape2D_0b4m6")
+debug_color = Color(0.66687, 0.648448, 0.659485, 0.419608)
+
+[connection signal="body_exited" from="arDetectBoundaries" to="." method="_on_hurtbox_body_exited"]

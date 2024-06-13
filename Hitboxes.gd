@@ -9,6 +9,7 @@ var hitboxes;
 @export var vstun = 1
 @export var hitProperty: Global.hitType = Global.hitType.NORMAL
 @export var blockStun = 10
+@onready var char_body_2d = $".."
 
 func _init(Stun = 19, StunVector = Vector2(1,-5), Damage = 0, AttackType = Global.blockType.MID, Hitstop = 7, Vstun = 1, HitProperty = Global.hitType.NORMAL, Blockstun = 10):
 	stun = Stun
@@ -30,3 +31,22 @@ func disableHitboxes():
 func enableHitboxes():
 	for box in hitboxes:
 		box.set_deferred("disabled", false)
+
+func _on_area_entered(hitbox):
+	if hitbox.get_parent() != char_body_2d:
+		var hitParent = hitbox.get_parent()
+		if hitProperty == Global.hitType.GRAB:
+			if hitbox.is_in_group("CollisionBox"):
+				char_body_2d.disableGravity = true
+				char_body_2d.velocity = Vector2(0,0)
+				hitParent.defaultGetHitEffects(self)
+				hitbox.set_deferred("disabled", true)
+				hitbox.grabbed()
+				char_body_2d.grabbedPlayer = hitParent
+				char_body_2d.setAttack("Throw", 1, 4)
+		elif hitbox.is_in_group("Hurtboxes"):
+			hitParent.getHit(self)
+			hitbox.set_deferred("disabled", true)
+			if hitProperty != Global.hitType.PROJECTILE:
+				char_body_2d.hitstop = hitstop
+				char_body_2d.normalCancel = true
