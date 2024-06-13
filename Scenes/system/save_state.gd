@@ -16,11 +16,13 @@ func _input(event):
 		loadState()
 
 func saveState():
-	ResourceSaver.save(player.saveState(), saveFilePath+saveFileName)
-	ResourceSaver.save(player2.saveState(), saveFilePath+saveFileName2)
+	var save = PlayerStateArray.new()
+	save.player1State = player.saveStateArray()
+	save.player2State = player2.saveStateArray()
+	ResourceSaver.save(save, saveFilePath+saveFileName)
 
 func loadState():
-	#.duplicate(true)
-	player.loadState(ResourceLoader.load(saveFilePath+saveFileName))
-	player2.loadState(ResourceLoader.load(saveFilePath+saveFileName2))
+	var load = ResourceLoader.load(saveFilePath+saveFileName)
+	player.loadStateArray(load.player1State)
+	player2.loadStateArray(load.player2State)
 	Global.loadState.emit()

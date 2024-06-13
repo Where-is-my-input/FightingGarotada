@@ -12,3 +12,4 @@ res://Scenes/system/save_state.gd
 res://healthBars.gd
 res://Player.gd
 res://playerState.gd
+res://PlayerStateArray.gd

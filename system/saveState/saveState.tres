@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="PlayerState" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="PlayerStateArray" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://playerState.gd" id="1_02wjw"]
+[ext_resource type="Script" path="res://PlayerStateArray.gd" id="1_q0jto"]
 
 [resource]
-script = ExtResource("1_02wjw")
-HP = 5000
-bodyGlobalPositionX = 1621.57
-bodyGlobalPositionY = 785.0
+script = ExtResource("1_q0jto")
+player1State = [5000, 1062.75, 688.333, "", 0.0, "jumping", "idle", "falling", "jumpStartUp", "LP", "hit", "idle", "otg"]
+player2State = [5000, 1092.21, 785.0, "", 0.0, "standing", "idle", "rising", "idle", "LP", "hit", "idle", "otg"]

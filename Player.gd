@@ -100,3 +100,25 @@ func loadState(state):
 	HP = state.HP
 	body.global_position.x = state.bodyGlobalPositionX
 	body.global_position.y = state.bodyGlobalPositionY
+
+func saveStateArray():
+	#print(body.get_property_list())
+	var animation = [body.animation_player.current_animation, body.animation_player.current_animation_position]
+	var animationStates = [body.state, body.action, body.jumpState, body.movement, body.attack, body.hit, body.idleState, body.knockdownState]
+	return [HP, body.global_position.x, body.global_position.y] + animation + animationStates
+	
+func loadStateArray(state):
+	HP = state[0]
+	body.global_position.x = state[1]
+	body.global_position.y = state[2]
+	body.state = state[5]
+	body.action = state[6]
+	body.jumpState = state[7]
+	body.movement = state[8]
+	body.attack = state[9]
+	body.hit = state[10]
+	body.idleState = state[11]
+	body.knockdownState = state[12]
+	body.animation_player.current_animation = state[3]
+	body.animation_player.seek(state[4])
+	body.setAnimation()

@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="PlayerState" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="PlayerStateArray" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://playerState.gd" id="1_jnly8"]
+[ext_resource type="Script" path="res://PlayerStateArray.gd" id="1_guma1"]
 
 [resource]
-script = ExtResource("1_jnly8")
-HP = 5000
-bodyGlobalPositionX = 1653.94
-bodyGlobalPositionY = 785.0
+script = ExtResource("1_guma1")
+playerState = [4649, 1135.62, 620.0]
