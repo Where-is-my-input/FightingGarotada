@@ -34,8 +34,11 @@ var timerPause = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tmr_round_start.start(2)
-	#if !timerPause: tmr_timer.start(99)
+	if Global.mode.TRAINING:
+		tmr_round_start.start(0.1)
+	else:
+		tmr_round_start.start(5)
+	Global.connect("loadState", updateHUD)
 	lb_ko.visible = false
 	lbl_player_wins.visible = false
 	player1 = self.get_node("VirtualController/Player")
@@ -55,6 +58,10 @@ func _process(_delta):
 		lbl_timer.text = str("%2d"%timer)
 	else:
 		lbl_timer.text = str("%2d"%tmr_round_start.time_left)
+
+func updateHUD():
+	hpBarP1.value = player1.HP
+	hpBarP2.value = player2.HP
 
 func player1GotHit():
 	hpBarP1.value = player1.HP
@@ -152,7 +159,7 @@ func KO():
 	setWinStreak()
 
 func _on_tmr_ko_timeout():
-	get_tree().change_scene_to_file("res://Bruh.tscn")
+	get_tree().change_scene_to_file("res://GameScene.tscn")
 
 func draw():
 	lbl_player_wins.text = "Draw!"

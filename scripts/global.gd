@@ -10,6 +10,9 @@ signal debugPause()
 signal debugFrameAdvance()
 signal roundStarted()
 
+signal saveState()
+signal loadState()
+
 var player1Wins = 0
 var player2Wins = 0
 

@@ -5,8 +5,6 @@ extends Node2D
 @onready var hitboxes = $charBody2D/Hitboxes
 @onready var collision_area = $charBody2D/collisionArea
 
-var save:Resource
-
 #@onready var virtualController = $"../VirtualController"
 #var teste = 1
 var virtualController
@@ -92,14 +90,13 @@ func setPalette(p):
 	body.setPalette(p)
 
 func saveState():
-	save.resource_name = "x"
-	save.resource_path
-	 #= {
-		#"x": body.global_position.x,
-		#"y": body.global_position.y
-	#}
+	var save = PlayerState.new()
+	save.bodyGlobalPositionX = body.global_position.x
+	save.bodyGlobalPositionY = body.global_position.y
+	save.HP = HP
 	return save
 
-func loadState(value):
-	print(value)
-	#body.global_position = Vector2(x,y)
+func loadState(state):
+	HP = state.HP
+	body.global_position.x = state.bodyGlobalPositionX
+	body.global_position.y = state.bodyGlobalPositionY

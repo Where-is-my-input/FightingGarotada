@@ -1,16 +1,16 @@
 [gd_scene load_steps=15 format=3 uid="uid://b8dsl308vfypc"]
 
-[ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="1_qqqc0"]
-[ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="2"]
-[ext_resource type="PackedScene" uid="uid://cbi3kopno23pf" path="res://Player.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://healthBars.tscn" id="3_qyq2c"]
-[ext_resource type="Script" path="res://Camera2D.gd" id="5_dclaj"]
-[ext_resource type="Script" path="res://trainingMode.gd" id="6_wsjpw"]
-[ext_resource type="PackedScene" uid="uid://j1cpqciinjla" path="res://Scenes/system/save_state.tscn" id="7_c82h6"]
-[ext_resource type="Script" path="res://Scenes/system/save_state.gd" id="8_tgq1k"]
+[ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="1_mbwpd"]
+[ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://healthBars.tscn" id="2_t76xf"]
+[ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="3_47k4m"]
+[ext_resource type="PackedScene" uid="uid://cbi3kopno23pf" path="res://Player.tscn" id="4_8dqe4"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="5_set2w"]
+[ext_resource type="Script" path="res://trainingMode.gd" id="6_tauia"]
+[ext_resource type="PackedScene" uid="uid://j1cpqciinjla" path="res://Scenes/system/save_state.tscn" id="7_cv1jc"]
+[ext_resource type="Script" path="res://Scenes/system/save_state.gd" id="8_3e5y6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1wml"]
-texture = ExtResource("2")
+texture = ExtResource("1_mbwpd")
 texture_region_size = Vector2i(64, 64)
 0:0/next_alternative_id = 8
 0:0/0 = 0
@@ -118,23 +118,23 @@ tile_set = SubResource("2")
 format = 2
 layer_0/tile_data = PackedInt32Array(851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 196634, 0, 0, 262170, 0, 0, 327706, 0, 0, 393242, 0, 0, 458778, 0, 0, 524314, 0, 0, 589850, 0, 0, 655386, 0, 0, 720922, 0, 0, 786458, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 196633, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0)
 
-[node name="HPBars" parent="." instance=ExtResource("3_qyq2c")]
+[node name="HPBars" parent="." instance=ExtResource("2_t76xf")]
 offset_left = 704.0
 offset_top = 272.0
 offset_right = 704.0
 offset_bottom = 272.0
 
-[node name="VirtualController" parent="HPBars" instance=ExtResource("1_qqqc0")]
+[node name="VirtualController" parent="HPBars" instance=ExtResource("3_47k4m")]
 position = Vector2(-312, 30)
 
-[node name="Player" parent="HPBars/VirtualController" groups=["saveState"] instance=ExtResource("3")]
+[node name="Player" parent="HPBars/VirtualController" groups=["saveState"] instance=ExtResource("4_8dqe4")]
 position = Vector2(391, 465)
 
-[node name="VirtualController2" parent="HPBars" instance=ExtResource("1_qqqc0")]
+[node name="VirtualController2" parent="HPBars" instance=ExtResource("3_47k4m")]
 position = Vector2(856, 27)
 player = 2
 
-[node name="Player2" parent="HPBars/VirtualController2" instance=ExtResource("3")]
+[node name="Player2" parent="HPBars/VirtualController2" instance=ExtResource("4_8dqe4")]
 position = Vector2(-432, 474)
 
 [node name="Camera2D" type="Camera2D" parent="HPBars"]
@@ -147,7 +147,7 @@ limit_top = 230
 limit_right = 1725
 limit_bottom = 875
 position_smoothing_enabled = true
-script = ExtResource("5_dclaj")
+script = ExtResource("5_set2w")
 
 [node name="cornerBounds" type="CharacterBody2D" parent="HPBars/Camera2D"]
 position = Vector2(-956.002, -602.998)
@@ -165,7 +165,7 @@ scale = Vector2(4.39955, 59.7126)
 shape = SubResource("RectangleShape2D_qgjce")
 
 [node name="trainingMode" type="Node" parent="HPBars"]
-script = ExtResource("6_wsjpw")
+script = ExtResource("6_tauia")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="HPBars/trainingMode"]
 
@@ -194,8 +194,9 @@ offset_bottom = 1125.0
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="saveState" parent="HPBars" instance=ExtResource("7_c82h6")]
-script = ExtResource("8_tgq1k")
+[node name="saveState" parent="HPBars" instance=ExtResource("7_cv1jc")]
+process_mode = 3
+script = ExtResource("8_3e5y6")
 
 [node name="debugger" type="Node" parent="."]
 process_mode = 3
