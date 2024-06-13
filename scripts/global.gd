@@ -8,6 +8,7 @@ signal player1KO()
 signal player2KO()
 signal debugPause()
 signal debugFrameAdvance()
+signal roundStarted()
 
 var player1Wins = 0
 var player2Wins = 0

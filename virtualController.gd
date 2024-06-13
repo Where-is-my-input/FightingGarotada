@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var player = 1
+var roundStart = true
 
 #directions
 var directionX = 0
@@ -46,6 +47,7 @@ var motionBuffer = 15
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.connect("roundStarted", enableButtons)
 	if player == 2:
 		setInputsP2()
 	setPalette()
@@ -90,7 +92,7 @@ func modulateVisualController():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	motion()
-	readButtons() #change to input event to not call everyframe?
+	if !roundStart: readButtons() #change to input event to not call everyframe?
 	modulateVisualController()
 
 func motion():
@@ -181,3 +183,6 @@ func checkMotionExecutedExcept(motionCheck, motionLockout, facing = 1, maxBuffer
 
 func buttonPressed():
 	return LP > 0 || MP > 0 || HP > 0 || LK > 0 || MK > 0 || HK > 0
+
+func enableButtons():
+	roundStart = false

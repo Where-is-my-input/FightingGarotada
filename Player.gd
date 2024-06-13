@@ -5,6 +5,8 @@ extends Node2D
 @onready var hitboxes = $charBody2D/Hitboxes
 @onready var collision_area = $charBody2D/collisionArea
 
+var save:Resource
+
 #@onready var virtualController = $"../VirtualController"
 #var teste = 1
 var virtualController
@@ -88,3 +90,16 @@ func setShaderPar(p, v):
 
 func setPalette(p):
 	body.setPalette(p)
+
+func saveState():
+	save.resource_name = "x"
+	save.resource_path
+	 #= {
+		#"x": body.global_position.x,
+		#"y": body.global_position.y
+	#}
+	return save
+
+func loadState(value):
+	print(value)
+	#body.global_position = Vector2(x,y)

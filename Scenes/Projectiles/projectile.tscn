@@ -6,7 +6,7 @@
 [ext_resource type="Shader" path="res://Scenes/Projectiles/projectile.gdshader" id="2_onxoc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdkkp"]
-size = Vector2(32, 32)
+size = Vector2(24, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujm1w"]
 
@@ -25,6 +25,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nymjj"]
+size = Vector2(1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4m6"]
 size = Vector2(1, 1)
@@ -66,4 +67,5 @@ collision_mask = 256
 shape = SubResource("RectangleShape2D_0b4m6")
 debug_color = Color(0.66687, 0.648448, 0.659485, 0.419608)
 
+[connection signal="area_entered" from="hitbox" to="hitbox" method="_on_area_entered"]
 [connection signal="body_exited" from="arDetectBoundaries" to="." method="_on_hurtbox_body_exited"]

@@ -193,7 +193,11 @@ text = "99"
 
 [node name="tmrTimer" type="Timer" parent="CanvasLayer"]
 
+[node name="tmrRoundStart" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="CanvasLayer/tmComboPlayer1" to="." method="_on_tm_combo_player_1_timeout"]
 [connection signal="timeout" from="CanvasLayer/tmComboPlayer2" to="." method="_on_tm_combo_player_2_timeout"]
 [connection signal="timeout" from="CanvasLayer/tmrKO" to="." method="_on_tmr_ko_timeout"]
 [connection signal="timeout" from="CanvasLayer/tmrTimer" to="." method="_on_tmr_timer_timeout"]
+[connection signal="timeout" from="tmrRoundStart" to="." method="_on_tmr_round_start_timeout"]

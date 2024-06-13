@@ -1,3 +1,5 @@
+Timer
+Node
 CollisionShape2D
 Area2D
 VBoxContainer
@@ -11,4 +13,3 @@ AnimatedSprite2D
 StaticBody2D
 TextureProgressBar
 CanvasLayer
-Label

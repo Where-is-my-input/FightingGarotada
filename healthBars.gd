@@ -22,6 +22,7 @@ extends Control
 @onready var lbl_leader_1 = $CanvasLayer/lblLeader1
 @onready var hpBarP1 = $CanvasLayer/tpHPPlayer1
 @onready var hpBarP2 = $CanvasLayer/tpHPPlayer2
+@onready var tmr_round_start = $tmrRoundStart
 
 var player1
 var player2
@@ -29,11 +30,12 @@ var player2
 var player1KOed = false
 var player2KOed = false
 
-var timerPause = false
+#var timerPause = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if !timerPause: tmr_timer.start(99)
+	tmr_round_start.start(2)
+	#if !timerPause: tmr_timer.start(99)
 	lb_ko.visible = false
 	lbl_player_wins.visible = false
 	player1 = self.get_node("VirtualController/Player")
@@ -48,8 +50,11 @@ func _ready():
 	setDefault()
 
 func _process(_delta):
-	var timer = tmr_timer.time_left + 1
-	if !tmr_timer.is_stopped(): lbl_timer.text = str("%2d"%timer)
+	var timer = tmr_timer.time_left +1
+	if !tmr_timer.is_stopped(): 
+		lbl_timer.text = str("%2d"%timer)
+	else:
+		lbl_timer.text = str("%2d"%tmr_round_start.time_left)
 
 func player1GotHit():
 	hpBarP1.value = player1.HP
@@ -176,3 +181,7 @@ func pauseTimer():
 
 func resumeTimer():
 	tmr_timer.start(tmr_timer.get_time_left())
+
+func _on_tmr_round_start_timeout():
+	Global.roundStarted.emit()
+	tmr_timer.start(99)

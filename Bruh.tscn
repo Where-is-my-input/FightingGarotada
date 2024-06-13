@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8dsl308vfypc"]
+[gd_scene load_steps=15 format=3 uid="uid://b8dsl308vfypc"]
 
 [ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="1_qqqc0"]
 [ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="2"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://healthBars.tscn" id="3_qyq2c"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_dclaj"]
 [ext_resource type="Script" path="res://trainingMode.gd" id="6_wsjpw"]
+[ext_resource type="PackedScene" uid="uid://j1cpqciinjla" path="res://Scenes/system/save_state.tscn" id="7_c82h6"]
+[ext_resource type="Script" path="res://Scenes/system/save_state.gd" id="8_tgq1k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1wml"]
 texture = ExtResource("2")
@@ -125,7 +127,7 @@ offset_bottom = 272.0
 [node name="VirtualController" parent="HPBars" instance=ExtResource("1_qqqc0")]
 position = Vector2(-312, 30)
 
-[node name="Player" parent="HPBars/VirtualController" instance=ExtResource("3")]
+[node name="Player" parent="HPBars/VirtualController" groups=["saveState"] instance=ExtResource("3")]
 position = Vector2(391, 465)
 
 [node name="VirtualController2" parent="HPBars" instance=ExtResource("1_qqqc0")]
@@ -191,6 +193,9 @@ offset_right = 1003.0
 offset_bottom = 1125.0
 theme_override_font_sizes/font_size = 50
 text = "0"
+
+[node name="saveState" parent="HPBars" instance=ExtResource("7_c82h6")]
+script = ExtResource("8_tgq1k")
 
 [node name="debugger" type="Node" parent="."]
 process_mode = 3
