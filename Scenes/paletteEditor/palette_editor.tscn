@@ -180,5 +180,30 @@ position = Vector2(964, 843.125)
 shape = SubResource("RectangleShape2D_ldo53")
 debug_color = Color(0.341176, 0.403922, 0.4, 0.419608)
 
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_right = -163.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="btPlayer1" type="Button" parent="CenterContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Set for player 1"
+
+[node name="btPlayer2" type="Button" parent="CenterContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Set for player 2"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btPrint" to="." method="_on_bt_print_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btMainMenu" to="." method="_on_bt_main_menu_pressed"]
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/btPlayer1" to="." method="_on_bt_player_1_pressed"]
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/btPlayer2" to="." method="_on_bt_player_2_pressed"]

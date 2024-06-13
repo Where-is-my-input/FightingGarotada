@@ -1,9 +1,9 @@
-Button
 VBoxContainer
+Button
+CenterContainer
 ColorRect
 HBoxContainer
 HSlider
-CenterContainer
 CollisionShape2D
 CharacterBody2D
 AnimatedSprite2D

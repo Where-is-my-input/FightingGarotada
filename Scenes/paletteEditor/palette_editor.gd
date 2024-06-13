@@ -41,11 +41,19 @@ func changed(c, v):
 	var color = colorsArray[index].getColor()
 	player.setShaderPar(parameterArray[index], Vector4(color.r, color.g, color.b, color.a))
 
-
 func _on_bt_print_pressed():
 	for c in colorsArray:
 		print(c.getColor())
 
-
 func _on_bt_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Scenes/menu/main_menu.tscn")
+
+func _on_bt_player_1_pressed():
+	Global.player1Palette.clear()
+	for c in colorsArray:
+		Global.player1Palette.push_back(c.getColor())
+
+func _on_bt_player_2_pressed():
+	Global.player2Palette.clear()
+	for c in colorsArray:
+		Global.player2Palette.push_back(c.getColor())

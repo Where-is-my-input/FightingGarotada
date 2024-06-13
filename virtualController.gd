@@ -46,9 +46,13 @@ var motionBuffer = 15
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var child = self.get_child(1)
-	if child != null && child.name == "Player2" || player == 2:
+	if player == 2:
 		setInputsP2()
+	setPalette()
+
+func setPalette():
+	var child = get_child(2)
+	child.setPalette(player)
 
 func modulateSprite(sprite, value = 0.2):
 	sprite.modulate.a = value + 0.2
@@ -155,7 +159,6 @@ func _on_tmr_buffer_timeout():
 func checkMotionExecuted(motion, facing = 1, maxBuffer = 10):
 	var motionIndex = 0
 	for m in motionArray:
-		#if maxBuffer == 10: print((motion[motionIndex].x * facing) * -1, m.x && motion[motionIndex].y == m.y)
 		if (motion[motionIndex].x * facing) * -1 == m.x && motion[motionIndex].y == m.y:
 			motionIndex += 1
 			if motionIndex > maxBuffer: return false

@@ -85,3 +85,6 @@ func getShaderPar(p):
 
 func setShaderPar(p, v):
 	body.material.set(p, v)
+
+func setPalette(p):
+	body.setPalette(p)

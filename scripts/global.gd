@@ -15,6 +15,8 @@ var player2Wins = 0
 var player1WinStreak = 0
 var player2WinStreak = 0
 
+var player1Palette:Array
+var player2Palette:Array
 
 var ground = 785
 
