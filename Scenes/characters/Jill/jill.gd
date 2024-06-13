@@ -39,5 +39,5 @@ func spawnGranade():
 	var nade = granade.instantiate()
 	nade.globalPos = grab_position.global_position
 	nade.velX = nade.velX * facing * -1
-	add_child(nade)
+	parent.add_child(nade)
 	nade.setHitboxValues()

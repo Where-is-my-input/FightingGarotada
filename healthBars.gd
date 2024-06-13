@@ -30,7 +30,7 @@ var player2
 var player1KOed = false
 var player2KOed = false
 
-var timerPause = true
+var timerPause = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,8 +50,8 @@ func _ready():
 	setDefault()
 
 func _process(_delta):
-	var timer = tmr_timer.time_left +1
-	if !tmr_timer.is_stopped(): 
+	var timer = tmr_timer.time_left
+	if !tmr_timer.is_stopped() || tmr_round_start.is_stopped(): 
 		lbl_timer.text = str("%2d"%timer)
 	else:
 		lbl_timer.text = str("%2d"%tmr_round_start.time_left)
