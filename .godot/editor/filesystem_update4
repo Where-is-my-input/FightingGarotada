@@ -10,3 +10,5 @@ res://Scenes/Projectiles/projectile.tscn
 res://healthBars.tscn
 res://Scenes/menu/main_menu.tscn
 res://Player.gd
+res://Scenes/paletteEditor/colorPicker.tscn
+res://Scenes/paletteEditor/colorSlider.gd

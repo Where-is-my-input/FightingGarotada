@@ -12,21 +12,49 @@ layout_mode = 2
 [node name="sliders" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="R" type="HSlider" parent="sliders"]
+[node name="boxR" type="HBoxContainer" parent="sliders"]
+layout_mode = 2
+
+[node name="R" type="HSlider" parent="sliders/boxR"]
 custom_minimum_size = Vector2(250, 25)
 layout_mode = 2
 max_value = 255.0
 
-[node name="G" type="HSlider" parent="sliders"]
+[node name="lineR" type="LineEdit" parent="sliders/boxR"]
+layout_mode = 2
+alignment = 1
+max_length = 3
+select_all_on_focus = true
+
+[node name="boxG" type="HBoxContainer" parent="sliders"]
+layout_mode = 2
+
+[node name="G" type="HSlider" parent="sliders/boxG"]
 custom_minimum_size = Vector2(250, 25)
 layout_mode = 2
 max_value = 255.0
 
-[node name="B" type="HSlider" parent="sliders"]
+[node name="lineG" type="LineEdit" parent="sliders/boxG"]
+layout_mode = 2
+alignment = 1
+select_all_on_focus = true
+
+[node name="boxB" type="HBoxContainer" parent="sliders"]
+layout_mode = 2
+
+[node name="B" type="HSlider" parent="sliders/boxB"]
 custom_minimum_size = Vector2(250, 25)
 layout_mode = 2
 max_value = 255.0
 
-[connection signal="drag_ended" from="sliders/R" to="." method="_on_r_drag_ended"]
-[connection signal="drag_ended" from="sliders/G" to="." method="_on_g_drag_ended"]
-[connection signal="drag_ended" from="sliders/B" to="." method="_on_b_drag_ended"]
+[node name="lineB" type="LineEdit" parent="sliders/boxB"]
+layout_mode = 2
+alignment = 1
+select_all_on_focus = true
+
+[connection signal="drag_ended" from="sliders/boxR/R" to="." method="_on_r_drag_ended"]
+[connection signal="text_changed" from="sliders/boxR/lineR" to="." method="_on_line_r_text_changed"]
+[connection signal="drag_ended" from="sliders/boxG/G" to="." method="_on_g_drag_ended"]
+[connection signal="text_changed" from="sliders/boxG/lineG" to="." method="_on_line_g_text_changed"]
+[connection signal="drag_ended" from="sliders/boxB/B" to="." method="_on_b_drag_ended"]
+[connection signal="text_changed" from="sliders/boxB/lineB" to="." method="_on_line_b_text_changed"]
