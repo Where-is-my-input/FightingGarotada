@@ -35,9 +35,12 @@ func setPalette(p):
 		index += 1
 		material.set(m, Vector4(r,g,b,255.0))
 
-func spawnGranade():
+func spawnGranade(special = 0):
 	var nade = granade.instantiate()
 	nade.globalPos = grab_position.global_position
 	nade.velX = nade.velX * facing * -1
+	if special == 1: 
+		nade.velY = -400
+		nade.velX = (nade.velX - 100) * facing * -1
 	parent.add_child(nade)
 	nade.setHitboxValues()

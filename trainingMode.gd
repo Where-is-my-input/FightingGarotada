@@ -32,6 +32,13 @@ func _process(_delta):
 	alignHurtboxes()
 
 func getHitHurtBoxes(p):
+	var colBox = p.getCollisionBox()
+	var colorNode = ColorRect.new()
+	colorNode.color = Color.BLUE
+	colorNode.self_modulate.a = 0.5
+	add_child(colorNode)
+	hurtboxes.push_back(colorNode)
+	hurtboxesPointers.push_back(colBox)
 	for i in p.getHurtboxes():
 		var node = ColorRect.new()
 		node.color = Color.LIME_GREEN
@@ -47,13 +54,6 @@ func getHitHurtBoxes(p):
 		add_child(node)
 		hurtboxes.push_back(node)
 		hurtboxesPointers.push_back(i)
-	var colBox = p.getCollisionBox()
-	var node = ColorRect.new()
-	node.color = Color.BLUE
-	node.self_modulate.a = 0.5
-	add_child(node)
-	hurtboxes.push_back(node)
-	hurtboxesPointers.push_back(colBox)
 
 func alignHurtboxes():
 	for i in hurtboxes.size():

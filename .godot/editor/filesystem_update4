@@ -4,13 +4,11 @@ res://theme.tres
 res://Scenes/menu/buttonRemap.gd
 res://Scenes/Projectiles/projectile.gdshader
 res://Characters/Lilith/spr_lilit.gdshader
-res://CharacterScript.gd
 res://Player.tscn
 res://Scenes/Projectiles/projectile.tscn
 res://healthBars.tscn
 res://Scenes/menu/main_menu.tscn
-res://Player.gd
 res://Scenes/paletteEditor/colorPicker.tscn
-res://Scenes/paletteEditor/colorSlider.gd
 res://Scenes/paletteEditor/palette_editor.tscn
-res://Scenes/paletteEditor/palette_editor.gd
+res://Scenes/characters/Jill/jill.gd
+res://trainingMode.gd
