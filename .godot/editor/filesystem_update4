@@ -12,3 +12,5 @@ res://Scenes/menu/main_menu.tscn
 res://Player.gd
 res://Scenes/paletteEditor/colorPicker.tscn
 res://Scenes/paletteEditor/colorSlider.gd
+res://Scenes/paletteEditor/palette_editor.tscn
+res://Scenes/paletteEditor/palette_editor.gd

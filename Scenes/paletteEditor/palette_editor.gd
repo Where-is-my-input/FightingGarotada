@@ -3,6 +3,7 @@ extends Control
 @onready var color_picker = $CenterContainer/VBoxContainer/colorPickerContainer/colorPicker
 @onready var color_picker_2 = $CenterContainer/VBoxContainer/colorPickerContainer/colorPicker2
 @onready var color_picker_3 = $CenterContainer/VBoxContainer/colorPickerContainer/colorPicker3
+@onready var virtual_controller = $VirtualController
 
 var shadderParamenter = "shader_parameter/newColor"
 
@@ -12,6 +13,7 @@ var parameterIndex = 1
 var body
 
 func _ready():
+	virtual_controller.roundStart = false
 	body = player.body
 	fillArrays(color_picker)
 	fillArrays(color_picker_2)
