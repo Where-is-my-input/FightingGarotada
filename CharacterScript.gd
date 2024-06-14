@@ -23,7 +23,7 @@ var dashing = false
 var jumping = false
 #var airborne = false
 
-var strength = -900
+const strength = -900
 var attacking = false
 var blocking = false
 var lowBlock = false

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PlayerStateArray" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://PlayerStateArray.gd" id="1_q0jto"]
+[ext_resource type="Script" path="res://PlayerStateArray.gd" id="1_1atl6"]
 
 [resource]
-script = ExtResource("1_q0jto")
-player1State = [5000, 1062.75, 688.333, "", 0.0, "jumping", "idle", "falling", "jumpStartUp", "LP", "hit", "idle", "otg"]
-player2State = [5000, 1092.21, 785.0, "", 0.0, "standing", "idle", "rising", "idle", "LP", "hit", "idle", "otg"]
+script = ExtResource("1_1atl6")
+player1State = [5000, 1098.76, 672.5, "", 0.0, "jumping", "attacking", "falling", "jumpStartUp", "MK", "hit", "idle", "otg", -1, false, false, false, null, false, false, true, 31.0, 450.0, 2, false, false, false, true, false, true, true, 3, false, Vector2(500, 0), 0, 0, 0, 250, 200, 0, 1.0]
+player2State = [4020, 1156.19, 638.333, "", 0.0, "jumping", "hit", "rising", "idle", "LP", "hit", "idle", "otg", 1, false, false, false, null, false, false, false, 177.0, 200.0, 0, false, false, false, false, false, true, true, 0, false, Vector2(500, 0), 14, 0, 0, 250, 200, 200, 0]

@@ -1,15 +1,12 @@
 res://default_env.tres
 res://GameScene.tscn
 res://theme.tres
-res://Scenes/Projectiles/projectile.gdshader
 res://Scenes/menu/buttonRemap.gd
+res://Scenes/Projectiles/projectile.gdshader
 res://Characters/Lilith/spr_lilit.gdshader
+res://CharacterScript.gd
 res://Player.tscn
 res://Scenes/Projectiles/projectile.tscn
 res://healthBars.tscn
 res://Scenes/menu/main_menu.tscn
-res://Scenes/system/save_state.gd
-res://healthBars.gd
 res://Player.gd
-res://playerState.gd
-res://PlayerStateArray.gd

@@ -103,9 +103,16 @@ func loadState(state):
 
 func saveStateArray():
 	#print(body.get_property_list())
+	#brute forcing save stating cause I'm stupid
 	var animation = [body.animation_player.current_animation, body.animation_player.current_animation_position]
 	var animationStates = [body.state, body.action, body.jumpState, body.movement, body.attack, body.hit, body.idleState, body.knockdownState]
-	return [HP, body.global_position.x, body.global_position.y] + animation + animationStates
+	var bodyVars = [body.facing, body.grounded, body.knockdown, body.beingGrabbed, 
+	body.grabbedPlayer, body.jumpStartUp, body.dashing, body.jumping]
+	var bodyVars2 = [body.attacking, body.blocking, body.lowBlock, body.isBlocking]
+	var cancels = [body.normalCancel, body.jumpCancel, body.specialCancel, body.superCancel, body.gatlingPriority, body.disableGravity]
+	var bodyVars3 = [body.moveSpeed, body.hitstun, body.verticalHitstun, body.hitstop]
+	var speeds = [body.speed, body.jumpSpeed, body.preservedJumpSpeed, body.jumpDirection]
+	return [HP, body.global_position.x, body.global_position.y] + animation + animationStates + bodyVars + [body.velocity.x, body.velocity.y] + bodyVars2 + cancels + bodyVars3 + speeds
 	
 func loadStateArray(state):
 	HP = state[0]
@@ -120,5 +127,34 @@ func loadStateArray(state):
 	body.idleState = state[11]
 	body.knockdownState = state[12]
 	body.animation_player.current_animation = state[3]
-	body.animation_player.seek(state[4])
+	body.facing = state[13]
+	body.grounded = state[14]
+	body.knockdown = state[15]
+	body.beingGrabbed = state[16] 
+	body.grabbedPlayer = state[17] 
+	body.jumpStartUp = state[18] 
+	body.dashing = state[19]
+	body.jumping = state[20]
+	body.velocity.x = state[21]
+	body.velocity.y = state[22]
+	body.attacking = state[23]
+	body.blocking = state[24]
+	body.lowBlock = state[25] 
+	body.isBlocking = state[26]
+	body.normalCancel = state[27]
+	body.jumpCancel = state[28] 
+	body.specialCancel = state[29]
+	body.superCancel = state[30] 
+	body.gatlingPriority = state[31] 
+	body.disableGravity = state[32]
+	body.moveSpeed = state[33] 
+	body.hitstun = state[34] 
+	body.verticalHitstun = state[35] 
+	body.hitstop = state[36]
+	body.speed = state[37]
+	body.jumpSpeed = state[38]
+	body.preservedJumpSpeed = state[39]
+	body.jumpDirection = state[40]
 	body.setAnimation()
+	body.animation_player.seek(state[4], true, true)
+	
