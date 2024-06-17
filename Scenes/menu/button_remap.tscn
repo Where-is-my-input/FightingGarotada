@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/menu/menuRemap.gd" id="1_76uwp"]
 [ext_resource type="PackedScene" uid="uid://ceajyw4r80aev" path="res://Scenes/menu/input_remapper.tscn" id="1_iqykh"]
-[ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="2_o3vnq"]
+[ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://Scenes/virtualController.tscn" id="2_o3vnq"]
 
 [node name="buttonRemap" type="Control"]
 layout_mode = 3

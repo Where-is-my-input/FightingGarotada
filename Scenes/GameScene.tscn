@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://b8dsl308vfypc"]
 
 [ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="1_mbwpd"]
-[ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://healthBars.tscn" id="2_t76xf"]
-[ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://virtualController.tscn" id="3_47k4m"]
-[ext_resource type="PackedScene" uid="uid://cbi3kopno23pf" path="res://Player.tscn" id="4_8dqe4"]
-[ext_resource type="Script" path="res://Camera2D.gd" id="5_set2w"]
-[ext_resource type="Script" path="res://trainingMode.gd" id="6_tauia"]
+[ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://Scenes/healthBars.tscn" id="2_t76xf"]
+[ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://Scenes/virtualController.tscn" id="3_47k4m"]
+[ext_resource type="PackedScene" uid="uid://cbi3kopno23pf" path="res://Scenes/Player.tscn" id="4_8dqe4"]
+[ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="5_set2w"]
+[ext_resource type="Script" path="res://Scenes/trainingMode.gd" id="6_tauia"]
 [ext_resource type="PackedScene" uid="uid://j1cpqciinjla" path="res://Scenes/system/save_state.tscn" id="7_cv1jc"]
 [ext_resource type="Script" path="res://Scenes/system/save_state.gd" id="8_3e5y6"]
 

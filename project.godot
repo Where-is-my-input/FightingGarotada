@@ -18,7 +18,7 @@ config/icon="res://img/LDG.png"
 
 [autoload]
 
-Global="*res://scripts/global.gd"
+Global="*res://system/scripts/global.gd"
 
 [display]
 

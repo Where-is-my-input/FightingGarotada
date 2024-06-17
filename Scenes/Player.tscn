@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_ecalt"]
 [ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="3_2jnjg"]
 [ext_resource type="PackedScene" uid="uid://h2cxolpx00yq" path="res://Scenes/characters/spr_jill.tscn" id="4_sfrd1"]
-[ext_resource type="Script" path="res://Player.gd" id="19"]
-[ext_resource type="Script" path="res://Hitboxes.gd" id="99_32v1y"]
-[ext_resource type="Script" path="res://collisionArea.gd" id="196_djj2p"]
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="19"]
+[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="99_32v1y"]
+[ext_resource type="Script" path="res://Scenes/collisionArea.gd" id="196_djj2p"]
 
 [sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;

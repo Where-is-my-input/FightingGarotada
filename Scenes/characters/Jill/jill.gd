@@ -1,4 +1,4 @@
-extends "res://CharacterScript.gd"
+extends "res://Scenes/CharacterScript.gd"
 
 var granade = preload("res://Scenes/Projectiles/projectile.tscn")
 

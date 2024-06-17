@@ -1,8 +1,8 @@
 res://default_env.tres
 res://GameScene.tscn
 res://theme.tres
-res://Scenes/menu/buttonRemap.gd
 res://Scenes/Projectiles/projectile.gdshader
+res://Scenes/menu/buttonRemap.gd
 res://Characters/Lilith/spr_lilit.gdshader
 res://Player.tscn
 res://Scenes/Projectiles/projectile.tscn
@@ -10,5 +10,9 @@ res://healthBars.tscn
 res://Scenes/menu/main_menu.tscn
 res://Scenes/paletteEditor/colorPicker.tscn
 res://Scenes/paletteEditor/palette_editor.tscn
+res://scripts/global.gd
+res://Scenes/GameScene.tscn
+res://Scenes/Player.tscn
+res://Scenes/healthBars.tscn
+res://Scenes/menu/main_menu.gd
 res://Scenes/characters/Jill/jill.gd
-res://trainingMode.gd

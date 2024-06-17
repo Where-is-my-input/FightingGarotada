@@ -13,7 +13,8 @@ signal roundStarted()
 signal saveState()
 signal loadState()
 
-const SAVE_PATH : String = "user://gamedata.data"
+#const SAVE_PATH : String = "user://gamedata.data"
+const SAVE_PATH : String = "res://palettes/gamedata.data"
 
 var player1Wins = 0
 var player2Wins = 0

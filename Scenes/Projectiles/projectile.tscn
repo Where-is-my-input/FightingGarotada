@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cfjlrtpddd5pd"]
 
-[ext_resource type="Script" path="res://Hitboxes.gd" id="1_j748k"]
 [ext_resource type="Script" path="res://Scenes/Projectiles/projectile.gd" id="1_mtvw5"]
 [ext_resource type="Texture2D" uid="uid://cpm2glo1hy1ke" path="res://Characters/Jill Valentine/anim646.png" id="2_6i4w0"]
+[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="2_chaw2"]
 [ext_resource type="Shader" path="res://Scenes/Projectiles/projectile.gdshader" id="2_onxoc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdkkp"]
@@ -38,7 +38,7 @@ script = ExtResource("1_mtvw5")
 [node name="hitbox" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 10
-script = ExtResource("1_j748k")
+script = ExtResource("2_chaw2")
 
 [node name="csHitbox" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("RectangleShape2D_cdkkp")
