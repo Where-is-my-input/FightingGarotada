@@ -59,3 +59,7 @@ func _on_bt_player_2_pressed():
 	Global.player2Palette.clear()
 	for c in colorsArray:
 		Global.player2Palette.push_back(c.getColor())
+
+
+func _on_save_collorbt_pressed() -> void:
+	Global.SaveGameData()

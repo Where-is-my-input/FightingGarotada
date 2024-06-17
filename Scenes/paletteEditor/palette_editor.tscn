@@ -208,7 +208,12 @@ text = "Set for player 1"
 layout_mode = 2
 text = "Set for player 2"
 
+[node name="SaveCollorbt" type="Button" parent="CenterContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Save Color"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btPrint" to="." method="_on_bt_print_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btMainMenu" to="." method="_on_bt_main_menu_pressed"]
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/btPlayer1" to="." method="_on_bt_player_1_pressed"]
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/btPlayer2" to="." method="_on_bt_player_2_pressed"]
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/SaveCollorbt" to="." method="_on_save_collorbt_pressed"]
