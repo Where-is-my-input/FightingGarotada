@@ -12,3 +12,5 @@ res://Scenes/paletteEditor/colorPicker.tscn
 res://Scenes/paletteEditor/palette_editor.tscn
 res://Scenes/CharacterScript.gd
 res://Scenes/characters/Jill/jill.gd
+res://Scenes/paletteEditor/colorSlider.gd
+res://Scenes/paletteEditor/palette_editor.gd

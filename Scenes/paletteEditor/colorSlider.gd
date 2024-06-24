@@ -8,6 +8,8 @@ extends HBoxContainer
 @onready var line_b = $sliders/boxB/lineB
 
 signal changed()
+signal copy()
+signal paste()
 
 func _ready():
 	r.value = color_rect.color.r * 255
@@ -61,3 +63,22 @@ func _on_line_g_text_changed(new_text):
 func _on_line_b_text_changed(new_text):
 	b.value = int(new_text)
 	_on_b_drag_ended(0)
+
+func returnColor():
+	return Color(r.value, g.value, b.value)
+
+func _on_btn_copiar_pressed():
+	copy.emit(returnColor())
+
+func _on_btn_colar_pressed():
+	paste.emit(self)
+
+func pasteColor(c):
+	r.value = c.r
+	g.value = c.g
+	b.value = c.b
+	color_rect.color = Color(c.r, c.g, c.b, c.a)
+	color_rect.color.r = colorChanged(r, line_r)
+	color_rect.color.g = colorChanged(g, line_g)
+	color_rect.color.b = colorChanged(b, line_b)
+	

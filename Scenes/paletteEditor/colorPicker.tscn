@@ -6,8 +6,16 @@
 script = ExtResource("1_aqqw7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(75, 0)
+custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
+
+[node name="btnCopiar" type="Button" parent="."]
+layout_mode = 2
+text = "📃"
+
+[node name="btnColar" type="Button" parent="."]
+layout_mode = 2
+text = "📒"
 
 [node name="sliders" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -52,9 +60,11 @@ layout_mode = 2
 alignment = 1
 select_all_on_focus = true
 
-[connection signal="drag_ended" from="sliders/boxR/R" to="." method="_on_r_drag_ended"]
+[connection signal="pressed" from="btnCopiar" to="." method="_on_btn_copiar_pressed"]
+[connection signal="pressed" from="btnColar" to="." method="_on_btn_colar_pressed"]
+[connection signal="value_changed" from="sliders/boxR/R" to="." method="_on_line_r_text_changed"]
 [connection signal="text_changed" from="sliders/boxR/lineR" to="." method="_on_line_r_text_changed"]
-[connection signal="drag_ended" from="sliders/boxG/G" to="." method="_on_g_drag_ended"]
+[connection signal="value_changed" from="sliders/boxG/G" to="." method="_on_line_g_text_changed"]
 [connection signal="text_changed" from="sliders/boxG/lineG" to="." method="_on_line_g_text_changed"]
-[connection signal="drag_ended" from="sliders/boxB/B" to="." method="_on_b_drag_ended"]
+[connection signal="value_changed" from="sliders/boxB/B" to="." method="_on_line_b_text_changed"]
 [connection signal="text_changed" from="sliders/boxB/lineB" to="." method="_on_line_b_text_changed"]

@@ -1,3 +1,4 @@
+Button
 LineEdit
 HBoxContainer
 Timer
@@ -5,11 +6,9 @@ Node
 CollisionShape2D
 Area2D
 VBoxContainer
-Button
 CenterContainer
 ColorRect
 HSlider
 CharacterBody2D
 AnimatedSprite2D
 StaticBody2D
-TextureProgressBar

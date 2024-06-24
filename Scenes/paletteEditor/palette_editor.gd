@@ -12,6 +12,8 @@ var parameterArray:Array
 var parameterIndex = 1
 var body
 
+var copiedColor:Color = Color(255, 255, 0)
+
 func _ready():
 	virtual_controller.roundStart = false
 	body = player.body
@@ -36,12 +38,20 @@ func fillArrays(cPicker):
 			parameterIndex += 1
 			c.setColor(player.getShaderPar(shaderpar))
 			c.connect("changed", changed)
+			c.connect("copy", copyColor)
+			c.connect("paste", pasteColor)
 #array.find
 func changed(c, v):
 	var index = colorsArray.find(c)
 	if index == -1: return
 	var color = colorsArray[index].getColor()
 	player.setShaderPar(parameterArray[index], Vector4(color.r, color.g, color.b, color.a))
+
+func pasteColor(colorPicker):
+	colorPicker.pasteColor(copiedColor)
+
+func copyColor(v):
+	copiedColor = v
 
 func _on_bt_print_pressed():
 	for c in colorsArray:
@@ -59,7 +69,6 @@ func _on_bt_player_2_pressed():
 	Global.player2Palette.clear()
 	for c in colorsArray:
 		Global.player2Palette.push_back(c.getColor())
-
 
 func _on_save_collorbt_pressed() -> void:
 	Global.SaveGameData()
