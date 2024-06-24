@@ -11,8 +11,8 @@ var knockbackVector:Vector2 = Vector2(1,1)
 
 var motionForward = [Vector2(0,1), Vector2(1,1), Vector2(1,0)]
 var motionBackwards = [Vector2(0,1), Vector2(-1,1), Vector2(-1,0)]
-var motionDash = [Vector2(1,0), Vector2(0,0), Vector2(1,0)]
-var motionBackdash = [Vector2(-1,0), Vector2(0,0), Vector2(-1,0)]
+var motionDash = [Vector2(0,0), Vector2(1,0), Vector2(0,0), Vector2(1,0)]
+var motionBackdash = [Vector2(0,0), Vector2(-1,0), Vector2(0,0), Vector2(-1,0)]
 
 var facing = 1
 var grounded = true
@@ -269,10 +269,10 @@ func neutralAnimation():
 				movement = "walkback"
 			else:
 				movement = "walk"
-		if parent.virtualController.checkMotionExecutedExcept(motionDash, Vector2(-1,0), facing, 3) && !dashing:
+		if parent.virtualController.checkMotionExecutedExcept(motionDash, Vector2(-1,0), facing, 5) && !dashing:
 			dashing = true
 			movement = "dash"
-		elif parent.virtualController.checkMotionExecutedExcept(motionBackdash, Vector2(1,0), facing, 3) && !dashing:
+		elif parent.virtualController.checkMotionExecutedExcept(motionBackdash, Vector2(1,0), facing, 5) && !dashing:
 			dashing = true
 			movement = "backdash"
 	
