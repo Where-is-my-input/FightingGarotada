@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name CharacterScript
 #D:\Games\Game Dev sprites
 var crouching = false
 var gravity = 50
@@ -38,6 +39,7 @@ var jumpState = "rising"
 var hit = "hit"
 var idleState = "idle"
 var knockdownState = "airborne"
+var jumpDirectionState = "neutral"
 
 #cancel states
 var normalCancel = false
@@ -85,6 +87,7 @@ var jumpDirection = 0
 @onready var A_IdleState = "parameters/IdleState/transition_request"
 @onready var A_TimeScale = "parameters/TimeScale/scale"
 @onready var A_KnockDownAction = "parameters/knockDownAction/transition_request"
+@onready var A_JumpDirection = "parameters/jumpDirection/transition_request"
 
 #controller
 @onready var virtualController = parent.virtualController
@@ -336,7 +339,10 @@ func jump():
 		jumpState = "rising"
 
 func startJump():
+	jumpDirectionState = "neutral"
 	if abs(jumpDirection) > 0:
+		if jumpDirection == facing:
+			jumpDirectionState = "backwards"
 		#velocity.x = parent.virtualController.directionX*jumpSpeed #allow to change direction post start up
 		if preservedJumpSpeed != 0:
 			velocity.x = jumpDirection*abs(preservedJumpSpeed)
@@ -367,6 +373,7 @@ func setAnimation():
 	animatedTree.set(A_JumpHit, hit)
 	animatedTree.set(A_IdleState, idleState)
 	animatedTree.set(A_KnockDownAction, knockdownState)
+	animatedTree.set(A_JumpDirection, jumpDirectionState)
 
 #func _on_hitboxes_area_entered(hitbox):
 	#if hitbox.get_parent() != self:

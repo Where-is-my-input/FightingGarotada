@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=134 format=3 uid="uid://cbi3kopno23pf"]
 
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_ecalt"]
 [ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="3_2jnjg"]
@@ -6887,6 +6887,36 @@ tracks/5/keys = {
 "values": [Vector2(0, 8)]
 }
 
+[sub_resource type="Animation" id="Animation_mqx5c"]
+resource_name = "jumpingBackwards"
+length = 0.300002
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"JumpBackwards"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0166667, 0.05, 0.0833333, 0.133333, 0.183333, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 4, 5, 6, 7, 8, 9]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xaxc"]
 resource_local_to_scene = true
 _data = {
@@ -6915,6 +6945,7 @@ _data = {
 "jumpHitstun": SubResource("Animation_bwebm"),
 "jumpStartUp": SubResource("Animation_yiy1m"),
 "jumping": SubResource("Animation_q1b2y"),
+"jumpingBackwards": SubResource("Animation_mqx5c"),
 "jumpingFalling": SubResource("Animation_4my04"),
 "midHitstun": SubResource("Animation_xxx4n"),
 "otg": SubResource("Animation_5sc5t"),
@@ -7223,6 +7254,9 @@ animation = &"Jill/jumpHitstun"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pdeln"]
 animation = &"Jill/backdash"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pq2kd"]
+animation = &"Jill/jumpingBackwards"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l371l"]
 animation = &"Jill/Grab"
 
@@ -7293,6 +7327,14 @@ animation = &"Jill/Throw"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3w07"]
 animation = &"Jill/jumpBloackstun"
 
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_y8637"]
+input_0/name = "neutral"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "backwards"
+input_1/auto_advance = false
+input_1/reset = true
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r37j0"]
 animation = &"Jill/jumpHitstun"
 
@@ -7326,6 +7368,7 @@ animation = &"Jill/wakeUp"
 animation = &"Jill/walkBack"
 
 [sub_resource type="AnimationNodeBlendTree" id="18"]
+graph_offset = Vector2(330.835, 211.718)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1240, -480)
 nodes/Crouch/node = SubResource("13")
@@ -7398,10 +7441,12 @@ nodes/airHitstun/node = SubResource("AnimationNodeAnimation_7nf65")
 nodes/airHitstun/position = Vector2(1440, 460)
 nodes/backdash/node = SubResource("AnimationNodeAnimation_pdeln")
 nodes/backdash/position = Vector2(1740, -660)
+nodes/backwards/node = SubResource("AnimationNodeAnimation_pq2kd")
+nodes/backwards/position = Vector2(780, 420)
 nodes/cGrab/node = SubResource("AnimationNodeAnimation_l371l")
 nodes/cGrab/position = Vector2(384.521, 325.577)
 nodes/cHK/node = SubResource("AnimationNodeAnimation_wei0a")
-nodes/cHK/position = Vector2(880, 360)
+nodes/cHK/position = Vector2(820, 240)
 nodes/cHP/node = SubResource("AnimationNodeAnimation_qty1o")
 nodes/cHP/position = Vector2(880, 140)
 nodes/cLK/node = SubResource("AnimationNodeAnimation_66o44")
@@ -7444,6 +7489,8 @@ nodes/jThrow/node = SubResource("AnimationNodeAnimation_63ocg")
 nodes/jThrow/position = Vector2(1509.34, 1051.21)
 nodes/jumpBlockstun/node = SubResource("AnimationNodeAnimation_i3w07")
 nodes/jumpBlockstun/position = Vector2(640, 480)
+nodes/jumpDirection/node = SubResource("AnimationNodeTransition_y8637")
+nodes/jumpDirection/position = Vector2(1040, 320)
 nodes/jumpHitstun/node = SubResource("AnimationNodeAnimation_r37j0")
 nodes/jumpHitstun/position = Vector2(576.546, 637.737)
 nodes/jumpStartUp/node = SubResource("AnimationNodeAnimation_gfc1h")
@@ -7454,14 +7501,14 @@ nodes/otg/node = SubResource("AnimationNodeAnimation_tgult")
 nodes/otg/position = Vector2(1680, 500)
 nodes/output/position = Vector2(2180, 100)
 nodes/rising/node = SubResource("AnimationNodeAnimation_gswe2")
-nodes/rising/position = Vector2(1000, 360)
+nodes/rising/position = Vector2(840, 280)
 nodes/standingBlocking/node = SubResource("AnimationNodeAnimation_c5rpv")
 nodes/standingBlocking/position = Vector2(980, -120)
 nodes/wakeUp/node = SubResource("AnimationNodeAnimation_nstri")
 nodes/wakeUp/position = Vector2(1650.66, 683.498)
 nodes/walkBack/node = SubResource("AnimationNodeAnimation_epjdj")
 nodes/walkBack/position = Vector2(1240, -520)
-node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Attacking", 3, &"LK", &"Attacking", 4, &"MK", &"Attacking", 5, &"HK", &"Attacking", 6, &"Special01", &"Attacking", 7, &"Special2", &"Attacking", 8, &"Grab", &"Attacking", 9, &"Throw", &"Attacking", 10, &"Special3", &"Attacking", 11, &"Special4", &"Attacking", 12, &"Special5", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchAttacking", 4, &"cMK", &"CrouchAttacking", 5, &"cHK", &"CrouchAttacking", 6, &"cSpecial1", &"CrouchAttacking", 7, &"Special2 2", &"CrouchAttacking", 8, &"cGrab", &"CrouchAttacking", 9, &"cThrow", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"rising", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpAttacking", 3, &"jLK", &"JumpAttacking", 4, &"jMK", &"JumpAttacking", 5, &"jHK", &"JumpAttacking", 6, &"jSpecial01", &"JumpAttacking", 7, &"jSpecial2", &"JumpAttacking", 8, &"jGrab", &"JumpAttacking", 9, &"jThrow", &"JumpHit", 0, &"jumpBlockstun", &"JumpHit", 1, &"jumpHitstun", &"JumpingAction", 0, &"Jump", &"JumpingAction", 1, &"JumpHit", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"Movement", 3, &"jumpStartUp", &"Movement", 4, &"dash", &"Movement", 5, &"backdash", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"State", 3, &"knockDownAction", &"TimeScale", 0, &"State", &"knockDownAction", 0, &"airHitstun", &"knockDownAction", 1, &"otg", &"knockDownAction", 2, &"wakeUp", &"output", 0, &"TimeScale"]
+node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Attacking", 3, &"LK", &"Attacking", 4, &"MK", &"Attacking", 5, &"HK", &"Attacking", 6, &"Special01", &"Attacking", 7, &"Special2", &"Attacking", 8, &"Grab", &"Attacking", 9, &"Throw", &"Attacking", 10, &"Special3", &"Attacking", 11, &"Special4", &"Attacking", 12, &"Special5", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchAttacking", 4, &"cMK", &"CrouchAttacking", 5, &"cHK", &"CrouchAttacking", 6, &"cSpecial1", &"CrouchAttacking", 7, &"Special2 2", &"CrouchAttacking", 8, &"cGrab", &"CrouchAttacking", 9, &"cThrow", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"jumpDirection", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpAttacking", 3, &"jLK", &"JumpAttacking", 4, &"jMK", &"JumpAttacking", 5, &"jHK", &"JumpAttacking", 6, &"jSpecial01", &"JumpAttacking", 7, &"jSpecial2", &"JumpAttacking", 8, &"jGrab", &"JumpAttacking", 9, &"jThrow", &"JumpHit", 0, &"jumpBlockstun", &"JumpHit", 1, &"jumpHitstun", &"JumpingAction", 0, &"Jump", &"JumpingAction", 1, &"JumpHit", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"Movement", 3, &"jumpStartUp", &"Movement", 4, &"dash", &"Movement", 5, &"backdash", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"State", 3, &"knockDownAction", &"TimeScale", 0, &"State", &"jumpDirection", 0, &"rising", &"jumpDirection", 1, &"backwards", &"knockDownAction", 0, &"airHitstun", &"knockDownAction", 1, &"otg", &"knockDownAction", 2, &"wakeUp", &"output", 0, &"TimeScale"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfye"]
 resource_local_to_scene = true
@@ -7592,6 +7639,9 @@ parameters/State/current_state = "standing"
 parameters/State/transition_request = ""
 parameters/State/current_index = 0
 parameters/TimeScale/scale = 1.0
+parameters/jumpDirection/current_state = ""
+parameters/jumpDirection/transition_request = "backwards"
+parameters/jumpDirection/current_index = -1
 parameters/knockDownAction/current_state = ""
 parameters/knockDownAction/transition_request = "airborne"
 parameters/knockDownAction/current_index = -1
