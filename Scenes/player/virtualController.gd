@@ -50,7 +50,7 @@ func _ready():
 	Global.connect("roundStarted", enableButtons)
 	if player == 2:
 		setInputsP2()
-	setPalette()
+	#setPalette()
 
 func setPalette():
 	var child = get_child(2)

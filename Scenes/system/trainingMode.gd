@@ -16,11 +16,13 @@ var hurtboxes:Array
 var hurtboxesPointers:Array
 
 func _ready():
+	Global.connect("roundStarted", loadTraining)
 	if Global.gameMode != Global.mode.TRAINING:
 		queue_free()
-	else:
-		player2.connect("gotHit", player2GotHit)
-		hp_bars.timerPause = true
+
+func loadTraining():
+	player2.connect("gotHit", player2GotHit)
+	hp_bars.timerPause = true
 	getHitHurtBoxes(player)
 	getHitHurtBoxes(player2)
 

@@ -70,6 +70,7 @@ var jumpDirection = 0
 @onready var tmr_knockdown = $tmrKnockdown
 @onready var collision_area = $collisionArea
 @onready var grab_position = $grabPosition
+@onready var hurtboxes = $Hurtboxes
 
 #animationTree
 @onready var A_State = "parameters/State/transition_request"
@@ -518,3 +519,12 @@ func setGrabbedGlobalPosition(p):
 		global_position = p
 		return true
 	return false
+
+func getCollisionArea():
+	return collision_area
+
+func getHurtBoxes():
+	return hurtboxes
+
+func getHitBoxes():
+	return hitboxes

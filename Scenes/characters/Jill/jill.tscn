@@ -1,11 +1,10 @@
-[gd_scene load_steps=134 format=3 uid="uid://cbi3kopno23pf"]
+[gd_scene load_steps=133 format=3 uid="uid://fjoshq8g2rxd"]
 
-[ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_ecalt"]
-[ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="3_2jnjg"]
-[ext_resource type="PackedScene" uid="uid://h2cxolpx00yq" path="res://Scenes/characters/spr_jill.tscn" id="4_sfrd1"]
-[ext_resource type="Script" path="res://Scenes/Player.gd" id="19"]
-[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="99_32v1y"]
-[ext_resource type="Script" path="res://Scenes/collisionArea.gd" id="196_djj2p"]
+[ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="1_x0fi1"]
+[ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="2_steuv"]
+[ext_resource type="PackedScene" uid="uid://h2cxolpx00yq" path="res://Scenes/characters/spr_jill.tscn" id="3_63h5k"]
+[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="4_oc5ri"]
+[ext_resource type="Script" path="res://Scenes/characters/collisionArea.gd" id="5_n35ws"]
 
 [sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
@@ -163,7 +162,7 @@ shader_parameter/newColor22 = Color(0.6, 0.4, 0, 1)
 shader_parameter/newColor23 = Color(0.866667, 0.6, 0, 1)
 shader_parameter/newColor24 = Color(1, 0, 1, 1)
 shader_parameter/newColor25 = Color(1, 0, 1, 1)
-shader_parameter/palette = ExtResource("2_ecalt")
+shader_parameter/palette = ExtResource("1_x0fi1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_educ5"]
 size = Vector2(34, 88)
@@ -4206,6 +4205,36 @@ tracks/5/keys = {
 "values": [Vector2(0, -12)]
 }
 
+[sub_resource type="Animation" id="Animation_mqx5c"]
+resource_name = "jumpingBackwards"
+length = 0.300002
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"JumpBackwards"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0166667, 0.05, 0.0833333, 0.133333, 0.183333, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 4, 5, 6, 7, 8, 9]
+}
+
 [sub_resource type="Animation" id="Animation_4my04"]
 resource_name = "jumpingFalling"
 length = 0.166668
@@ -6887,36 +6916,6 @@ tracks/5/keys = {
 "values": [Vector2(0, 8)]
 }
 
-[sub_resource type="Animation" id="Animation_mqx5c"]
-resource_name = "jumpingBackwards"
-length = 0.300002
-loop_mode = 1
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"JumpBackwards"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0166667, 0.05, 0.0833333, 0.133333, 0.183333, 0.233333, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 2, 4, 5, 6, 7, 8, 9]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xaxc"]
 resource_local_to_scene = true
 _data = {
@@ -7517,67 +7516,63 @@ size = Vector2(32, 88)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53n7y"]
 size = Vector2(1, 1)
 
-[node name="Player" type="Node2D" groups=["Player"]]
-scale = Vector2(-1, 1)
-script = ExtResource("19")
-
-[node name="charBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animatedSprite") groups=["CollisionBox"]]
+[node name="charBody2D" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite") groups=["CollisionBox"]]
 material = SubResource("2")
 collision_layer = 0
 collision_mask = 4
 floor_block_on_wall = false
-script = ExtResource("3_2jnjg")
+script = ExtResource("2_steuv")
 jumpCancel = true
 moveSpeed = Vector2(500, 0)
 animatedSprite = NodePath("sprJill")
 
-[node name="CollisionBox" type="CollisionShape2D" parent="charBody2D"]
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_educ5")
 
-[node name="sprJill" parent="charBody2D" instance=ExtResource("4_sfrd1")]
+[node name="sprJill" parent="." instance=ExtResource("3_63h5k")]
 animation = &"default"
 frame = 0
 frame_progress = 0.0
 
-[node name="anchorPoint" type="Area2D" parent="charBody2D"]
+[node name="anchorPoint" type="Area2D" parent="."]
 position = Vector2(0, 48)
 collision_layer = 256
 collision_mask = 256
 
-[node name="anchorCollision" type="CollisionShape2D" parent="charBody2D/anchorPoint"]
+[node name="anchorCollision" type="CollisionShape2D" parent="anchorPoint"]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_l40to")
 debug_color = Color(1, 1, 1, 1)
 
-[node name="Marker2D" type="Marker2D" parent="charBody2D/anchorPoint"]
+[node name="Marker2D" type="Marker2D" parent="anchorPoint"]
 position = Vector2(0, 48)
 
-[node name="tmrKnockdown" type="Timer" parent="charBody2D"]
+[node name="tmrKnockdown" type="Timer" parent="."]
 one_shot = true
 
-[node name="Hurtboxes" type="Area2D" parent="charBody2D" groups=["Hurtboxes"]]
+[node name="Hurtboxes" type="Area2D" parent="." groups=["Hurtboxes"]]
 collision_layer = 2
 collision_mask = 0
 
-[node name="Hurtbox" type="CollisionShape2D" parent="charBody2D/Hurtboxes"]
+[node name="Hurtbox" type="CollisionShape2D" parent="Hurtboxes"]
 light_mask = 2
 visibility_layer = 4
 position = Vector2(-0.5, 11)
 shape = SubResource("RectangleShape2D_x4kfw")
 debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 
-[node name="Hitboxes" type="Area2D" parent="charBody2D" groups=["Hitboxes"]]
+[node name="Hitboxes" type="Area2D" parent="." groups=["Hitboxes"]]
 collision_layer = 4
 collision_mask = 10
-script = ExtResource("99_32v1y")
+script = ExtResource("4_oc5ri")
 stun = 35
 stunVector = Vector2(500, -50)
 damage = 750
 hitstop = 15
 vstun = 10
 
-[node name="Hitbox" type="CollisionShape2D" parent="charBody2D/Hitboxes"]
+[node name="Hitbox" type="CollisionShape2D" parent="Hitboxes"]
 light_mask = 4
 visibility_layer = 2
 position = Vector2(89.5, -17.5)
@@ -7585,7 +7580,7 @@ shape = SubResource("5")
 disabled = true
 debug_color = Color(1, 0, 0.0784314, 0.419608)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="charBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
 root_node = NodePath("../sprJill")
 libraries = {
@@ -7594,7 +7589,7 @@ libraries = {
 "Lilith": SubResource("AnimationLibrary_jvexr")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="charBody2D/AnimationPlayer"]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
 active = false
 root_node = NodePath("../../sprJill")
 tree_root = SubResource("18")
@@ -7646,26 +7641,24 @@ parameters/knockDownAction/current_state = ""
 parameters/knockDownAction/transition_request = "airborne"
 parameters/knockDownAction/current_index = -1
 
-[node name="collisionArea" type="Area2D" parent="charBody2D" groups=["CollisionBox"]]
+[node name="collisionArea" type="Area2D" parent="." groups=["CollisionBox"]]
 collision_layer = 8
 collision_mask = 8
-script = ExtResource("196_djj2p")
+script = ExtResource("5_n35ws")
 
-[node name="collisionAreaCollision" type="CollisionShape2D" parent="charBody2D/collisionArea" groups=["CollisionBox"]]
+[node name="collisionAreaCollision" type="CollisionShape2D" parent="collisionArea" groups=["CollisionBox"]]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_mmfye")
 debug_color = Color(0.105957, 0, 0.732455, 0.42)
 
-[node name="grabPosition" type="CollisionShape2D" parent="charBody2D"]
+[node name="grabPosition" type="CollisionShape2D" parent="."]
 position = Vector2(56, -16)
 shape = SubResource("RectangleShape2D_53n7y")
 disabled = true
 debug_color = Color(0.398854, 0.0011998, 0.59075, 0.42)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-
-[connection signal="body_entered" from="charBody2D/anchorPoint" to="charBody2D" method="_on_anchor_point_body_entered"]
-[connection signal="body_exited" from="charBody2D/anchorPoint" to="charBody2D" method="_on_anchor_point_body_exited"]
-[connection signal="timeout" from="charBody2D/tmrKnockdown" to="charBody2D" method="_on_tmr_knockdown_timeout"]
-[connection signal="area_entered" from="charBody2D/Hitboxes" to="charBody2D" method="_on_hitboxes_area_entered"]
-[connection signal="area_entered" from="charBody2D/Hitboxes" to="charBody2D/Hitboxes" method="_on_area_entered"]
+[connection signal="body_entered" from="anchorPoint" to="." method="_on_anchor_point_body_entered"]
+[connection signal="body_exited" from="anchorPoint" to="." method="_on_anchor_point_body_exited"]
+[connection signal="timeout" from="tmrKnockdown" to="." method="_on_tmr_knockdown_timeout"]
+[connection signal="area_entered" from="Hitboxes" to="." method="_on_hitboxes_area_entered"]
+[connection signal="area_entered" from="Hitboxes" to="Hitboxes" method="_on_area_entered"]

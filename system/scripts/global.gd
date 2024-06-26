@@ -3,6 +3,7 @@ extends Node
 enum mode {VERSUS, TRAINING}
 enum hitType {NORMAL, LAUNCHER, KNOCKDOWN, GRAB, PROJECTILE} #STAGGER, BOUNCES
 enum blockType {MID, LOW, HIGH, UNBLOCKABLE}
+enum character {JILL}
 
 signal player1KO()
 signal player2KO()
@@ -28,6 +29,9 @@ var player2Palette:Array
 var ground = 785
 
 var gameMode = mode.VERSUS
+
+var player1Character = character.JILL
+var player2Character = character.JILL
 
 func _ready() -> void:
 	LoadGameData()

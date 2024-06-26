@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbi3kopno23pf"]
+
+[ext_resource type="Script" path="res://Scenes/player/Player.gd" id="19"]
+
+[node name="Player" type="Node2D" groups=["Player"]]
+scale = Vector2(-1, 1)
+script = ExtResource("19")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

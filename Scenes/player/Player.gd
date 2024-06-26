@@ -1,9 +1,14 @@
 extends Node2D
 @onready var remote_transform_2d = $RemoteTransform2D
-@onready var body = $charBody2D
-@onready var hurtboxes = $charBody2D/Hurtboxes
-@onready var hitboxes = $charBody2D/Hitboxes
-@onready var collision_area = $charBody2D/collisionArea
+#@onready var body = $charBody2D
+#@onready var hurtboxes = $charBody2D/Hurtboxes
+#@onready var hitboxes = $charBody2D/Hitboxes
+#@onready var collision_area = $charBody2D/collisionArea
+
+@export var body:CharacterBody2D
+var collisionArea
+var hurtboxes
+var hitboxes
 
 #@onready var virtualController = $"../VirtualController"
 #var teste = 1
@@ -26,7 +31,24 @@ var nearestPlayerX = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	virtualController = get_parent()
+	if virtualController.player == 1:
+		addCharacter(Global.player1Character)
+	else:
+		addCharacter(Global.player2Character)
 	playerGroup = get_tree().get_nodes_in_group("Player")
+
+func addCharacter(playerCharacter):
+		match playerCharacter:
+			Global.character.JILL:
+				var chaBody = preload("res://Scenes/characters/Jill/jill.tscn").instantiate()
+				add_child(chaBody)
+				setBodyVariables(chaBody)
+
+func setBodyVariables(charBody):
+	body = charBody
+	collisionArea = body.getCollisionArea()
+	hurtboxes = body.getHurtBoxes()
+	hitboxes = body.getHitBoxes()
 
 func _physics_process(_delta):
 	getNearesPlayer()
@@ -37,9 +59,9 @@ func getNearesPlayer():
 		if player == self:
 			continue
 		if nearestPlayer == null:
-			nearestPlayer = player
+			nearestPlayer = player.body
 		elif player.global_position.distance_to(body.global_position) < nearestPlayer.global_position.distance_to(body.global_position):
-			nearestPlayer = player
+			nearestPlayer = player.body
 	if nearestPlayer != null:
 		var child = nearestPlayer.get_child(0)
 		nearestPlayerX = child.global_position.x
@@ -78,7 +100,7 @@ func getHitboxes():
 	return hitboxes.get_children()
 
 func getCollisionBox():
-	return collision_area.getCollision()
+	return collisionArea.getCollision()
 
 func getShaderPar(p):
 	return body.material.get(p)

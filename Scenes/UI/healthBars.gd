@@ -159,7 +159,7 @@ func KO():
 	setWinStreak()
 
 func _on_tmr_ko_timeout():
-	get_tree().change_scene_to_file("res://GameScene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/GameScene.tscn")
 
 func draw():
 	lbl_player_wins.text = "Draw!"
