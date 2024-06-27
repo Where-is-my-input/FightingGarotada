@@ -34,7 +34,7 @@ var timerPause = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Global.mode.TRAINING:
+	if Global.mode.TRAINING == Global.gameMode:
 		tmr_round_start.start(0.1)
 	else:
 		tmr_round_start.start(5)

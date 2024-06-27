@@ -43,6 +43,10 @@ func addCharacter(playerCharacter):
 				var chaBody = preload("res://Scenes/characters/Jill/jill.tscn").instantiate()
 				add_child(chaBody)
 				setBodyVariables(chaBody)
+			_:
+				var chaBody = preload("res://Scenes/characters/Jill/jill.tscn").instantiate()
+				add_child(chaBody)
+				setBodyVariables(chaBody)
 
 func setBodyVariables(charBody):
 	body = charBody

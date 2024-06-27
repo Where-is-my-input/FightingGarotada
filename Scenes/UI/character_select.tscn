@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://djm6t30qoyxvi"]
+
+[ext_resource type="Texture2D" uid="uid://lx5457wnwm3r" path="res://Characters/Jill Valentine/icon/jillIcon.png" id="1_4msoo"]
+[ext_resource type="Script" path="res://Scenes/UI/character_select.gd" id="1_okltk"]
+[ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="2_jkrkh"]
+
+[node name="CharacterSelect" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_okltk")
+
+[node name="characters" type="Node" parent="."]
+
+[node name="sprJill" type="Sprite2D" parent="characters"]
+position = Vector2(728, 464)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4msoo")
+
+[node name="sprJill2" type="Sprite2D" parent="characters"]
+position = Vector2(848, 464)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4msoo")
+
+[node name="sprJill3" type="Sprite2D" parent="characters"]
+position = Vector2(968, 464)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4msoo")
+
+[node name="sprJill4" type="Sprite2D" parent="characters"]
+position = Vector2(1088, 464)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4msoo")
+
+[node name="sprJill5" type="Sprite2D" parent="characters"]
+position = Vector2(1208, 464)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4msoo")
+
+[node name="sprJill6" type="Sprite2D" parent="characters"]
+position = Vector2(792, 576)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4msoo")
+
+[node name="sprJill7" type="Sprite2D" parent="characters"]
+position = Vector2(912, 576)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4msoo")
+
+[node name="sprJill8" type="Sprite2D" parent="characters"]
+position = Vector2(1032, 576)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4msoo")
+
+[node name="sprJill9" type="Sprite2D" parent="characters"]
+position = Vector2(1152, 576)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4msoo")
+
+[node name="player1Selection" type="Sprite2D" parent="."]
+position = Vector2(720, 480)
+texture = ExtResource("2_jkrkh")
+
+[node name="player2Selection" type="Sprite2D" parent="."]
+position = Vector2(720, 480)
+texture = ExtResource("2_jkrkh")
