@@ -62,7 +62,7 @@ var jumpDirection = 0
 @onready var parent = $".."
 @export var animatedSprite:AnimatedSprite2D
 @onready var hitboxes = $Hitboxes
-@onready var animatedTree = $AnimationPlayer/AnimationTree
+@export var animatedTree:AnimationTree
 @onready var animation_player = $AnimationPlayer
 @onready var collision_box = $CollisionBox
 @onready var marker_2d = $anchorPoint/Marker2D

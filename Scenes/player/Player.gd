@@ -38,15 +38,14 @@ func _ready():
 	playerGroup = get_tree().get_nodes_in_group("Player")
 
 func addCharacter(playerCharacter):
+		var chaBody = preload("res://Scenes/characters/Jill/jill.tscn").instantiate()
 		match playerCharacter:
 			Global.character.JILL:
-				var chaBody = preload("res://Scenes/characters/Jill/jill.tscn").instantiate()
-				add_child(chaBody)
-				setBodyVariables(chaBody)
-			_:
-				var chaBody = preload("res://Scenes/characters/Jill/jill.tscn").instantiate()
-				add_child(chaBody)
-				setBodyVariables(chaBody)
+				chaBody = preload("res://Scenes/characters/Jill/jill.tscn").instantiate()
+			Global.character.LILITH:
+				chaBody = preload("res://Scenes/characters/Lilith/lilith.tscn").instantiate()
+		add_child(chaBody)
+		setBodyVariables(chaBody)
 
 func setBodyVariables(charBody):
 	body = charBody

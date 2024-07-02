@@ -1,10 +1,10 @@
-[gd_scene load_steps=133 format=3 uid="uid://fjoshq8g2rxd"]
+[gd_scene load_steps=133 format=3 uid="uid://elw7k1crskct"]
 
-[ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="1_x0fi1"]
-[ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="2_steuv"]
-[ext_resource type="PackedScene" uid="uid://h2cxolpx00yq" path="res://Scenes/characters/spr_jill.tscn" id="3_63h5k"]
-[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="4_oc5ri"]
-[ext_resource type="Script" path="res://Scenes/characters/collisionArea.gd" id="5_n35ws"]
+[ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="1_4osa3"]
+[ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="2_aybu0"]
+[ext_resource type="PackedScene" uid="uid://dane1axjv145s" path="res://Scenes/characters/spr_lilith.tscn" id="3_h206i"]
+[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="4_6847p"]
+[ext_resource type="Script" path="res://Scenes/characters/collisionArea.gd" id="5_sey50"]
 
 [sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
@@ -162,7 +162,7 @@ shader_parameter/newColor22 = Color(0.6, 0.4, 0, 1)
 shader_parameter/newColor23 = Color(0.866667, 0.6, 0, 1)
 shader_parameter/newColor24 = Color(1, 0, 1, 1)
 shader_parameter/newColor25 = Color(1, 0, 1, 1)
-shader_parameter/palette = ExtResource("1_x0fi1")
+shader_parameter/palette = ExtResource("1_4osa3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_educ5"]
 size = Vector2(34, 88)
@@ -7366,7 +7366,7 @@ animation = &"Jill/wakeUp"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_epjdj"]
 animation = &"Jill/walkBack"
 
-[sub_resource type="AnimationNodeBlendTree" id="18"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_got31"]
 resource_local_to_scene = true
 graph_offset = Vector2(535, -875)
 nodes/Attacking/node = SubResource("20")
@@ -7522,20 +7522,17 @@ material = SubResource("2")
 collision_layer = 0
 collision_mask = 4
 floor_block_on_wall = false
-script = ExtResource("2_steuv")
+script = ExtResource("2_aybu0")
 jumpCancel = true
 moveSpeed = Vector2(500, 0)
-animatedSprite = NodePath("sprJill")
-animatedTree = NodePath("AnimationPlayer/AnimationTree")
+animatedSprite = NodePath("sprLilith")
+animatedTree = NodePath("AnimationPlayer/aTreeLilith")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_educ5")
 
-[node name="sprJill" parent="." instance=ExtResource("3_63h5k")]
-animation = &"default"
-frame = 0
-frame_progress = 0.0
+[node name="sprLilith" parent="." instance=ExtResource("3_h206i")]
 
 [node name="anchorPoint" type="Area2D" parent="."]
 position = Vector2(0, 48)
@@ -7567,7 +7564,7 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 [node name="Hitboxes" type="Area2D" parent="." groups=["Hitboxes"]]
 collision_layer = 4
 collision_mask = 10
-script = ExtResource("4_oc5ri")
+script = ExtResource("4_6847p")
 stun = 35
 stunVector = Vector2(500, -50)
 damage = 750
@@ -7584,17 +7581,17 @@ debug_color = Color(1, 0, 0.0784314, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
-root_node = NodePath("../sprJill")
+root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_yv7pk"),
 "Jill": SubResource("AnimationLibrary_7xaxc"),
 "Lilith": SubResource("AnimationLibrary_jvexr")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+[node name="aTreeLilith" type="AnimationTree" parent="AnimationPlayer"]
 active = false
-root_node = NodePath("../../sprJill")
-tree_root = SubResource("18")
+root_node = NodePath("")
+tree_root = SubResource("AnimationNodeBlendTree_got31")
 anim_player = NodePath("..")
 parameters/Attacking/current_state = "HP"
 parameters/Attacking/transition_request = ""
@@ -7646,7 +7643,7 @@ parameters/knockDownAction/current_index = -1
 [node name="collisionArea" type="Area2D" parent="." groups=["CollisionBox"]]
 collision_layer = 8
 collision_mask = 8
-script = ExtResource("5_n35ws")
+script = ExtResource("5_sey50")
 
 [node name="collisionAreaCollision" type="CollisionShape2D" parent="collisionArea" groups=["CollisionBox"]]
 position = Vector2(0, 4)
