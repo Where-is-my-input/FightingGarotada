@@ -1,4 +1,4 @@
-[gd_scene load_steps=453 format=3 uid="uid://elw7k1crskct"]
+[gd_scene load_steps=461 format=3 uid="uid://elw7k1crskct"]
 
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="1_4osa3"]
 [ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="2_aybu0"]
@@ -91,10 +91,15 @@
 [ext_resource type="Texture2D" uid="uid://dfsc6o1lvbjl8" path="res://Characters/Lilith/JPEG/VS2_Lilith_18770.jpg" id="85_qeard"]
 [ext_resource type="Texture2D" uid="uid://co3ud0x2psh6d" path="res://Characters/Lilith/JPEG/VS2_Lilith_18798.jpg" id="86_7os5h"]
 [ext_resource type="Texture2D" uid="uid://cetei4pu6si2x" path="res://Characters/Lilith/JPEG/VS2_Lilith_60648.jpg" id="87_0icgy"]
+[ext_resource type="Texture2D" uid="uid://basp60080ssyg" path="res://Characters/Lilith/JPEG/VS2_Lilith_828.jpg" id="87_dqxw8"]
 [ext_resource type="Texture2D" uid="uid://ebst7owuo08d" path="res://Characters/Lilith/JPEG/VS2_Lilith_25150.jpg" id="88_3y4it"]
+[ext_resource type="Texture2D" uid="uid://c5x5ell0odtfa" path="res://Characters/Lilith/JPEG/VS2_Lilith_852.jpg" id="88_b872x"]
 [ext_resource type="Texture2D" uid="uid://cwssv0five873" path="res://Characters/Lilith/JPEG/VS2_Lilith_25174.jpg" id="89_ffvlg"]
+[ext_resource type="Texture2D" uid="uid://wlu10sv4ayi2" path="res://Characters/Lilith/JPEG/VS2_Lilith_876.jpg" id="89_m5bu0"]
+[ext_resource type="Texture2D" uid="uid://dhr5cqtifrlsp" path="res://Characters/Lilith/JPEG/VS2_Lilith_900.jpg" id="90_2kisf"]
 [ext_resource type="Texture2D" uid="uid://h2jimyqhjkat" path="res://Characters/Lilith/JPEG/VS2_Lilith_25198.jpg" id="90_jlho1"]
 [ext_resource type="Texture2D" uid="uid://rix63h3b814y" path="res://Characters/Lilith/JPEG/VS2_Lilith_25222.jpg" id="91_5pgra"]
+[ext_resource type="Texture2D" uid="uid://dnigpcxy16be0" path="res://Characters/Lilith/JPEG/VS2_Lilith_924.jpg" id="91_7ukfw"]
 [ext_resource type="Texture2D" uid="uid://b77uqy64ejogb" path="res://Characters/Lilith/JPEG/VS2_Lilith_25246.jpg" id="92_0qnv4"]
 [ext_resource type="Texture2D" uid="uid://1lek7qf7b0gi" path="res://Characters/Lilith/JPEG/VS2_Lilith_25270.jpg" id="93_38juf"]
 [ext_resource type="Texture2D" uid="uid://ctwxl2basbteg" path="res://Characters/Lilith/JPEG/VS2_Lilith_25294.jpg" id="94_81hka"]
@@ -340,9 +345,13 @@
 [ext_resource type="Texture2D" uid="uid://bnbwvqmpfvyxl" path="res://Characters/Lilith/JPEG/VS2_Lilith_20842.jpg" id="334_set4p"]
 [ext_resource type="Texture2D" uid="uid://8ljoem22l26w" path="res://Characters/Lilith/JPEG/VS2_Lilith_20866.jpg" id="335_8fipn"]
 [ext_resource type="Texture2D" uid="uid://dedyyw2rgywh2" path="res://Characters/Lilith/JPEG/VS2_Lilith_3924.jpg" id="336_8b0hb"]
+[ext_resource type="Texture2D" uid="uid://chyj5u8vj47vo" path="res://Characters/Lilith/JPEG/VS2_Lilith_7978.jpg" id="336_as1oe"]
 [ext_resource type="Texture2D" uid="uid://crvfpyvoc3bc7" path="res://Characters/Lilith/JPEG/VS2_Lilith_3952.jpg" id="337_0nhis"]
+[ext_resource type="Texture2D" uid="uid://c3e13jkgpnviw" path="res://Characters/Lilith/JPEG/VS2_Lilith_8002.jpg" id="337_r0w6f"]
 [ext_resource type="Texture2D" uid="uid://c1jmvqbo6jxks" path="res://Characters/Lilith/JPEG/VS2_Lilith_56332.jpg" id="338_8wtsk"]
+[ext_resource type="Texture2D" uid="uid://bitsgg8lqgbdy" path="res://Characters/Lilith/JPEG/VS2_Lilith_8026.jpg" id="338_gr2n5"]
 [ext_resource type="Texture2D" uid="uid://bl7b48a6565rm" path="res://Characters/Lilith/JPEG/VS2_Lilith_56356.jpg" id="339_gsvti"]
+[ext_resource type="Texture2D" uid="uid://ckevs50rd3oo4" path="res://Characters/Lilith/JPEG/VS2_Lilith_8050.jpg" id="339_n887q"]
 [ext_resource type="Texture2D" uid="uid://cljbo176x7q30" path="res://Characters/Lilith/JPEG/VS2_Lilith_56380.jpg" id="340_sf2jp"]
 [ext_resource type="Texture2D" uid="uid://canl0dtt0rfwe" path="res://Characters/Lilith/JPEG/VS2_Lilith_62444.jpg" id="341_oo2f3"]
 [ext_resource type="Texture2D" uid="uid://y2h1hp3c2cve" path="res://Characters/Lilith/JPEG/VS2_Lilith_62468.jpg" id="342_xbdpk"]
@@ -440,7 +449,6 @@
 [ext_resource type="Texture2D" uid="uid://cowbkkuhg0jhd" path="res://Characters/Lilith/JPEG/VS2_Lilith_62928.jpg" id="434_kp1j5"]
 [ext_resource type="Texture2D" uid="uid://b5h0nrurhwwf6" path="res://Characters/Lilith/JPEG/VS2_Lilith_62952.jpg" id="435_m6v7r"]
 [ext_resource type="Texture2D" uid="uid://djo16hr3tc6b2" path="res://Characters/Lilith/JPEG/VS2_Lilith_62976.jpg" id="436_0fnwg"]
-[ext_resource type="AnimationLibrary" uid="uid://603q1ivypa65" path="res://Scenes/characters/Jill/jill.res" id="439_askeg"]
 
 [sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
@@ -898,7 +906,22 @@ animations = [{
 "name": &"DashForward",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("87_dqxw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_b872x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_m5bu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_2kisf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_7ukfw")
+}],
 "loop": true,
 "name": &"JumpBackwards",
 "speed": 5.0
@@ -1795,12 +1818,27 @@ animations = [{
 "name": &"jSpecial1",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("87_0icgy")
+}],
 "loop": true,
 "name": &"jumpBlockstun",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("336_as1oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("337_r0w6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("338_gr2n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("339_n887q")
+}],
 "loop": true,
 "name": &"jumpFalling",
 "speed": 5.0
@@ -1816,7 +1854,16 @@ animations = [{
 "name": &"jumpHitstun",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("338_gr2n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("339_n887q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("310_x26pv")
+}],
 "loop": true,
 "name": &"jumptStartUp",
 "speed": 5.0
@@ -2521,7 +2568,6 @@ reset_on_save = false
 root_node = NodePath("../sprLilith")
 libraries = {
 "": SubResource("AnimationLibrary_yv7pk"),
-"Jill": ExtResource("439_askeg"),
 "lilith": ExtResource("7_nhyln")
 }
 

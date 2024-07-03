@@ -8,7 +8,6 @@
 [ext_resource type="AnimationNodeBlendTree" uid="uid://30vijdtfimn4" path="res://Scenes/characters/Jill/jill.tres" id="5_4yrhh"]
 [ext_resource type="Script" path="res://Scenes/characters/collisionArea.gd" id="5_n35ws"]
 [ext_resource type="Texture2D" uid="uid://dkcb5nx5hi22y" path="res://Characters/Jill Valentine/anim073.png" id="5_o4w55"]
-[ext_resource type="AnimationLibrary" uid="uid://dvre72jvf85b7" path="res://Scenes/characters/Lilith/lilith.res" id="5_xshi4"]
 [ext_resource type="Texture2D" uid="uid://bxrd1mlyh2qxp" path="res://Characters/Jill Valentine/anim074.png" id="6_3gpfs"]
 [ext_resource type="Texture2D" uid="uid://bp4ym33ld87t2" path="res://Characters/Jill Valentine/anim075.png" id="7_ljaif"]
 [ext_resource type="Texture2D" uid="uid://bvrisbplgt2ut" path="res://Characters/Jill Valentine/anim076.png" id="8_0uert"]
@@ -272,6 +271,7 @@
 [ext_resource type="Texture2D" uid="uid://be5pp3d211j0g" path="res://Characters/Jill Valentine/anim419.png" id="266_gr6p5"]
 [ext_resource type="Texture2D" uid="uid://dl5bjpfps7h8v" path="res://Characters/Jill Valentine/anim420.png" id="267_hdk7k"]
 [ext_resource type="Texture2D" uid="uid://beyykhh1yct0y" path="res://Characters/Jill Valentine/anim421.png" id="268_p5iof"]
+[ext_resource type="AnimationLibrary" uid="uid://603q1ivypa65" path="res://Scenes/characters/Jill/Jill.res" id="270_k8dn5"]
 
 [sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
@@ -1946,12 +1946,11 @@ disabled = true
 debug_color = Color(1, 0, 0.0784314, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-active = false
 reset_on_save = false
 root_node = NodePath("../sprJill")
 libraries = {
 "": SubResource("AnimationLibrary_yv7pk"),
-"Jill": ExtResource("5_xshi4")
+"Jill": ExtResource("270_k8dn5")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
