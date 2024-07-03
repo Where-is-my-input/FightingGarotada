@@ -10,3 +10,5 @@ res://Scenes/characters/Jill/Jill.res
 res://Characters/Lilith/spr_lilit.gdshader
 res://Scenes/characters/Lilith/lilith.tscn
 res://Scenes/player/Player.tscn
+res://Scenes/characters/CharacterScript.gd
+res://Scenes/characters/Lilith/lilith.gd

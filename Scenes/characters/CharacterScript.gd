@@ -97,9 +97,9 @@ var jumpDirection = 0
 func _ready():
 	animation_player.root_node = animatedSprite.get_path()
 	global_position.y = Global.ground
-	if randi_range(0,100) > 50:
-		var palette = load("res://Characters/Jill Valentine/4by4Palette.jpg")
-		material.set_shader_parameter("palette",palette)
+	#if randi_range(0,100) > 50:
+		#var palette = load("res://Characters/Jill Valentine/4by4Palette.jpg")
+		#material.set_shader_parameter("palette",palette)
 	setAnimation()
 	animatedTree.active = true
 	parent.connect("KO",KO)

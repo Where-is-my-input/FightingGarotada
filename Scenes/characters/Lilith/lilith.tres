@@ -395,7 +395,7 @@ animation = &"lilith/walkBack"
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(438.385, 45.0696)
+graph_offset = Vector2(411.385, 420.07)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1240, -480)
 nodes/Crouch/node = SubResource("13")
@@ -449,7 +449,7 @@ nodes/Special2/position = Vector2(626.037, -397.156)
 "nodes/Special2 2/node" = SubResource("AnimationNodeAnimation_klev6")
 "nodes/Special2 2/position" = Vector2(430.501, 134.397)
 nodes/Special3/node = SubResource("AnimationNodeAnimation_yinc4")
-nodes/Special3/position = Vector2(600, -280)
+nodes/Special3/position = Vector2(640, -300)
 nodes/Special4/node = SubResource("AnimationNodeAnimation_yfk6f")
 nodes/Special4/position = Vector2(660, -500)
 nodes/Special5/node = SubResource("AnimationNodeAnimation_as5s7")
