@@ -456,6 +456,7 @@
 [ext_resource type="Texture2D" uid="uid://djo16hr3tc6b2" path="res://Characters/Lilith/JPEG/VS2_Lilith_62976.jpg" id="436_0fnwg"]
 
 [sub_resource type="Shader" id="1"]
+resource_local_to_scene = true
 code = "shader_type canvas_item;
 const float precision = 0.1;
 //uniform vec4 chroma_key: source_color = vec4(248.0,0.0,248.0,255.0);

@@ -17,3 +17,8 @@ res://Scenes/characters/Marrow/spr_marrow.tscn
 res://Scenes/characters/spr_jill.tscn
 res://Scenes/characters/Jill/sprJill/spr_jill.tres
 res://Scenes/characters/Marrow/spr_marrow.tres
+res://Scenes/characters/Marrow/marrow.tscn
+res://Scenes/characters/Marrow/marrow.res
+res://system/scripts/global.gd
+res://Scenes/player/Player.gd
+res://Scenes/characters/Marrow/marrow.gdshader

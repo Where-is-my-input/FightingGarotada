@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=70 format=3 uid="uid://qwcqbckk6w1s"]
+[gd_resource type="AnimationNodeBlendTree" load_steps=70 format=3 uid="uid://up27wj44l7vt"]
 
 [sub_resource type="AnimationNodeTransition" id="20"]
 input_0/name = "LP"
@@ -395,7 +395,7 @@ animation = &"lilith/walkBack"
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(839.588, 49.4267)
+graph_offset = Vector2(74.385, -707.93)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1240, -480)
 nodes/Crouch/node = SubResource("13")

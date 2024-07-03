@@ -44,6 +44,8 @@ func addCharacter(playerCharacter):
 				chaBody = preload("res://Scenes/characters/Jill/jill.tscn").instantiate()
 			Global.character.LILITH:
 				chaBody = preload("res://Scenes/characters/Lilith/lilith.tscn").instantiate()
+			Global.character.MARROW:
+				chaBody = preload("res://Scenes/characters/Marrow/marrow.tscn").instantiate()
 		add_child(chaBody)
 		setBodyVariables(chaBody)
 
