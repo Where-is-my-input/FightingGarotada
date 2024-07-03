@@ -1,12 +1,277 @@
-[gd_scene load_steps=18 format=3 uid="uid://fjoshq8g2rxd"]
+[gd_scene load_steps=284 format=3 uid="uid://fjoshq8g2rxd"]
 
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="1_x0fi1"]
 [ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="2_steuv"]
 [ext_resource type="PackedScene" uid="uid://h2cxolpx00yq" path="res://Scenes/characters/spr_jill.tscn" id="3_63h5k"]
+[ext_resource type="Texture2D" uid="uid://5n7msu2pbmnw" path="res://Characters/Jill Valentine/anim072.png" id="4_8mkt1"]
 [ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="4_oc5ri"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://30vijdtfimn4" path="res://Scenes/characters/Jill/jill.tres" id="5_4yrhh"]
 [ext_resource type="Script" path="res://Scenes/characters/collisionArea.gd" id="5_n35ws"]
+[ext_resource type="Texture2D" uid="uid://dkcb5nx5hi22y" path="res://Characters/Jill Valentine/anim073.png" id="5_o4w55"]
 [ext_resource type="AnimationLibrary" uid="uid://dvre72jvf85b7" path="res://Scenes/characters/Lilith/lilith.res" id="5_xshi4"]
+[ext_resource type="Texture2D" uid="uid://bxrd1mlyh2qxp" path="res://Characters/Jill Valentine/anim074.png" id="6_3gpfs"]
+[ext_resource type="Texture2D" uid="uid://bp4ym33ld87t2" path="res://Characters/Jill Valentine/anim075.png" id="7_ljaif"]
+[ext_resource type="Texture2D" uid="uid://bvrisbplgt2ut" path="res://Characters/Jill Valentine/anim076.png" id="8_0uert"]
+[ext_resource type="Texture2D" uid="uid://dyp2afpir8764" path="res://Characters/Jill Valentine/anim077.png" id="9_j2r3s"]
+[ext_resource type="Texture2D" uid="uid://5sxj8ycx4h2a" path="res://Characters/Jill Valentine/anim086.png" id="10_k3pwy"]
+[ext_resource type="Texture2D" uid="uid://b8util4yer7ta" path="res://Characters/Jill Valentine/anim087.png" id="11_5ypxt"]
+[ext_resource type="Texture2D" uid="uid://bi4jb4kjsj07r" path="res://Characters/Jill Valentine/anim088.png" id="12_b8hym"]
+[ext_resource type="Texture2D" uid="uid://5xklasapxp1c" path="res://Characters/Jill Valentine/anim089.png" id="13_oqw87"]
+[ext_resource type="Texture2D" uid="uid://ecee3ubav70p" path="res://Characters/Jill Valentine/anim090.png" id="14_wst3q"]
+[ext_resource type="Texture2D" uid="uid://c8w67a2fty2do" path="res://Characters/Jill Valentine/anim091.png" id="15_j0vhg"]
+[ext_resource type="Texture2D" uid="uid://cob42bsl7n7fb" path="res://Characters/Jill Valentine/anim092.png" id="16_4lhbl"]
+[ext_resource type="Texture2D" uid="uid://b824t3tnau3y0" path="res://Characters/Jill Valentine/anim093.png" id="17_np47n"]
+[ext_resource type="Texture2D" uid="uid://bod1q6na6uc17" path="res://Characters/Jill Valentine/anim094.png" id="18_br10t"]
+[ext_resource type="Texture2D" uid="uid://dlxca04n0ytp" path="res://Characters/Jill Valentine/anim095.png" id="19_j4ljf"]
+[ext_resource type="Texture2D" uid="uid://brk86gguv7hx2" path="res://Characters/Jill Valentine/anim078.png" id="20_88i06"]
+[ext_resource type="Texture2D" uid="uid://btade3xf1eteb" path="res://Characters/Jill Valentine/anim079.png" id="21_7ywnk"]
+[ext_resource type="Texture2D" uid="uid://dg8h6gajravaa" path="res://Characters/Jill Valentine/anim080.png" id="22_mlf8r"]
+[ext_resource type="Texture2D" uid="uid://7e6oebkc3mi4" path="res://Characters/Jill Valentine/anim081.png" id="23_p3qy5"]
+[ext_resource type="Texture2D" uid="uid://dj7fs5xlaohxo" path="res://Characters/Jill Valentine/anim082.png" id="24_74esy"]
+[ext_resource type="Texture2D" uid="uid://clummjp4i55x6" path="res://Characters/Jill Valentine/anim083.png" id="25_qtgmd"]
+[ext_resource type="Texture2D" uid="uid://d1kvexcjil7fo" path="res://Characters/Jill Valentine/anim084.png" id="26_kepcg"]
+[ext_resource type="Texture2D" uid="uid://dpmiocrqdmywu" path="res://Characters/Jill Valentine/anim085.png" id="27_6admx"]
+[ext_resource type="Texture2D" uid="uid://b4ypyyg1f40t6" path="res://Characters/Jill Valentine/anim105.png" id="28_avurc"]
+[ext_resource type="Texture2D" uid="uid://c0mxww54pl8yl" path="res://Characters/Jill Valentine/anim106.png" id="29_7mkc3"]
+[ext_resource type="Texture2D" uid="uid://bngbgvfwn1nli" path="res://Characters/Jill Valentine/anim107.png" id="30_4ydr5"]
+[ext_resource type="Texture2D" uid="uid://c0p40wik66b0n" path="res://Characters/Jill Valentine/anim108.png" id="31_6o3t0"]
+[ext_resource type="Texture2D" uid="uid://jvnc7ehedrwx" path="res://Characters/Jill Valentine/anim109.png" id="32_4mqck"]
+[ext_resource type="Texture2D" uid="uid://5l45l0sdoah5" path="res://Characters/Jill Valentine/anim110.png" id="33_3t27b"]
+[ext_resource type="Texture2D" uid="uid://b8tboc02hvaa0" path="res://Characters/Jill Valentine/anim111.png" id="34_4ihds"]
+[ext_resource type="Texture2D" uid="uid://dvmjtonskj8ax" path="res://Characters/Jill Valentine/anim112.png" id="35_mkwcx"]
+[ext_resource type="Texture2D" uid="uid://bt344e36j5g66" path="res://Characters/Jill Valentine/anim137.png" id="36_27eml"]
+[ext_resource type="Texture2D" uid="uid://bcepaej2f56ir" path="res://Characters/Jill Valentine/anim138.png" id="37_0wfjm"]
+[ext_resource type="Texture2D" uid="uid://bcb06al3d7ib7" path="res://Characters/Jill Valentine/anim139.png" id="38_wexm6"]
+[ext_resource type="Texture2D" uid="uid://dvvxbbipcfpor" path="res://Characters/Jill Valentine/anim132.png" id="39_l5yif"]
+[ext_resource type="Texture2D" uid="uid://cbt5gjx7xorou" path="res://Characters/Jill Valentine/anim133.png" id="40_5m5bp"]
+[ext_resource type="Texture2D" uid="uid://b4643jrmvx2s8" path="res://Characters/Jill Valentine/anim134.png" id="41_plawi"]
+[ext_resource type="Texture2D" uid="uid://dqlao4hc1mb2w" path="res://Characters/Jill Valentine/anim096.png" id="42_5xfn5"]
+[ext_resource type="Texture2D" uid="uid://chya0cf16jfqa" path="res://Characters/Jill Valentine/anim097.png" id="43_tgf2c"]
+[ext_resource type="Texture2D" uid="uid://buhvto0dtv6r5" path="res://Characters/Jill Valentine/anim098.png" id="44_monef"]
+[ext_resource type="Texture2D" uid="uid://bro0nf6onok22" path="res://Characters/Jill Valentine/anim099.png" id="45_6lnym"]
+[ext_resource type="Texture2D" uid="uid://chr3dqs755m5j" path="res://Characters/Jill Valentine/anim100.png" id="46_qx767"]
+[ext_resource type="Texture2D" uid="uid://bk8iwxvuan4d1" path="res://Characters/Jill Valentine/anim101.png" id="47_3cuu8"]
+[ext_resource type="Texture2D" uid="uid://ddpoml14gaue0" path="res://Characters/Jill Valentine/anim102.png" id="48_5uao4"]
+[ext_resource type="Texture2D" uid="uid://bwgv116ivpmh2" path="res://Characters/Jill Valentine/anim103.png" id="49_6m68w"]
+[ext_resource type="Texture2D" uid="uid://chpuubyya76j5" path="res://Characters/Jill Valentine/anim104.png" id="50_m10pt"]
+[ext_resource type="Texture2D" uid="uid://dvxq7ibuo6rp3" path="res://Characters/Jill Valentine/anim116.png" id="51_b83h0"]
+[ext_resource type="Texture2D" uid="uid://be5bffhgncylb" path="res://Characters/Jill Valentine/anim117.png" id="52_5ymy2"]
+[ext_resource type="Texture2D" uid="uid://p7nxdwxf1egy" path="res://Characters/Jill Valentine/anim118.png" id="53_fjow3"]
+[ext_resource type="Texture2D" uid="uid://cswhloxlptlin" path="res://Characters/Jill Valentine/anim119.png" id="54_tbqku"]
+[ext_resource type="Texture2D" uid="uid://bt8e20d4iv0tt" path="res://Characters/Jill Valentine/anim120.png" id="55_6dx0h"]
+[ext_resource type="Texture2D" uid="uid://bn5t7cdekjeb7" path="res://Characters/Jill Valentine/anim121.png" id="56_c8vlh"]
+[ext_resource type="Texture2D" uid="uid://cavliky5okdaq" path="res://Characters/Jill Valentine/anim122.png" id="57_mihjn"]
+[ext_resource type="Texture2D" uid="uid://0ixehxl165wj" path="res://Characters/Jill Valentine/anim123.png" id="58_guf00"]
+[ext_resource type="Texture2D" uid="uid://fy25tiu0vqok" path="res://Characters/Jill Valentine/anim124.png" id="59_hjth1"]
+[ext_resource type="Texture2D" uid="uid://xtux5ybjxbmj" path="res://Characters/Jill Valentine/anim125.png" id="60_2y6qk"]
+[ext_resource type="Texture2D" uid="uid://bceuglkanufp0" path="res://Characters/Jill Valentine/anim140.png" id="61_7udc5"]
+[ext_resource type="Texture2D" uid="uid://cfb8dq228ja3b" path="res://Characters/Jill Valentine/anim141.png" id="62_84vo8"]
+[ext_resource type="Texture2D" uid="uid://bllikqoo7467q" path="res://Characters/Jill Valentine/anim113.png" id="63_6nmer"]
+[ext_resource type="Texture2D" uid="uid://01ucjm2xfaqp" path="res://Characters/Jill Valentine/anim114.png" id="64_h5w8q"]
+[ext_resource type="Texture2D" uid="uid://7lme10wqgriq" path="res://Characters/Jill Valentine/anim115.png" id="65_62j2e"]
+[ext_resource type="Texture2D" uid="uid://bjaichdbtml7g" path="res://Characters/Jill Valentine/anim126.png" id="66_xswmi"]
+[ext_resource type="Texture2D" uid="uid://3b1reuhan4r1" path="res://Characters/Jill Valentine/anim127.png" id="67_eaha1"]
+[ext_resource type="Texture2D" uid="uid://u4qnoq1oqj4u" path="res://Characters/Jill Valentine/anim128.png" id="68_n68yw"]
+[ext_resource type="Texture2D" uid="uid://d4eopuplyxkky" path="res://Characters/Jill Valentine/anim135.png" id="69_yhal4"]
+[ext_resource type="Texture2D" uid="uid://c8kung7sp28g6" path="res://Characters/Jill Valentine/anim136.png" id="70_y8hxi"]
+[ext_resource type="Texture2D" uid="uid://daligtu8orvdy" path="res://Characters/Jill Valentine/anim129.png" id="71_812kd"]
+[ext_resource type="Texture2D" uid="uid://d1cobpj3d1m5n" path="res://Characters/Jill Valentine/anim130.png" id="72_jn0x7"]
+[ext_resource type="Texture2D" uid="uid://c7kkmp1736tok" path="res://Characters/Jill Valentine/anim131.png" id="73_cbxwi"]
+[ext_resource type="Texture2D" uid="uid://bppxicac84pdp" path="res://Characters/Jill Valentine/anim426.png" id="74_upmad"]
+[ext_resource type="Texture2D" uid="uid://d3yehxu5s16ju" path="res://Characters/Jill Valentine/anim427.png" id="75_h72b5"]
+[ext_resource type="Texture2D" uid="uid://b8afx5m7fwc5v" path="res://Characters/Jill Valentine/anim428.png" id="76_6leo2"]
+[ext_resource type="Texture2D" uid="uid://dbn03u2jocede" path="res://Characters/Jill Valentine/anim429.png" id="77_ljcon"]
+[ext_resource type="Texture2D" uid="uid://c6stcekd2y35k" path="res://Characters/Jill Valentine/anim430.png" id="78_r77hd"]
+[ext_resource type="Texture2D" uid="uid://bfxasibij0xpb" path="res://Characters/Jill Valentine/anim431.png" id="79_m2lxf"]
+[ext_resource type="Texture2D" uid="uid://bgor8b6ni2u46" path="res://Characters/Jill Valentine/anim432.png" id="80_gyhr4"]
+[ext_resource type="Texture2D" uid="uid://ci7ch3rvosx1l" path="res://Characters/Jill Valentine/anim433.png" id="81_msao4"]
+[ext_resource type="Texture2D" uid="uid://bvp6b3saqsnys" path="res://Characters/Jill Valentine/anim434.png" id="82_mbpig"]
+[ext_resource type="Texture2D" uid="uid://chqp5ehl0gqrm" path="res://Characters/Jill Valentine/anim435.png" id="83_0ejwx"]
+[ext_resource type="Texture2D" uid="uid://c3swy6sq5g1sw" path="res://Characters/Jill Valentine/anim436.png" id="84_cof06"]
+[ext_resource type="Texture2D" uid="uid://b2dvt7raom88w" path="res://Characters/Jill Valentine/anim437.png" id="85_b50wp"]
+[ext_resource type="Texture2D" uid="uid://dngmgumuye3yi" path="res://Characters/Jill Valentine/anim438.png" id="86_of5df"]
+[ext_resource type="Texture2D" uid="uid://63t515hlqj33" path="res://Characters/Jill Valentine/anim439.png" id="87_h0v38"]
+[ext_resource type="Texture2D" uid="uid://dw4uxrdirx4rk" path="res://Characters/Jill Valentine/anim440.png" id="88_qltm6"]
+[ext_resource type="Texture2D" uid="uid://cttuf2a8wqrvu" path="res://Characters/Jill Valentine/anim144.png" id="89_ph3pf"]
+[ext_resource type="Texture2D" uid="uid://bovjc3evovdns" path="res://Characters/Jill Valentine/anim145.png" id="90_q3a21"]
+[ext_resource type="Texture2D" uid="uid://b5nag7kjmp820" path="res://Characters/Jill Valentine/anim146.png" id="91_n7lrp"]
+[ext_resource type="Texture2D" uid="uid://cwlwk18ud2sn5" path="res://Characters/Jill Valentine/anim147.png" id="92_7r1cj"]
+[ext_resource type="Texture2D" uid="uid://dk2kcm85ecy8m" path="res://Characters/Jill Valentine/anim293.png" id="93_18dbl"]
+[ext_resource type="Texture2D" uid="uid://b0knmpi206170" path="res://Characters/Jill Valentine/anim294.png" id="94_u6jxk"]
+[ext_resource type="Texture2D" uid="uid://dahom1c1nvqfu" path="res://Characters/Jill Valentine/anim295.png" id="95_lxqsq"]
+[ext_resource type="Texture2D" uid="uid://csmogjhaokq8j" path="res://Characters/Jill Valentine/anim296.png" id="96_ta7qq"]
+[ext_resource type="Texture2D" uid="uid://bnmodqwmovy2u" path="res://Characters/Jill Valentine/anim297.png" id="97_4ae5m"]
+[ext_resource type="Texture2D" uid="uid://3h8fl4xowbvu" path="res://Characters/Jill Valentine/anim298.png" id="98_dlmns"]
+[ext_resource type="Texture2D" uid="uid://cchrvmflvj1uw" path="res://Characters/Jill Valentine/anim299.png" id="99_4we4c"]
+[ext_resource type="Texture2D" uid="uid://h71lsj41sauj" path="res://Characters/Jill Valentine/anim278.png" id="100_mto0t"]
+[ext_resource type="Texture2D" uid="uid://ch3r0tvp6tyr0" path="res://Characters/Jill Valentine/anim279.png" id="101_jq6o1"]
+[ext_resource type="Texture2D" uid="uid://u5jo6iogytfs" path="res://Characters/Jill Valentine/anim280.png" id="102_3ojxd"]
+[ext_resource type="Texture2D" uid="uid://m2f7124c36b4" path="res://Characters/Jill Valentine/anim281.png" id="103_bxv4p"]
+[ext_resource type="Texture2D" uid="uid://d3apvybiwoh3s" path="res://Characters/Jill Valentine/anim282.png" id="104_auohx"]
+[ext_resource type="Texture2D" uid="uid://c7wry7850j0cq" path="res://Characters/Jill Valentine/anim283.png" id="105_ntjcm"]
+[ext_resource type="Texture2D" uid="uid://dacwtd5nx31q7" path="res://Characters/Jill Valentine/anim284.png" id="106_jrjfl"]
+[ext_resource type="Texture2D" uid="uid://m41lc64lemp0" path="res://Characters/Jill Valentine/anim285.png" id="107_d8k2n"]
+[ext_resource type="Texture2D" uid="uid://c5oe3muf80wdm" path="res://Characters/Jill Valentine/anim286.png" id="108_idotw"]
+[ext_resource type="Texture2D" uid="uid://bcnni1o2jiqy" path="res://Characters/Jill Valentine/anim287.png" id="109_q143u"]
+[ext_resource type="Texture2D" uid="uid://bcko2x7hd32uw" path="res://Characters/Jill Valentine/anim288.png" id="110_gfco4"]
+[ext_resource type="Texture2D" uid="uid://bknmyfd0f10i5" path="res://Characters/Jill Valentine/anim270.png" id="111_tf17d"]
+[ext_resource type="Texture2D" uid="uid://d3du8epaf0dg7" path="res://Characters/Jill Valentine/anim271.png" id="112_ge54t"]
+[ext_resource type="Texture2D" uid="uid://0dv7nbvyrr0n" path="res://Characters/Jill Valentine/anim272.png" id="113_fj7lw"]
+[ext_resource type="Texture2D" uid="uid://ct0um58bcvkvp" path="res://Characters/Jill Valentine/anim289.png" id="114_4l60w"]
+[ext_resource type="Texture2D" uid="uid://crmtcbqtq2g0d" path="res://Characters/Jill Valentine/anim290.png" id="115_gquu8"]
+[ext_resource type="Texture2D" uid="uid://cbtoa6nrjpjiq" path="res://Characters/Jill Valentine/anim291.png" id="116_p6pql"]
+[ext_resource type="Texture2D" uid="uid://cdjcyox2om7v1" path="res://Characters/Jill Valentine/anim292.png" id="117_ruumt"]
+[ext_resource type="Texture2D" uid="uid://bosifea7jjyk3" path="res://Characters/Jill Valentine/anim273.png" id="118_71cbv"]
+[ext_resource type="Texture2D" uid="uid://b0jql35qbi6fn" path="res://Characters/Jill Valentine/anim274.png" id="119_epduu"]
+[ext_resource type="Texture2D" uid="uid://cs3xlim7klyca" path="res://Characters/Jill Valentine/anim275.png" id="120_7cmuh"]
+[ext_resource type="Texture2D" uid="uid://djontpw1kog1q" path="res://Characters/Jill Valentine/anim276.png" id="121_jg8y3"]
+[ext_resource type="Texture2D" uid="uid://dm0vbhyq4g254" path="res://Characters/Jill Valentine/anim277.png" id="122_wtio0"]
+[ext_resource type="Texture2D" uid="uid://dkqgv7qemittp" path="res://Characters/Jill Valentine/anim471.png" id="123_mpoyy"]
+[ext_resource type="Texture2D" uid="uid://cinobo6f8c3q2" path="res://Characters/Jill Valentine/anim472.png" id="124_g10gl"]
+[ext_resource type="Texture2D" uid="uid://dowjmole3vkiw" path="res://Characters/Jill Valentine/anim473.png" id="125_l00sd"]
+[ext_resource type="Texture2D" uid="uid://br53p53io5knj" path="res://Characters/Jill Valentine/anim053.png" id="126_15c63"]
+[ext_resource type="Texture2D" uid="uid://8dqddt7p33qo" path="res://Characters/Jill Valentine/anim054.png" id="127_jjv1i"]
+[ext_resource type="Texture2D" uid="uid://ulee81e28x3l" path="res://Characters/Jill Valentine/anim055.png" id="128_wk42l"]
+[ext_resource type="Texture2D" uid="uid://cusk4aiaxn7kj" path="res://Characters/Jill Valentine/anim056.png" id="129_pkcqh"]
+[ext_resource type="Texture2D" uid="uid://c1qfl52oqe73u" path="res://Characters/Jill Valentine/anim057.png" id="130_xhkl1"]
+[ext_resource type="Texture2D" uid="uid://bi4e6awwr73as" path="res://Characters/Jill Valentine/anim058.png" id="131_mjbj4"]
+[ext_resource type="Texture2D" uid="uid://ccsgvm0q8htr1" path="res://Characters/Jill Valentine/anim059.png" id="132_jjq47"]
+[ext_resource type="Texture2D" uid="uid://04f4rdw42uni" path="res://Characters/Jill Valentine/anim060.png" id="133_8qp3v"]
+[ext_resource type="Texture2D" uid="uid://cx2tni2akm5h7" path="res://Characters/Jill Valentine/anim061.png" id="134_r8jx5"]
+[ext_resource type="Texture2D" uid="uid://bxcec25bl73lc" path="res://Characters/Jill Valentine/anim062.png" id="135_oqs18"]
+[ext_resource type="Texture2D" uid="uid://2uyubp5hmm2p" path="res://Characters/Jill Valentine/anim324.png" id="136_erm4o"]
+[ext_resource type="Texture2D" uid="uid://b2qdyjoqmsry1" path="res://Characters/Jill Valentine/anim325.png" id="137_xbpa7"]
+[ext_resource type="Texture2D" uid="uid://bgbucwi1tokuh" path="res://Characters/Jill Valentine/anim326.png" id="138_d6qhj"]
+[ext_resource type="Texture2D" uid="uid://buc4wr5ic1m75" path="res://Characters/Jill Valentine/anim327.png" id="139_wwl4a"]
+[ext_resource type="Texture2D" uid="uid://pld2wkuehaal" path="res://Characters/Jill Valentine/anim328.png" id="140_lok75"]
+[ext_resource type="Texture2D" uid="uid://o1uihxk00bgb" path="res://Characters/Jill Valentine/anim329.png" id="141_uho2b"]
+[ext_resource type="Texture2D" uid="uid://ddmln1ijj24hn" path="res://Characters/Jill Valentine/anim330.png" id="142_m8pgd"]
+[ext_resource type="Texture2D" uid="uid://di6o4soa0nnc5" path="res://Characters/Jill Valentine/anim307.png" id="143_ir15n"]
+[ext_resource type="Texture2D" uid="uid://d0hwgf0ksrq23" path="res://Characters/Jill Valentine/anim308.png" id="144_xdmi1"]
+[ext_resource type="Texture2D" uid="uid://533qdwwntxx" path="res://Characters/Jill Valentine/anim309.png" id="145_6yioi"]
+[ext_resource type="Texture2D" uid="uid://d1wvtl3o7apcq" path="res://Characters/Jill Valentine/anim310.png" id="146_dm0am"]
+[ext_resource type="Texture2D" uid="uid://b66f46aoetvxa" path="res://Characters/Jill Valentine/anim311.png" id="147_y2cwd"]
+[ext_resource type="Texture2D" uid="uid://m5vesu5m5xwk" path="res://Characters/Jill Valentine/anim312.png" id="148_vmua0"]
+[ext_resource type="Texture2D" uid="uid://spi7122o2i4y" path="res://Characters/Jill Valentine/anim313.png" id="149_vpoot"]
+[ext_resource type="Texture2D" uid="uid://dwnow522h5qvw" path="res://Characters/Jill Valentine/anim314.png" id="150_2dq0h"]
+[ext_resource type="Texture2D" uid="uid://c2denn1qw3xce" path="res://Characters/Jill Valentine/anim315.png" id="151_d5s5u"]
+[ext_resource type="Texture2D" uid="uid://b41617gdnpia" path="res://Characters/Jill Valentine/anim316.png" id="152_57xug"]
+[ext_resource type="Texture2D" uid="uid://elyby2fjc3uy" path="res://Characters/Jill Valentine/anim317.png" id="153_hutcn"]
+[ext_resource type="Texture2D" uid="uid://dv4owud1sjhq1" path="res://Characters/Jill Valentine/anim318.png" id="154_l3u83"]
+[ext_resource type="Texture2D" uid="uid://dbnog6bfcmtn5" path="res://Characters/Jill Valentine/anim319.png" id="155_ti7sf"]
+[ext_resource type="Texture2D" uid="uid://dyabp30xh1b5u" path="res://Characters/Jill Valentine/anim300.png" id="156_twbnh"]
+[ext_resource type="Texture2D" uid="uid://bejsqr7f0imov" path="res://Characters/Jill Valentine/anim301.png" id="157_jvvjb"]
+[ext_resource type="Texture2D" uid="uid://duuf16n32os56" path="res://Characters/Jill Valentine/anim302.png" id="158_nfryr"]
+[ext_resource type="Texture2D" uid="uid://c53j8tailhabi" path="res://Characters/Jill Valentine/anim303.png" id="159_uwt4y"]
+[ext_resource type="Texture2D" uid="uid://cri7i87i1ade8" path="res://Characters/Jill Valentine/anim320.png" id="160_fx0re"]
+[ext_resource type="Texture2D" uid="uid://bi02qergw1dh4" path="res://Characters/Jill Valentine/anim321.png" id="161_80i1y"]
+[ext_resource type="Texture2D" uid="uid://bgy737ihdglhv" path="res://Characters/Jill Valentine/anim322.png" id="162_k6c5m"]
+[ext_resource type="Texture2D" uid="uid://cqsi2s8vxdhud" path="res://Characters/Jill Valentine/anim323.png" id="163_y0waa"]
+[ext_resource type="Texture2D" uid="uid://cvnml7w8tucbi" path="res://Characters/Jill Valentine/anim304.png" id="164_enp7o"]
+[ext_resource type="Texture2D" uid="uid://cnnkwj8tug1a5" path="res://Characters/Jill Valentine/anim305.png" id="165_t51cs"]
+[ext_resource type="Texture2D" uid="uid://bsa2yhs18ti8j" path="res://Characters/Jill Valentine/anim306.png" id="166_qxu6m"]
+[ext_resource type="Texture2D" uid="uid://ds5t0c3byeqs5" path="res://Characters/Jill Valentine/anim485.png" id="167_nh5hf"]
+[ext_resource type="Texture2D" uid="uid://cif2ythb4bo1v" path="res://Characters/Jill Valentine/anim486.png" id="168_ww1vd"]
+[ext_resource type="Texture2D" uid="uid://bl6ce1icxci32" path="res://Characters/Jill Valentine/anim487.png" id="169_vdvos"]
+[ext_resource type="Texture2D" uid="uid://b250s8aifmedx" path="res://Characters/Jill Valentine/anim488.png" id="170_e6psm"]
+[ext_resource type="Texture2D" uid="uid://bjwrgehb1s3nq" path="res://Characters/Jill Valentine/anim489.png" id="171_pj7jg"]
+[ext_resource type="Texture2D" uid="uid://3fln8kkh2mq4" path="res://Characters/Jill Valentine/anim490.png" id="172_1xebw"]
+[ext_resource type="Texture2D" uid="uid://cflpddgc7wfjp" path="res://Characters/Jill Valentine/anim331.png" id="173_vpage"]
+[ext_resource type="Texture2D" uid="uid://chinucsnl1ab2" path="res://Characters/Jill Valentine/anim332.png" id="174_virax"]
+[ext_resource type="Texture2D" uid="uid://d0g2kruuasjvy" path="res://Characters/Jill Valentine/anim333.png" id="175_le56s"]
+[ext_resource type="Texture2D" uid="uid://bq7uy5pvswom3" path="res://Characters/Jill Valentine/anim334.png" id="176_2wpsk"]
+[ext_resource type="Texture2D" uid="uid://c4l1pbsyh8um3" path="res://Characters/Jill Valentine/anim335.png" id="177_34bus"]
+[ext_resource type="Texture2D" uid="uid://bks8ocxcrc5im" path="res://Characters/Jill Valentine/anim336.png" id="178_bfhkf"]
+[ext_resource type="Texture2D" uid="uid://dn53wltvll041" path="res://Characters/Jill Valentine/anim337.png" id="179_vkcq7"]
+[ext_resource type="Texture2D" uid="uid://bvru1hd667mdy" path="res://Characters/Jill Valentine/anim338.png" id="180_0cqcf"]
+[ext_resource type="Texture2D" uid="uid://cxwvd4tsh6iyj" path="res://Characters/Jill Valentine/anim339.png" id="181_p2wkh"]
+[ext_resource type="Texture2D" uid="uid://bor3w5gbpt5oh" path="res://Characters/Jill Valentine/anim340.png" id="182_v338f"]
+[ext_resource type="Texture2D" uid="uid://ccyreswieo5cj" path="res://Characters/Jill Valentine/anim467.png" id="183_ayv4w"]
+[ext_resource type="Texture2D" uid="uid://bu5ght442ejeg" path="res://Characters/Jill Valentine/anim468.png" id="184_1eume"]
+[ext_resource type="Texture2D" uid="uid://g2x7rebvdlrx" path="res://Characters/Jill Valentine/anim469.png" id="185_vqqii"]
+[ext_resource type="Texture2D" uid="uid://eax4qg7dibif" path="res://Characters/Jill Valentine/anim470.png" id="186_y888v"]
+[ext_resource type="Texture2D" uid="uid://dlsgwhhbcbjvo" path="res://Characters/Jill Valentine/anim491.png" id="187_l6sqk"]
+[ext_resource type="Texture2D" uid="uid://be64gp03t1tt7" path="res://Characters/Jill Valentine/anim492.png" id="188_acb6j"]
+[ext_resource type="Texture2D" uid="uid://vs2wcuyb1c55" path="res://Characters/Jill Valentine/anim493.png" id="189_7mapw"]
+[ext_resource type="Texture2D" uid="uid://d3lmxy7d15g58" path="res://Characters/Jill Valentine/anim494.png" id="190_rjnx3"]
+[ext_resource type="Texture2D" uid="uid://cresin1nhvl41" path="res://Characters/Jill Valentine/anim495.png" id="191_w3mcs"]
+[ext_resource type="Texture2D" uid="uid://cbvmn1encmtno" path="res://Characters/Jill Valentine/anim378.png" id="192_ojqrr"]
+[ext_resource type="Texture2D" uid="uid://2h5w00nkpbss" path="res://Characters/Jill Valentine/anim379.png" id="193_ovv87"]
+[ext_resource type="Texture2D" uid="uid://ovjvxytc17j6" path="res://Characters/Jill Valentine/anim380.png" id="194_ewf3d"]
+[ext_resource type="Texture2D" uid="uid://djqevjjuc0nrp" path="res://Characters/Jill Valentine/anim387.png" id="195_yxbri"]
+[ext_resource type="Texture2D" uid="uid://y676h0crmn13" path="res://Characters/Jill Valentine/anim388.png" id="196_of42r"]
+[ext_resource type="Texture2D" uid="uid://btag0u8kxdatu" path="res://Characters/Jill Valentine/anim389.png" id="197_pwv4o"]
+[ext_resource type="Texture2D" uid="uid://0t4yrmrk8x8h" path="res://Characters/Jill Valentine/anim390.png" id="198_sjg4j"]
+[ext_resource type="Texture2D" uid="uid://c4e1d1ea2ah2r" path="res://Characters/Jill Valentine/anim391.png" id="199_ikik6"]
+[ext_resource type="Texture2D" uid="uid://d3mxs7sekv7tg" path="res://Characters/Jill Valentine/anim392.png" id="200_0sfg2"]
+[ext_resource type="Texture2D" uid="uid://brh6rkqvvpqmx" path="res://Characters/Jill Valentine/anim393.png" id="201_uxhp8"]
+[ext_resource type="Texture2D" uid="uid://do4gtjsycnwuf" path="res://Characters/Jill Valentine/anim394.png" id="202_22dlu"]
+[ext_resource type="Texture2D" uid="uid://cgqdk53xrg7sr" path="res://Characters/Jill Valentine/anim395.png" id="203_py3pg"]
+[ext_resource type="Texture2D" uid="uid://v1ptvm5tlatk" path="res://Characters/Jill Valentine/anim396.png" id="204_11fql"]
+[ext_resource type="Texture2D" uid="uid://b4rfkn0thea6j" path="res://Characters/Jill Valentine/anim397.png" id="205_bcq1e"]
+[ext_resource type="Texture2D" uid="uid://b2dxkluqb7g1n" path="res://Characters/Jill Valentine/anim398.png" id="206_rik1b"]
+[ext_resource type="Texture2D" uid="uid://dt38g6jnj8bys" path="res://Characters/Jill Valentine/anim399.png" id="207_yvig3"]
+[ext_resource type="Texture2D" uid="uid://7dlayta641hh" path="res://Characters/Jill Valentine/anim400.png" id="208_5olg5"]
+[ext_resource type="Texture2D" uid="uid://doxr3esa3jffi" path="res://Characters/Jill Valentine/anim256.png" id="209_avq23"]
+[ext_resource type="Texture2D" uid="uid://dlmo6bshxcvmp" path="res://Characters/Jill Valentine/anim261.png" id="210_cgrrl"]
+[ext_resource type="Texture2D" uid="uid://byxsx3vot43mr" path="res://Characters/Jill Valentine/anim262.png" id="211_wen0n"]
+[ext_resource type="Texture2D" uid="uid://bbrhmha1dduf2" path="res://Characters/Jill Valentine/anim263.png" id="212_vde41"]
+[ext_resource type="Texture2D" uid="uid://dlbmmfpbakar2" path="res://Characters/Jill Valentine/anim264.png" id="213_lpurj"]
+[ext_resource type="Texture2D" uid="uid://3if07hp0ndod" path="res://Characters/Jill Valentine/anim265.png" id="214_vh30e"]
+[ext_resource type="Texture2D" uid="uid://b82kp0hgx5ihn" path="res://Characters/Jill Valentine/anim266.png" id="215_ydg72"]
+[ext_resource type="Texture2D" uid="uid://b2fhvqynht6ma" path="res://Characters/Jill Valentine/anim267.png" id="216_p705a"]
+[ext_resource type="Texture2D" uid="uid://onhqcx8pgn8g" path="res://Characters/Jill Valentine/anim268.png" id="217_euirb"]
+[ext_resource type="Texture2D" uid="uid://ojpp5bqciebo" path="res://Characters/Jill Valentine/anim269.png" id="218_kd0ob"]
+[ext_resource type="Texture2D" uid="uid://c8vdxq0fusg2y" path="res://Characters/Jill Valentine/anim244.png" id="219_56cp2"]
+[ext_resource type="Texture2D" uid="uid://d30v8jq6mxe0u" path="res://Characters/Jill Valentine/anim245.png" id="220_wwp2c"]
+[ext_resource type="Texture2D" uid="uid://nnk7yia2ofqm" path="res://Characters/Jill Valentine/anim246.png" id="221_75oxi"]
+[ext_resource type="Texture2D" uid="uid://2b40g12dimvp" path="res://Characters/Jill Valentine/anim247.png" id="222_5gxgy"]
+[ext_resource type="Texture2D" uid="uid://enx385c22kw3" path="res://Characters/Jill Valentine/anim248.png" id="223_jrwqy"]
+[ext_resource type="Texture2D" uid="uid://i468qme0060y" path="res://Characters/Jill Valentine/anim249.png" id="224_p0hri"]
+[ext_resource type="Texture2D" uid="uid://bi6s8fknsoqxp" path="res://Characters/Jill Valentine/anim250.png" id="225_x5jak"]
+[ext_resource type="Texture2D" uid="uid://y1byx0x85g1t" path="res://Characters/Jill Valentine/anim251.png" id="226_fng5f"]
+[ext_resource type="Texture2D" uid="uid://85eff2bs24vm" path="res://Characters/Jill Valentine/anim252.png" id="227_34el3"]
+[ext_resource type="Texture2D" uid="uid://bevys3w1h5iwm" path="res://Characters/Jill Valentine/anim253.png" id="228_u81iu"]
+[ext_resource type="Texture2D" uid="uid://cs83x52pf28wa" path="res://Characters/Jill Valentine/anim254.png" id="229_5qjx2"]
+[ext_resource type="Texture2D" uid="uid://dqu47hcbjr8ak" path="res://Characters/Jill Valentine/anim255.png" id="230_rwpat"]
+[ext_resource type="Texture2D" uid="uid://c865kemyona51" path="res://Characters/Jill Valentine/anim237.png" id="231_1hx53"]
+[ext_resource type="Texture2D" uid="uid://bimv4bqtinmuw" path="res://Characters/Jill Valentine/anim238.png" id="232_ja6ty"]
+[ext_resource type="Texture2D" uid="uid://6843ftnlkbpq" path="res://Characters/Jill Valentine/anim239.png" id="233_ci7su"]
+[ext_resource type="Texture2D" uid="uid://behcqsc11xn1u" path="res://Characters/Jill Valentine/anim257.png" id="234_qe7m1"]
+[ext_resource type="Texture2D" uid="uid://boxehga0vqb3w" path="res://Characters/Jill Valentine/anim258.png" id="235_xadpi"]
+[ext_resource type="Texture2D" uid="uid://n786kqqterso" path="res://Characters/Jill Valentine/anim259.png" id="236_ti6ad"]
+[ext_resource type="Texture2D" uid="uid://di6oxxuvccod2" path="res://Characters/Jill Valentine/anim260.png" id="237_bvgym"]
+[ext_resource type="Texture2D" uid="uid://lbtwg5l4jt0a" path="res://Characters/Jill Valentine/anim240.png" id="238_fqo1f"]
+[ext_resource type="Texture2D" uid="uid://ce21qjogw7mh7" path="res://Characters/Jill Valentine/anim241.png" id="239_yysqf"]
+[ext_resource type="Texture2D" uid="uid://d1ju3yjb43ys4" path="res://Characters/Jill Valentine/anim242.png" id="240_75bbk"]
+[ext_resource type="Texture2D" uid="uid://wx1m11nob7j0" path="res://Characters/Jill Valentine/anim243.png" id="241_cfkaq"]
+[ext_resource type="Texture2D" uid="uid://3jxa1fldpk16" path="res://Characters/Jill Valentine/anim401.png" id="242_oyp7q"]
+[ext_resource type="Texture2D" uid="uid://crsxihrs1w76a" path="res://Characters/Jill Valentine/anim402.png" id="243_tmcgu"]
+[ext_resource type="Texture2D" uid="uid://bkbgrnyy71v6x" path="res://Characters/Jill Valentine/anim403.png" id="244_bvist"]
+[ext_resource type="Texture2D" uid="uid://ci3stxnfb45sk" path="res://Characters/Jill Valentine/anim404.png" id="245_mx2fs"]
+[ext_resource type="Texture2D" uid="uid://bbl3gmggoc5ky" path="res://Characters/Jill Valentine/anim405.png" id="246_pibbp"]
+[ext_resource type="Texture2D" uid="uid://dwutrxxyn3rwa" path="res://Characters/Jill Valentine/anim406.png" id="247_pmwka"]
+[ext_resource type="Texture2D" uid="uid://bn2v7syvq8jox" path="res://Characters/Jill Valentine/anim407.png" id="248_ua577"]
+[ext_resource type="Texture2D" uid="uid://csuykp8ggoef6" path="res://Characters/Jill Valentine/anim408.png" id="249_y1v6m"]
+[ext_resource type="Texture2D" uid="uid://b2fuaego5fn3s" path="res://Characters/Jill Valentine/anim381.png" id="250_vbg0f"]
+[ext_resource type="Texture2D" uid="uid://crwj06wq000dv" path="res://Characters/Jill Valentine/anim382.png" id="251_rt16u"]
+[ext_resource type="Texture2D" uid="uid://xvpwhrg4vf5p" path="res://Characters/Jill Valentine/anim383.png" id="252_v40c4"]
+[ext_resource type="Texture2D" uid="uid://jr72bili0ysa" path="res://Characters/Jill Valentine/anim384.png" id="253_aisld"]
+[ext_resource type="Texture2D" uid="uid://brm85k2q4i7yn" path="res://Characters/Jill Valentine/anim385.png" id="254_dtkjp"]
+[ext_resource type="Texture2D" uid="uid://dvse26u1sqqmj" path="res://Characters/Jill Valentine/anim386.png" id="255_7uro8"]
+[ext_resource type="Texture2D" uid="uid://v4gegsktw3ce" path="res://Characters/Jill Valentine/anim409.png" id="256_lnn1y"]
+[ext_resource type="Texture2D" uid="uid://e6128ha0ur0u" path="res://Characters/Jill Valentine/anim410.png" id="257_d606c"]
+[ext_resource type="Texture2D" uid="uid://cas528tihxaw3" path="res://Characters/Jill Valentine/anim411.png" id="258_w23ep"]
+[ext_resource type="Texture2D" uid="uid://chw44gqerlnib" path="res://Characters/Jill Valentine/anim412.png" id="259_6s2ue"]
+[ext_resource type="Texture2D" uid="uid://lqetx1yep5kj" path="res://Characters/Jill Valentine/anim413.png" id="260_ofa6h"]
+[ext_resource type="Texture2D" uid="uid://brle5ai1tt1yt" path="res://Characters/Jill Valentine/anim414.png" id="261_bruar"]
+[ext_resource type="Texture2D" uid="uid://c740o0gwic5yp" path="res://Characters/Jill Valentine/anim415.png" id="262_2dcfy"]
+[ext_resource type="Texture2D" uid="uid://d36saphvedcn7" path="res://Characters/Jill Valentine/anim416.png" id="263_c1cco"]
+[ext_resource type="Texture2D" uid="uid://dams5mfl4jjbv" path="res://Characters/Jill Valentine/anim417.png" id="264_p0rj8"]
+[ext_resource type="Texture2D" uid="uid://cdbycnte10kni" path="res://Characters/Jill Valentine/anim418.png" id="265_53v5o"]
+[ext_resource type="Texture2D" uid="uid://be5pp3d211j0g" path="res://Characters/Jill Valentine/anim419.png" id="266_gr6p5"]
+[ext_resource type="Texture2D" uid="uid://dl5bjpfps7h8v" path="res://Characters/Jill Valentine/anim420.png" id="267_hdk7k"]
+[ext_resource type="Texture2D" uid="uid://beyykhh1yct0y" path="res://Characters/Jill Valentine/anim421.png" id="268_p5iof"]
 
 [sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
@@ -168,6 +433,1231 @@ shader_parameter/palette = ExtResource("1_x0fi1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_educ5"]
 size = Vector2(34, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14tsi"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8mkt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o4w55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3gpfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ljaif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0uert")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j2r3s")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_k3pwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5ypxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b8hym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oqw87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wst3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j0vhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4lhbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_np47n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_br10t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_j4ljf")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_88i06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7ywnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mlf8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_p3qy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_74esy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qtgmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_kepcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_6admx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k3pwy")
+}],
+"loop": true,
+"name": &"6",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_avurc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7mkc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_4ydr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6o3t0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_4mqck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3t27b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_4ihds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mkwcx")
+}],
+"loop": false,
+"name": &"8",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_27eml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0wfjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_wexm6")
+}],
+"loop": true,
+"name": &"CrouchingBlocking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_l5yif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_5m5bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_plawi")
+}],
+"loop": true,
+"name": &"CrouchingTurnAround",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_5xfn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_tgf2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_monef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_6lnym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_qx767")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_3cuu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_5uao4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_6m68w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_m10pt")
+}],
+"loop": true,
+"name": &"DashForward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_avurc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7mkc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_4ydr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6o3t0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_4mqck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3t27b")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_b83h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_5ymy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_fjow3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_tbqku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_6dx0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_c8vlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_mihjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_guf00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_hjth1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_2y6qk")
+}],
+"loop": true,
+"name": &"JumpBackwards",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_7udc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_84vo8")
+}],
+"loop": true,
+"name": &"JumpingBlocking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_6nmer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_h5w8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_62j2e")
+}],
+"loop": true,
+"name": &"Landing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_xswmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_eaha1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_n68yw")
+}],
+"loop": true,
+"name": &"LandingBackwards",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("69_yhal4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_y8hxi")
+}],
+"loop": true,
+"name": &"StandingBlocking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_812kd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_jn0x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_cbxwi")
+}],
+"loop": true,
+"name": &"StandingTurnAround",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_upmad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_h72b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_6leo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_ljcon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_r77hd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_m2lxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_gyhr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_msao4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_mbpig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_0ejwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_cof06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_b50wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_of5df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_h0v38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_qltm6")
+}],
+"loop": true,
+"name": &"Super1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_ph3pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_q3a21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_n7lrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_7r1cj")
+}],
+"loop": true,
+"name": &"WakeUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_qx767")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_3cuu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_5uao4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_6m68w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_m10pt")
+}],
+"loop": true,
+"name": &"backdash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_18dbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_u6jxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_lxqsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_ta7qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_4ae5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_dlmns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_4we4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_18dbl")
+}],
+"loop": true,
+"name": &"cHK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("100_mto0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_jq6o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_3ojxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_bxv4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_auohx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ntjcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_jrjfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_d8k2n")
+}],
+"loop": true,
+"name": &"cHP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("108_idotw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_q143u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_gfco4")
+}],
+"loop": true,
+"name": &"cLK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111_tf17d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_ge54t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_fj7lw")
+}],
+"loop": true,
+"name": &"cLP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("108_idotw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_4l60w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_gquu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_p6pql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_ruumt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_18dbl")
+}],
+"loop": true,
+"name": &"cMK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("118_71cbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_epduu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_7cmuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_jg8y3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_wtio0")
+}],
+"loop": true,
+"name": &"cMP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("123_mpoyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_g10gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_l00sd")
+}],
+"loop": true,
+"name": &"crouchHitstun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_5xfn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_tgf2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_monef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_6lnym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_qx767")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("126_15c63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_jjv1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_wk42l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_pkcqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_xhkl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_mjbj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_jjq47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_8qp3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_r8jx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_oqs18")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("136_erm4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_xbpa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_d6qhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_wwl4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_lok75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_uho2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_m8pgd")
+}],
+"loop": true,
+"name": &"jHK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("143_ir15n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_xdmi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_6yioi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_dm0am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_y2cwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_vmua0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_vpoot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_2dq0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_d5s5u")
+}],
+"loop": true,
+"name": &"jHP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("152_57xug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_hutcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_l3u83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_ti7sf")
+}],
+"loop": true,
+"name": &"jLK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("156_twbnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_jvvjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_nfryr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_uwt4y")
+}],
+"loop": true,
+"name": &"jLP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("155_ti7sf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_fx0re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_80i1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_k6c5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_y0waa")
+}],
+"loop": true,
+"name": &"jMK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("159_uwt4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_enp7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_t51cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_qxu6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_ir15n")
+}],
+"loop": true,
+"name": &"jMP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_7udc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_84vo8")
+}],
+"loop": true,
+"name": &"jumpBloackstun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_3t27b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_4ihds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mkwcx")
+}],
+"loop": true,
+"name": &"jumpFalling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("167_nh5hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_ww1vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_vdvos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_e6psm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_pj7jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_1xebw")
+}],
+"loop": true,
+"name": &"jumpHitstun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_6nmer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_h5w8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_62j2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_b83h0")
+}],
+"loop": true,
+"name": &"jumptStartUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("173_vpage")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_virax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_le56s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_2wpsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_34bus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_bfhkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_vkcq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_0cqcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_p2wkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_v338f")
+}],
+"loop": true,
+"name": &"knifeAttack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("183_ayv4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_1eume")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_vqqii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_y888v")
+}],
+"loop": true,
+"name": &"midHitstun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("187_l6sqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_acb6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_7mapw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_rjnx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_w3mcs")
+}],
+"loop": true,
+"name": &"otg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("192_ojqrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_ovv87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_ewf3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_yxbri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_of42r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_pwv4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_sjg4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_ikik6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_0sfg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_uxhp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_22dlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_py3pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_11fql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_bcq1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_rik1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_yvig3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_5olg5")
+}],
+"loop": true,
+"name": &"reload",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("209_avq23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_cgrrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_wen0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_vde41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_lpurj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_vh30e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_ydg72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_p705a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_euirb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_kd0ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_avq23")
+}],
+"loop": true,
+"name": &"sHK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("219_56cp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_wwp2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_75oxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_5gxgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_jrwqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_p0hri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_x5jak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_fng5f")
+}],
+"loop": true,
+"name": &"sHP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("209_avq23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_34el3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_u81iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_5qjx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230_rwpat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_avq23")
+}],
+"loop": true,
+"name": &"sLK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("231_1hx53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_ja6ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_ci7su")
+}],
+"loop": true,
+"name": &"sLP",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("209_avq23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_qe7m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_xadpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_ti6ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_bvgym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_avq23")
+}],
+"loop": true,
+"name": &"sMK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("238_fqo1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_yysqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_75bbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_cfkaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_56cp2")
+}],
+"loop": true,
+"name": &"sMP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("208_5olg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_oyp7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_tmcgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_bvist")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_mx2fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_pibbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_pmwka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_ua577")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_y1v6m")
+}],
+"loop": true,
+"name": &"special1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("192_ojqrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_ovv87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_ewf3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_vbg0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_rt16u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_v40c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_aisld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_dtkjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255_7uro8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_uxhp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_22dlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_py3pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_11fql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_bcq1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_rik1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_yvig3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_5olg5")
+}],
+"loop": true,
+"name": &"special2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("249_y1v6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_lnn1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_d606c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_w23ep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_6s2ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("260_ofa6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("261_bruar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_2dcfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("263_c1cco")
+}],
+"loop": true,
+"name": &"special3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("263_c1cco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("264_p0rj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("265_53v5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("266_gr6p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("267_hdk7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("268_p5iof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("263_c1cco")
+}],
+"loop": true,
+"name": &"special4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_ph3pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_q3a21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_n7lrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_7r1cj")
+}],
+"loop": true,
+"name": &"wakeUp",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l40to"]
 size = Vector2(1, 1)
@@ -405,6 +1895,7 @@ position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_educ5")
 
 [node name="sprJill" parent="." instance=ExtResource("3_63h5k")]
+sprite_frames = SubResource("SpriteFrames_14tsi")
 animation = &"default"
 frame = 0
 frame_progress = 0.0

@@ -267,6 +267,7 @@
 [ext_resource type="Texture2D" uid="uid://beyykhh1yct0y" path="res://Characters/Jill Valentine/anim421.png" id="265_6nnis"]
 
 [sub_resource type="SpriteFrames" id="4"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
