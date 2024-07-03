@@ -1,11 +1,12 @@
 res://default_env.tres
 res://Scenes/characters/Jill/jill.tscn
 res://theme.tres
-res://Scenes/menu/buttonRemap.gd
 res://Scenes/Projectiles/projectile.gdshader
+res://Scenes/menu/buttonRemap.gd
+res://Scenes/characters/Jill/jill.tres
+res://Scenes/characters/Lilith/lilith.res
+res://Scenes/characters/Jill/Jill.res
+res://Scenes/characters/Lilith/lilith.tres
 res://Characters/Lilith/spr_lilit.gdshader
 res://Scenes/characters/Lilith/lilith.tscn
-res://Scenes/characters/CharacterScript.gd
 res://Scenes/player/Player.tscn
-res://system/scripts/global.gd
-res://Scenes/player/Player.gd
