@@ -2526,7 +2526,6 @@ texture_filter = 3
 position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_1qh3s")
 animation = &"default"
-frame_progress = 0.0
 
 [node name="anchorPoint" type="Area2D" parent="."]
 position = Vector2(0, 48)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxqoonawm54l3"]
+
+[ext_resource type="SpriteFrames" uid="uid://gcqfkv8ep8gj" path="res://Scenes/characters/Marrow/spr_marrow.tres" id="1_0tj5t"]
+
+[node name="sprMarrow" type="AnimatedSprite2D"]
+use_parent_material = true
+sprite_frames = ExtResource("1_0tj5t")
+animation = &"Jump"
+frame = 1
+frame_progress = 0.0117069

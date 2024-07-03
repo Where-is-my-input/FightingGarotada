@@ -12,3 +12,8 @@ res://Scenes/characters/Lilith/lilith.tscn
 res://Scenes/player/Player.tscn
 res://Scenes/characters/CharacterScript.gd
 res://Scenes/characters/Lilith/lilith.gd
+res://Scenes/characters/spr_lilith.tscn
+res://Scenes/characters/Marrow/spr_marrow.tscn
+res://Scenes/characters/spr_jill.tscn
+res://Scenes/characters/Jill/sprJill/spr_jill.tres
+res://Scenes/characters/Marrow/spr_marrow.tres

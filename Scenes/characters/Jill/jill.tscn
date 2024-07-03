@@ -1897,8 +1897,6 @@ shape = SubResource("RectangleShape2D_educ5")
 [node name="sprJill" parent="." instance=ExtResource("3_63h5k")]
 sprite_frames = SubResource("SpriteFrames_14tsi")
 animation = &"default"
-frame = 0
-frame_progress = 0.0
 
 [node name="anchorPoint" type="Area2D" parent="."]
 position = Vector2(0, 48)
