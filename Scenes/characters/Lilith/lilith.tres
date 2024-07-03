@@ -42,7 +42,7 @@ input_12/auto_advance = false
 input_12/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="13"]
-animation = &"Jill/crouch"
+animation = &"lilith/crouch"
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_tno34"]
 input_0/name = "LP"
@@ -96,22 +96,22 @@ input_2/auto_advance = false
 input_2/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8c3si"]
-animation = &"Jill/crouchingBlocking"
+animation = &"lilith/crouchingBlocking"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rt7ga"]
-animation = &"Jill/crouchHitstun"
+animation = &"lilith/crouchHitstun"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oq511"]
-animation = &"Jill/standingFlip"
+animation = &"lilith/standingFlip"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bnunv"]
-animation = &"Jill/Grab"
+animation = &"lilith/Grab"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o40bj"]
-animation = &"Jill/sHK"
+animation = &"lilith/sHK"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kshar"]
-animation = &"Jill/sHP"
+animation = &"lilith/sHP"
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_gyptk"]
 input_0/name = "block"
@@ -122,7 +122,7 @@ input_1/auto_advance = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="16"]
-animation = &"Jill/Idle"
+animation = &"lilith/Idle"
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ry38b"]
 input_0/name = "idle"
@@ -192,16 +192,16 @@ input_2/auto_advance = false
 input_2/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q6a8w"]
-animation = &"Jill/sLK"
+animation = &"lilith/sLK"
 
 [sub_resource type="AnimationNodeAnimation" id="14"]
-animation = &"Jill/sLP"
+animation = &"lilith/sLP"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2li4r"]
-animation = &"Jill/sMK"
+animation = &"lilith/sMK"
 
 [sub_resource type="AnimationNodeAnimation" id="15"]
-animation = &"Jill/sMP"
+animation = &"lilith/sMP"
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_pyepl"]
 input_0/name = "idle"
@@ -224,22 +224,22 @@ input_5/auto_advance = false
 input_5/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iu5f5"]
-animation = &"Jill/special1"
+animation = &"lilith/special1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_klev6"]
-animation = &"Jill/special2"
+animation = &"lilith/special2"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_21u75"]
-animation = &"Jill/special2"
+animation = &"lilith/special2"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yinc4"]
-animation = &"Jill/special3"
+animation = &"lilith/special3"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yfk6f"]
-animation = &"Jill/special4"
+animation = &"lilith/special4"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_as5s7"]
-animation = &"Jill/special5"
+animation = &"lilith/special5"
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_2eds3"]
 input_0/name = "idle"
@@ -267,91 +267,91 @@ input_3/auto_advance = false
 input_3/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_551y7"]
-animation = &"Jill/Throw"
+animation = &"lilith/Throw"
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_uhuok"]
 
 [sub_resource type="AnimationNodeAnimation" id="12"]
-animation = &"Jill/WalkForward"
+animation = &"lilith/WalkForward"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7nf65"]
-animation = &"Jill/jumpHitstun"
+animation = &"lilith/jumpHitstun"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pdeln"]
-animation = &"Jill/backdash"
+animation = &"lilith/backdash"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pq2kd"]
-animation = &"Jill/jumpingBackwards"
+animation = &"lilith/jumpingBackwards"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l371l"]
-animation = &"Jill/Grab"
+animation = &"lilith/Grab"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wei0a"]
-animation = &"Jill/cHK"
+animation = &"lilith/cHK"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qty1o"]
-animation = &"Jill/cHP"
+animation = &"lilith/cHP"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_66o44"]
-animation = &"Jill/cLK"
+animation = &"lilith/cLK"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fh6lj"]
-animation = &"Jill/cLP"
+animation = &"lilith/cLP"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qt7sf"]
-animation = &"Jill/cMK"
+animation = &"lilith/cMK"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7votr"]
 resource_local_to_scene = true
-animation = &"Jill/cMP"
+animation = &"lilith/cMP"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fcgg3"]
-animation = &"Jill/special1"
+animation = &"lilith/special1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tbanw"]
-animation = &"Jill/Throw"
+animation = &"lilith/Throw"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3l5ri"]
-animation = &"Jill/dash"
+animation = &"lilith/dash"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qbig3"]
-animation = &"Jill/jumpingFalling"
+animation = &"lilith/jumpingFalling"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0n5x5"]
-animation = &"Jill/midHitstun"
+animation = &"lilith/midHitstun"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v11wb"]
-animation = &"Jill/Grab"
+animation = &"lilith/Grab"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2dx5m"]
-animation = &"Jill/jHK"
+animation = &"lilith/jHK"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r5hej"]
-animation = &"Jill/jHP"
+animation = &"lilith/jHP"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ms06q"]
-animation = &"Jill/jLK"
+animation = &"lilith/jLK"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jg4d3"]
-animation = &"Jill/jLP"
+animation = &"lilith/jLP"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fcq8y"]
-animation = &"Jill/jMK"
+animation = &"lilith/jMK"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nahtu"]
-animation = &"Jill/jMP"
+animation = &"lilith/jMP"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3i4nc"]
-animation = &"Jill/special1"
+animation = &"lilith/special1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jvfse"]
-animation = &"Jill/special1"
+animation = &"lilith/special1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_63ocg"]
-animation = &"Jill/Throw"
+animation = &"lilith/Throw"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3w07"]
-animation = &"Jill/jumpBloackstun"
+animation = &"lilith/jumpBloackstun"
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_y8637"]
 input_0/name = "neutral"
@@ -362,10 +362,10 @@ input_1/auto_advance = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r37j0"]
-animation = &"Jill/jumpHitstun"
+animation = &"lilith/jumpHitstun"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gfc1h"]
-animation = &"Jill/jumpStartUp"
+animation = &"lilith/jumpStartUp"
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_lqffq"]
 input_0/name = "airborne"
@@ -379,23 +379,23 @@ input_2/auto_advance = false
 input_2/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tgult"]
-animation = &"Jill/otg"
+animation = &"lilith/otg"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gswe2"]
-animation = &"Jill/jumping"
+animation = &"lilith/jumping"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5rpv"]
-animation = &"Jill/standingBlocking"
+animation = &"lilith/standingBlocking"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nstri"]
-animation = &"Jill/wakeUp"
+animation = &"lilith/wakeUp"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_epjdj"]
-animation = &"Jill/walkBack"
+animation = &"lilith/walkBack"
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(1391.36, -1438.33)
+graph_offset = Vector2(438.385, 45.0696)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1240, -480)
 nodes/Crouch/node = SubResource("13")
@@ -473,7 +473,7 @@ nodes/backwards/position = Vector2(780, 420)
 nodes/cGrab/node = SubResource("AnimationNodeAnimation_l371l")
 nodes/cGrab/position = Vector2(384.521, 325.577)
 nodes/cHK/node = SubResource("AnimationNodeAnimation_wei0a")
-nodes/cHK/position = Vector2(820, 240)
+nodes/cHK/position = Vector2(780, 200)
 nodes/cHP/node = SubResource("AnimationNodeAnimation_qty1o")
 nodes/cHP/position = Vector2(880, 140)
 nodes/cLK/node = SubResource("AnimationNodeAnimation_66o44")
@@ -481,7 +481,7 @@ nodes/cLK/position = Vector2(1020, 220)
 nodes/cLP/node = SubResource("AnimationNodeAnimation_fh6lj")
 nodes/cLP/position = Vector2(860, 0)
 nodes/cMK/node = SubResource("AnimationNodeAnimation_qt7sf")
-nodes/cMK/position = Vector2(740, 240)
+nodes/cMK/position = Vector2(660, 220)
 nodes/cMP/node = SubResource("AnimationNodeAnimation_7votr")
 nodes/cMP/position = Vector2(720, 40)
 nodes/cSpecial1/node = SubResource("AnimationNodeAnimation_fcgg3")
@@ -515,7 +515,7 @@ nodes/jSpecial2/position = Vector2(880, 1120)
 nodes/jThrow/node = SubResource("AnimationNodeAnimation_63ocg")
 nodes/jThrow/position = Vector2(1509.34, 1051.21)
 nodes/jumpBlockstun/node = SubResource("AnimationNodeAnimation_i3w07")
-nodes/jumpBlockstun/position = Vector2(640, 480)
+nodes/jumpBlockstun/position = Vector2(620, 480)
 nodes/jumpDirection/node = SubResource("AnimationNodeTransition_y8637")
 nodes/jumpDirection/position = Vector2(1040, 320)
 nodes/jumpHitstun/node = SubResource("AnimationNodeAnimation_r37j0")

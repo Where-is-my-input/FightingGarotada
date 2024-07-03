@@ -435,6 +435,7 @@
 [ext_resource type="Texture2D" uid="uid://b7bt5vdfhq86l" path="res://Characters/Lilith/JPEG/VS2_Lilith_50396.jpg" id="433_1h4co"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pj5w7"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
