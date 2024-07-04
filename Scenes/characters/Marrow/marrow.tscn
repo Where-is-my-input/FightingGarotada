@@ -1,4 +1,4 @@
-[gd_scene load_steps=451 format=3 uid="uid://b8381bmosefni"]
+[gd_scene load_steps=449 format=3 uid="uid://b8381bmosefni"]
 
 [ext_resource type="Shader" path="res://Scenes/characters/Marrow/marrow.gdshader" id="1_fvj0y"]
 [ext_resource type="Script" path="res://Scenes/characters/Lilith/lilith.gd" id="2_ukqix"]
@@ -155,11 +155,6 @@
 [ext_resource type="Texture2D" uid="uid://nnvhhwhtbiug" path="res://Characters/Marrow/MVC2_Marrow_721.png" id="159_qp36c"]
 [ext_resource type="Texture2D" uid="uid://docskpacnx4r6" path="res://Characters/Marrow/MVC2_Marrow_722.png" id="160_73hqg"]
 [ext_resource type="Texture2D" uid="uid://mb04w5qrjew" path="res://Characters/Marrow/MVC2_Marrow_723.png" id="161_uv08b"]
-[ext_resource type="Texture2D" uid="uid://dqlao4hc1mb2w" path="res://Characters/Jill Valentine/anim096.png" id="162_5sqx5"]
-[ext_resource type="Texture2D" uid="uid://chya0cf16jfqa" path="res://Characters/Jill Valentine/anim097.png" id="163_q3gb0"]
-[ext_resource type="Texture2D" uid="uid://buhvto0dtv6r5" path="res://Characters/Jill Valentine/anim098.png" id="164_2c6ng"]
-[ext_resource type="Texture2D" uid="uid://bro0nf6onok22" path="res://Characters/Jill Valentine/anim099.png" id="165_ssrn2"]
-[ext_resource type="Texture2D" uid="uid://chr3dqs755m5j" path="res://Characters/Jill Valentine/anim100.png" id="166_2ionk"]
 [ext_resource type="Texture2D" uid="uid://cjcjnmf6y2jov" path="res://Characters/Marrow/MVC2_Marrow_27.png" id="167_15auv"]
 [ext_resource type="Texture2D" uid="uid://0ewc8u6vxe1q" path="res://Characters/Marrow/MVC2_Marrow_28.png" id="168_3jseh"]
 [ext_resource type="Texture2D" uid="uid://c5ehs53bcvoxq" path="res://Characters/Marrow/MVC2_Marrow_29.png" id="169_apnrj"]
@@ -649,32 +644,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("47_im0e1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_cd6m2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_cao3e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_cidak")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_ppgsk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_qably")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_4qps5")
-}],
-"loop": true,
-"name": &"DashForward",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("54_rpxdj")
 }, {
 "duration": 1.0,
@@ -1101,19 +1070,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("162_5sqx5")
+"texture": ExtResource("47_im0e1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("163_q3gb0")
+"texture": ExtResource("48_cd6m2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("164_2c6ng")
+"texture": ExtResource("49_cao3e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("165_ssrn2")
+"texture": ExtResource("50_cidak")
 }, {
 "duration": 1.0,
-"texture": ExtResource("166_2ionk")
+"texture": ExtResource("51_ppgsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_qably")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_4qps5")
 }],
 "loop": true,
 "name": &"dash",
@@ -2135,8 +2110,17 @@ size = Vector2(1, 1)
 resource_local_to_scene = true
 size = Vector2(47, 59)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm8so"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmm0b"]
+size = Vector2(0, 0)
+
 [sub_resource type="RectangleShape2D" id="5"]
 resource_local_to_scene = true
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5auy0"]
 size = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfye"]
@@ -2326,7 +2310,7 @@ tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(500, -50)]
 }
 tracks/15/type = "value"
@@ -2338,8 +2322,116 @@ tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(56, -16)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Hurtboxes/Hurtbox2:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../Hurtboxes/Hurtbox2:shape:size")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../Hurtboxes/Hurtbox2:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(24, 32)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../Hurtboxes/Hurbotx3:shape:size")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Hurtboxes/Hurbotx3:disabled")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Hurtboxes/Hurbotx3:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(37.375, 9.5)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../Hitboxes/Hitbox2:shape:size")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../Hitboxes/Hitbox2:disabled")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("../Hitboxes/Hitbox2:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(47, -8)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
@@ -2354,6 +2446,9 @@ collision_layer = 0
 collision_mask = 4
 floor_block_on_wall = false
 script = ExtResource("2_ukqix")
+jumpCancel = true
+disableGravity = true
+moveSpeed = Vector2(50, 0)
 animatedSprite = NodePath("sprMarrow")
 animatedTree = NodePath("AnimationPlayer/AnimationTree")
 
@@ -2386,7 +2481,6 @@ position = Vector2(0, 48)
 one_shot = true
 
 [node name="Hurtboxes" type="Area2D" parent="." groups=["Hurtboxes"]]
-visible = false
 collision_layer = 2
 collision_mask = 0
 
@@ -2397,14 +2491,26 @@ position = Vector2(-0.5, 11)
 shape = SubResource("RectangleShape2D_x4kfw")
 debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 
+[node name="Hurtbox2" type="CollisionShape2D" parent="Hurtboxes"]
+position = Vector2(24, 32)
+shape = SubResource("RectangleShape2D_xm8so")
+disabled = true
+debug_color = Color(0, 0.647059, 0.254902, 0.419608)
+
+[node name="Hurbotx3" type="CollisionShape2D" parent="Hurtboxes"]
+position = Vector2(37.375, 9.5)
+shape = SubResource("RectangleShape2D_xmm0b")
+disabled = true
+debug_color = Color(0, 0.647059, 0.254902, 0.419608)
+
 [node name="Hitboxes" type="Area2D" parent="." groups=["Hitboxes"]]
-visible = false
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("3_y3vc6")
-stun = 12
+stun = 30
 stunVector = Vector2(500, -50)
-damage = 125
+damage = 575
+attackType = 2
 hitstop = 15
 vstun = 10
 
@@ -2413,6 +2519,12 @@ light_mask = 4
 visibility_layer = 2
 position = Vector2(89.5, -17.5)
 shape = SubResource("5")
+disabled = true
+debug_color = Color(1, 0, 0.0784314, 0.419608)
+
+[node name="Hitbox2" type="CollisionShape2D" parent="Hitboxes"]
+position = Vector2(47, -8)
+shape = SubResource("RectangleShape2D_5auy0")
 disabled = true
 debug_color = Color(1, 0, 0.0784314, 0.419608)
 
@@ -2434,7 +2546,6 @@ disabled = true
 debug_color = Color(0.398854, 0.0011998, 0.59075, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-reset_on_save = false
 root_node = NodePath("../sprMarrow")
 libraries = {
 "": SubResource("AnimationLibrary_yv7pk"),
