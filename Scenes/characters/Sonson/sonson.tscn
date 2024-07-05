@@ -2549,7 +2549,6 @@ animatedSprite = NodePath("sprSonson")
 animatedTree = NodePath("AnimationPlayer/AnimationTree")
 
 [node name="sprSonson" parent="." instance=ExtResource("4_m7s1s")]
-z_index = 1
 use_parent_material = true
 position = Vector2(40, -152)
 scale = Vector2(-1, 1)
