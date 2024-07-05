@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://buqk22nrxq8hf"]
+
+[ext_resource type="SpriteFrames" uid="uid://dv5k2176vypl" path="res://Scenes/characters/Sonson/spr_sonson.tres" id="1_o15r4"]
+
+[node name="sprSonson" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = ExtResource("1_o15r4")
+animation = &"WakeUp"

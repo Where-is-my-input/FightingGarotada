@@ -1,0 +1,537 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=70 format=3 uid="uid://udg52e6bwo3j"]
+
+[sub_resource type="AnimationNodeTransition" id="20"]
+input_0/name = "LP"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "MP"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "HP"
+input_2/auto_advance = false
+input_2/reset = true
+input_3/name = "LK"
+input_3/auto_advance = false
+input_3/reset = true
+input_4/name = "MK"
+input_4/auto_advance = false
+input_4/reset = true
+input_5/name = "HK"
+input_5/auto_advance = false
+input_5/reset = true
+input_6/name = "Special1"
+input_6/auto_advance = false
+input_6/reset = true
+input_7/name = "Special2"
+input_7/auto_advance = false
+input_7/reset = true
+input_8/name = "Grab"
+input_8/auto_advance = false
+input_8/reset = true
+input_9/name = "Throw"
+input_9/auto_advance = false
+input_9/reset = true
+input_10/name = "Special3"
+input_10/auto_advance = false
+input_10/reset = true
+input_11/name = "Special4"
+input_11/auto_advance = false
+input_11/reset = true
+input_12/name = "Special5"
+input_12/auto_advance = false
+input_12/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="13"]
+animation = &"Jill/crouch"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_tno34"]
+input_0/name = "LP"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "MP"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "HP"
+input_2/auto_advance = false
+input_2/reset = true
+input_3/name = "LK"
+input_3/auto_advance = false
+input_3/reset = true
+input_4/name = "MK"
+input_4/auto_advance = false
+input_4/reset = true
+input_5/name = "HK"
+input_5/auto_advance = false
+input_5/reset = true
+input_6/name = "Special1"
+input_6/auto_advance = false
+input_6/reset = true
+input_7/name = "Special2"
+input_7/auto_advance = false
+input_7/reset = true
+input_8/name = "Grab"
+input_8/auto_advance = false
+input_8/reset = true
+input_9/name = "Throw"
+input_9/auto_advance = false
+input_9/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_rutvc"]
+input_0/name = "block"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "hit"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ksbsh"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "hit"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "attacking"
+input_2/auto_advance = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8c3si"]
+animation = &"Jill/crouchingBlocking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rt7ga"]
+animation = &"Jill/crouchHitstun"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oq511"]
+animation = &"Jill/standingFlip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bnunv"]
+animation = &"Jill/Grab"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o40bj"]
+animation = &"Jill/sHK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kshar"]
+animation = &"Jill/sHP"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_gyptk"]
+input_0/name = "block"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "hit"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="16"]
+animation = &"Jill/Idle"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ry38b"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "flip"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_jgyhb"]
+input_0/name = "rising"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "falling"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_bps3t"]
+input_0/name = "LP"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "MP"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "HP"
+input_2/auto_advance = false
+input_2/reset = true
+input_3/name = "LK"
+input_3/auto_advance = false
+input_3/reset = true
+input_4/name = "MK"
+input_4/auto_advance = false
+input_4/reset = true
+input_5/name = "HK"
+input_5/auto_advance = false
+input_5/reset = true
+input_6/name = "Special1"
+input_6/auto_advance = false
+input_6/reset = true
+input_7/name = "Special2"
+input_7/auto_advance = false
+input_7/reset = true
+input_8/name = "Grab"
+input_8/auto_advance = false
+input_8/reset = true
+input_9/name = "Throw"
+input_9/auto_advance = false
+input_9/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ppl63"]
+input_0/name = "block"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "hit"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_43hom"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "hit"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "attacking"
+input_2/auto_advance = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q6a8w"]
+animation = &"Jill/sLK"
+
+[sub_resource type="AnimationNodeAnimation" id="14"]
+animation = &"Jill/sLP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2li4r"]
+animation = &"Jill/sMK"
+
+[sub_resource type="AnimationNodeAnimation" id="15"]
+animation = &"Jill/sMP"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_pyepl"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "walk"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "walkback"
+input_2/auto_advance = false
+input_2/reset = true
+input_3/name = "jumpStartUp"
+input_3/auto_advance = false
+input_3/reset = true
+input_4/name = "dash"
+input_4/auto_advance = false
+input_4/reset = true
+input_5/name = "backdash"
+input_5/auto_advance = false
+input_5/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iu5f5"]
+animation = &"Jill/special1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_klev6"]
+animation = &"Jill/special2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_21u75"]
+animation = &"Jill/special2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yinc4"]
+animation = &"Jill/special3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yfk6f"]
+animation = &"Jill/special4"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_as5s7"]
+animation = &"Jill/special5"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_2eds3"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "hit"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "attacking"
+input_2/auto_advance = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="17"]
+input_0/name = "standing"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "crouching"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "jumping"
+input_2/auto_advance = false
+input_2/reset = true
+input_3/name = "knockdown"
+input_3/auto_advance = false
+input_3/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_551y7"]
+animation = &"Jill/Throw"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_uhuok"]
+
+[sub_resource type="AnimationNodeAnimation" id="12"]
+animation = &"Jill/WalkForward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7nf65"]
+animation = &"Jill/jumpHitstun"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pdeln"]
+animation = &"Jill/backdash"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pq2kd"]
+animation = &"Jill/jumpingBackwards"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l371l"]
+animation = &"Jill/Grab"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wei0a"]
+animation = &"Jill/cHK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qty1o"]
+animation = &"Jill/cHP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_66o44"]
+animation = &"Jill/cLK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fh6lj"]
+animation = &"Jill/cLP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qt7sf"]
+animation = &"Jill/cMK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7votr"]
+resource_local_to_scene = true
+animation = &"Jill/cMP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fcgg3"]
+animation = &"Jill/special1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tbanw"]
+animation = &"Jill/Throw"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3l5ri"]
+animation = &"Jill/dash"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qbig3"]
+animation = &"Jill/jumpingFalling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0n5x5"]
+animation = &"Jill/midHitstun"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v11wb"]
+animation = &"Jill/Grab"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2dx5m"]
+animation = &"Jill/jHK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r5hej"]
+animation = &"Jill/jHP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ms06q"]
+animation = &"Jill/jLK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jg4d3"]
+animation = &"Jill/jLP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fcq8y"]
+animation = &"Jill/jMK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nahtu"]
+animation = &"Jill/jMP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3i4nc"]
+animation = &"Jill/special1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jvfse"]
+animation = &"Jill/special1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_63ocg"]
+animation = &"Jill/Throw"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3w07"]
+animation = &"Jill/jumpBloackstun"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_y8637"]
+input_0/name = "neutral"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "backwards"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r37j0"]
+animation = &"Jill/jumpHitstun"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gfc1h"]
+animation = &"Jill/jumpStartUp"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_lqffq"]
+input_0/name = "airborne"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "otg"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "wakeUp"
+input_2/auto_advance = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tgult"]
+animation = &"Jill/otg"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gswe2"]
+animation = &"Jill/jumping"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5rpv"]
+animation = &"Jill/standingBlocking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nstri"]
+animation = &"Jill/wakeUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_epjdj"]
+animation = &"Jill/walkBack"
+
+[resource]
+resource_local_to_scene = true
+nodes/Attacking/node = SubResource("20")
+nodes/Attacking/position = Vector2(1240, -480)
+nodes/Crouch/node = SubResource("13")
+nodes/Crouch/position = Vector2(780, -100)
+nodes/CrouchAttacking/node = SubResource("AnimationNodeTransition_tno34")
+nodes/CrouchAttacking/position = Vector2(1260, 100)
+nodes/CrouchHit/node = SubResource("AnimationNodeTransition_rutvc")
+nodes/CrouchHit/position = Vector2(1300, -40)
+nodes/CrouchingAction/node = SubResource("AnimationNodeTransition_ksbsh")
+nodes/CrouchingAction/position = Vector2(1485, -22)
+nodes/CrouchingBlocking/node = SubResource("AnimationNodeAnimation_8c3si")
+nodes/CrouchingBlocking/position = Vector2(1020, -60)
+nodes/CrouchingHitstun/node = SubResource("AnimationNodeAnimation_rt7ga")
+nodes/CrouchingHitstun/position = Vector2(1000, 60)
+nodes/Flip/node = SubResource("AnimationNodeAnimation_oq511")
+nodes/Flip/position = Vector2(1100, -660)
+nodes/Grab/node = SubResource("AnimationNodeAnimation_bnunv")
+nodes/Grab/position = Vector2(576.427, -221.706)
+nodes/HK/node = SubResource("AnimationNodeAnimation_o40bj")
+nodes/HK/position = Vector2(960, -300)
+nodes/HP/node = SubResource("AnimationNodeAnimation_kshar")
+nodes/HP/position = Vector2(940, -420)
+nodes/Hit/node = SubResource("AnimationNodeTransition_gyptk")
+nodes/Hit/position = Vector2(1375, -231)
+nodes/Idle/node = SubResource("16")
+nodes/Idle/position = Vector2(1120, -780)
+nodes/IdleState/node = SubResource("AnimationNodeTransition_ry38b")
+nodes/IdleState/position = Vector2(1280, -740)
+nodes/Jump/node = SubResource("AnimationNodeTransition_jgyhb")
+nodes/Jump/position = Vector2(1200, 460)
+nodes/JumpAttacking/node = SubResource("AnimationNodeTransition_bps3t")
+nodes/JumpAttacking/position = Vector2(1232, 704)
+nodes/JumpHit/node = SubResource("AnimationNodeTransition_ppl63")
+nodes/JumpHit/position = Vector2(840, 560)
+nodes/JumpingAction/node = SubResource("AnimationNodeTransition_43hom")
+nodes/JumpingAction/position = Vector2(1440, 220)
+nodes/LK/node = SubResource("AnimationNodeAnimation_q6a8w")
+nodes/LK/position = Vector2(1020, -380)
+nodes/LP/node = SubResource("14")
+nodes/LP/position = Vector2(920, -520)
+nodes/MK/node = SubResource("AnimationNodeAnimation_2li4r")
+nodes/MK/position = Vector2(860, -320)
+nodes/MP/node = SubResource("15")
+nodes/MP/position = Vector2(1060, -440)
+nodes/Movement/node = SubResource("AnimationNodeTransition_pyepl")
+nodes/Movement/position = Vector2(1420, -640)
+nodes/Special01/node = SubResource("AnimationNodeAnimation_iu5f5")
+nodes/Special01/position = Vector2(780, -240)
+nodes/Special2/node = SubResource("AnimationNodeAnimation_21u75")
+nodes/Special2/position = Vector2(626.037, -397.156)
+"nodes/Special2 2/node" = SubResource("AnimationNodeAnimation_klev6")
+"nodes/Special2 2/position" = Vector2(430.501, 134.397)
+nodes/Special3/node = SubResource("AnimationNodeAnimation_yinc4")
+nodes/Special3/position = Vector2(600, -280)
+nodes/Special4/node = SubResource("AnimationNodeAnimation_yfk6f")
+nodes/Special4/position = Vector2(660, -500)
+nodes/Special5/node = SubResource("AnimationNodeAnimation_as5s7")
+nodes/Special5/position = Vector2(482.897, -454.048)
+nodes/StandingAction/node = SubResource("AnimationNodeTransition_2eds3")
+nodes/StandingAction/position = Vector2(1600, -380)
+nodes/State/node = SubResource("17")
+nodes/State/position = Vector2(1680, 80)
+nodes/Throw/node = SubResource("AnimationNodeAnimation_551y7")
+nodes/Throw/position = Vector2(460, -180)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_uhuok")
+nodes/TimeScale/position = Vector2(1940, 60)
+"nodes/WalkForward /node" = SubResource("12")
+"nodes/WalkForward /position" = Vector2(1060, -560)
+nodes/airHitstun/node = SubResource("AnimationNodeAnimation_7nf65")
+nodes/airHitstun/position = Vector2(1440, 460)
+nodes/backdash/node = SubResource("AnimationNodeAnimation_pdeln")
+nodes/backdash/position = Vector2(1740, -660)
+nodes/backwards/node = SubResource("AnimationNodeAnimation_pq2kd")
+nodes/backwards/position = Vector2(780, 420)
+nodes/cGrab/node = SubResource("AnimationNodeAnimation_l371l")
+nodes/cGrab/position = Vector2(384.521, 325.577)
+nodes/cHK/node = SubResource("AnimationNodeAnimation_wei0a")
+nodes/cHK/position = Vector2(820, 240)
+nodes/cHP/node = SubResource("AnimationNodeAnimation_qty1o")
+nodes/cHP/position = Vector2(880, 140)
+nodes/cLK/node = SubResource("AnimationNodeAnimation_66o44")
+nodes/cLK/position = Vector2(1020, 220)
+nodes/cLP/node = SubResource("AnimationNodeAnimation_fh6lj")
+nodes/cLP/position = Vector2(860, 0)
+nodes/cMK/node = SubResource("AnimationNodeAnimation_qt7sf")
+nodes/cMK/position = Vector2(740, 240)
+nodes/cMP/node = SubResource("AnimationNodeAnimation_7votr")
+nodes/cMP/position = Vector2(720, 40)
+nodes/cSpecial1/node = SubResource("AnimationNodeAnimation_fcgg3")
+nodes/cSpecial1/position = Vector2(599.417, 328.844)
+nodes/cThrow/node = SubResource("AnimationNodeAnimation_tbanw")
+nodes/cThrow/position = Vector2(371.211, 498.607)
+nodes/dash/node = SubResource("AnimationNodeAnimation_3l5ri")
+nodes/dash/position = Vector2(1580, -560)
+nodes/falling/node = SubResource("AnimationNodeAnimation_qbig3")
+nodes/falling/position = Vector2(1000, 520)
+nodes/hitstun/node = SubResource("AnimationNodeAnimation_0n5x5")
+nodes/hitstun/position = Vector2(1240, -140)
+nodes/jGrab/node = SubResource("AnimationNodeAnimation_v11wb")
+nodes/jGrab/position = Vector2(1440, 880)
+nodes/jHK/node = SubResource("AnimationNodeAnimation_2dx5m")
+nodes/jHK/position = Vector2(1080, 1000)
+nodes/jHP/node = SubResource("AnimationNodeAnimation_r5hej")
+nodes/jHP/position = Vector2(1067, 869)
+nodes/jLK/node = SubResource("AnimationNodeAnimation_ms06q")
+nodes/jLK/position = Vector2(902.546, 968.072)
+nodes/jLP/node = SubResource("AnimationNodeAnimation_jg4d3")
+nodes/jLP/position = Vector2(1012, 715)
+nodes/jMK/node = SubResource("AnimationNodeAnimation_fcq8y")
+nodes/jMK/position = Vector2(766.146, 837.172)
+nodes/jMP/node = SubResource("AnimationNodeAnimation_nahtu")
+nodes/jMP/position = Vector2(902, 803)
+nodes/jSpecial01/node = SubResource("AnimationNodeAnimation_3i4nc")
+nodes/jSpecial01/position = Vector2(1200, 1060)
+nodes/jSpecial2/node = SubResource("AnimationNodeAnimation_jvfse")
+nodes/jSpecial2/position = Vector2(880, 1120)
+nodes/jThrow/node = SubResource("AnimationNodeAnimation_63ocg")
+nodes/jThrow/position = Vector2(1509.34, 1051.21)
+nodes/jumpBlockstun/node = SubResource("AnimationNodeAnimation_i3w07")
+nodes/jumpBlockstun/position = Vector2(640, 480)
+nodes/jumpDirection/node = SubResource("AnimationNodeTransition_y8637")
+nodes/jumpDirection/position = Vector2(1040, 320)
+nodes/jumpHitstun/node = SubResource("AnimationNodeAnimation_r37j0")
+nodes/jumpHitstun/position = Vector2(576.546, 637.737)
+nodes/jumpStartUp/node = SubResource("AnimationNodeAnimation_gfc1h")
+nodes/jumpStartUp/position = Vector2(1540, -720)
+nodes/knockDownAction/node = SubResource("AnimationNodeTransition_lqffq")
+nodes/knockDownAction/position = Vector2(1820, 340)
+nodes/otg/node = SubResource("AnimationNodeAnimation_tgult")
+nodes/otg/position = Vector2(1680, 500)
+nodes/output/position = Vector2(2180, 100)
+nodes/rising/node = SubResource("AnimationNodeAnimation_gswe2")
+nodes/rising/position = Vector2(840, 280)
+nodes/standingBlocking/node = SubResource("AnimationNodeAnimation_c5rpv")
+nodes/standingBlocking/position = Vector2(980, -120)
+nodes/wakeUp/node = SubResource("AnimationNodeAnimation_nstri")
+nodes/wakeUp/position = Vector2(1650.66, 683.498)
+nodes/walkBack/node = SubResource("AnimationNodeAnimation_epjdj")
+nodes/walkBack/position = Vector2(1240, -520)
+node_connections = [&"Attacking", 0, &"LP", &"Attacking", 1, &"MP", &"Attacking", 2, &"HP", &"Attacking", 3, &"LK", &"Attacking", 4, &"MK", &"Attacking", 5, &"HK", &"Attacking", 6, &"Special01", &"Attacking", 7, &"Special2", &"Attacking", 8, &"Grab", &"Attacking", 9, &"Throw", &"Attacking", 10, &"Special3", &"Attacking", 11, &"Special4", &"Attacking", 12, &"Special5", &"CrouchAttacking", 0, &"cLP", &"CrouchAttacking", 1, &"cMP", &"CrouchAttacking", 2, &"cHP", &"CrouchAttacking", 3, &"cLK", &"CrouchAttacking", 4, &"cMK", &"CrouchAttacking", 5, &"cHK", &"CrouchAttacking", 6, &"cSpecial1", &"CrouchAttacking", 7, &"Special2 2", &"CrouchAttacking", 8, &"cGrab", &"CrouchAttacking", 9, &"cThrow", &"CrouchHit", 0, &"CrouchingBlocking", &"CrouchHit", 1, &"CrouchingHitstun", &"CrouchingAction", 0, &"Crouch", &"CrouchingAction", 1, &"CrouchHit", &"CrouchingAction", 2, &"CrouchAttacking", &"Hit", 0, &"standingBlocking", &"Hit", 1, &"hitstun", &"IdleState", 0, &"Idle", &"IdleState", 1, &"Flip", &"Jump", 0, &"jumpDirection", &"Jump", 1, &"falling", &"JumpAttacking", 0, &"jLP", &"JumpAttacking", 1, &"jMP", &"JumpAttacking", 2, &"jHP", &"JumpAttacking", 3, &"jLK", &"JumpAttacking", 4, &"jMK", &"JumpAttacking", 5, &"jHK", &"JumpAttacking", 6, &"jSpecial01", &"JumpAttacking", 7, &"jSpecial2", &"JumpAttacking", 8, &"jGrab", &"JumpAttacking", 9, &"jThrow", &"JumpHit", 0, &"jumpBlockstun", &"JumpHit", 1, &"jumpHitstun", &"JumpingAction", 0, &"Jump", &"JumpingAction", 1, &"JumpHit", &"JumpingAction", 2, &"JumpAttacking", &"Movement", 0, &"IdleState", &"Movement", 1, &"WalkForward ", &"Movement", 2, &"walkBack", &"Movement", 3, &"jumpStartUp", &"Movement", 4, &"dash", &"Movement", 5, &"backdash", &"StandingAction", 0, &"Movement", &"StandingAction", 1, &"Hit", &"StandingAction", 2, &"Attacking", &"State", 0, &"StandingAction", &"State", 1, &"CrouchingAction", &"State", 2, &"JumpingAction", &"State", 3, &"knockDownAction", &"TimeScale", 0, &"State", &"jumpDirection", 0, &"rising", &"jumpDirection", 1, &"backwards", &"knockDownAction", 0, &"airHitstun", &"knockDownAction", 1, &"otg", &"knockDownAction", 2, &"wakeUp", &"output", 0, &"TimeScale"]

@@ -8,7 +8,7 @@ var charactersArray:Array
 @onready var p_2_spawn_position = $p2Char/p2SpawnPosition
 
 var player1Selected = 0
-var player2Selected = 5
+var player2Selected = 2
 
 var p1Confirmed = false
 var p2Confirmed = false

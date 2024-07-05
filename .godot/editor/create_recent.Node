@@ -1,7 +1,8 @@
+AnimatedSprite2D
+Sprite2D
 CollisionShape2D
 Node2D
 Node
-Sprite2D
 TextureButton
 ColorRect
 Button

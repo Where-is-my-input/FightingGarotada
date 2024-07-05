@@ -3,7 +3,7 @@ extends Node
 enum mode {VERSUS, TRAINING}
 enum hitType {NORMAL, LAUNCHER, KNOCKDOWN, GRAB, PROJECTILE} #STAGGER, BOUNCES
 enum blockType {MID, LOW, HIGH, UNBLOCKABLE}
-enum character {JILL, LILITH, MARROW}
+enum character {JILL, LILITH, MARROW, SONSON}
 
 signal player1KO()
 signal player2KO()

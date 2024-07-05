@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=442 format=3 uid="uid://gcqfkv8ep8gj"]
+[gd_resource type="SpriteFrames" load_steps=429 format=3 uid="uid://gcqfkv8ep8gj"]
 
 [ext_resource type="Texture2D" uid="uid://5f48bhyfyvtf" path="res://Characters/Marrow/MVC2_Marrow_134.png" id="1_px3w2"]
 [ext_resource type="Texture2D" uid="uid://dspdjqpm8a63f" path="res://Characters/Marrow/MVC2_Marrow_62.png" id="6_vsowy"]
@@ -23,31 +23,18 @@
 [ext_resource type="Texture2D" uid="uid://65336jve1hhe" path="res://Characters/Marrow/MVC2_Marrow_57.png" id="23_rl65u"]
 [ext_resource type="Texture2D" uid="uid://bv7tujsyvqink" path="res://Characters/Marrow/MVC2_Marrow_58.png" id="24_44ahj"]
 [ext_resource type="Texture2D" uid="uid://vxns4uoo62iy" path="res://Characters/Marrow/MVC2_Marrow_59.png" id="25_7sras"]
-[ext_resource type="Texture2D" uid="uid://b4ypyyg1f40t6" path="res://Characters/Jill Valentine/anim105.png" id="25_p7xsp"]
-[ext_resource type="Texture2D" uid="uid://c0mxww54pl8yl" path="res://Characters/Jill Valentine/anim106.png" id="26_0vjlf"]
 [ext_resource type="Texture2D" uid="uid://b6f5cdre1g73w" path="res://Characters/Marrow/MVC2_Marrow_60.png" id="26_25l2k"]
-[ext_resource type="Texture2D" uid="uid://bngbgvfwn1nli" path="res://Characters/Jill Valentine/anim107.png" id="27_rlduj"]
 [ext_resource type="Texture2D" uid="uid://c3upjfqxt78ct" path="res://Characters/Marrow/MVC2_Marrow_61.png" id="27_xk5gt"]
-[ext_resource type="Texture2D" uid="uid://c0p40wik66b0n" path="res://Characters/Jill Valentine/anim108.png" id="28_rq7jp"]
-[ext_resource type="Texture2D" uid="uid://jvnc7ehedrwx" path="res://Characters/Jill Valentine/anim109.png" id="29_jl447"]
-[ext_resource type="Texture2D" uid="uid://5l45l0sdoah5" path="res://Characters/Jill Valentine/anim110.png" id="30_lgsf4"]
-[ext_resource type="Texture2D" uid="uid://b8tboc02hvaa0" path="res://Characters/Jill Valentine/anim111.png" id="31_u5b6p"]
-[ext_resource type="Texture2D" uid="uid://dvmjtonskj8ax" path="res://Characters/Jill Valentine/anim112.png" id="32_2eh7r"]
 [ext_resource type="Texture2D" uid="uid://cmcep4n5en7he" path="res://Characters/Marrow/MVC2_Marrow_147.png" id="34_nay1p"]
 [ext_resource type="Texture2D" uid="uid://cftws7nwtjcrp" path="res://Characters/Marrow/MVC2_Marrow_148.png" id="35_igpte"]
 [ext_resource type="Texture2D" uid="uid://gqi4mcxc47xo" path="res://Characters/Marrow/MVC2_Marrow_149.png" id="36_fcp36"]
 [ext_resource type="Texture2D" uid="uid://cs0cxhm5f7u06" path="res://Characters/Marrow/MVC2_Marrow_150.png" id="37_e3jgw"]
 [ext_resource type="Texture2D" uid="uid://c3kva3pfvhapk" path="res://Characters/Marrow/MVC2_Marrow_151.png" id="38_67jei"]
-[ext_resource type="Texture2D" uid="uid://dqlao4hc1mb2w" path="res://Characters/Jill Valentine/anim096.png" id="39_83rpd"]
 [ext_resource type="Texture2D" uid="uid://4a8yvrn01gvc" path="res://Characters/Marrow/MVC2_Marrow_152.png" id="39_opkxj"]
 [ext_resource type="Texture2D" uid="uid://ci285nrn7e27a" path="res://Characters/Marrow/MVC2_Marrow_153.png" id="40_aq4ye"]
-[ext_resource type="Texture2D" uid="uid://chya0cf16jfqa" path="res://Characters/Jill Valentine/anim097.png" id="40_il6js"]
 [ext_resource type="Texture2D" uid="uid://blcnu6hue25js" path="res://Characters/Marrow/MVC2_Marrow_138.png" id="41_cgb7r"]
-[ext_resource type="Texture2D" uid="uid://buhvto0dtv6r5" path="res://Characters/Jill Valentine/anim098.png" id="41_hqfex"]
 [ext_resource type="Texture2D" uid="uid://bcyqrvy7ikmjl" path="res://Characters/Marrow/MVC2_Marrow_139.png" id="42_v0815"]
-[ext_resource type="Texture2D" uid="uid://bro0nf6onok22" path="res://Characters/Jill Valentine/anim099.png" id="42_xpb0v"]
 [ext_resource type="Texture2D" uid="uid://c4sm67gf4qsgc" path="res://Characters/Marrow/MVC2_Marrow_140.png" id="43_exhk8"]
-[ext_resource type="Texture2D" uid="uid://chr3dqs755m5j" path="res://Characters/Jill Valentine/anim100.png" id="43_mnqes"]
 [ext_resource type="Texture2D" uid="uid://c2pmgahfdoocm" path="res://Characters/Marrow/MVC2_Marrow_74.png" id="44_mx3ha"]
 [ext_resource type="Texture2D" uid="uid://bk5uf5gicjyqg" path="res://Characters/Marrow/MVC2_Marrow_75.png" id="45_pi4h3"]
 [ext_resource type="Texture2D" uid="uid://cv4qu3kivr57b" path="res://Characters/Marrow/MVC2_Marrow_76.png" id="46_giwok"]
@@ -537,28 +524,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("25_p7xsp")
+"texture": ExtResource("51_er58p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_0vjlf")
+"texture": ExtResource("52_5mio1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_rlduj")
+"texture": ExtResource("53_i2utm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_rq7jp")
+"texture": ExtResource("54_soxny")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_jl447")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_lgsf4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_u5b6p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_2eh7r")
+"texture": ExtResource("55_tqc6f")
 }],
 "loop": false,
 "name": &"8",
@@ -602,32 +580,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"CrouchingTurnAround",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("44_mx3ha")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_pi4h3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_giwok")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_sm216")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_c85i7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_l0e2w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_qjuwk")
-}],
-"loop": true,
-"name": &"DashForward",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1058,19 +1010,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("39_83rpd")
+"texture": ExtResource("44_mx3ha")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_il6js")
+"texture": ExtResource("45_pi4h3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_hqfex")
+"texture": ExtResource("46_giwok")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_xpb0v")
+"texture": ExtResource("47_sm216")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_mnqes")
+"texture": ExtResource("48_c85i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_l0e2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_qjuwk")
 }],
 "loop": true,
 "name": &"dash",
