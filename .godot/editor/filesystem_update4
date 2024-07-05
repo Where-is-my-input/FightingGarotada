@@ -33,3 +33,6 @@ res://Scenes/characters/Sonson/sonson.res
 res://system/scripts/global.gd
 res://Scenes/player/Player.gd
 res://Scenes/characters/Sonson/sonson.gdshader
+res://Scenes/characters/Sonson/icon_sonson.tscn
+res://Scenes/menu/main_menu.tscn
+res://Scenes/menu/main_menu.gd

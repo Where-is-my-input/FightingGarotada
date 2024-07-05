@@ -18,10 +18,16 @@ func _ready():
 	setPlayerSelection(player_1_selection, player1Selected)
 
 func _process(delta):
+	if p1Confirmed && Global.gameMode == Global.mode.PALETTE_EDITOR:
+		confirmedSelectCharacters()
+		get_tree().change_scene_to_file("res://Scenes/paletteEditor/palette_editor.tscn")
 	if p1Confirmed && p2Confirmed:
-		Global.player1Character = player1Selected
-		Global.player2Character = player2Selected
+		confirmedSelectCharacters()
 		get_tree().change_scene_to_file("res://Scenes/GameScene.tscn")
+
+func confirmedSelectCharacters():
+	Global.player1Character = player1Selected
+	Global.player2Character = player2Selected
 
 func _input(event):
 	if !p2Confirmed:

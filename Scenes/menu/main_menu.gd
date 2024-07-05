@@ -18,4 +18,5 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/UI/character_select.tscn")
 
 func _on_btn_color_editor_pressed():
-	get_tree().change_scene_to_file("res://Scenes/paletteEditor/palette_editor.tscn")
+	Global.setGameMode(Global.mode.PALETTE_EDITOR)
+	get_tree().change_scene_to_file("res://Scenes/UI/character_select.tscn")
