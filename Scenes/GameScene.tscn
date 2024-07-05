@@ -235,6 +235,7 @@ scale = Vector2(0.0551778, 14.53)
 color = Color(0.381474, 0.274218, 0.0731015, 1)
 
 [node name="ground" type="StaticBody2D" parent="." groups=["ground"]]
+z_index = -5
 collision_layer = 256
 collision_mask = 256
 

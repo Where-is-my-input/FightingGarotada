@@ -1,4 +1,4 @@
-[gd_scene load_steps=483 format=3 uid="uid://dow0fbokli040"]
+[gd_scene load_steps=478 format=3 uid="uid://dow0fbokli040"]
 
 [ext_resource type="Shader" path="res://Scenes/characters/Sonson/sonson.gdshader" id="1_716nd"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_q0wj3"]
@@ -43,15 +43,10 @@
 [ext_resource type="Texture2D" uid="uid://gqplg8c3046x" path="res://Characters/Sonson/image084.png" id="41_go1m2"]
 [ext_resource type="Texture2D" uid="uid://cpd3atb3c3q02" path="res://Characters/Sonson/image085.png" id="42_dfsrl"]
 [ext_resource type="Texture2D" uid="uid://qxaq7dk8q4dl" path="res://Characters/Sonson/image086.png" id="43_5bvfb"]
-[ext_resource type="Texture2D" uid="uid://dqlao4hc1mb2w" path="res://Characters/Jill Valentine/anim096.png" id="43_37jao"]
-[ext_resource type="Texture2D" uid="uid://chya0cf16jfqa" path="res://Characters/Jill Valentine/anim097.png" id="44_u2371"]
 [ext_resource type="Texture2D" uid="uid://c4i0oychrmpqj" path="res://Characters/Sonson/image087.png" id="44_w6u4y"]
 [ext_resource type="Texture2D" uid="uid://yc72jht5oak4" path="res://Characters/Sonson/image088.png" id="45_j6nlh"]
-[ext_resource type="Texture2D" uid="uid://buhvto0dtv6r5" path="res://Characters/Jill Valentine/anim098.png" id="45_qexcp"]
 [ext_resource type="Texture2D" uid="uid://b8t2qlm1gi7bm" path="res://Characters/Sonson/image090.png" id="46_g3oip"]
-[ext_resource type="Texture2D" uid="uid://bro0nf6onok22" path="res://Characters/Jill Valentine/anim099.png" id="46_icjkq"]
 [ext_resource type="Texture2D" uid="uid://dgjqya7nsst6q" path="res://Characters/Sonson/image091.png" id="47_d1cye"]
-[ext_resource type="Texture2D" uid="uid://chr3dqs755m5j" path="res://Characters/Jill Valentine/anim100.png" id="47_qddvy"]
 [ext_resource type="Texture2D" uid="uid://d22b6qoo2w1a2" path="res://Characters/Sonson/image092.png" id="48_toek6"]
 [ext_resource type="Texture2D" uid="uid://dq5pulnr3mr1y" path="res://Characters/Sonson/image093.png" id="49_ljrmc"]
 [ext_resource type="Texture2D" uid="uid://0ri5j67qne2b" path="res://Characters/Sonson/image094.png" id="50_lro8n"]
@@ -916,7 +911,37 @@ animations = [{
 "name": &"airThrow",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_6b7tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_b3kfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_tcqy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_j2twc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_mbkcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ng6lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_14121")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_1qo0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_3th1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_q0cfe")
+}],
 "loop": true,
 "name": &"backdash",
 "speed": 5.0
@@ -1126,19 +1151,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("43_37jao")
+"texture": ExtResource("39_i1apr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_u2371")
+"texture": ExtResource("40_0x8kk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_qexcp")
+"texture": ExtResource("41_go1m2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_icjkq")
+"texture": ExtResource("42_dfsrl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_qddvy")
+"texture": ExtResource("43_5bvfb")
 }],
 "loop": true,
 "name": &"dash",
@@ -2518,7 +2543,8 @@ collision_mask = 4
 floor_block_on_wall = false
 script = ExtResource("3_l8fd7")
 jumpCancel = true
-moveSpeed = Vector2(500, 0)
+disableGravity = true
+moveSpeed = Vector2(350, 0)
 animatedSprite = NodePath("sprSonson")
 animatedTree = NodePath("AnimationPlayer/AnimationTree")
 

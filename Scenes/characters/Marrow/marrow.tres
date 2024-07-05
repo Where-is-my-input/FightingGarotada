@@ -270,6 +270,7 @@ input_3/reset = true
 animation = &"lilith/Throw"
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_uhuok"]
+resource_local_to_scene = true
 
 [sub_resource type="AnimationNodeAnimation" id="12"]
 animation = &"lilith/WalkForward"
@@ -395,7 +396,7 @@ animation = &"lilith/walkBack"
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(74.385, -707.93)
+graph_offset = Vector2(1104.78, -66.7287)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1240, -480)
 nodes/Crouch/node = SubResource("13")

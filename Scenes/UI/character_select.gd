@@ -4,8 +4,6 @@ extends Control
 @onready var player_2_selection = $player2Selection
 const JILL = preload("res://Scenes/characters/Jill/jill.tscn")
 var charactersArray:Array
-@onready var p_1_spawn_position = $p1Char/p1SpawnPosition
-@onready var p_2_spawn_position = $p2Char/p2SpawnPosition
 
 var player1Selected = 0
 var player2Selected = 2
