@@ -8,7 +8,7 @@ size = Vector2(59.9375, 12.1563)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vpk2"]
 resource_local_to_scene = true
-size = Vector2(50, 10)
+size = Vector2(0, 0)
 
 [node name="Hitbox" type="CollisionShape2D"]
 process_physics_priority = -2

@@ -45,7 +45,7 @@ func getHitHurtBoxes(p):
 		var node = ColorRect.new()
 		node.color = Color.LIME_GREEN
 		node.self_modulate.a = 0.5
-		node.set_anchors_preset(Control.PRESET_CENTER, true)
+		#node.set_anchors_preset(Control.PRESET_CENTER, true)
 		add_child(node)
 		hurtboxes.push_back(node)
 		hurtboxesPointers.push_back(i)
