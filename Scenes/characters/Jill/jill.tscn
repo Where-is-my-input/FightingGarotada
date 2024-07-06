@@ -1785,6 +1785,8 @@ floor_block_on_wall = false
 script = ExtResource("2_steuv")
 jumpCancel = true
 disableGravity = true
+maxAirJumps = 0
+maxAirDashes = 0
 animatedSprite = NodePath("sprJill")
 animatedTree = NodePath("AnimationPlayer/AnimationTree")
 

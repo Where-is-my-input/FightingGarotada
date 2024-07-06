@@ -2,8 +2,9 @@ extends Node
 
 enum mode {VERSUS, TRAINING, PALETTE_EDITOR}
 enum hitType {NORMAL, LAUNCHER, KNOCKDOWN, GRAB, PROJECTILE} #STAGGER, BOUNCES
-enum blockType {MID, LOW, HIGH, UNBLOCKABLE}
+enum blockType {MID, LOW, HIGH, UNBLOCKABLE, AIRUNBLOCKABLE}
 enum character {JILL, LILITH, MARROW, SONSON}
+enum invulnerability {NONE, FULL, STRIKE, THROW, PROJECTILE, AIR}
 
 signal player1KO()
 signal player2KO()

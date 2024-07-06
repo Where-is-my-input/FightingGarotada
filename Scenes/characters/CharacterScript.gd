@@ -56,6 +56,8 @@ var hitstun = 0
 var verticalHitstun = 0
 var hitstop = 0
 
+@export var invulnerability = Global.invulnerability.NONE
+
 var speed = 250;
 var jumpSpeed = 200
 var preservedJumpSpeed = jumpSpeed
@@ -103,9 +105,6 @@ var airJumpLocked = false
 func _ready():
 	animation_player.root_node = animatedSprite.get_path()
 	global_position.y = Global.ground
-	#if randi_range(0,100) > 50:
-		#var palette = load("res://Characters/Jill Valentine/4by4Palette.jpg")
-		#material.set_shader_parameter("palette",palette)
 	setAnimation()
 	animatedTree.active = true
 	parent.connect("KO",KO)
@@ -133,7 +132,7 @@ func _physics_process(_delta):
 				velocity.x = 0
 			if (!attacking || normalCancel && action == "attacking" && parent.virtualController.buttonPressed()) && action != "hit":
 				isAttacking()
-			jump()
+			checkJump()
 			setAnimation()
 
 func playerCollision():
@@ -320,40 +319,47 @@ func applyKnockback(knockbackApplied):
 	else:
 		velocity.x = 0
 
-func jump():
+func checkJump():
 	if action == "hit":
 		return
 	if parent.virtualController.directionY < 0 && (!attacking || jumpCancel) && !jumpStartUp:
 		#grounded = false
 		if grounded:
-			airJumpLocked = true
-			disableGravity = false
-			gatlingPriority = 0
-			state = "standing"
-			action = "idle"
-			jumpCancel = false
-			movement = "jumpStartUp"
-			jumpStartUp = true
-			attacking = false
-			jumpDirection = parent.virtualController.directionX
-			if !dashing: 
-				velocity.x = 0
-				preservedJumpSpeed = 0
-			else:
-				preservedJumpSpeed = velocity.x
-			return
+			jump()
 		elif airJumps < maxAirJumps && !airJumpLocked:
-			airJumps += 1
-			attacking = false
-			jumpDirection = parent.virtualController.directionX
-			preservedJumpSpeed = 0
-			startJump()
+			airJump()
 	elif parent.virtualController.directionY >= 0:
 		airJumpLocked = false
 	if velocity.y > 0:
 		jumpState = "falling"
 	elif !jumpStartUp:
 		jumpState = "rising"
+
+func jump():
+	airJumpLocked = true
+	disableGravity = false
+	gatlingPriority = 0
+	state = "standing"
+	action = "idle"
+	jumpCancel = false
+	movement = "jumpStartUp"
+	jumpStartUp = true
+	attacking = false
+	jumpDirection = parent.virtualController.directionX
+	if !dashing: 
+		velocity.x = 0
+		preservedJumpSpeed = 0
+	else:
+		preservedJumpSpeed = velocity.x
+	return
+
+func airJump():
+	airJumps += 1
+	attacking = false
+	jumpDirection = parent.virtualController.directionX
+	preservedJumpSpeed = 0
+	velocity.x = 0
+	startJump()
 
 func startJump():
 	jumpDirectionState = "neutral"

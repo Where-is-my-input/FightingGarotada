@@ -2544,6 +2544,7 @@ floor_block_on_wall = false
 script = ExtResource("3_l8fd7")
 jumpCancel = true
 disableGravity = true
+maxAirJumps = 0
 moveSpeed = Vector2(350, 0)
 animatedSprite = NodePath("sprSonson")
 animatedTree = NodePath("AnimationPlayer/AnimationTree")
