@@ -48,6 +48,8 @@ var specialCancel = true
 var superCancel = true
 var gatlingPriority = 0
 @export var disableGravity = false
+@export var maxAirJumps = 1
+@export var maxAirDashes = 1
 
 @export var moveSpeed = Vector2(0,0)
 var hitstun = 0
@@ -58,6 +60,10 @@ var speed = 250;
 var jumpSpeed = 200
 var preservedJumpSpeed = jumpSpeed
 var jumpDirection = 0
+var airJumps = 0
+var airDashes = 0
+
+var airJumpLocked = false
 
 @onready var parent = $".."
 @export var animatedSprite:AnimatedSprite2D
@@ -317,23 +323,33 @@ func applyKnockback(knockbackApplied):
 func jump():
 	if action == "hit":
 		return
-	if parent.virtualController.directionY < 0 && grounded && (!attacking || jumpCancel) && !jumpStartUp:
+	if parent.virtualController.directionY < 0 && (!attacking || jumpCancel) && !jumpStartUp:
 		#grounded = false
-		disableGravity = false
-		gatlingPriority = 0
-		state = "standing"
-		action = "idle"
-		jumpCancel = false
-		movement = "jumpStartUp"
-		jumpStartUp = true
-		attacking = false
-		jumpDirection = parent.virtualController.directionX
-		if !dashing: 
-			velocity.x = 0
+		if grounded:
+			airJumpLocked = true
+			disableGravity = false
+			gatlingPriority = 0
+			state = "standing"
+			action = "idle"
+			jumpCancel = false
+			movement = "jumpStartUp"
+			jumpStartUp = true
+			attacking = false
+			jumpDirection = parent.virtualController.directionX
+			if !dashing: 
+				velocity.x = 0
+				preservedJumpSpeed = 0
+			else:
+				preservedJumpSpeed = velocity.x
+			return
+		elif airJumps < maxAirJumps && !airJumpLocked:
+			airJumps += 1
+			attacking = false
+			jumpDirection = parent.virtualController.directionX
 			preservedJumpSpeed = 0
-		else:
-			preservedJumpSpeed = velocity.x
-		return
+			startJump()
+	elif parent.virtualController.directionY >= 0:
+		airJumpLocked = false
 	if velocity.y > 0:
 		jumpState = "falling"
 	elif !jumpStartUp:
@@ -467,6 +483,8 @@ func _on_anchor_point_body_entered(body):
 		land()
 	
 func land():
+	airJumps = 0
+	airDashes = 0
 	grounded = true
 	jumping = false
 	if knockdownState == "airborne": knockdownState = "otg"
