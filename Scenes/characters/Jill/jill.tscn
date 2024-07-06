@@ -1793,7 +1793,6 @@ position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_educ5")
 
 [node name="sprJill" parent="." instance=ExtResource("3_63h5k")]
-z_index = 1
 sprite_frames = SubResource("SpriteFrames_14tsi")
 animation = &"default"
 

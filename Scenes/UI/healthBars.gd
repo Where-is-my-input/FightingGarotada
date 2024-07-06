@@ -23,6 +23,8 @@ extends Control
 @onready var hpBarP1 = $CanvasLayer/tpHPPlayer1
 @onready var hpBarP2 = $CanvasLayer/tpHPPlayer2
 @onready var tmr_round_start = $tmrRoundStart
+@onready var icon_p_1 = $CanvasLayer/icons/iconP1
+@onready var icon_p_2 = $CanvasLayer/icons/iconP2
 
 var player1
 var player2
@@ -51,6 +53,23 @@ func _ready():
 	setWinStreak()
 	#player2.setCamera(camera_2d.get_path())
 	setDefault()
+	setPlayerIcon(Global.player1Character, icon_p_1, 1)
+	setPlayerIcon(Global.player2Character, icon_p_2, 2)
+	icon_p_2.scale.x *= -1
+
+func setPlayerIcon(playerCharacter, iconPlayer, player):
+	var icon
+	match playerCharacter:
+		Global.character.JILL:
+			icon = preload("res://Scenes/UI/character_icons/icon_jill.tscn").instantiate()
+		Global.character.LILITH:
+			icon = preload("res://Scenes/UI/character_icons/icon_lilith.tscn").instantiate()
+		Global.character.MARROW:
+			icon = preload("res://Scenes/UI/character_icons/icon_marrow.tscn").instantiate()
+		Global.character.SONSON:
+			icon = preload("res://Scenes/characters/Sonson/icon_sonson.tscn").instantiate()
+	icon.setPlayerPalette(player)
+	iconPlayer.add_child(icon)
 
 func _process(_delta):
 	var timer = tmr_timer.time_left

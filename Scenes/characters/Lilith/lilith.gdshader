@@ -56,6 +56,17 @@ uniform vec4 newColor23: source_color = vec4(248.0,0.0,248.0,255.0);
 uniform vec4 newColor24: source_color = vec4(248.0,0.0,248.0,255.0);
 uniform vec4 newColor25: source_color = vec4(248.0,0.0,248.0,255.0);
 
+uniform vec4 chromaKey0: source_color = vec4(252.0,2.0,252.0,255.0);
+uniform vec4 chromaKey1: source_color = vec4(252.0,2.0,252.0,255.0);
+uniform vec4 chromaKey2: source_color = vec4(252.0,2.0,252.0,255.0);
+uniform vec4 chromaKey3: source_color = vec4(252.0,2.0,252.0,255.0);
+uniform vec4 chromaKey4: source_color = vec4(252.0,2.0,252.0,255.0);
+uniform vec4 chromaKey5: source_color = vec4(252.0,2.0,252.0,255.0);
+uniform vec4 chromaKey6: source_color = vec4(252.0,2.0,252.0,255.0);
+uniform vec4 chromaKey7: source_color = vec4(252.0,2.0,252.0,255.0);
+uniform vec4 chromaKey8: source_color = vec4(252.0,2.0,252.0,255.0);
+uniform vec4 chromaKey9: source_color = vec4(252.0,2.0,252.0,255.0);
+
 vec4 swap_color(vec4 color){
 	vec4 original_colors[25] = vec4[25] (color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11, color12, color13, color14, color15, color16, color17, color18, color19, color20, color21, color22, color23, color24, color25);
 	vec4 replace_colors[25] = vec4[25] (newColor1, newColor2, newColor3, newColor4, newColor5, newColor6, newColor7, newColor8, newColor9, newColor10, newColor11, newColor12, newColor13, newColor14, newColor15, newColor16, newColor17, newColor18, newColor19, newColor20, newColor21, newColor22, newColor23, newColor24, newColor25);
@@ -69,32 +80,15 @@ vec4 swap_color(vec4 color){
 
 void fragment(){
 	vec4 color_a = texture(TEXTURE, UV);
-	//color_a.b = 0.0;
-	//vec3 color = color_a.rgb;
-	//float a = color_a.a;
-	//float chroma_key_len = length(chroma_key.rgb);
-	//float c_len = length(color);
-	
-	//vec3 chroma_key_norm = chroma_key.rgb / chroma_key_len * c_len;
-	//vec3 chroma_replace_norm = chroma_key_replace.rgb / chroma_key_len * c_len;
-	
-	//float chroma_dist = distance(color, chroma_key_norm) * 5.0 ;
-	//color = mix(chroma_replace_norm, color, step(tolerance,chroma_dist));
-	if (color_a.r > 248.0 && color_a.g < 5.0 && color_a.b > 248.00) { //Opacity
-        color_a.a = 0.0;
-    }
-	//color_a = vec4(color_a.r, color_a.g, 0, color_a.a);
-	//if (color_a.r == color1.r && color_a.g == color1.g && color_a.b == color1.b) {
-        //color_a = vec4(newColor1.r, newColor1.g, newColor1.b, color_a.a);
-    //}else if (color_a.r == color2.r && color_a.g == color2.g && color_a.b == color2.b) {
-        //color_a = vec4(newColor2.r, newColor2.g, newColor2.b, color_a.a);
-    //}else if (color_a.r == color3.r && color_a.g == color3.g && color_a.b == color3.b) {
-        //color_a = vec4(newColor3.r, newColor3.g, newColor3.b, color_a.a);
+	vec4 chromaArray[10] = vec4[10](chromaKey0,chromaKey1,chromaKey2,chromaKey3,chromaKey4,chromaKey5,chromaKey6,chromaKey7,chromaKey8,chromaKey9);
+	for(int i = 0; i < 10; i++){
+		if (distance(color_a, chromaArray[i]) <= precision){
+			color_a.a = 0.0;
+			break;
+		}
+	}
+	//if (color_a.r > 248.0 && color_a.g < 5.0 && color_a.b > 248.00) { //Opacity
+        //color_a.a = 0.0;
     //}
-	//vec4 rgba = texture(TEXTURE, UV);
-	//vec4 finalColor = texture(palette, vec2(color_a.r, color_a.g));
-	//finalColor.a = color_a.a;
-	
-	//COLOR = finalColor;
 	COLOR = swap_color(color_a);
 }

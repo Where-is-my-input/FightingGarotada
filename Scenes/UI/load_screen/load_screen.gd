@@ -13,7 +13,6 @@ func _ready():
 	ResourceLoader.load_threaded_request(scene, "", true)
 
 func _process(delta):
-	print(ResourceLoader.load_threaded_get_status(scene))
 	if tmr_wait.is_stopped():
 		match ResourceLoader.load_threaded_get_status(scene):
 			0,1,2:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8dsl308vfypc"]
+[gd_scene load_steps=16 format=3 uid="uid://b8dsl308vfypc"]
 
 [ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="1_mbwpd"]
 [ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://Scenes/UI/healthBars.tscn" id="2_t76xf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scenes/system/trainingMode.gd" id="6_tauia"]
 [ext_resource type="PackedScene" uid="uid://j1cpqciinjla" path="res://Scenes/system/save_state.tscn" id="7_cv1jc"]
 [ext_resource type="Script" path="res://Scenes/system/save_state.gd" id="8_3e5y6"]
+[ext_resource type="PackedScene" uid="uid://dy8dp8tqcj1q6" path="res://Scenes/stages/stage_00.tscn" id="9_srhrf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1wml"]
 texture = ExtResource("1_mbwpd")
@@ -250,5 +251,7 @@ color = Color(0.381474, 0.274218, 0.0731015, 1)
 position = Vector2(964, 843.125)
 shape = SubResource("RectangleShape2D_bl8iv")
 debug_color = Color(0.341176, 0.403922, 0.4, 0.419608)
+
+[node name="stage00" parent="." instance=ExtResource("9_srhrf")]
 
 [connection signal="timeout" from="HPBars/trainingMode/CanvasLayer/tmrBlock" to="HPBars/trainingMode" method="_on_tmr_block_timeout"]

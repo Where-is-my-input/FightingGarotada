@@ -193,6 +193,14 @@ text = "99"
 
 [node name="tmrTimer" type="Timer" parent="CanvasLayer"]
 
+[node name="icons" type="Node" parent="CanvasLayer"]
+
+[node name="iconP1" type="Node2D" parent="CanvasLayer/icons"]
+position = Vector2(10, 9.5)
+
+[node name="iconP2" type="Node2D" parent="CanvasLayer/icons"]
+position = Vector2(947, 13)
+
 [node name="tmrRoundStart" type="Timer" parent="."]
 one_shot = true
 

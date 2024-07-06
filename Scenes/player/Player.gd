@@ -131,7 +131,6 @@ func loadState(state):
 	body.global_position.y = state.bodyGlobalPositionY
 
 func saveStateArray():
-	#print(body.get_property_list())
 	#brute forcing save stating cause I'm stupid
 	var animation = [body.animation_player.current_animation, body.animation_player.current_animation_position]
 	var animationStates = [body.state, body.action, body.jumpState, body.movement, body.attack, body.hit, body.idleState, body.knockdownState]

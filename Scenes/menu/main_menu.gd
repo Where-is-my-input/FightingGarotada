@@ -4,7 +4,7 @@ extends Control
 
 func _ready():
 	btn_training.grab_focus()
-	RenderingServer.set_default_clear_color(Color.DARK_SLATE_GRAY)
+	RenderingServer.set_default_clear_color(Color.DARK_SLATE_GRAY)#DARK_SLATE_GRAY
 
 func _on_btn_versus_pressed():
 	Global.setGameMode(Global.mode.VERSUS)

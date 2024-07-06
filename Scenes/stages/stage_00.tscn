@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy8dp8tqcj1q6"]
+
+[ext_resource type="Texture2D" uid="uid://c60uf0udlxxks" path="res://img/LobbyDaGarotada/Whytho_Updated.png" id="1_7vsve"]
+[ext_resource type="Texture2D" uid="uid://qmlinf3w3fe0" path="res://img/LobbyDaGarotada/domitebanner.png" id="2_v4k11"]
+
+[node name="stage00" type="Control"]
+z_index = -15
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.458824)
+z_index = -15
+layout_mode = 0
+offset_left = 238.0
+offset_top = -78.0
+offset_right = 3575.0
+offset_bottom = 2579.0
+scale = Vector2(0.444184, 0.444184)
+texture = ExtResource("1_7vsve")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 59.0
+offset_right = 2537.0
+offset_bottom = 1216.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_v4k11")
