@@ -1,4 +1,4 @@
-[gd_scene load_steps=466 format=3 uid="uid://elw7k1crskct"]
+[gd_scene load_steps=467 format=3 uid="uid://elw7k1crskct"]
 
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="1_4osa3"]
 [ext_resource type="Shader" path="res://Scenes/characters/Lilith/lilith.gdshader" id="1_o1017"]
@@ -455,6 +455,7 @@
 [ext_resource type="Texture2D" uid="uid://cowbkkuhg0jhd" path="res://Characters/Lilith/JPEG/VS2_Lilith_62928.jpg" id="434_kp1j5"]
 [ext_resource type="Texture2D" uid="uid://b5h0nrurhwwf6" path="res://Characters/Lilith/JPEG/VS2_Lilith_62952.jpg" id="435_m6v7r"]
 [ext_resource type="Texture2D" uid="uid://djo16hr3tc6b2" path="res://Characters/Lilith/JPEG/VS2_Lilith_62976.jpg" id="436_0fnwg"]
+[ext_resource type="PackedScene" uid="uid://bqgg1jrj5p264" path="res://Scenes/system/collision/hitbox.tscn" id="453_gfjsh"]
 
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
@@ -2203,7 +2204,7 @@ size = Vector2(1, 1)
 resource_local_to_scene = true
 size = Vector2(47, 59)
 
-[sub_resource type="RectangleShape2D" id="5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pldyf"]
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
@@ -2583,13 +2584,10 @@ damage = 750
 hitstop = 15
 vstun = 10
 
-[node name="Hitbox" type="CollisionShape2D" parent="Hitboxes"]
-light_mask = 4
-visibility_layer = 2
+[node name="Hitbox" parent="Hitboxes" instance=ExtResource("453_gfjsh")]
 position = Vector2(89.5, -17.5)
-shape = SubResource("5")
+shape = SubResource("RectangleShape2D_pldyf")
 disabled = true
-debug_color = Color(1, 0, 0.0784314, 0.419608)
 
 [node name="collisionArea" type="Area2D" parent="." groups=["CollisionBox"]]
 visible = false

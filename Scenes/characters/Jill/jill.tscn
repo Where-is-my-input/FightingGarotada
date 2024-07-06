@@ -1,4 +1,4 @@
-[gd_scene load_steps=284 format=3 uid="uid://fjoshq8g2rxd"]
+[gd_scene load_steps=285 format=3 uid="uid://fjoshq8g2rxd"]
 
 [ext_resource type="Shader" path="res://Scenes/characters/Jill/jill.gdshader" id="1_twjs6"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="1_x0fi1"]
@@ -273,6 +273,7 @@
 [ext_resource type="Texture2D" uid="uid://dl5bjpfps7h8v" path="res://Characters/Jill Valentine/anim420.png" id="267_hdk7k"]
 [ext_resource type="Texture2D" uid="uid://beyykhh1yct0y" path="res://Characters/Jill Valentine/anim421.png" id="268_p5iof"]
 [ext_resource type="AnimationLibrary" uid="uid://603q1ivypa65" path="res://Scenes/characters/Jill/Jill.res" id="270_k8dn5"]
+[ext_resource type="PackedScene" uid="uid://bqgg1jrj5p264" path="res://Scenes/system/collision/hitbox.tscn" id="271_07734"]
 
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
@@ -1564,7 +1565,7 @@ size = Vector2(1, 1)
 resource_local_to_scene = true
 size = Vector2(47, 59)
 
-[sub_resource type="RectangleShape2D" id="5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fajuu"]
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
@@ -1763,6 +1764,18 @@ tracks/15/keys = {
 "update": 0,
 "values": [Vector2(56, -16)]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Hitboxes/Hitbox/ShapeCast2D:enabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
 resource_local_to_scene = true
@@ -1829,20 +1842,16 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("4_oc5ri")
-stun = 35
+stun = 10
 stunVector = Vector2(500, -50)
-damage = 750
-attackType = 3
+damage = 150
 hitstop = 15
 vstun = 10
 
-[node name="Hitbox" type="CollisionShape2D" parent="Hitboxes"]
-light_mask = 4
-visibility_layer = 2
+[node name="Hitbox" parent="Hitboxes" instance=ExtResource("271_07734")]
 position = Vector2(89.5, -17.5)
-shape = SubResource("5")
+shape = SubResource("RectangleShape2D_fajuu")
 disabled = true
-debug_color = Color(1, 0, 0.0784314, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -1923,5 +1932,3 @@ debug_color = Color(0.398854, 0.0011998, 0.59075, 0.42)
 [connection signal="body_entered" from="anchorPoint" to="." method="_on_anchor_point_body_entered"]
 [connection signal="body_exited" from="anchorPoint" to="." method="_on_anchor_point_body_exited"]
 [connection signal="timeout" from="tmrKnockdown" to="." method="_on_tmr_knockdown_timeout"]
-[connection signal="area_entered" from="Hitboxes" to="." method="_on_hitboxes_area_entered"]
-[connection signal="area_entered" from="Hitboxes" to="Hitboxes" method="_on_area_entered"]

@@ -59,7 +59,12 @@ func getHitHurtBoxes(p):
 
 func alignHurtboxes():
 	for i in hurtboxes.size():
-		if hurtboxesPointers[i].disabled == false:
+		if !(hurtboxesPointers[i] is CollisionShape2D):
+			continue
+			hurtboxes[i].visible = true
+			hurtboxes[i].size = hurtboxesPointers[i].shape.size
+			hurtboxes[i].global_position = Vector2(hurtboxesPointers[i].global_position.x - hurtboxes[i].size.x /2, hurtboxesPointers[i].global_position.y - hurtboxes[i].size.y/2)
+		elif hurtboxesPointers[i].disabled == false:
 			hurtboxes[i].visible = true
 			hurtboxes[i].size = hurtboxesPointers[i].shape.size
 			hurtboxes[i].global_position = Vector2(hurtboxesPointers[i].global_position.x - hurtboxes[i].size.x /2, hurtboxesPointers[i].global_position.y - hurtboxes[i].size.y/2)

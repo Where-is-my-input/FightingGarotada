@@ -1,4 +1,4 @@
-[gd_scene load_steps=449 format=3 uid="uid://b8381bmosefni"]
+[gd_scene load_steps=450 format=3 uid="uid://b8381bmosefni"]
 
 [ext_resource type="Shader" path="res://Scenes/characters/Marrow/marrow.gdshader" id="1_fvj0y"]
 [ext_resource type="Script" path="res://Scenes/characters/Marrow/marrow.gd" id="2_4p3jg"]
@@ -433,6 +433,7 @@
 [ext_resource type="Texture2D" uid="uid://dxw6e0och5x8q" path="res://Characters/Marrow/MVC2_Marrow_194.png" id="429_r6aig"]
 [ext_resource type="Texture2D" uid="uid://bq7eo3trqsuqs" path="res://Characters/Marrow/MVC2_Marrow_195.png" id="430_6xa8s"]
 [ext_resource type="Texture2D" uid="uid://i05kfhuxd2xc" path="res://Characters/Marrow/MVC2_Marrow_196.png" id="431_vk05g"]
+[ext_resource type="PackedScene" uid="uid://bqgg1jrj5p264" path="res://Scenes/system/collision/hitbox.tscn" id="433_7n5vx"]
 [ext_resource type="AnimationLibrary" uid="uid://eatapbb04umh" path="res://Scenes/characters/Marrow/marrow.res" id="447_cp2fu"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://up27wj44l7vt" path="res://Scenes/characters/Marrow/marrow.tres" id="448_pkoye"]
 
@@ -2116,11 +2117,12 @@ size = Vector2(0, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmm0b"]
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bat1f"]
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5auy0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4tci"]
+resource_local_to_scene = true
 size = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfye"]
@@ -2505,26 +2507,21 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("3_y3vc6")
-stun = 30
+stun = 10
 stunVector = Vector2(500, -50)
-damage = 575
-attackType = 2
+damage = 150
 hitstop = 15
 vstun = 10
 
-[node name="Hitbox" type="CollisionShape2D" parent="Hitboxes"]
-light_mask = 4
-visibility_layer = 2
+[node name="Hitbox" parent="Hitboxes" instance=ExtResource("433_7n5vx")]
 position = Vector2(89.5, -17.5)
-shape = SubResource("5")
+shape = SubResource("RectangleShape2D_bat1f")
 disabled = true
-debug_color = Color(1, 0, 0.0784314, 0.419608)
 
-[node name="Hitbox2" type="CollisionShape2D" parent="Hitboxes"]
+[node name="Hitbox2" parent="Hitboxes" instance=ExtResource("433_7n5vx")]
 position = Vector2(47, -8)
-shape = SubResource("RectangleShape2D_5auy0")
+shape = SubResource("RectangleShape2D_t4tci")
 disabled = true
-debug_color = Color(1, 0, 0.0784314, 0.419608)
 
 [node name="collisionArea" type="Area2D" parent="." groups=["CollisionBox"]]
 visible = false

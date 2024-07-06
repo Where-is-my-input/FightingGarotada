@@ -1,4 +1,4 @@
-[gd_scene load_steps=478 format=3 uid="uid://dow0fbokli040"]
+[gd_scene load_steps=479 format=3 uid="uid://dow0fbokli040"]
 
 [ext_resource type="Shader" path="res://Scenes/characters/Sonson/sonson.gdshader" id="1_716nd"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_q0wj3"]
@@ -462,6 +462,7 @@
 [ext_resource type="Texture2D" uid="uid://b6p2bm6k433tv" path="res://Characters/Sonson/image148.png" id="463_b4yr2"]
 [ext_resource type="Texture2D" uid="uid://7eg37d73d700" path="res://Characters/Sonson/image149.png" id="464_jbgrc"]
 [ext_resource type="Texture2D" uid="uid://bxlj2kymn8p0w" path="res://Characters/Sonson/image150.png" id="465_1fyd2"]
+[ext_resource type="PackedScene" uid="uid://bqgg1jrj5p264" path="res://Scenes/system/collision/hitbox.tscn" id="465_x320c"]
 [ext_resource type="Texture2D" uid="uid://n3bxro3tnqot" path="res://Characters/Sonson/image151.png" id="466_itmg6"]
 [ext_resource type="Texture2D" uid="uid://dxy0xcekx38u7" path="res://Characters/Sonson/image152.png" id="467_0gmu4"]
 [ext_resource type="Texture2D" uid="uid://csjft2itw7ana" path="res://Characters/Sonson/image153.png" id="468_rnk4m"]
@@ -2323,7 +2324,7 @@ size = Vector2(1, 1)
 resource_local_to_scene = true
 size = Vector2(47, 59)
 
-[sub_resource type="RectangleShape2D" id="5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi12e"]
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
@@ -2597,13 +2598,10 @@ damage = 750
 hitstop = 15
 vstun = 10
 
-[node name="Hitbox" type="CollisionShape2D" parent="Hitboxes"]
-light_mask = 4
-visibility_layer = 2
+[node name="Hitbox" parent="Hitboxes" instance=ExtResource("465_x320c")]
 position = Vector2(89.5, -17.5)
-shape = SubResource("5")
+shape = SubResource("RectangleShape2D_oi12e")
 disabled = true
-debug_color = Color(1, 0, 0.0784314, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false

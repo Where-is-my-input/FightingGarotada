@@ -10,6 +10,8 @@ var hitboxes;
 @export var hitProperty: Global.hitType = Global.hitType.NORMAL
 @export var blockStun = 10
 @onready var char_body_2d = $".."
+@onready var shape_cast_2d = $ShapeCast2D
+@onready var hitbox = $Hitbox
 
 func _init(Stun = 19, StunVector = Vector2(1,-5), Damage = 0, AttackType = Global.blockType.MID, Hitstop = 7, Vstun = 1, HitProperty = Global.hitType.NORMAL, Blockstun = 10):
 	stun = Stun
@@ -24,10 +26,6 @@ func _init(Stun = 19, StunVector = Vector2(1,-5), Damage = 0, AttackType = Globa
 func _ready():
 	hitboxes = get_children()
 
-#func _physics_process(delta):
-	#for a in get_overlapping_areas():
-		#print(a)
-
 func disableHitboxes():
 	for box in hitboxes:
 		box.set_deferred("disabled", true)
@@ -38,6 +36,7 @@ func enableHitboxes():
 
 func _on_area_entered(hitbox):
 	if hitbox.get_parent() != char_body_2d:
+		#shape_cast_2d.enabled = false
 		var hitParent = hitbox.get_parent()
 		if hitProperty == Global.hitType.GRAB:
 			if hitbox.is_in_group("CollisionBox"):
