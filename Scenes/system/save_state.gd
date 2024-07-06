@@ -22,7 +22,7 @@ func saveState():
 	ResourceSaver.save(save, saveFilePath+saveFileName)
 
 func loadState():
-	var load = ResourceLoader.load(saveFilePath+saveFileName)
-	player.loadStateArray(load.player1State)
-	player2.loadStateArray(load.player2State)
+	var loadScene = ResourceLoader.load(saveFilePath+saveFileName)
+	player.loadStateArray(loadScene.player1State)
+	player2.loadStateArray(loadScene.player2State)
 	Global.loadState.emit()

@@ -10,8 +10,6 @@ var hitboxes;
 @export var hitProperty: Global.hitType = Global.hitType.NORMAL
 @export var blockStun = 10
 @onready var char_body_2d = $".."
-@onready var shape_cast_2d = $ShapeCast2D
-@onready var hitbox = $Hitbox
 
 func _init(Stun = 19, StunVector = Vector2(1,-5), Damage = 0, AttackType = Global.blockType.MID, Hitstop = 7, Vstun = 1, HitProperty = Global.hitType.NORMAL, Blockstun = 10):
 	stun = Stun
