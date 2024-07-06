@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://djm6t30qoyxvi"]
+[gd_scene load_steps=15 format=3 uid="uid://djm6t30qoyxvi"]
 
 [ext_resource type="Script" path="res://Scenes/UI/character_select.gd" id="1_okltk"]
 [ext_resource type="PackedScene" uid="uid://chymqcdt43cd0" path="res://Scenes/UI/character_icons/icon_jill.tscn" id="2_nq61g"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://hq8qxrccklev" path="res://img/LDGring.png" id="5_wm74j"]
 [ext_resource type="Shader" path="res://Scenes/characters/Lilith/lilith.gdshader" id="6_acair"]
 [ext_resource type="Shader" path="res://Scenes/characters/Sonson/sonson.gdshader" id="6_me7sa"]
+[ext_resource type="Texture2D" uid="uid://c60uf0udlxxks" path="res://img/LobbyDaGarotada/Whytho_Updated.png" id="11_hcsed"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r16mt"]
 resource_local_to_scene = true
@@ -226,3 +227,24 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(720, 480)
 scale = Vector2(-0.3, -0.3)
 texture = ExtResource("5_wm74j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.47451)
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_top = -312.0
+offset_right = 3321.0
+offset_bottom = 2345.0
+scale = Vector2(0.589753, 0.589753)
+texture = ExtResource("11_hcsed")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 592.0
+offset_top = 368.0
+offset_right = 632.0
+offset_bottom = 408.0
+scale = Vector2(15.2737, 4.95553)
+color = Color(0.14413, 0.134589, 0.131811, 1)

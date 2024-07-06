@@ -24,6 +24,10 @@ func _init(Stun = 19, StunVector = Vector2(1,-5), Damage = 0, AttackType = Globa
 func _ready():
 	hitboxes = get_children()
 
+#func _physics_process(delta):
+	#for a in get_overlapping_areas():
+		#print(a)
+
 func disableHitboxes():
 	for box in hitboxes:
 		box.set_deferred("disabled", true)
