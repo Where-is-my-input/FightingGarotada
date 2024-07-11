@@ -2432,7 +2432,7 @@ tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(47, -8)]
 }
 
@@ -2448,6 +2448,9 @@ collision_layer = 0
 collision_mask = 4
 floor_block_on_wall = false
 script = ExtResource("2_4p3jg")
+jumpCancel = true
+disableGravity = true
+moveSpeed = Vector2(200, 0)
 animatedSprite = NodePath("sprMarrow")
 animatedTree = NodePath("AnimationPlayer/AnimationTree")
 
@@ -2510,8 +2513,8 @@ collision_mask = 10
 script = ExtResource("3_y3vc6")
 stun = 13
 stunVector = Vector2(500, -50)
-damage = 75
-attackType = 1
+damage = 50
+attackType = 2
 hitstop = 15
 vstun = 10
 
