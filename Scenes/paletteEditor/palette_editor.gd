@@ -20,14 +20,6 @@ func _ready():
 	fillArrays(color_picker)
 	fillArrays(color_picker_2)
 	fillArrays(color_picker_3)
-	#for c in color_picker_2.get_children():
-		#if c.is_in_group("colorPicker"):
-			#colorsArray.push_back(c)
-			#c.connect("changed", changed)
-	#for c in color_picker_3.get_children():
-		#if c.is_in_group("colorPicker"):
-			#colorsArray.push_back(c)
-			#c.connect("changed", changed)
 
 func fillArrays(cPicker):
 	for c in cPicker.get_children():
@@ -41,10 +33,9 @@ func fillArrays(cPicker):
 			c.connect("copy", copyColor)
 			c.connect("paste", pasteColor)
 #array.find
-func changed(c, v):
+func changed(c, color):
 	var index = colorsArray.find(c)
 	if index == -1: return
-	var color = colorsArray[index].getColor()
 	player.setShaderPar(parameterArray[index], Vector4(color.r, color.g, color.b, color.a))
 
 func pasteColor(colorPicker):
