@@ -35,7 +35,6 @@ func enableHitboxes():
 func _on_area_entered(hitbox):
 	if hitbox.get_parent() != char_body_2d:
 		#shape_cast_2d.enabled = false
-		disableHitboxes()
 		var hitParent = hitbox.get_parent()
 		if hitProperty == Global.hitType.GRAB:
 			if hitbox.is_in_group("CollisionBox"):

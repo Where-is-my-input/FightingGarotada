@@ -5,6 +5,10 @@
 [node name="color" type="HBoxContainer" groups=["colorPicker"]]
 script = ExtResource("1_aqqw7")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
 [node name="btnCopiar" type="Button" parent="."]
 layout_mode = 2
 text = "📃"
@@ -13,10 +17,54 @@ text = "📃"
 layout_mode = 2
 text = "📒"
 
-[node name="colorPicker" type="ColorPickerButton" parent="."]
+[node name="sliders" type="VBoxContainer" parent="."]
 layout_mode = 2
-text = "ColorPick"
+
+[node name="boxR" type="HBoxContainer" parent="sliders"]
+layout_mode = 2
+
+[node name="R" type="HSlider" parent="sliders/boxR"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 2
+max_value = 255.0
+
+[node name="lineR" type="LineEdit" parent="sliders/boxR"]
+layout_mode = 2
+alignment = 1
+max_length = 3
+select_all_on_focus = true
+
+[node name="boxG" type="HBoxContainer" parent="sliders"]
+layout_mode = 2
+
+[node name="G" type="HSlider" parent="sliders/boxG"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 2
+max_value = 255.0
+
+[node name="lineG" type="LineEdit" parent="sliders/boxG"]
+layout_mode = 2
+alignment = 1
+select_all_on_focus = true
+
+[node name="boxB" type="HBoxContainer" parent="sliders"]
+layout_mode = 2
+
+[node name="B" type="HSlider" parent="sliders/boxB"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 2
+max_value = 255.0
+
+[node name="lineB" type="LineEdit" parent="sliders/boxB"]
+layout_mode = 2
+alignment = 1
+select_all_on_focus = true
 
 [connection signal="pressed" from="btnCopiar" to="." method="_on_btn_copiar_pressed"]
 [connection signal="pressed" from="btnColar" to="." method="_on_btn_colar_pressed"]
-[connection signal="color_changed" from="colorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="value_changed" from="sliders/boxR/R" to="." method="_on_line_r_text_changed"]
+[connection signal="text_changed" from="sliders/boxR/lineR" to="." method="_on_line_r_text_changed"]
+[connection signal="value_changed" from="sliders/boxG/G" to="." method="_on_line_g_text_changed"]
+[connection signal="text_changed" from="sliders/boxG/lineG" to="." method="_on_line_g_text_changed"]
+[connection signal="value_changed" from="sliders/boxB/B" to="." method="_on_line_b_text_changed"]
+[connection signal="text_changed" from="sliders/boxB/lineB" to="." method="_on_line_b_text_changed"]
