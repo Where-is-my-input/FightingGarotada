@@ -2529,8 +2529,7 @@ shape = SubResource("RectangleShape2D_t4tci")
 disabled = true
 
 [node name="collisionArea" type="Area2D" parent="." groups=["CollisionBox"]]
-visible = false
-collision_layer = 8
+collision_layer = 10
 collision_mask = 8
 script = ExtResource("4_gpsae")
 
@@ -2555,6 +2554,10 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
 active = false
 root_node = NodePath("../../sprMarrow")
+libraries = {
+"": SubResource("AnimationLibrary_yv7pk"),
+"lilith": ExtResource("447_cp2fu")
+}
 tree_root = ExtResource("448_pkoye")
 anim_player = NodePath("..")
 parameters/Attacking/current_state = "HP"

@@ -1941,6 +1941,10 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
 active = false
 root_node = NodePath("../../sprJill")
+libraries = {
+"": SubResource("AnimationLibrary_yv7pk"),
+"Jill": ExtResource("270_k8dn5")
+}
 tree_root = ExtResource("5_4yrhh")
 anim_player = NodePath("..")
 parameters/Attacking/current_state = "HP"
@@ -1991,7 +1995,7 @@ parameters/knockDownAction/transition_request = "airborne"
 parameters/knockDownAction/current_index = -1
 
 [node name="collisionArea" type="Area2D" parent="." groups=["CollisionBox"]]
-collision_layer = 8
+collision_layer = 10
 collision_mask = 8
 script = ExtResource("5_n35ws")
 
