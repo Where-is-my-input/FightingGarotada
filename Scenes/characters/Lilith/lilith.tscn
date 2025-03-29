@@ -1,13 +1,13 @@
 [gd_scene load_steps=467 format=3 uid="uid://elw7k1crskct"]
 
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="1_4osa3"]
-[ext_resource type="Shader" path="res://Scenes/characters/Lilith/lilith.gdshader" id="1_o1017"]
-[ext_resource type="Script" path="res://Scenes/characters/Lilith/lilith.gd" id="2_268om"]
+[ext_resource type="Shader" uid="uid://do5a3u0n4khx4" path="res://Scenes/characters/Lilith/lilith.gdshader" id="1_o1017"]
+[ext_resource type="Script" uid="uid://cqv0j1cpj5pbr" path="res://Scenes/characters/Lilith/lilith.gd" id="2_268om"]
 [ext_resource type="PackedScene" uid="uid://dane1axjv145s" path="res://Scenes/characters/spr_lilith.tscn" id="3_h206i"]
 [ext_resource type="Texture2D" uid="uid://gergw2h3wynm" path="res://Characters/Lilith/JPEG/VS2_Lilith_50424.jpg" id="4_1fj7q"]
-[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="4_6847p"]
+[ext_resource type="Script" uid="uid://il8mpbtvq14v" path="res://Scenes/Hitboxes.gd" id="4_6847p"]
 [ext_resource type="Texture2D" uid="uid://mm8fb7jkivib" path="res://Characters/Lilith/JPEG/VS2_Lilith_50448.jpg" id="5_kprc5"]
-[ext_resource type="Script" path="res://Scenes/characters/collisionArea.gd" id="5_sey50"]
+[ext_resource type="Script" uid="uid://do473gcyjq8fu" path="res://Scenes/characters/collisionArea.gd" id="5_sey50"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://qwcqbckk6w1s" path="res://Scenes/characters/Lilith/lilith.tres" id="6_epy3c"]
 [ext_resource type="Texture2D" uid="uid://c356fusje086o" path="res://Characters/Lilith/JPEG/VS2_Lilith_50472.jpg" id="6_geo3q"]
 [ext_resource type="Texture2D" uid="uid://baddb5h6h2xok" path="res://Characters/Lilith/JPEG/VS2_Lilith_50496.jpg" id="7_3mshe"]
@@ -460,6 +460,7 @@
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
 shader = ExtResource("1_o1017")
+shader_parameter/palette = ExtResource("1_4osa3")
 shader_parameter/color1 = Color(0.788235, 0.0196078, 0.0235294, 1)
 shader_parameter/color2 = Color(0.968627, 0.372549, 0.290196, 1)
 shader_parameter/color3 = Color(0.643137, 0.0784314, 0.0784314, 1)
@@ -520,7 +521,6 @@ shader_parameter/chromaKey6 = Color(0.596078, 0.266667, 0.560784, 1)
 shader_parameter/chromaKey7 = Color(0.784314, 0.156863, 0.635294, 1)
 shader_parameter/chromaKey8 = Color(0.67451, 0.2, 0.698039, 1)
 shader_parameter/chromaKey9 = Color(0.682353, 0.254902, 0.478431, 1)
-shader_parameter/palette = ExtResource("1_4osa3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_educ5"]
 size = Vector2(34, 88)
@@ -2522,7 +2522,7 @@ tracks/24/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
 resource_local_to_scene = true
 _data = {
-"RESET": SubResource("Animation_ml7xx")
+&"RESET": SubResource("Animation_ml7xx")
 }
 
 [node name="charBody2D" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite", "animatedTree") groups=["CollisionBox"]]

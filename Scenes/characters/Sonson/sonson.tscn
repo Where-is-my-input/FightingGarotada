@@ -1,8 +1,8 @@
 [gd_scene load_steps=479 format=3 uid="uid://dow0fbokli040"]
 
-[ext_resource type="Shader" path="res://Scenes/characters/Sonson/sonson.gdshader" id="1_716nd"]
+[ext_resource type="Shader" uid="uid://dgq220u88doxy" path="res://Scenes/characters/Sonson/sonson.gdshader" id="1_716nd"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_q0wj3"]
-[ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="3_l8fd7"]
+[ext_resource type="Script" uid="uid://dghjlgumb0tp7" path="res://Scenes/characters/Jill/jill.gd" id="3_l8fd7"]
 [ext_resource type="PackedScene" uid="uid://buqk22nrxq8hf" path="res://Scenes/characters/Sonson/spr_sonson.tscn" id="4_m7s1s"]
 [ext_resource type="Texture2D" uid="uid://cp5lp1ad32rk5" path="res://Characters/Sonson/image119.png" id="5_4i7ti"]
 [ext_resource type="Texture2D" uid="uid://b8hee2ex8kik0" path="res://Characters/Sonson/image120.png" id="6_tqs3e"]
@@ -279,11 +279,11 @@
 [ext_resource type="Texture2D" uid="uid://dyeodtagmphox" path="res://Characters/Sonson/image255.png" id="267_ew5yg"]
 [ext_resource type="Texture2D" uid="uid://81itv84dl3fd" path="res://Characters/Sonson/image256.png" id="268_6wjb8"]
 [ext_resource type="Texture2D" uid="uid://hmd4nlpk3mt0" path="res://Characters/Sonson/image257.png" id="269_cy1cy"]
-[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="270_6jb8a"]
+[ext_resource type="Script" uid="uid://il8mpbtvq14v" path="res://Scenes/Hitboxes.gd" id="270_6jb8a"]
 [ext_resource type="Texture2D" uid="uid://bc7y1c8w20723" path="res://Characters/Sonson/image258.png" id="270_7h1ek"]
 [ext_resource type="Texture2D" uid="uid://c6ox6nqdsjyee" path="res://Characters/Sonson/image259.png" id="271_haufq"]
 [ext_resource type="Texture2D" uid="uid://bhflfkggq7kdw" path="res://Characters/Sonson/image289.png" id="272_h0uxx"]
-[ext_resource type="Script" path="res://Scenes/characters/collisionArea.gd" id="273_ewquy"]
+[ext_resource type="Script" uid="uid://do473gcyjq8fu" path="res://Scenes/characters/collisionArea.gd" id="273_ewquy"]
 [ext_resource type="Texture2D" uid="uid://bualilhu6y1ry" path="res://Characters/Sonson/image290.png" id="273_qnmib"]
 [ext_resource type="Texture2D" uid="uid://b8fka6x0rtgug" path="res://Characters/Sonson/image291.png" id="274_xa7vf"]
 [ext_resource type="Texture2D" uid="uid://clgaiwjtqy0lj" path="res://Characters/Sonson/image292.png" id="275_326ru"]
@@ -472,6 +472,7 @@
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
 shader = ExtResource("1_716nd")
+shader_parameter/palette = ExtResource("2_q0wj3")
 shader_parameter/color1 = Color(0.988235, 0.196078, 0.0784314, 1)
 shader_parameter/color2 = Color(0.8, 0.133333, 0.0784314, 1)
 shader_parameter/color3 = Color(0.67451, 0.196078, 0.0784314, 1)
@@ -523,7 +524,6 @@ shader_parameter/newColor23 = Color(0.8, 0.541176, 0.266667, 1)
 shader_parameter/newColor24 = Color(1, 1, 1, 1)
 shader_parameter/newColor25 = Color(1, 1, 1, 1)
 shader_parameter/chromaKey = Color(0.988235, 0.00784314, 0.988235, 1)
-shader_parameter/palette = ExtResource("2_q0wj3")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8eddy"]
 resource_local_to_scene = true
@@ -2527,7 +2527,7 @@ tracks/15/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
 resource_local_to_scene = true
 _data = {
-"RESET": SubResource("Animation_ml7xx")
+&"RESET": SubResource("Animation_ml7xx")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfye"]

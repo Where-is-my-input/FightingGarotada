@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ceajyw4r80aev"]
 
-[ext_resource type="Script" path="res://Scenes/menu/buttonRemap.gd" id="1_ji83h"]
+[ext_resource type="Script" uid="uid://oqkvkyldgd5t" path="res://Scenes/menu/buttonRemap.gd" id="1_ji83h"]
 
 [node name="inputRemapper" type="VBoxContainer"]
 script = ExtResource("1_ji83h")

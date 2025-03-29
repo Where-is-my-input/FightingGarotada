@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhcb7vokhypql"]
 
-[ext_resource type="Script" path="res://Scenes/UI/load_screen/load_screen.gd" id="1_d13by"]
+[ext_resource type="Script" uid="uid://bxcb4bvvvgqe1" path="res://Scenes/UI/load_screen/load_screen.gd" id="1_d13by"]
 [ext_resource type="Texture2D" uid="uid://hq8qxrccklev" path="res://img/LDGring.png" id="3_ebfgh"]
 [ext_resource type="Texture2D" uid="uid://c0jolulnwf8e2" path="res://img/LobbyDaGarotada/army_escondido.png" id="4_livxc"]
 
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c1iw4"]
 _data = {
-"RESET": SubResource("Animation_24c7i"),
-"loading": SubResource("Animation_360ys")
+&"RESET": SubResource("Animation_24c7i"),
+&"loading": SubResource("Animation_360ys")
 }
 
 [node name="LoadScreen" type="Control"]

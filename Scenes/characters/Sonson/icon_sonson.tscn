@@ -1,13 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj0phj4xckmae"]
 
-[ext_resource type="Shader" path="res://Scenes/characters/Sonson/sonson.gdshader" id="1_8or6q"]
+[ext_resource type="Shader" uid="uid://dgq220u88doxy" path="res://Scenes/characters/Sonson/sonson.gdshader" id="1_8or6q"]
 [ext_resource type="Texture2D" uid="uid://ci08iq7vn7heb" path="res://Characters/Sonson/icon/sonsonIcon.png" id="1_83hj8"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_acoam"]
-[ext_resource type="Script" path="res://Scenes/UI/icon.gd" id="2_tb0gp"]
+[ext_resource type="Script" uid="uid://qjsni3phgoqk" path="res://Scenes/UI/icon.gd" id="2_tb0gp"]
 
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
 shader = ExtResource("1_8or6q")
+shader_parameter/palette = ExtResource("2_acoam")
 shader_parameter/color1 = Color(0.988235, 0.196078, 0.0784314, 1)
 shader_parameter/color2 = Color(0.8, 0.133333, 0.0784314, 1)
 shader_parameter/color3 = Color(0.67451, 0.196078, 0.0784314, 1)
@@ -59,7 +60,6 @@ shader_parameter/newColor23 = Color(0.8, 0.541176, 0.266667, 1)
 shader_parameter/newColor24 = Color(1, 1, 1, 1)
 shader_parameter/newColor25 = Color(1, 1, 1, 1)
 shader_parameter/chromaKey = Color(0.988235, 0.00784314, 0.988235, 1)
-shader_parameter/palette = ExtResource("2_acoam")
 
 [node name="iconSonson" type="Sprite2D"]
 texture_filter = 1

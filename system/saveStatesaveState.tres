@@ -1,6 +1,9 @@
-[gd_resource type="Resource" script_class="PlayerState" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="PlayerState" load_steps=2 format=3 uid="uid://dstn88ivh2nyx"]
 
-[ext_resource type="Script" path="res://Scenes/playerState.gd" id="1_s4105"]
+[ext_resource type="Script" uid="uid://c00rr0f7yrwx2" path="res://Scenes/playerState.gd" id="1_s4105"]
 
 [resource]
 script = ExtResource("1_s4105")
+HP = 5000
+bodyGlobalPositionX = 0
+bodyGlobalPositionY = 0

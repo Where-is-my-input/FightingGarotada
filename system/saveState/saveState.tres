@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="PlayerStateArray" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="PlayerStateArray" load_steps=2 format=3 uid="uid://26murenosa3p"]
 
-[ext_resource type="Script" path="res://Scenes/PlayerStateArray.gd" id="1_2kw31"]
+[ext_resource type="Script" uid="uid://dydlubxg1qy0f" path="res://Scenes/PlayerStateArray.gd" id="1_2kw31"]
 
 [resource]
 script = ExtResource("1_2kw31")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1cdogqes3rkf"]
 
-[ext_resource type="Shader" path="res://Scenes/characters/Marrow/marrow.gdshader" id="1_c6w1v"]
+[ext_resource type="Shader" uid="uid://bd5io27frr6yn" path="res://Scenes/characters/Marrow/marrow.gdshader" id="1_c6w1v"]
 [ext_resource type="Texture2D" uid="uid://v2da5curh2o3" path="res://Characters/Marrow/icon/marrowIcon.png" id="1_s1b8a"]
-[ext_resource type="Script" path="res://Scenes/UI/icon.gd" id="3_l03ob"]
+[ext_resource type="Script" uid="uid://qjsni3phgoqk" path="res://Scenes/UI/icon.gd" id="3_l03ob"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x0qlt"]
 shader = ExtResource("1_c6w1v")

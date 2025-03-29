@@ -1,13 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://v86fh4ugadky"]
 
-[ext_resource type="Shader" path="res://Scenes/characters/Lilith/lilith.gdshader" id="1_aq05i"]
+[ext_resource type="Shader" uid="uid://do5a3u0n4khx4" path="res://Scenes/characters/Lilith/lilith.gdshader" id="1_aq05i"]
 [ext_resource type="Texture2D" uid="uid://blhxnarcxcfip" path="res://Characters/Lilith/icon/lilithIcon.png" id="2_b1hmf"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_pogt8"]
-[ext_resource type="Script" path="res://Scenes/UI/icon.gd" id="3_d0ech"]
+[ext_resource type="Script" uid="uid://qjsni3phgoqk" path="res://Scenes/UI/icon.gd" id="3_d0ech"]
 
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
 shader = ExtResource("1_aq05i")
+shader_parameter/palette = ExtResource("2_pogt8")
 shader_parameter/color1 = Color(0.788235, 0.0196078, 0.0235294, 1)
 shader_parameter/color2 = Color(0.968627, 0.372549, 0.290196, 1)
 shader_parameter/color3 = Color(0.643137, 0.0784314, 0.0784314, 1)
@@ -68,7 +69,6 @@ shader_parameter/chromaKey6 = Color(0.596078, 0.266667, 0.560784, 1)
 shader_parameter/chromaKey7 = Color(0.784314, 0.156863, 0.635294, 1)
 shader_parameter/chromaKey8 = Color(0.67451, 0.2, 0.698039, 1)
 shader_parameter/chromaKey9 = Color(0.682353, 0.254902, 0.478431, 1)
-shader_parameter/palette = ExtResource("2_pogt8")
 
 [node name="iconLilith" type="Sprite2D"]
 texture_filter = 1

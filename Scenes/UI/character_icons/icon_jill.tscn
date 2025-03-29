@@ -1,13 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://chymqcdt43cd0"]
 
 [ext_resource type="Texture2D" uid="uid://lx5457wnwm3r" path="res://Characters/Jill Valentine/icon/jillIcon.png" id="1_bdcg1"]
-[ext_resource type="Shader" path="res://Scenes/characters/Jill/jill.gdshader" id="1_ssy7f"]
+[ext_resource type="Shader" uid="uid://dmggnlv3jthq" path="res://Scenes/characters/Jill/jill.gdshader" id="1_ssy7f"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="2_lh8nj"]
-[ext_resource type="Script" path="res://Scenes/UI/icon.gd" id="3_hd6vl"]
+[ext_resource type="Script" uid="uid://qjsni3phgoqk" path="res://Scenes/UI/icon.gd" id="3_hd6vl"]
 
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
 shader = ExtResource("1_ssy7f")
+shader_parameter/palette = ExtResource("2_lh8nj")
 shader_parameter/color1 = Color(0.333333, 0.866667, 1, 1)
 shader_parameter/color2 = Color(0.2, 0.666667, 1, 1)
 shader_parameter/color3 = Color(0.266667, 0.533333, 1, 1)
@@ -58,7 +59,6 @@ shader_parameter/newColor22 = Color(0.6, 0.4, 0, 1)
 shader_parameter/newColor23 = Color(0.866667, 0.6, 0, 1)
 shader_parameter/newColor24 = Color(0.321569, 0.176471, 0.454902, 1)
 shader_parameter/newColor25 = Color(0.133333, 0.2, 0.266667, 1)
-shader_parameter/palette = ExtResource("2_lh8nj")
 
 [node name="iconJill" type="Sprite2D"]
 texture_filter = 1

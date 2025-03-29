@@ -1,10 +1,10 @@
 [gd_scene load_steps=450 format=3 uid="uid://b8381bmosefni"]
 
-[ext_resource type="Shader" path="res://Scenes/characters/Marrow/marrow.gdshader" id="1_fvj0y"]
-[ext_resource type="Script" path="res://Scenes/characters/Marrow/marrow.gd" id="2_4p3jg"]
+[ext_resource type="Shader" uid="uid://bd5io27frr6yn" path="res://Scenes/characters/Marrow/marrow.gdshader" id="1_fvj0y"]
+[ext_resource type="Script" uid="uid://btpav7v8ttiio" path="res://Scenes/characters/Marrow/marrow.gd" id="2_4p3jg"]
 [ext_resource type="PackedScene" uid="uid://cxqoonawm54l3" path="res://Scenes/characters/Marrow/spr_marrow.tscn" id="3_0g11j"]
-[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="3_y3vc6"]
-[ext_resource type="Script" path="res://Scenes/characters/collisionArea.gd" id="4_gpsae"]
+[ext_resource type="Script" uid="uid://il8mpbtvq14v" path="res://Scenes/Hitboxes.gd" id="3_y3vc6"]
+[ext_resource type="Script" uid="uid://do473gcyjq8fu" path="res://Scenes/characters/collisionArea.gd" id="4_gpsae"]
 [ext_resource type="Texture2D" uid="uid://5f48bhyfyvtf" path="res://Characters/Marrow/MVC2_Marrow_134.png" id="4_vopk7"]
 [ext_resource type="Texture2D" uid="uid://dspdjqpm8a63f" path="res://Characters/Marrow/MVC2_Marrow_62.png" id="5_umubd"]
 [ext_resource type="Texture2D" uid="uid://dhh52x03ifax0" path="res://Characters/Marrow/MVC2_Marrow_63.png" id="6_llct8"]
@@ -2439,7 +2439,7 @@ tracks/24/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
 resource_local_to_scene = true
 _data = {
-"RESET": SubResource("Animation_ml7xx")
+&"RESET": SubResource("Animation_ml7xx")
 }
 
 [node name="charBody2D" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite", "animatedTree") groups=["CollisionBox"]]

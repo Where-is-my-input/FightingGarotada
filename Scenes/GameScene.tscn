@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://Scenes/UI/healthBars.tscn" id="2_t76xf"]
 [ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://Scenes/player/virtualController.tscn" id="3_47k4m"]
 [ext_resource type="PackedScene" uid="uid://cbi3kopno23pf" path="res://Scenes/player/Player.tscn" id="4_8dqe4"]
-[ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="5_set2w"]
-[ext_resource type="Script" path="res://Scenes/system/trainingMode.gd" id="6_tauia"]
+[ext_resource type="Script" uid="uid://5jx35ahdhkmg" path="res://Scenes/Camera2D.gd" id="5_set2w"]
+[ext_resource type="Script" uid="uid://bhdsoqumkl8sm" path="res://Scenes/system/trainingMode.gd" id="6_tauia"]
 [ext_resource type="PackedScene" uid="uid://j1cpqciinjla" path="res://Scenes/system/save_state.tscn" id="7_cv1jc"]
-[ext_resource type="Script" path="res://Scenes/system/save_state.gd" id="8_3e5y6"]
+[ext_resource type="Script" uid="uid://dm6pk6puqhfgi" path="res://Scenes/system/save_state.gd" id="8_3e5y6"]
 [ext_resource type="PackedScene" uid="uid://dy8dp8tqcj1q6" path="res://Scenes/stages/stage_00.tscn" id="9_srhrf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1wml"]
@@ -15,48 +15,32 @@ texture = ExtResource("1_mbwpd")
 texture_region_size = Vector2i(64, 64)
 0:0/next_alternative_id = 8
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 0:0/1 = 1
 0:0/1/flip_h = true
-0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/1/physics_layer_0/angular_velocity = 0.0
 0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, -32, -32, -32, 32, 32, 32)
 0:0/2 = 2
 0:0/2/flip_v = true
-0:0/2/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/2/physics_layer_0/angular_velocity = 0.0
 0:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, 32, 32, 32, -32, -32, -32)
 0:0/3 = 3
 0:0/3/flip_h = true
 0:0/3/flip_v = true
-0:0/3/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/3/physics_layer_0/angular_velocity = 0.0
 0:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
 0:0/4 = 4
 0:0/4/transpose = true
-0:0/4/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/4/physics_layer_0/angular_velocity = 0.0
 0:0/4/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 0:0/5 = 5
 0:0/5/flip_h = true
 0:0/5/transpose = true
-0:0/5/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/5/physics_layer_0/angular_velocity = 0.0
 0:0/5/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, -32)
 0:0/6 = 6
 0:0/6/flip_v = true
 0:0/6/transpose = true
-0:0/6/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/6/physics_layer_0/angular_velocity = 0.0
 0:0/6/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
 0:0/7 = 7
 0:0/7/flip_h = true
 0:0/7/flip_v = true
 0:0/7/transpose = true
-0:0/7/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/7/physics_layer_0/angular_velocity = 0.0
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, 32, -32, -32, -32, -32, 32)
 
 [sub_resource type="TileSet" id="2"]

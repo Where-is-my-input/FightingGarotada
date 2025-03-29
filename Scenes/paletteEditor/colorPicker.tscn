@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cuae3v35mxgx8"]
 
-[ext_resource type="Script" path="res://Scenes/paletteEditor/colorSlider.gd" id="1_aqqw7"]
+[ext_resource type="Script" uid="uid://dw8pqf2lc0w62" path="res://Scenes/paletteEditor/colorSlider.gd" id="1_aqqw7"]
 
 [node name="color" type="HBoxContainer" groups=["colorPicker"]]
 script = ExtResource("1_aqqw7")

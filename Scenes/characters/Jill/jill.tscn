@@ -1,13 +1,13 @@
 [gd_scene load_steps=287 format=3 uid="uid://fjoshq8g2rxd"]
 
-[ext_resource type="Shader" path="res://Scenes/characters/Jill/jill.gdshader" id="1_twjs6"]
+[ext_resource type="Shader" uid="uid://dmggnlv3jthq" path="res://Scenes/characters/Jill/jill.gdshader" id="1_twjs6"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="1_x0fi1"]
-[ext_resource type="Script" path="res://Scenes/characters/Jill/jill.gd" id="2_steuv"]
+[ext_resource type="Script" uid="uid://dghjlgumb0tp7" path="res://Scenes/characters/Jill/jill.gd" id="2_steuv"]
 [ext_resource type="PackedScene" uid="uid://h2cxolpx00yq" path="res://Scenes/characters/spr_jill.tscn" id="3_63h5k"]
 [ext_resource type="Texture2D" uid="uid://5n7msu2pbmnw" path="res://Characters/Jill Valentine/anim072.png" id="4_8mkt1"]
-[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="4_oc5ri"]
+[ext_resource type="Script" uid="uid://il8mpbtvq14v" path="res://Scenes/Hitboxes.gd" id="4_oc5ri"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://30vijdtfimn4" path="res://Scenes/characters/Jill/jill.tres" id="5_4yrhh"]
-[ext_resource type="Script" path="res://Scenes/characters/collisionArea.gd" id="5_n35ws"]
+[ext_resource type="Script" uid="uid://do473gcyjq8fu" path="res://Scenes/characters/collisionArea.gd" id="5_n35ws"]
 [ext_resource type="Texture2D" uid="uid://dkcb5nx5hi22y" path="res://Characters/Jill Valentine/anim073.png" id="5_o4w55"]
 [ext_resource type="Texture2D" uid="uid://bxrd1mlyh2qxp" path="res://Characters/Jill Valentine/anim074.png" id="6_3gpfs"]
 [ext_resource type="Texture2D" uid="uid://bp4ym33ld87t2" path="res://Characters/Jill Valentine/anim075.png" id="7_ljaif"]
@@ -278,6 +278,7 @@
 [sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
 shader = ExtResource("1_twjs6")
+shader_parameter/palette = ExtResource("1_x0fi1")
 shader_parameter/color1 = Color(0.333333, 0.866667, 1, 1)
 shader_parameter/color2 = Color(0.2, 0.666667, 1, 1)
 shader_parameter/color3 = Color(0.266667, 0.533333, 1, 1)
@@ -328,7 +329,6 @@ shader_parameter/newColor22 = Color(0.6, 0.4, 0, 1)
 shader_parameter/newColor23 = Color(0.866667, 0.6, 0, 1)
 shader_parameter/newColor24 = Color(0.321569, 0.176471, 0.454902, 1)
 shader_parameter/newColor25 = Color(0.133333, 0.2, 0.266667, 1)
-shader_parameter/palette = ExtResource("1_x0fi1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_educ5"]
 size = Vector2(34, 88)
@@ -1846,7 +1846,7 @@ tracks/21/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yv7pk"]
 resource_local_to_scene = true
 _data = {
-"RESET": SubResource("Animation_ml7xx")
+&"RESET": SubResource("Animation_ml7xx")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfye"]
@@ -1934,17 +1934,13 @@ disabled = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../sprJill")
 libraries = {
-"": SubResource("AnimationLibrary_yv7pk"),
-"Jill": ExtResource("270_k8dn5")
+&"": SubResource("AnimationLibrary_yv7pk"),
+&"Jill": ExtResource("270_k8dn5")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
 active = false
 root_node = NodePath("../../sprJill")
-libraries = {
-"": SubResource("AnimationLibrary_yv7pk"),
-"Jill": ExtResource("270_k8dn5")
-}
 tree_root = ExtResource("5_4yrhh")
 anim_player = NodePath("..")
 parameters/Attacking/current_state = "HP"

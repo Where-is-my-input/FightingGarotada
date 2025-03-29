@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://cfjlrtpddd5pd"]
 
-[ext_resource type="Script" path="res://Scenes/Projectiles/projectile.gd" id="1_mtvw5"]
+[ext_resource type="Script" uid="uid://bo1focm0mptri" path="res://Scenes/Projectiles/projectile.gd" id="1_mtvw5"]
 [ext_resource type="Texture2D" uid="uid://cpm2glo1hy1ke" path="res://Characters/Jill Valentine/anim646.png" id="2_6i4w0"]
-[ext_resource type="Script" path="res://Scenes/Hitboxes.gd" id="2_chaw2"]
-[ext_resource type="Shader" path="res://Scenes/Projectiles/projectile.gdshader" id="2_onxoc"]
+[ext_resource type="Script" uid="uid://il8mpbtvq14v" path="res://Scenes/Hitboxes.gd" id="2_chaw2"]
+[ext_resource type="Shader" uid="uid://dk7t276cqbmqv" path="res://Scenes/Projectiles/projectile.gdshader" id="2_onxoc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdkkp"]
 size = Vector2(24, 24)

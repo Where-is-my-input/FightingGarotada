@@ -1,20 +1,21 @@
 [gd_scene load_steps=15 format=3 uid="uid://djm6t30qoyxvi"]
 
-[ext_resource type="Script" path="res://Scenes/UI/character_select.gd" id="1_okltk"]
+[ext_resource type="Script" uid="uid://32jw0jrdx0dq" path="res://Scenes/UI/character_select.gd" id="1_okltk"]
 [ext_resource type="PackedScene" uid="uid://chymqcdt43cd0" path="res://Scenes/UI/character_icons/icon_jill.tscn" id="2_nq61g"]
-[ext_resource type="Shader" path="res://Scenes/characters/Jill/jill.gdshader" id="3_kfoem"]
+[ext_resource type="Shader" uid="uid://dmggnlv3jthq" path="res://Scenes/characters/Jill/jill.gdshader" id="3_kfoem"]
 [ext_resource type="PackedScene" uid="uid://v86fh4ugadky" path="res://Scenes/UI/character_icons/icon_lilith.tscn" id="3_qectk"]
 [ext_resource type="PackedScene" uid="uid://d1cdogqes3rkf" path="res://Scenes/UI/character_icons/icon_marrow.tscn" id="4_5e4hy"]
 [ext_resource type="Texture2D" uid="uid://dsphonu2hgoai" path="res://Characters/Jill Valentine/8by8palette.jpg" id="4_usdtq"]
 [ext_resource type="PackedScene" uid="uid://cj0phj4xckmae" path="res://Scenes/characters/Sonson/icon_sonson.tscn" id="5_uk80f"]
 [ext_resource type="Texture2D" uid="uid://hq8qxrccklev" path="res://img/LDGring.png" id="5_wm74j"]
-[ext_resource type="Shader" path="res://Scenes/characters/Lilith/lilith.gdshader" id="6_acair"]
-[ext_resource type="Shader" path="res://Scenes/characters/Sonson/sonson.gdshader" id="6_me7sa"]
+[ext_resource type="Shader" uid="uid://do5a3u0n4khx4" path="res://Scenes/characters/Lilith/lilith.gdshader" id="6_acair"]
+[ext_resource type="Shader" uid="uid://dgq220u88doxy" path="res://Scenes/characters/Sonson/sonson.gdshader" id="6_me7sa"]
 [ext_resource type="Texture2D" uid="uid://c60uf0udlxxks" path="res://img/LobbyDaGarotada/Whytho_Updated.png" id="11_hcsed"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r16mt"]
 resource_local_to_scene = true
 shader = ExtResource("3_kfoem")
+shader_parameter/palette = ExtResource("4_usdtq")
 shader_parameter/color1 = Color(0.333333, 0.866667, 1, 1)
 shader_parameter/color2 = Color(0.2, 0.666667, 1, 1)
 shader_parameter/color3 = Color(0.266667, 0.533333, 1, 1)
@@ -65,11 +66,11 @@ shader_parameter/newColor22 = Color(0.6, 0.4, 0, 1)
 shader_parameter/newColor23 = Color(0.866667, 0.6, 0, 1)
 shader_parameter/newColor24 = Color(0.321569, 0.176471, 0.454902, 1)
 shader_parameter/newColor25 = Color(0.133333, 0.2, 0.266667, 1)
-shader_parameter/palette = ExtResource("4_usdtq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xmofu"]
 resource_local_to_scene = true
 shader = ExtResource("6_acair")
+shader_parameter/palette = ExtResource("4_usdtq")
 shader_parameter/color1 = Color(0.788235, 0.0196078, 0.0235294, 1)
 shader_parameter/color2 = Color(0.968627, 0.372549, 0.290196, 1)
 shader_parameter/color3 = Color(0.643137, 0.0784314, 0.0784314, 1)
@@ -130,7 +131,6 @@ shader_parameter/chromaKey6 = Color(252, 2, 252, 255)
 shader_parameter/chromaKey7 = Color(252, 2, 252, 255)
 shader_parameter/chromaKey8 = Color(252, 2, 252, 255)
 shader_parameter/chromaKey9 = Color(252, 2, 252, 255)
-shader_parameter/palette = ExtResource("4_usdtq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8o12e"]
 shader = ExtResource("6_me7sa")

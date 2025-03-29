@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cewoaklc61xg2"]
 
-[ext_resource type="Script" path="res://Scenes/menu/button_map.gd" id="1_q0bfq"]
+[ext_resource type="Script" uid="uid://jn08qhnr02pi" path="res://Scenes/menu/button_map.gd" id="1_q0bfq"]
 
 [node name="ButtonMap" type="Control"]
 layout_mode = 3
