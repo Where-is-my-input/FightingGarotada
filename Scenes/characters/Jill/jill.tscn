@@ -2009,3 +2009,4 @@ debug_color = Color(0.398854, 0.0011998, 0.59075, 0.42)
 [connection signal="body_entered" from="anchorPoint" to="." method="_on_anchor_point_body_entered"]
 [connection signal="body_exited" from="anchorPoint" to="." method="_on_anchor_point_body_exited"]
 [connection signal="timeout" from="tmrKnockdown" to="." method="_on_tmr_knockdown_timeout"]
+[connection signal="area_entered" from="Hitboxes" to="Hitboxes" method="_on_area_entered"]
