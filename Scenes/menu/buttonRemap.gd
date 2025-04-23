@@ -6,6 +6,7 @@ extends Control
 @onready var tmr_set = $tmrSet
 
 @export var player: String = "1"
+@export var deviceId:int = -1
 
 @export var array = ["2","4","8","6","LP","MP","HP","LK","MK","HK"]
 #var p2Array = ["p2_2","p2_4","p2_8","p2_6","p2LP","p2MP","p2HP","p2LK","p2MK","p2HK"]
@@ -24,6 +25,8 @@ func _ready():
 	button.connect("pressed", _on_btn_remap_pressed)
 	text.visible = false
 	txtButton.visible = false
+	print(Input.get_connected_joypads())
+	print(Input.get_joy_name(0))
 
 func _on_btn_remap_pressed():
 	text.visible = true
@@ -54,7 +57,7 @@ func setGlobalInputs(event):
 		globalIndex += 1
 
 func _input(event):
-	if remapping && tmr_set.is_stopped():
+	if remapping && tmr_set.is_stopped() && deviceId == event.get_device():
 		if event is InputEventKey || event is InputEventJoypadButton:
 			if event.pressed:
 				remmapEvent(event)
@@ -72,3 +75,9 @@ func remmapEvent(event):
 
 func _on_tmr_set_timeout():
 	tmr_set.stop()
+
+func setDevice(id):
+	if deviceId < 0:
+		deviceId = id
+	elif id < 0:
+		deviceId = id

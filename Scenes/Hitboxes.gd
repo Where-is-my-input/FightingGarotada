@@ -33,7 +33,8 @@ func enableHitboxes():
 		box.set_deferred("disabled", false)
 
 func _on_area_entered(hitbox):
-	if hitbox.get_parent() != char_body_2d && char_body_2d.animatedTree.get(char_body_2d.A_TimeScale) > 0.0:
+	#if hitbox.get_parent() != char_body_2d && char_body_2d.animatedTree.get(char_body_2d.A_TimeScale) > 0.0:
+	if hitbox.get_parent() != char_body_2d && hitbox.get_parent().animatedTree.get(hitbox.get_parent().A_TimeScale) > 0.0:
 		#shape_cast_2d.enabled = false
 		var hitParent = hitbox.get_parent()
 		if hitProperty == Global.hitType.GRAB:

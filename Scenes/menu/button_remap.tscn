@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c36n082mv6i83"]
+[gd_scene load_steps=5 format=3 uid="uid://c36n082mv6i83"]
 
 [ext_resource type="Script" uid="uid://bwlmrhysdw280" path="res://Scenes/menu/menuRemap.gd" id="1_76uwp"]
 [ext_resource type="PackedScene" uid="uid://ceajyw4r80aev" path="res://Scenes/menu/input_remapper.tscn" id="1_iqykh"]
 [ext_resource type="PackedScene" uid="uid://d0cqqg2xcvlfi" path="res://Scenes/player/virtualController.tscn" id="2_o3vnq"]
+[ext_resource type="Script" uid="uid://wnwuyoqrnsrg" path="res://Scenes/menu/side_pick_container.gd" id="4_l770t"]
 
 [node name="buttonRemap" type="Control"]
 layout_mode = 3
@@ -41,11 +42,27 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="VirtualController" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control" instance=ExtResource("2_o3vnq")]
-position = Vector2(-1006, 328)
+position = Vector2(-268, 985)
 
 [node name="VirtualController2" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control" instance=ExtResource("2_o3vnq")]
-position = Vector2(-798, 328)
+position = Vector2(-60, 985)
 player = 2
+
+[node name="sidePickContainer" type="HBoxContainer" parent="VBoxContainer" node_paths=PackedStringArray("remapperOne", "remapperTwo")]
+layout_mode = 2
+alignment = 1
+script = ExtResource("4_l770t")
+remapperOne = NodePath("../HBoxContainer/inputRemapper")
+remapperTwo = NodePath("../HBoxContainer/inputRemapper2")
+
+[node name="vboxplayer1" type="VBoxContainer" parent="VBoxContainer/sidePickContainer"]
+layout_mode = 2
+
+[node name="vboxmiddle" type="VBoxContainer" parent="VBoxContainer/sidePickContainer"]
+layout_mode = 2
+
+[node name="vboxplayer2" type="VBoxContainer" parent="VBoxContainer/sidePickContainer"]
+layout_mode = 2
 
 [node name="btnMainMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
