@@ -1866,7 +1866,6 @@ jumpCancel = true
 disableGravity = true
 maxAirJumps = 0
 maxAirDashes = 0
-moveSpeed = Vector2(-350, 0)
 animatedSprite = NodePath("sprJill")
 animatedTree = NodePath("AnimationPlayer/AnimationTree")
 
@@ -1921,8 +1920,10 @@ debug_color = Color(0, 0.647059, 0.254902, 0.419608)
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("4_oc5ri")
+stun = 23
 stunVector = Vector2(500, -50)
-damage = 200
+damage = 275
+attackType = 2
 hitstop = 15
 vstun = 10
 

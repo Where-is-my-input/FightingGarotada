@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b8dsl308vfypc"]
+[gd_scene load_steps=17 format=3 uid="uid://b8dsl308vfypc"]
 
 [ext_resource type="Texture2D" uid="uid://dw3ly1k67a08g" path="res://icon.png" id="1_mbwpd"]
 [ext_resource type="PackedScene" uid="uid://t6di5bpmga3k" path="res://Scenes/UI/healthBars.tscn" id="2_t76xf"]
@@ -51,6 +51,9 @@ sources/0 = SubResource("TileSetAtlasSource_x1wml")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgjce"]
 size = Vector2(20, 9.61178)
+
+[sub_resource type="Theme" id="Theme_y30xb"]
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="GDScript" id="GDScript_8u6lv"]
 script/source = "extends Node
@@ -153,6 +156,72 @@ shape = SubResource("RectangleShape2D_qgjce")
 script = ExtResource("6_tauia")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="HPBars/trainingMode"]
+
+[node name="states" type="Node" parent="HPBars/trainingMode/CanvasLayer"]
+
+[node name="p1States" type="VBoxContainer" parent="HPBars/trainingMode/CanvasLayer/states"]
+offset_left = 656.0
+offset_top = 106.0
+offset_right = 724.0
+offset_bottom = 345.0
+
+[node name="p1state" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p1States"]
+layout_mode = 2
+theme = SubResource("Theme_y30xb")
+text = "standing"
+
+[node name="p1Knockdown" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p1States"]
+layout_mode = 2
+
+[node name="p1Grounded" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p1States"]
+layout_mode = 2
+
+[node name="p1Facing" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p1States"]
+layout_mode = 2
+
+[node name="p1BeingGrabed" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p1States"]
+layout_mode = 2
+
+[node name="p1JumpStartUp" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p1States"]
+layout_mode = 2
+
+[node name="p1Dashing" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p1States"]
+layout_mode = 2
+
+[node name="p1Jumping" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p1States"]
+layout_mode = 2
+
+[node name="p2States" type="VBoxContainer" parent="HPBars/trainingMode/CanvasLayer/states"]
+offset_left = 1211.0
+offset_top = 103.0
+offset_right = 1279.0
+offset_bottom = 315.0
+alignment = 2
+
+[node name="p2state" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p2States"]
+layout_mode = 2
+text = "standing"
+
+[node name="p2Knockdown" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p2States"]
+layout_mode = 2
+
+[node name="p2Grounded" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p2States"]
+layout_mode = 2
+
+[node name="p2Facing" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p2States"]
+layout_mode = 2
+
+[node name="p2BeingGrabed" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p2States"]
+layout_mode = 2
+
+[node name="p2JumpStartup" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p2States"]
+layout_mode = 2
+
+[node name="p2Dashing" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p2States"]
+layout_mode = 2
+
+[node name="p2Jumping" type="Label" parent="HPBars/trainingMode/CanvasLayer/states/p2States"]
+layout_mode = 2
 
 [node name="tmrBlock" type="Timer" parent="HPBars/trainingMode/CanvasLayer"]
 one_shot = true
