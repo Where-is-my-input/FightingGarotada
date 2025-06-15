@@ -444,7 +444,7 @@ func getHit(hitbox):
 			state = "knockdown"
 			if knockdownState != "otg": knockdownState = "airborne"
 		attacking = 0
-		hitstun = hitbox.stun
+		hitstun = 1 if hitbox.stun == 0 else hitbox.stun
 		knockback = 35 * parent.facing
 		hit = "hit"
 		isBlocking = false
@@ -552,3 +552,6 @@ func getHurtBoxes():
 
 func getHitBoxes():
 	return hitboxes
+
+func getState():
+	return state

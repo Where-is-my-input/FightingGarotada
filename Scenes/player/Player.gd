@@ -100,6 +100,9 @@ func getGlobalPos():
 func getStun():
 	return body.hitstun
 
+func getState():
+	return body.getState()
+
 func getHurtboxes():
 	return hurtboxes.get_children()
 	
