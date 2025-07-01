@@ -423,6 +423,7 @@ func defaultGetHitEffects(hitbox):
 	hitstop = hitbox.hitstop
 	verticalHitstun = hitbox.vstun
 	#hitbox.stunVector.x = hitbox.stunVector.x * parent.facing
+	dashing = false
 	knockbackVector = Vector2(hitbox.stunVector.x * parent.facing, hitbox.stunVector.y)
 	velocity.x = 0
 	velocity.y = 0
