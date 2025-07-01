@@ -462,7 +462,7 @@ animation = &"Jill/walkBack"
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(1268.61, -1321.1)
+graph_offset = Vector2(426.229, -82.7684)
 nodes/Attacking/node = SubResource("20")
 nodes/Attacking/position = Vector2(1240, -480)
 nodes/Crouch/node = SubResource("13")

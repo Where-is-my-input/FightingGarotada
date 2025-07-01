@@ -79,6 +79,8 @@ var airJumpLocked = false
 @onready var collision_area = $collisionArea
 @onready var grab_position = $grabPosition
 @onready var hurtboxes = $Hurtboxes
+@onready var animated_human: Node3D = $SubViewportContainer/SubViewport/AnimatedHuman
+@onready var animationPlayer3D: AnimationPlayer = $SubViewportContainer/SubViewport/AnimatedHuman/AnimationPlayer
 
 #animationTree
 @onready var A_State = "parameters/State/transition_request"
@@ -376,6 +378,7 @@ func startJump():
 	hitboxes.disableHitboxes()
 	jumping = true
 	state = "jumping"
+	#animationPlayer3D.play("Jump")
 	grounded = false
 	jumpState = "rising"
 	velocity.y = +strength
@@ -555,3 +558,97 @@ func getHitBoxes():
 
 func getState():
 	return state
+
+func save_state() -> Dictionary:
+	return {
+		"global_position": global_position,
+		"velocity": velocity,
+		"facing": facing,
+		"grounded": grounded,
+		"knockdown": knockdown,
+		"beingGrabbed": beingGrabbed,
+		"grabbedPlayer": grabbedPlayer,
+		"jumpStartUp": jumpStartUp,
+		"dashing": dashing,
+		"jumping": jumping,
+		"attacking": attacking,
+		"blocking": blocking,
+		"lowBlock": lowBlock,
+		"isBlocking": isBlocking,
+		"state": state,
+		"action": action,
+		"movement": movement,
+		"attack": attack,
+		"jumpState": jumpState,
+		"hit": hit,
+		"idleState": idleState,
+		"knockdownState": knockdownState,
+		"jumpDirectionState": jumpDirectionState,
+		"normalCancel": normalCancel,
+		"jumpCancel": jumpCancel,
+		"specialCancel": specialCancel,
+		"superCancel": superCancel,
+		"gatlingPriority": gatlingPriority,
+		"disableGravity": disableGravity,
+		"moveSpeed": moveSpeed,
+		"hitstun": hitstun,
+		"verticalHitstun": verticalHitstun,
+		"hitstop": hitstop,
+		"invulnerability": invulnerability,
+		"speed": speed,
+		"jumpSpeed": jumpSpeed,
+		"preservedJumpSpeed": preservedJumpSpeed,
+		"jumpDirection": jumpDirection,
+		"airJumps": airJumps,
+		"airDashes": airDashes,
+		"airJumpLocked": airJumpLocked,
+		"crouching": crouching,
+		"knockback": knockback,
+		"knockbackVector": knockbackVector,
+	}
+
+func load_state(state: Dictionary) -> void:
+	global_position = state["global_position"]
+	velocity = state["velocity"]
+	facing = state["facing"]
+	grounded = state["grounded"]
+	knockdown = state["knockdown"]
+	beingGrabbed = state["beingGrabbed"]
+	grabbedPlayer = state["grabbedPlayer"]
+	jumpStartUp = state["jumpStartUp"]
+	dashing = state["dashing"]
+	jumping = state["jumping"]
+	attacking = state["attacking"]
+	blocking = state["blocking"]
+	lowBlock = state["lowBlock"]
+	isBlocking = state["isBlocking"]
+	state = state["state"]
+	action = state["action"]
+	movement = state["movement"]
+	attack = state["attack"]
+	jumpState = state["jumpState"]
+	hit = state["hit"]
+	idleState = state["idleState"]
+	knockdownState = state["knockdownState"]
+	jumpDirectionState = state["jumpDirectionState"]
+	normalCancel = state["normalCancel"]
+	jumpCancel = state["jumpCancel"]
+	specialCancel = state["specialCancel"]
+	superCancel = state["superCancel"]
+	gatlingPriority = state["gatlingPriority"]
+	disableGravity = state["disableGravity"]
+	moveSpeed = state["moveSpeed"]
+	hitstun = state["hitstun"]
+	verticalHitstun = state["verticalHitstun"]
+	hitstop = state["hitstop"]
+	invulnerability = state["invulnerability"]
+	speed = state["speed"]
+	jumpSpeed = state["jumpSpeed"]
+	preservedJumpSpeed = state["preservedJumpSpeed"]
+	jumpDirection = state["jumpDirection"]
+	airJumps = state["airJumps"]
+	airDashes = state["airDashes"]
+	airJumpLocked = state["airJumpLocked"]
+	crouching = state["crouching"]
+	knockback = state["knockback"]
+	knockbackVector = state["knockbackVector"]
